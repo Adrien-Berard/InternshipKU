@@ -20,7 +20,7 @@ class Chromatine:
             while new_position in existing_rnase_positions:
                 new_position += 1
             existing_rnase_positions.append(new_position)
-            self.histones.insert(new_position, 'H')
+            # self.histones.insert(new_position, 'H')
 
 class RNase:
     def __init__(self, chromatine, position=0, temperature=1.0):
@@ -29,10 +29,10 @@ class RNase:
         self.position = position
         self.temperature = temperature
 
-    def calculate_repulsive_energy(self, chromatine):
-        # Calculate repulsive energy based on histones in front and back of the RNase
-        attractive_force = -1.0  # You may adjust this as needed
-        max_distance = 2  # Maximum distance to consider (2 points in front and 2 points behind)
+    def calculate_attractive_energy(self, chromatine):
+        # Calculate attrative energy based on histones in front and back of the RNase
+        attractive_force = 10  # You may adjust this as needed
+        max_distance = 20  # Maximum distance to consider (2 points in front and 2 points behind)
 
         # Calculate energy for histones in front of the RNase
         front_energy = sum([attractive_force / max(1, abs(self.position - i)) for i in range(self.position + 1, self.position + 1 + max_distance)])
@@ -41,21 +41,21 @@ class RNase:
         back_energy = sum([attractive_force / max(1, abs(self.position - i)) for i in range(self.position - 1, self.position - 1 - max_distance, -1)])
 
         #max so avoiding dividing by zero and physically the histone on the current position is considered inactive 
-        return front_energy + back_energy
+        return front_energy, back_energy
 
     def calculate_boltzmann_probability(self, energy_difference):
         # Calculate Boltzmann probability
         k_B = 1.0  # Boltzmann constant (you can adjust this as needed)
         return math.exp(-energy_difference / (k_B * self.temperature))
 
-    def move(self, chromatine, other_rnases):
+    def move(self, chromatine):
         # Define two possible states for movement (left and right)
         states = [-1, 1]
 
         # Calculate energies for the current and potential next positions
         current_energy = 0
         next_positions = [self.position + state for state in states]
-        next_energies = [self.calculate_repulsive_energy(chromatine) for _ in range(len(next_positions))]
+        next_energies = list(self.calculate_attractive_energy(chromatine))
 
         # Calculate probabilities using Boltzmann distribution
         temperature = self.temperature
@@ -92,22 +92,21 @@ def visualize_chromatine(histones, rnase_positions=None):
 def update(frame):
     deleted_positions = []  # Keep track of deleted positions for regeneration
     for i, rnase in enumerate(rnases):
-        other_rnases = rnases[:i] + rnases[i+1:]  # Exclude the current RNase from interaction
-        rnase.move(chromatine, other_rnases)
+        #other_rnases = rnases[:i] + rnases[i+1:]  # Exclude the current RNase from interaction
+        rnase.move(chromatine)
         rnase.cleave_histone(chromatine)
         deleted_positions.append(rnase.position)
 
     # Randomly add new RNase at the beginning of the chromatine with a certain probability
-    if random.random() < 0.1:  # Adjust the probability as needed
+    if random.random() < 0.8:  # Adjust the probability as needed
         new_rnase_position = 0
-        while new_rnase_position in existing_rnase_positions:
-            new_rnase_position += 1
+        chromatine.add_rnases(1,existing_rnase_positions)
         existing_rnase_positions.append(new_rnase_position)
-        chromatine.histones.insert(new_rnase_position, 'H')
+        #chromatine.histones.insert(new_rnase_position, 'H')
 
-    if frame % 10 == 0:
-        # Add new RNases every 10 steps
-        chromatine.add_rnases(len(rnases), existing_rnase_positions)
+    #if frame % 10 == 0:
+    #    # Add new RNases every 10 steps
+    #   chromatine.add_rnases(len(rnases), existing_rnase_positions)
 
     plt.clf()  # Clear the previous frame
 
@@ -115,7 +114,8 @@ def update(frame):
     visualize_chromatine(chromatine.histones, rnase_positions=[rnase.position for rnase in rnases])
 
     # Regenerate histones at deleted positions
-    chromatine.regenerate_histones(deleted_positions)
+    if random.random() < 0.1:
+        chromatine.regenerate_histones(deleted_positions)
 
 # Parameters for simulation
 chromatine_size = 50
