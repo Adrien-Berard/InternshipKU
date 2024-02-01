@@ -1,3 +1,4 @@
+
 import random
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -13,6 +14,10 @@ class Chromatine:
             if pos not in self.new_histones:
                 self.new_histones.add(pos)
                 self.histones[pos] = 'N'
+
+    def add_rnases(self, count):
+        for _ in range(count):
+            self.histones.insert(0, 'H')
 
 class RNase:
     def __init__(self, chromatine, position=0, temperature=1.0):
@@ -71,6 +76,9 @@ def update(frame):
         rnase.cleave_histone()
         deleted_positions.append(rnase.position)
 
+    if frame % 10 == 0:
+        chromatine.add_rnases(len(rnases))  # Add new RNases every 10 steps
+
     plt.clf()  # Clear the previous frame
 
     # Visualize chromatine structure with arrows indicating RNase positions
@@ -82,7 +90,7 @@ def update(frame):
 # Parameters for simulation
 chromatine_size = 50
 rnase_count = 2
-simulation_steps = 20
+simulation_steps = 100
 
 # Initialize chromatine and RNases with a specified temperature
 chromatine = Chromatine(chromatine_size)
