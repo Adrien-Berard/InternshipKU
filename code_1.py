@@ -56,7 +56,7 @@ def update(frame):
 # Parameters for simulation
 chromatine_size = 50
 rnase_count = 1
-simulation_steps = 20
+simulation_steps = 200
 
 # Initialize chromatine and RNase
 chromatine = Chromatine(chromatine_size)
