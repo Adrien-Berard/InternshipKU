@@ -20,7 +20,6 @@ class Chromatine:
             while new_position in existing_rnase_positions:
                 new_position += 1
             existing_rnase_positions.append(new_position)
-            # self.histones.insert(new_position, 'H')
 
 class RNase:
     def __init__(self, chromatine, position=0, temperature=1.0):
@@ -30,7 +29,7 @@ class RNase:
         self.temperature = temperature
 
     def calculate_attractive_energy(self, chromatine):
-        # Calculate attrative energy based on histones in front and back of the RNase
+        # Calculate attractive energy based on histones in front and back of the RNase
         attractive_force = 10  # You may adjust this as needed
         max_distance = 20  # Maximum distance to consider (2 points in front and 2 points behind)
 
@@ -40,7 +39,7 @@ class RNase:
         # Calculate energy for histones behind the RNase
         back_energy = sum([attractive_force / max(1, abs(self.position - i)) for i in range(self.position - 1, self.position - 1 - max_distance, -1)])
 
-        #max so avoiding dividing by zero and physically the histone on the current position is considered inactive 
+        # Max to avoid dividing by zero and physically consider the histone on the current position as inactive
         return front_energy, back_energy
 
     def calculate_boltzmann_probability(self, energy_difference):
@@ -85,37 +84,53 @@ def visualize_chromatine(histones, rnase_positions=None):
     plt.ylabel("Histone")
 
     if rnase_positions:
+        # Draw arrows indicating RNase positions
         for position in rnase_positions:
             plt.arrow(position, -0.2, 0, -0.1, color='red', head_width=0.5, head_length=0.1)
 
 # Function to update the plot in each animation frame
 def update(frame):
     deleted_positions = []  # Keep track of deleted positions for regeneration
-    for i, rnase in enumerate(rnases):
-        #other_rnases = rnases[:i] + rnases[i+1:]  # Exclude the current RNase from interaction
+    for rnase in rnases:
         rnase.move(chromatine)
         rnase.cleave_histone(chromatine)
         deleted_positions.append(rnase.position)
 
     # Randomly add new RNase at the beginning of the chromatine with a certain probability
     if random.random() < 0.8:  # Adjust the probability as needed
-        new_rnase_position = 0
-        chromatine.add_rnases(1,existing_rnase_positions)
-        existing_rnase_positions.append(new_rnase_position)
-        #chromatine.histones.insert(new_rnase_position, 'H')
+        # Add new RNases with random positions
+        new_rnase_positions = random.sample(range(1, len(chromatine.histones)), k=1)  # Avoid position 0 to prevent overlap
+        chromatine.add_rnases(1, new_rnase_positions)
+        existing_rnase_positions.extend(new_rnase_positions)
 
-    #if frame % 10 == 0:
-    #    # Add new RNases every 10 steps
-    #   chromatine.add_rnases(len(rnases), existing_rnase_positions)
+    # Regenerate histones at deleted positions
+    if random.random() < 0.1:
+        chromatine.regenerate_histones(deleted_positions)
+
+    # Update the number of RNases and active histones lists
+    rnase_count_over_time.append(len(rnases))
+    active_histone_count = sum(1 for histone in chromatine.histones if histone in {'H', 'N'})
+    active_histone_count_over_time.append(active_histone_count)
 
     plt.clf()  # Clear the previous frame
 
     # Visualize chromatine structure with arrows indicating RNase positions
     visualize_chromatine(chromatine.histones, rnase_positions=[rnase.position for rnase in rnases])
 
-    # Regenerate histones at deleted positions
-    if random.random() < 0.1:
-        chromatine.regenerate_histones(deleted_positions)
+    
+
+    # Plot the number of RNases and active histones over time
+    plt.subplot(2, 2, 3)
+    plt.plot(range(frame + 1), rnase_count_over_time, marker='o')
+    plt.title('Number of RNases Over Time')
+    plt.xlabel('Time Steps')
+    plt.ylabel('Number of RNases')
+
+    plt.subplot(2, 2, 4)
+    plt.plot(range(frame + 1), active_histone_count_over_time, marker='o', color='green')
+    plt.title('Number of Active Histones Over Time')
+    plt.xlabel('Time Steps')
+    plt.ylabel('Number of Active Histones')
 
 # Parameters for simulation
 chromatine_size = 50
@@ -129,7 +144,11 @@ rnases = [RNase(chromatine, temperature=1.0) for _ in range(rnase_count)]
 # Track existing RNase positions using a list to avoid duplicates
 existing_rnase_positions = [rnase.position for rnase in rnases]
 
+# Lists to store the number of RNases and active histones over time
+rnase_count_over_time = []
+active_histone_count_over_time = []
+
 # Create an animated plot
-fig, ax = plt.subplots()
+fig, axs = plt.subplots(2, 2, figsize=(12, 8))
 ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
 plt.show()
