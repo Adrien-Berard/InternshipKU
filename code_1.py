@@ -52,12 +52,8 @@ class RNase:
         # Calculate probabilities using Boltzmann distribution
         probabilities = [self.calculate_boltzmann_probability(energy - current_energy) for energy in next_energies]
 
-        # Normalize probabilities to sum to 1
-        total_prob = sum(probabilities)
-        normalized_probabilities = [prob / total_prob for prob in probabilities]
-
-        # Choose the next position based on normalized probabilities
-        self.position = random.choices(next_positions, weights=normalized_probabilities, k=1)[0]
+        # Choose the next position based on probabilities
+        self.position = random.choices(next_positions, weights=probabilities, k=1)[0]
 
         # Boundering conditions
         self.position = max(0, min(self.position, len(self.chromatine.histones) - 1))
