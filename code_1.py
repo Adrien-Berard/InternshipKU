@@ -1,4 +1,3 @@
-
 import random
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -6,31 +5,38 @@ import math
 
 class Chromatine:
     def __init__(self, histones_count):
+        # Initialize chromatine with histones
         self.histones = ['H' for _ in range(histones_count)]
-        self.new_histones = set()
 
     def regenerate_histones(self, positions):
+        # Replace histones at specified positions with new histones ('N')
         for pos in positions:
-            if pos not in self.new_histones:
-                self.new_histones.add(pos)
-                self.histones[pos] = 'N'
+            self.histones[pos] = 'N'
 
-    def add_rnases(self, count):
+    def add_rnases(self, count, existing_rnase_positions):
+        # Add a specified number of new RNases at the beginning without overlapping existing RNase positions
         for _ in range(count):
-            self.histones.insert(0, 'H')
+            new_position = 0
+            while new_position in existing_rnase_positions:
+                new_position += 1
+            existing_rnase_positions.append(new_position)
+            self.histones.insert(new_position, 'H')
 
 class RNase:
     def __init__(self, chromatine, position=0, temperature=1.0):
+        # Initialize RNase with a reference to the chromatine, a starting position, and a temperature for movement
         self.chromatine = chromatine
         self.position = position
         self.temperature = temperature
 
     def calculate_repulsive_energy(self, other_rnase):
+        # Calculate repulsive energy
         repulsive_force = 1.0  # You may adjust this as needed
         distance = abs(self.position - other_rnase.position)
-        return repulsive_force / distance
+        return repulsive_force / max(1, distance)  # Ensure non-zero distance to avoid division by zero
 
     def calculate_boltzmann_probability(self, energy_difference):
+        # Calculate Boltzmann probability
         k_B = 1.0  # Boltzmann constant (you can adjust this as needed)
         return math.exp(-energy_difference / (k_B * self.temperature))
 
@@ -46,17 +52,23 @@ class RNase:
         # Calculate probabilities using Boltzmann distribution
         probabilities = [self.calculate_boltzmann_probability(energy - current_energy) for energy in next_energies]
 
-        # Choose the next position based on probabilities
-        self.position = random.choices(next_positions, probabilities)[0]
+        # Normalize probabilities to sum to 1
+        total_prob = sum(probabilities)
+        normalized_probabilities = [prob / total_prob for prob in probabilities]
+
+        # Choose the next position based on normalized probabilities
+        self.position = random.choices(next_positions, weights=normalized_probabilities, k=1)[0]
 
         # Boundering conditions
         self.position = max(0, min(self.position, len(self.chromatine.histones) - 1))
 
     def cleave_histone(self):
+        # Simulate the histone cleavage process by RNase
         if self.chromatine.histones[self.position] in {'H', 'N'}:
             self.chromatine.histones[self.position] = ' '
 
 def visualize_chromatine(histones, rnase_positions=None):
+    # Display chromatine state as a bar chart
     plt.bar(range(len(histones)), [1] * len(histones),
             color=[('gray' if hist == ' ' else 'blue' if hist == 'H' else 'green' if hist == 'N' else 'red') for hist in histones])
     plt.title("Chromatine Structure")
@@ -77,7 +89,7 @@ def update(frame):
         deleted_positions.append(rnase.position)
 
     if frame % 10 == 0:
-        chromatine.add_rnases(len(rnases))  # Add new RNases every 10 steps
+        chromatine.add_rnases(len(rnases), existing_rnase_positions)  # Add new RNases every 10 steps
 
     plt.clf()  # Clear the previous frame
 
@@ -95,6 +107,9 @@ simulation_steps = 100
 # Initialize chromatine and RNases with a specified temperature
 chromatine = Chromatine(chromatine_size)
 rnases = [RNase(chromatine, temperature=1.0) for _ in range(rnase_count)]
+
+# Track existing RNase positions using a list to avoid duplicates
+existing_rnase_positions = [rnase.position for rnase in rnases]
 
 # Create an animated plot
 fig, ax = plt.subplots()
