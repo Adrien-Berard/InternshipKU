@@ -111,26 +111,27 @@ def update(frame):
     rnase_count_over_time.append(len(rnases))
     active_histone_count = sum(1 for histone in chromatine.histones if histone in {'H', 'N'})
     active_histone_count_over_time.append(active_histone_count)
+    print(len(active_histone_count_over_time))
+    print(len(rnase_count_over_time))
+    print('frame : ' + str(len(range(1,frame+2))))
 
     plt.clf()  # Clear the previous frame
-
-    # Visualize chromatine structure with arrows indicating RNase positions
-    visualize_chromatine(chromatine.histones, rnase_positions=[rnase.position for rnase in rnases])
-
-    
-
+   
     # Plot the number of RNases and active histones over time
     plt.subplot(2, 2, 3)
-    plt.plot(range(frame + 1), rnase_count_over_time, marker='o')
+    plt.plot(range(1,frame + 3), rnase_count_over_time, marker='o')
     plt.title('Number of RNases Over Time')
     plt.xlabel('Time Steps')
     plt.ylabel('Number of RNases')
 
     plt.subplot(2, 2, 4)
-    plt.plot(range(frame + 1), active_histone_count_over_time, marker='o', color='green')
+    plt.plot(range(1,frame + 3), active_histone_count_over_time, marker='o', color='green')
     plt.title('Number of Active Histones Over Time')
     plt.xlabel('Time Steps')
     plt.ylabel('Number of Active Histones')
+
+     # Visualize chromatine structure with arrows indicating RNase positions
+    visualize_chromatine(chromatine.histones, rnase_positions=[rnase.position for rnase in rnases])
 
 # Parameters for simulation
 chromatine_size = 50
