@@ -39,6 +39,21 @@ class Chromatine:
 
         return probability
 
+    def change_next_histones(self, position):
+        # Simulate the influence of first neighbors on the next histones
+        if 1 <= position < len(self.histones) - 1:
+            current_histone = self.histones[position]
+            next_histone = self.histones[position + 1]
+            previous_histone = self.histones[position - 1]
+
+            if current_histone == 'A' and next_histone == 'M' and previous_histone == 'M' :
+                # If the current histone is acetylated and the next and previous histones are methylated, change the current histone
+                self.histones[position] = 'M'
+            
+            if current_histone == 'M' and next_histone == 'A' and previous_histone == 'A' :
+                # If the current histone is methylated and the next and previous histones are acetylated, change the current histone
+                self.histones[position] = 'A'
+
 class Polymerase:
     def __init__(self, chromatine, position=10, temperature=1.0):
         # Initialize polymerase with a reference to the chromatine, a starting position, and a temperature for movement
@@ -109,6 +124,10 @@ def update(frame):
     if random.random() < 0.4:
         chromatine.regenerate_histones(deleted_positions)
 
+    # Change the next histones based on the influence of first neighbors
+    for position in existing_polymerase_positions:
+        chromatine.change_next_histones(position)
+
     # Update the number of polymerases and active histones lists
     polymerase_count_over_time.append(len(polymerases))
     active_histone_count = sum(1 for histone in chromatine.histones if histone in {'M', 'A'})
@@ -120,9 +139,9 @@ def update(frame):
 
     # Pad polymerase_count_over_time with zeros if needed
     polymerase_count_over_time.extend([0] * (frame + 2 - len(polymerase_count_over_time)))
-    acetylated_histone_count_over_time.extend([0] * (frame + 2 - len(acetylated_histone_count_over_time)))
-    methylated_histone_count_over_time.extend([0] * (frame + 2 - len(methylated_histone_count_over_time)))
-    active_histone_count_over_time.extend([0] * (frame + 2 - len(active_histone_count_over_time)))
+    acetylated_histone_count_over_time.extend([0] * (frame + 1 - len(acetylated_histone_count_over_time)))
+    methylated_histone_count_over_time.extend([0] * (frame + 1 - len(methylated_histone_count_over_time)))
+    active_histone_count_over_time.extend([0] * (frame + 1 - len(active_histone_count_over_time)))
 
     # Clear the previous frame after updating the data
     axs[0, 0].clear()
@@ -134,9 +153,9 @@ def update(frame):
     axs[0, 0].set_xlabel('Time Steps')
     axs[0, 0].set_ylabel('Number of polymerases')
 
-    axs[0, 1].plot(range(1, frame + 2), active_histone_count_over_time[:frame + 1], marker='o', color='red', label ='Active Histones')
-    axs[0, 1].plot(range(1, frame + 2), acetylated_histone_count_over_time[:frame + 1], marker='o', color='green', label = "Acetylated Histones")
-    axs[0, 1].plot(range(1, frame + 2), methylated_histone_count_over_time[:frame + 1], marker='o', color='blue', label = "Methylated Histones")
+    axs[0, 1].plot(range(1, frame + 2), active_histone_count_over_time[:frame + 1], marker='o', color='red', label='Active Histones')
+    axs[0, 1].plot(range(1, frame + 2), acetylated_histone_count_over_time[:frame + 1], marker='o', color='green', label="Acetylated Histones")
+    axs[0, 1].plot(range(1, frame + 2), methylated_histone_count_over_time[:frame + 1], marker='o', color='blue', label="Methylated Histones")
     axs[0, 1].set_title('Number of Active Histones Over Time')
     axs[0, 1].set_xlabel('Time Steps')
     axs[0, 1].set_ylabel('Number of Histones')
