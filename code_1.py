@@ -18,11 +18,30 @@ class Chromatine:
     def add_polymerases(self, count, existing_polymerase_positions):
         # Add a specified number of new polymerases at non-overlapping positions
         for _ in range(count):
-            new_position = 10
+            new_position = adding_position
             while new_position in existing_polymerase_positions:
                 new_position += 1
             existing_polymerase_positions.append(new_position)
 
+    def adding_poly_proba(self):
+        # Linear function of the local density of histones
+        # Let's calculate local density as the count of active histones in the vicinity of the polymerase
+        vicinity_size = 5  # Adjust this size as needed
+        start_index = adding_position - vicinity_size
+        end_index = adding_position + vicinity_size
+
+        local_density = sum(1 for histone in self.histones[start_index:end_index] if histone in {'M', 'A'})
+
+        # Linear function parameters (you may adjust these)
+        slope = 1e-4  # Adjust the slope to control the influence of local density
+        intercept = 0.1  # Adjust the intercept to control the baseline probability
+
+        # Calculate the probability of adding a new polymerase
+        probability = slope * local_density + intercept
+
+        return probability
+
+    
 class Polymerase:
     def __init__(self, chromatine, position=10, temperature=1.0):
         # Initialize polymerase with a reference to the chromatine, a starting position, and a temperature for movement
@@ -83,7 +102,7 @@ def update(frame):
         polymerase_positions.append(polymerase.position)  # Append the current position
 
     # Randomly add new polymerase at the beginning of the chromatine with a certain probability
-    if random.random() < 0.05:  # Adjust the probability as needed
+    if random.random() < chromatine.adding_poly_proba():  # Adjust the probability as needed
         # Add new polymerases with non-overlapping random positions
         chromatine.add_polymerases(1, existing_polymerase_positions)
         new_polymerase_positions = existing_polymerase_positions[-1:]
@@ -134,6 +153,7 @@ def update(frame):
 chromatine_size = 50
 polymerase_count = 0
 simulation_steps = 100
+adding_position = 20
 
 # Initialize chromatine and polymerases with a specified temperature
 chromatine = Chromatine(chromatine_size)
@@ -152,3 +172,6 @@ methylated_histone_count_over_time = []
 fig, axs = plt.subplots(2, 2, figsize=(12, 8))
 ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
 plt.show()
+
+
+#effect of 1st neighbours 
