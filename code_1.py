@@ -6,19 +6,19 @@ import math
 class Chromatine:
     def __init__(self, histones_count):
         # Initialize chromatine with histones
-        self.histones = ['H' for _ in range(histones_count)]
+        self.histones = ['M' for _ in range(histones_count)]
 
     def regenerate_histones(self, positions):
-        # Replace histones at specified positions with new histones ('N')
+        # Replace histones at specified positions with new histones ('A')
         for pos in positions:
-            self.histones[pos] = 'N'
+            self.histones[pos] = 'A'
 
     def add_polymerases(self, count, existing_polymerase_positions):
         # Add a specified number of new polymerases at non-overlapping positions
         for _ in range(count):
-            new_position = 0
+            new_position = 10
             while new_position in existing_polymerase_positions:
-                new_position = random.randint(0, len(self.histones) - 1)
+                new_position += 1
             existing_polymerase_positions.append(new_position)
 
 class Polymerase:
@@ -44,7 +44,7 @@ class Polymerase:
 
     def move(self, chromatine):
         # Define two possible states for movement (left and right)
-        states = [-1, 1]
+        states = [0, 1]
 
         # Calculate energies for the current and potential next positions
         current_energy = 0
@@ -65,15 +65,15 @@ class Polymerase:
         # Boundering conditions
         self.position = max(0, min(self.position, len(chromatine.histones) - 1))
 
-    def cleave_histone(self, chromatine):
-        # Simulate the histone cleavage process by polymerase
-        if chromatine.histones[self.position] in {'H', 'N'}:
-            chromatine.histones[self.position] = ' '
+    def change_histones(self, chromatine):
+        # Simulate the histone change process by polymerase
+        if chromatine.histones[self.position] in {'M'}:
+            chromatine.histones[self.position] = 'A'
 
 def visualize_chromatine(histones, polymerase_positions=None):
     # Display chromatine state as a bar chart
     plt.bar(range(len(histones)), [1] * len(histones),
-            color=[('gray' if hist == ' ' else 'blue' if hist == 'H' else 'green' if hist == 'N' else 'red') for hist in histones])
+            color=[('gray' if hist == ' ' else 'blue' if hist == 'M' else 'green' if hist == 'A' else 'red') for hist in histones])
     plt.title("Chromatine Structure")
     plt.xlabel("Histone Position")
     plt.ylabel("Histone")
@@ -90,7 +90,7 @@ def update(frame):
 
     for polymerase in polymerases:
         polymerase.move(chromatine)
-        polymerase.cleave_histone(chromatine)
+        polymerase.change_histones(chromatine)
         deleted_positions.append(polymerase.position)
         polymerase_positions.append(polymerase.position)  # Append the current position
 
@@ -108,9 +108,12 @@ def update(frame):
 
     # Update the number of polymerases and active histones lists
     polymerase_count_over_time.append(len(polymerases))
-    active_histone_count = sum(1 for histone in chromatine.histones if histone in {'H', 'N'})
+    active_histone_count = sum(1 for histone in chromatine.histones if histone in {'M', 'A'})
+    acetylated_histone_count = sum(1 for histone in chromatine.histones if histone in {'A'})
+    methylated_histone_count = sum(1 for histone in chromatine.histones if histone in {'M'})
     active_histone_count_over_time.append(active_histone_count)
-
+    acetylated_histone_count_over_time.append(acetylated_histone_count)
+    methylated_histone_count_over_time.append(methylated_histone_count)
     # Clear the previous frame after updating the data
     axs[0, 0].clear()
     axs[0, 1].clear()
@@ -121,10 +124,14 @@ def update(frame):
     axs[0, 0].set_xlabel('Time Steps')
     axs[0, 0].set_ylabel('Number of polymerases')
 
-    axs[0, 1].plot(range(1, frame + 2), active_histone_count_over_time[:frame + 1], marker='o', color='green')
+    axs[0, 1].plot(range(1, frame + 2), active_histone_count_over_time[:frame + 1], marker='o', color='red', label ='Active Histones')
+    axs[0, 1].plot(range(1, frame + 2), acetylated_histone_count_over_time[:frame + 1], marker='o', color='green', label = "Acetylated Histones")
+    axs[0, 1].plot(range(1, frame + 2), methylated_histone_count_over_time[:frame + 1], marker='o', color='blue', label = "Methylated Histones")
     axs[0, 1].set_title('Number of Active Histones Over Time')
     axs[0, 1].set_xlabel('Time Steps')
-    axs[0, 1].set_ylabel('Number of Active Histones')
+    axs[0, 1].set_ylabel('Number of Histones')
+    axs[0, 1].legend()
+    #axs[0, 1].set_ylabel(['Number of Active Histones','Number of Acetylated Histones','Number of Methylated Histone'], loc = "top")
 
     # Visualize chromatine structure with arrows indicating polymerase positions
     visualize_chromatine(chromatine.histones, polymerase_positions=polymerase_positions)
@@ -132,7 +139,7 @@ def update(frame):
 
 # Parameters for simulation
 chromatine_size = 50
-polymerase_count = 2
+polymerase_count = 0
 simulation_steps = 100
 
 # Initialize chromatine and polymerases with a specified temperature
@@ -145,8 +152,13 @@ existing_polymerase_positions = [polymerase.position for polymerase in polymeras
 # Lists to store the number of polymerases and active histones over time
 polymerase_count_over_time = []
 active_histone_count_over_time = []
+acetylated_histone_count_over_time = []
+methylated_histone_count_over_time = []
 
 # Create an animated plot
 fig, axs = plt.subplots(2, 2, figsize=(12, 8))
 ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
 plt.show()
+
+#rate of coming in depends on the number of histones activated (20 in the middle and 20 on 2 sieds)
+#effect of 1st neighbours 
