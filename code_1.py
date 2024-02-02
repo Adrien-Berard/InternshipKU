@@ -154,3 +154,6 @@ active_histone_count_over_time = []
 fig, axs = plt.subplots(2, 2, figsize=(12, 8))
 ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
 plt.show()
+
+
+#Problems with the count of the rnases 
