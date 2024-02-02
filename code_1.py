@@ -13,39 +13,34 @@ class Chromatine:
         for pos in positions:
             self.histones[pos] = 'N'
 
-    def add_rnases(self, count, existing_rnase_positions):
-        # Add a specified number of new RNases at the beginning without overlapping existing RNase positions
+    def add_polymerases(self, count, existing_polymerase_positions):
+        # Add a specified number of new polymerases at the beginning without overlapping existing polymerase positions
         for _ in range(count):
             new_position = 0
-            while new_position in existing_rnase_positions:
+            while new_position in existing_polymerase_positions:
                 new_position += 1
-            existing_rnase_positions.append(new_position)
+            existing_polymerase_positions.append(new_position)
 
-class RNase:
+class Polymerase:
     def __init__(self, chromatine, position=0, temperature=1.0):
-        # Initialize RNase with a reference to the chromatine, a starting position, and a temperature for movement
+        # Initialize polymerase with a reference to the chromatine, a starting position, and a temperature for movement
         self.chromatine = chromatine
         self.position = position
         self.temperature = temperature
 
     def calculate_attractive_energy(self, chromatine):
-        # Calculate attractive energy based on histones in front and back of the RNase
-        attractive_force = -10  # You may adjust this as needed
-        max_distance = 20  # Maximum distance to consider (2 points in front and 2 points behind)
+        # Calculate attractive energy based on histones in front and back of the polymerase
+        attractive_force = 10  # You may adjust this as needed
+        max_distance = 20  # Maximum distance to consider (20 points in front and 20 points behind)
 
-        # Calculate energy for histones in front of the RNase
+        # Calculate energy for histones in front of the polymerase
         front_energy = sum([attractive_force / max(1, abs(self.position - i)) for i in range(self.position + 1, self.position + 1 + max_distance)])
 
-        # Calculate energy for histones behind the RNase
+        # Calculate energy for histones behind the polymerase
         back_energy = sum([attractive_force / max(1, abs(self.position - i)) for i in range(self.position - 1, self.position - 1 - max_distance, -1)])
 
         # Max to avoid dividing by zero and physically consider the histone on the current position as inactive
         return front_energy, back_energy
-
-    def calculate_boltzmann_probability(self, energy_difference):
-        # Calculate Boltzmann probability
-        k_B = 1.0  # Boltzmann constant (you can adjust this as needed)
-        return math.exp(-energy_difference / (k_B * self.temperature))
 
     def move(self, chromatine):
         # Define two possible states for movement (left and right)
@@ -58,7 +53,8 @@ class RNase:
 
         # Calculate probabilities using Boltzmann distribution
         temperature = self.temperature
-        probabilities = [math.exp(-energy / temperature) for energy in next_energies]
+        #probabilities = [math.exp(-energy / temperature) for energy in next_energies]
+        probabilities = [1/4, 3/4] 
 
         # Normalize probabilities to sum to 1
         total_prob = sum(probabilities)
@@ -71,11 +67,11 @@ class RNase:
         self.position = max(0, min(self.position, len(chromatine.histones) - 1))
 
     def cleave_histone(self, chromatine):
-        # Simulate the histone cleavage process by RNase
+        # Simulate the histone cleavage process by polymerase
         if chromatine.histones[self.position] in {'H', 'N'}:
             chromatine.histones[self.position] = ' '
 
-def visualize_chromatine(histones, rnase_positions=None):
+def visualize_chromatine(histones, polymerase_positions=None):
     # Display chromatine state as a bar chart
     plt.bar(range(len(histones)), [1] * len(histones),
             color=[('gray' if hist == ' ' else 'blue' if hist == 'H' else 'green' if hist == 'N' else 'red') for hist in histones])
@@ -83,71 +79,74 @@ def visualize_chromatine(histones, rnase_positions=None):
     plt.xlabel("Histone Position")
     plt.ylabel("Histone")
 
-    if rnase_positions:
-        # Draw arrows indicating RNase positions
-        for position in rnase_positions:
+    if polymerase_positions:
+        # Draw arrows indicating polymerase positions
+        for position in polymerase_positions:
             plt.arrow(position, -0.2, 0, -0.1, color='red', head_width=0.5, head_length=0.1)
 
 # Function to update the plot in each animation frame
 def update(frame):
     deleted_positions = []  # Keep track of deleted positions for regeneration
-    for rnase in rnases:
-        rnase.move(chromatine)
-        rnase.cleave_histone(chromatine)
-        deleted_positions.append(rnase.position)
+    polymerase_positions = []  # Clear the polymerase_positions list
 
-    # Randomly add new RNase at the beginning of the chromatine with a certain probability
+    for polymerase in polymerases:
+        polymerase.move(chromatine)
+        polymerase.cleave_histone(chromatine)
+        deleted_positions.append(polymerase.position)
+        polymerase_positions.append(polymerase.position)  # Append the current position
+
+    # Randomly add new polymerase at the beginning of the chromatine with a certain probability
     if random.random() < 0.01:  # Adjust the probability as needed
-        # Add new RNases with random positions
-        new_rnase_positions = random.sample(range(1, len(chromatine.histones)), k=1)  # Avoid position 0 to prevent overlap
-        chromatine.add_rnases(1, new_rnase_positions)
-        existing_rnase_positions.extend(new_rnase_positions)
-        rnases.append(RNase(chromatine, temperature=1.0))
+        # Add new polymerases with random positions
+        new_polymerase_positions = random.sample(range(1, len(chromatine.histones)), k=1)  # Avoid position 0 to prevent overlap
+        chromatine.add_polymerases(1, new_polymerase_positions)
+        existing_polymerase_positions.extend(new_polymerase_positions)
+        new_polymerases = [Polymerase(chromatine, position=pos, temperature=1.0) for pos in new_polymerase_positions]
+        polymerases.extend(new_polymerases)
+
 
     # Regenerate histones at deleted positions
-    if random.random() < 0.1:
+    if random.random() < 0.4:
         chromatine.regenerate_histones(deleted_positions)
 
-    # Update the number of RNases and active histones lists
-    rnase_count_over_time.append(len(rnases))
+    # Update the number of polymerases and active histones lists
+    polymerase_count_over_time.append(len(polymerases))
     active_histone_count = sum(1 for histone in chromatine.histones if histone in {'H', 'N'})
     active_histone_count_over_time.append(active_histone_count)
 
     # Clear the previous frame after updating the data
     axs[0, 0].clear()
     axs[0, 1].clear()
+    axs[1, 1].clear()
 
-    # Plot the number of RNases and active histones over time
-    axs[0, 0].clear()
-    axs[0, 1].clear()
-
-    axs[0, 0].plot(range(1, frame + 2), rnase_count_over_time[:frame + 1], marker='o')
-    axs[0, 0].set_title('Number of RNases Over Time')
+    axs[0, 0].plot(range(1, frame + 2), polymerase_count_over_time[:frame + 1], marker='o')
+    axs[0, 0].set_title('Number of polymerases Over Time')
     axs[0, 0].set_xlabel('Time Steps')
-    axs[0, 0].set_ylabel('Number of RNases')
+    axs[0, 0].set_ylabel('Number of polymerases')
 
     axs[0, 1].plot(range(1, frame + 2), active_histone_count_over_time[:frame + 1], marker='o', color='green')
     axs[0, 1].set_title('Number of Active Histones Over Time')
     axs[0, 1].set_xlabel('Time Steps')
     axs[0, 1].set_ylabel('Number of Active Histones')
 
-    # Visualize chromatine structure with arrows indicating RNase positions
-    visualize_chromatine(chromatine.histones, rnase_positions=[rnase.position for rnase in rnases])
+    # Visualize chromatine structure with arrows indicating polymerase positions
+    visualize_chromatine(chromatine.histones, polymerase_positions=polymerase_positions)
+
 
 # Parameters for simulation
 chromatine_size = 50
-rnase_count = 2
+polymerase_count = 2
 simulation_steps = 100
 
-# Initialize chromatine and RNases with a specified temperature
+# Initialize chromatine and polymerases with a specified temperature
 chromatine = Chromatine(chromatine_size)
-rnases = [RNase(chromatine, temperature=1.0) for _ in range(rnase_count)]
+polymerases = [Polymerase(chromatine, temperature=1.0) for _ in range(polymerase_count)]
 
-# Track existing RNase positions using a list to avoid duplicates
-existing_rnase_positions = [rnase.position for rnase in rnases]
+# Track existing polymerase positions using a list to avoid duplicates
+existing_polymerase_positions = [polymerase.position for polymerase in polymerases]
 
-# Lists to store the number of RNases and active histones over time
-rnase_count_over_time = []
+# Lists to store the number of polymerases and active histones over time
+polymerase_count_over_time = []
 active_histone_count_over_time = []
 
 # Create an animated plot
@@ -156,4 +155,4 @@ ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
 plt.show()
 
 
-#Problems with the count of the rnases 
+#Problems with the count of the polymerases 
