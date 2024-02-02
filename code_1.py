@@ -14,11 +14,11 @@ class Chromatine:
             self.histones[pos] = 'N'
 
     def add_polymerases(self, count, existing_polymerase_positions):
-        # Add a specified number of new polymerases at the beginning without overlapping existing polymerase positions
+        # Add a specified number of new polymerases at non-overlapping positions
         for _ in range(count):
             new_position = 0
             while new_position in existing_polymerase_positions:
-                new_position += 1
+                new_position = random.randint(0, len(self.histones) - 1)
             existing_polymerase_positions.append(new_position)
 
 class Polymerase:
@@ -53,8 +53,7 @@ class Polymerase:
 
         # Calculate probabilities using Boltzmann distribution
         temperature = self.temperature
-        #probabilities = [math.exp(-energy / temperature) for energy in next_energies]
-        probabilities = [1/4, 3/4] 
+        probabilities = [math.exp(-energy / temperature) for energy in next_energies]
 
         # Normalize probabilities to sum to 1
         total_prob = sum(probabilities)
@@ -96,14 +95,12 @@ def update(frame):
         polymerase_positions.append(polymerase.position)  # Append the current position
 
     # Randomly add new polymerase at the beginning of the chromatine with a certain probability
-    if random.random() < 0.01:  # Adjust the probability as needed
-        # Add new polymerases with random positions
-        new_polymerase_positions = random.sample(range(1, len(chromatine.histones)), k=1)  # Avoid position 0 to prevent overlap
-        chromatine.add_polymerases(1, new_polymerase_positions)
-        existing_polymerase_positions.extend(new_polymerase_positions)
+    if random.random() < 0.05:  # Adjust the probability as needed
+        # Add new polymerases with non-overlapping random positions
+        chromatine.add_polymerases(1, existing_polymerase_positions)
+        new_polymerase_positions = existing_polymerase_positions[-1:]
         new_polymerases = [Polymerase(chromatine, position=pos, temperature=1.0) for pos in new_polymerase_positions]
         polymerases.extend(new_polymerases)
-
 
     # Regenerate histones at deleted positions
     if random.random() < 0.4:
@@ -153,6 +150,3 @@ active_histone_count_over_time = []
 fig, axs = plt.subplots(2, 2, figsize=(12, 8))
 ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
 plt.show()
-
-
-#Problems with the count of the polymerases 
