@@ -31,8 +31,8 @@ class Chromatine:
         local_density = sum(1 for histone in self.histones[start_index:end_index] if histone in {'M', 'A'})
 
         # Linear function parameters (you may adjust these)
-        slope = 1e-4  # Adjust the slope to control the influence of local density
-        intercept = 0.1  # Adjust the intercept to control the baseline probability
+        slope = 1e-5  # Adjust the slope to control the influence of local density
+        intercept = 1e-2  # Adjust the intercept to control the baseline probability
 
         # Calculate the probability of adding a new polymerase
         probability = slope * local_density + intercept
@@ -40,19 +40,47 @@ class Chromatine:
         return probability
 
     def change_next_histones(self, position):
-        # Simulate the influence of first neighbors on the next histones
-        if 1 <= position < len(self.histones) - 1:
+        # Simulate the influence of neighbors on the next histones
+        if 0 <= position < len(self.histones) - 1:
             current_histone = self.histones[position]
             next_histone = self.histones[position + 1]
-            previous_histone = self.histones[position - 1]
 
-            if current_histone == 'A' and next_histone == 'M' and previous_histone == 'M' :
-                # If the current histone is acetylated and the next and previous histones are methylated, change the current histone
-                self.histones[position] = 'M'
-            
-            if current_histone == 'M' and next_histone == 'A' and previous_histone == 'A' :
-                # If the current histone is methylated and the next and previous histones are acetylated, change the current histone
-                self.histones[position] = 'A'
+            if current_histone == 'A' and next_histone == 'M':
+                # If the current histone is acetylated and the next histone is methylated, change the next histone
+                self.histones[position + 1] = 'A'
+
+            # Consider two neighbors back for histone changes
+            if position >= 2:
+                two_back_histone = self.histones[position - 2]
+                if two_back_histone == 'M':
+                    # If two neighbors back histone is methylated, change the next histone
+                    self.histones[position + 1] = 'A'
+
+                # Consider one neighbor up for histone changes
+                if position - 1 >= 0:
+                    one_up_histone = self.histones[position - 1]
+                    if one_up_histone == 'M':
+                        # If one neighbor up histone is methylated, change the next histone
+                        self.histones[position + 1] = 'A'
+
+
+        if current_histone == 'M' and next_histone == 'A':
+                # If the current histone is methylated and the next histone is acetylated, change the next histone
+                self.histones[position + 1] = 'M'
+
+        # Consider two neighbors back for histone changes
+        if position >= 2:
+            two_back_histone = self.histones[position - 2]
+            if two_back_histone == 'A':
+                # If two neighbors back histone is acetylated, change the next histone
+                self.histones[position + 1] = 'M'
+
+            # Consider one neighbor up for histone changes
+            if position - 1 >= 0:
+                one_up_histone = self.histones[position - 1]
+                if one_up_histone == 'A':
+                    # If one neighbor up histone is acetylated, change the next histone
+                    self.histones[position + 1] = 'M'
 
 class Polymerase:
     def __init__(self, chromatine, position=10, temperature=1.0):
