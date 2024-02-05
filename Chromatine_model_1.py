@@ -1,3 +1,4 @@
+# 2 states model A -> M 
 import random
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation

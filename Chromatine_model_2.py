@@ -8,9 +8,16 @@ class Chromatine:
         # Initialize chromatine with histones
         self.histones = np.full(histones_count, 'M', dtype='U1')
 
+        # Randomly set approximately 10% of histones to 'U' (unmodified)
+        num_unmodified = int(0.1 * histones_count)
+        unmodified_positions = np.random.choice(histones_count, size=num_unmodified, replace=False)
+        self.histones[unmodified_positions] = 'U'
+
     def regenerate_histones(self, positions):
-        # Replace histones at specified positions with new histones ('A')
-        self.histones[positions] = 'A'
+        # Replace histones at specified unmodified positions with new histones ('A')
+        unmodified_positions = np.where(self.histones == 'U')[0]
+        selected_positions = np.random.choice(unmodified_positions, size=len(positions), replace=False)
+        self.histones[selected_positions] = 'A'
 
     def add_polymerases(self, count, existing_polymerase_positions, adding_position):
         # Add a specified number of new polymerases at non-overlapping positions
@@ -44,41 +51,35 @@ class Chromatine:
             current_histone = self.histones[position]
             next_histone = self.histones[position + 1]
 
-            if current_histone == 'A' and next_histone == 'M':
-                # If the current histone is acetylated and the next histone is methylated, change the next histone
+            # Transition U A  -> U U 
+            if current_histone == 'U' and next_histone == 'A':
+                # If the next histone is Acetylated, change the next histone to Unmodified
+                self.histones[position + 1] = 'U'
+
+            # Transition U M -> U U 
+            elif current_histone == 'U' and next_histone == 'M':
+                # If the next histone is Methylated, change the next histone to Unmodified
+                self.histones[position + 1] = 'U'
+
+            # Transition A U  -> A A 
+            elif current_histone == 'A' and next_histone == 'U':
+                # If the next histone is Unmodified, change the next histone to Acetylated
                 self.histones[position + 1] = 'A'
 
-            # Consider two neighbors back for histone changes
-            if position >= 2:
-                two_back_histone = self.histones[position - 2]
-                if two_back_histone == 'M':
-                    # If two neighbors back histone is methylated, change the next histone
-                    self.histones[position + 1] = 'A'
+            # Transition A M  -> A A 
+            elif current_histone == 'A' and next_histone == 'M':
+                # If the next histone is Methylated, change the next histone to Acetylated
+                self.histones[position + 1] = 'A'
 
-                # Consider one neighbor up for histone changes
-                if position - 1 >= 0:
-                    one_up_histone = self.histones[position - 1]
-                    if one_up_histone == 'M':
-                        # If one neighbor up histone is methylated, change the next histone
-                        self.histones[position + 1] = 'A'
+            # Transition M A  -> M M 
+            elif current_histone == 'M' and next_histone == 'A':
+                # If the next histone is Acetylated, change the next histone to Methylated
+                self.histones[position + 1] = 'M'
 
-            if current_histone == 'M' and next_histone == 'A':
-                    # If the current histone is methylated and the next histone is acetylated, change the next histone
-                    self.histones[position + 1] = 'M'
-
-            # Consider two neighbors back for histone changes
-            if position >= 2:
-                two_back_histone = self.histones[position - 2]
-                if two_back_histone == 'A':
-                    # If two neighbors back histone is acetylated, change the next histone
-                    self.histones[position + 1] = 'M'
-
-                # Consider one neighbor up for histone changes
-                if position - 1 >= 0:
-                    one_up_histone = self.histones[position - 1]
-                    if one_up_histone == 'A':
-                        # If one neighbor up histone is acetylated, change the next histone
-                        self.histones[position + 1] = 'M'
+            # Transition M U  -> M M 
+            elif current_histone == 'M' and next_histone == 'U':
+                # If the next histone is Unmodified, change the next histone to Methylated
+                self.histones[position + 1] = 'M'
 
 class Polymerase:
     def __init__(self, chromatine, position=10, temperature=1.0):
@@ -117,7 +118,7 @@ class Polymerase:
 def visualize_chromatine(histones, polymerase_positions=None):
     # Display chromatine state as a bar chart
     plt.bar(range(len(histones)), [1] * len(histones),
-            color=[('gray' if hist == ' ' else 'blue' if hist == 'M' else 'green' if hist == 'A' else 'red') for hist in histones])
+            color=[('gray' if hist == 'U' else 'blue' if hist == 'M' else 'green' if hist == 'A' else 'red') for hist in histones])
     plt.title("Chromatine Structure")
     plt.xlabel("Histone Position")
     plt.ylabel("Histone")
@@ -146,7 +147,7 @@ def update(frame):
         new_polymerases = [Polymerase(chromatine, position=pos, temperature=1.0) for pos in new_polymerase_positions]
         polymerases.extend(new_polymerases)
 
-    # Regenerate histones at deleted positions
+    # Regenerate histones at unmodified positions
     if np.random.random() < 0.4:
         chromatine.regenerate_histones(deleted_positions)
 
@@ -159,15 +160,19 @@ def update(frame):
     active_histone_count = np.sum(np.isin(chromatine.histones, ['M', 'A']))
     acetylated_histone_count = np.sum(chromatine.histones == 'A')
     methylated_histone_count = np.sum(chromatine.histones == 'M')
+    unmodified_histone_count = np.sum(chromatine.histones == 'U')
     active_histone_count_over_time.append(active_histone_count)
+    unmodified_histone_count_over_time.append(unmodified_histone_count)
     acetylated_histone_count_over_time.append(acetylated_histone_count)
     methylated_histone_count_over_time.append(methylated_histone_count)
+    
 
-    # Pad polymerase_count_over_time with zeros if needed
-    polymerase_count_over_time.extend([0] * (frame + 2 - len(polymerase_count_over_time)))
-    acetylated_histone_count_over_time.extend([0] * (frame + 1 - len(acetylated_histone_count_over_time)))
-    methylated_histone_count_over_time.extend([0] * (frame + 1 - len(methylated_histone_count_over_time)))
-    active_histone_count_over_time.extend([0] * (frame + 1 - len(active_histone_count_over_time)))
+    # Only extend the lists if the frame is greater than the current length of the lists
+    if frame + 1 > len(polymerase_count_over_time):
+        polymerase_count_over_time.append(0)
+        acetylated_histone_count_over_time.append(0)
+        methylated_histone_count_over_time.append(0)
+        active_histone_count_over_time.append(0)
 
     # Clear the previous frame after updating the data
     axs[0, 0].clear()
@@ -182,6 +187,7 @@ def update(frame):
     axs[0, 1].plot(range(1, frame + 2), active_histone_count_over_time[:frame + 1], marker='o', color='red', label='Active Histones')
     axs[0, 1].plot(range(1, frame + 2), acetylated_histone_count_over_time[:frame + 1], marker='o', color='green', label="Acetylated Histones")
     axs[0, 1].plot(range(1, frame + 2), methylated_histone_count_over_time[:frame + 1], marker='o', color='blue', label="Methylated Histones")
+    axs[0, 1].plot(range(1, frame + 2), unmodified_histone_count_over_time[:frame + 1], marker='o', color='gray', label="Unmodified Histones")
     axs[0, 1].set_title('Number of Active Histones Over Time')
     axs[0, 1].set_xlabel('Time Steps')
     axs[0, 1].set_ylabel('Number of Histones')
@@ -208,6 +214,7 @@ polymerase_count_over_time = []
 active_histone_count_over_time = []
 acetylated_histone_count_over_time = []
 methylated_histone_count_over_time = []
+unmodified_histone_count_over_time = []
 
 # Create an animated plot
 fig, axs = plt.subplots(2, 2, figsize=(12, 8))
