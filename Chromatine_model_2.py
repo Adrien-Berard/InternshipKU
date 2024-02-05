@@ -9,15 +9,18 @@ class Chromatine:
         self.histones = np.full(histones_count, 'M', dtype='U1')
 
         # Randomly set approximately 10% of histones to 'U' (unmodified)
-        num_unmodified = int(0.1 * histones_count)
+        num_unmodified = int(0.3 * histones_count)
         unmodified_positions = np.random.choice(histones_count, size=num_unmodified, replace=False)
         self.histones[unmodified_positions] = 'U'
 
-    def regenerate_histones(self, positions):
-        # Replace histones at specified unmodified positions with new histones ('A')
+    def regenerate_histones(self, positions_to_delete):
         unmodified_positions = np.where(self.histones == 'U')[0]
-        selected_positions = np.random.choice(unmodified_positions, size=len(positions), replace=False)
-        self.histones[selected_positions] = 'A'
+
+        # Ensure that the size of the sample is not greater than the size of the population
+        if len(unmodified_positions) >= len(positions_to_delete):
+            selected_positions = np.random.choice(unmodified_positions, size=len(positions_to_delete), replace=False)
+            self.histones[selected_positions] = 'A'
+
 
     def add_polymerases(self, count, existing_polymerase_positions, adding_position):
         # Add a specified number of new polymerases at non-overlapping positions
@@ -95,20 +98,26 @@ class Polymerase:
         # Define two possible states for movement (left and right)
         states = [0, 1]
 
-        next_positions = [self.position + state for state in states]
+        next_position = self.position + 1  # Check only one position ahead
 
-        probabilities = [1/2, 30]
+        # Check if there is another polymerase in the next position
+        if next_position in existing_polymerase_positions:
+            # Do not move if there is another polymerase 1 place after
+            return
+
+        probabilities = [1/2, 1/2]
 
         # Normalize probabilities to sum to 1
         total_prob = np.sum(probabilities)
         normalized_probabilities = probabilities / total_prob
 
         # Choose the next position based on normalized probabilities
-        self.position = np.random.choice(next_positions, p=normalized_probabilities)
+        self.position = np.random.choice([self.position, next_position], p=normalized_probabilities)
 
         # Bounding conditions
         if self.position == len(chromatine.histones):
             self.delete()
+
 
     def change_histones(self, chromatine):
         # Simulate the histone change process by polymerase
@@ -136,8 +145,8 @@ def update(frame):
     for polymerase in polymerases:
         polymerase.move(chromatine)
         polymerase.change_histones(chromatine)
-        deleted_positions.append(polymerase.position)
         polymerase_positions.append(polymerase.position)  # Append the current position
+        deleted_positions.append(polymerase.position)
 
     # Randomly add new polymerase at the beginning of the chromatine with a certain probability
     if np.random.random() < chromatine.adding_poly_proba(adding_position):  # Adjust the probability as needed
@@ -147,13 +156,13 @@ def update(frame):
         new_polymerases = [Polymerase(chromatine, position=pos, temperature=1.0) for pos in new_polymerase_positions]
         polymerases.extend(new_polymerases)
 
-    # Regenerate histones at unmodified positions
-    if np.random.random() < 0.4:
-        chromatine.regenerate_histones(deleted_positions)
-
     # Change the next histones based on the influence of first neighbors
     for position in existing_polymerase_positions:
         chromatine.change_next_histones(position)
+
+    # Regenerate histones at unmodified positions
+    if np.random.random() < 0.4:
+        chromatine.regenerate_histones(deleted_positions)
 
     # Update the number of polymerases and active histones lists
     polymerase_count_over_time.append(len(polymerases))
@@ -162,10 +171,9 @@ def update(frame):
     methylated_histone_count = np.sum(chromatine.histones == 'M')
     unmodified_histone_count = np.sum(chromatine.histones == 'U')
     active_histone_count_over_time.append(active_histone_count)
-    unmodified_histone_count_over_time.append(unmodified_histone_count)
     acetylated_histone_count_over_time.append(acetylated_histone_count)
     methylated_histone_count_over_time.append(methylated_histone_count)
-    
+    unmodified_histone_count_over_time.append(unmodified_histone_count)
 
     # Only extend the lists if the frame is greater than the current length of the lists
     if frame + 1 > len(polymerase_count_over_time):
@@ -173,21 +181,22 @@ def update(frame):
         acetylated_histone_count_over_time.append(0)
         methylated_histone_count_over_time.append(0)
         active_histone_count_over_time.append(0)
+        unmodified_histone_count_over_time.append(0)
 
     # Clear the previous frame after updating the data
     axs[0, 0].clear()
     axs[0, 1].clear()
     axs[1, 1].clear()
 
-    axs[0, 0].plot(range(1, frame + 2), polymerase_count_over_time[:frame + 1], marker='o')
+    axs[0, 0].plot(range(1, len(polymerase_count_over_time) + 1), polymerase_count_over_time, marker='o')
     axs[0, 0].set_title('Number of polymerases Over Time')
     axs[0, 0].set_xlabel('Time Steps')
     axs[0, 0].set_ylabel('Number of polymerases')
 
-    axs[0, 1].plot(range(1, frame + 2), active_histone_count_over_time[:frame + 1], marker='o', color='red', label='Active Histones')
-    axs[0, 1].plot(range(1, frame + 2), acetylated_histone_count_over_time[:frame + 1], marker='o', color='green', label="Acetylated Histones")
-    axs[0, 1].plot(range(1, frame + 2), methylated_histone_count_over_time[:frame + 1], marker='o', color='blue', label="Methylated Histones")
-    axs[0, 1].plot(range(1, frame + 2), unmodified_histone_count_over_time[:frame + 1], marker='o', color='gray', label="Unmodified Histones")
+    axs[0, 1].plot(range(len(active_histone_count_over_time)), active_histone_count_over_time, marker='o', color='red', label='Active Histones')
+    axs[0, 1].plot(range(len(acetylated_histone_count_over_time)), acetylated_histone_count_over_time, marker='o', color='green', label="Acetylated Histones")
+    axs[0, 1].plot(range(len(methylated_histone_count_over_time)), methylated_histone_count_over_time, marker='o', color='blue', label="Methylated Histones")
+    axs[0, 1].plot(range(len(unmodified_histone_count_over_time)), unmodified_histone_count_over_time, marker='o', color='gray', label="Unmodified Histones")
     axs[0, 1].set_title('Number of Active Histones Over Time')
     axs[0, 1].set_xlabel('Time Steps')
     axs[0, 1].set_ylabel('Number of Histones')
@@ -198,7 +207,7 @@ def update(frame):
 
 # Parameters for simulation
 chromatine_size = 50
-polymerase_count = 0
+polymerase_count = 1
 simulation_steps = 100
 adding_position = 25
 
