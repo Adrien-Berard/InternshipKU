@@ -1,72 +1,88 @@
 import random
+import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-import numpy as np
 
 class Chromatine:
     def __init__(self, histones_count):
         # Initialize chromatine with histones
-        self.histones = np.array(['M' for _ in range(histones_count)])
+        self.histones = np.full(histones_count, 'M', dtype='U1')
 
     def regenerate_histones(self, positions):
         # Replace histones at specified positions with new histones ('A')
-        positions = np.atleast_1d(positions)
-        for pos in positions:
-            if 0 <= int(pos) < self.histones.shape[0]:
-                self.histones[int(pos)] = 'A'
+        self.histones[positions] = 'A'
 
     def add_polymerases(self, count, existing_polymerase_positions, adding_position):
         # Add a specified number of new polymerases at non-overlapping positions
-        new_positions = np.arange(adding_position, adding_position + count)
-        existing_polymerase_positions = np.concatenate([existing_polymerase_positions, new_positions])
+        for _ in range(count):
+            new_position = adding_position
+            while new_position in existing_polymerase_positions:
+                new_position += 1
+            existing_polymerase_positions.append(new_position)
 
     def adding_poly_proba(self, adding_position):
         # Linear function of the local density of histones
-        vicinity_size = 5
+        # Let's calculate local density as the count of active histones in the vicinity of the polymerase
+        vicinity_size = 5  # Adjust this size as needed
         start_index = max(0, adding_position - vicinity_size)
-        end_index = min(self.histones.shape[0], adding_position + vicinity_size + 1)
+        end_index = min(len(self.histones), adding_position + vicinity_size + 1)
 
         local_density = np.sum(np.isin(self.histones[start_index:end_index], ['M', 'A']))
 
-        slope = 1e-5
-        intercept = 1e-1
+        # Linear function parameters (you may adjust these)
+        slope = 1e-4  # Adjust the slope to control the influence of local density
+        intercept = 1e-1 # Adjust the intercept to control the baseline probability
+
+        # Calculate the probability of adding a new polymerase
         probability = slope * local_density + intercept
 
         return probability
 
     def change_next_histones(self, position):
-        if 0 <= position < self.histones.shape[0] - 1:
+        # Simulate the influence of neighbors on the next histones
+        if 0 <= position < len(self.histones) - 1:
             current_histone = self.histones[position]
             next_histone = self.histones[position + 1]
 
             if current_histone == 'A' and next_histone == 'M':
+                # If the current histone is acetylated and the next histone is methylated, change the next histone
                 self.histones[position + 1] = 'A'
 
+            # Consider two neighbors back for histone changes
             if position >= 2:
                 two_back_histone = self.histones[position - 2]
                 if two_back_histone == 'M':
+                    # If two neighbors back histone is methylated, change the next histone
                     self.histones[position + 1] = 'A'
 
-            if position - 1 >= 0:
-                one_up_histone = self.histones[position - 1]
-                if one_up_histone == 'M':
-                    self.histones[position + 1] = 'A'
+                # Consider one neighbor up for histone changes
+                if position - 1 >= 0:
+                    one_up_histone = self.histones[position - 1]
+                    if one_up_histone == 'M':
+                        # If one neighbor up histone is methylated, change the next histone
+                        self.histones[position + 1] = 'A'
 
             if current_histone == 'M' and next_histone == 'A':
-                self.histones[position + 1] = 'M'
+                    # If the current histone is methylated and the next histone is acetylated, change the next histone
+                    self.histones[position + 1] = 'M'
 
+            # Consider two neighbors back for histone changes
             if position >= 2:
                 two_back_histone = self.histones[position - 2]
                 if two_back_histone == 'A':
+                    # If two neighbors back histone is acetylated, change the next histone
                     self.histones[position + 1] = 'M'
 
-            if position - 1 >= 0:
-                one_up_histone = self.histones[position - 1]
-                if one_up_histone == 'A':
-                    self.histones[position + 1] = 'M'
+                # Consider one neighbor up for histone changes
+                if position - 1 >= 0:
+                    one_up_histone = self.histones[position - 1]
+                    if one_up_histone == 'A':
+                        # If one neighbor up histone is acetylated, change the next histone
+                        self.histones[position + 1] = 'M'
 
 class Polymerase:
     def __init__(self, chromatine, position=10, temperature=1.0):
+        # Initialize polymerase with a reference to the chromatine, a starting position, and a temperature for movement
         self.chromatine = chromatine
         self.position = position
         self.temperature = temperature
@@ -74,64 +90,86 @@ class Polymerase:
     def delete(self):
         polymerases.remove(self)
 
-    def move(self):
+    def move(self, chromatine):
+        # Define two possible states for movement (left and right)
         states = [0, 1]
-        next_positions = np.array(self.position) + states
-        probabilities = [1/2, 1/2]  # Fixed probabilities for each state
-        total_prob = sum(probabilities)
-        normalized_probabilities = [prob / total_prob for prob in probabilities]
+
+        next_positions = [self.position + state for state in states]
+
+        probabilities = [1/2, 30]
+
+        # Normalize probabilities to sum to 1
+        total_prob = np.sum(probabilities)
+        normalized_probabilities = probabilities / total_prob
+
+        # Choose the next position based on normalized probabilities
         self.position = np.random.choice(next_positions, p=normalized_probabilities)
 
-        if self.position == self.chromatine.histones.shape[0]:
+        # Bounding conditions
+        if self.position == len(chromatine.histones):
             self.delete()
 
-    def change_histones(self):
-        if 0 <= self.position < self.chromatine.histones.shape[0] and self.chromatine.histones[self.position] == 'M':
-            self.chromatine.histones[self.position] = 'A'
+    def change_histones(self, chromatine):
+        # Simulate the histone change process by polymerase
+        if 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'M':
+            chromatine.histones[self.position] = 'A'
 
 def visualize_chromatine(histones, polymerase_positions=None):
-    plt.bar(range(histones.shape[0]), [1] * histones.shape[0],
+    # Display chromatine state as a bar chart
+    plt.bar(range(len(histones)), [1] * len(histones),
             color=[('gray' if hist == ' ' else 'blue' if hist == 'M' else 'green' if hist == 'A' else 'red') for hist in histones])
     plt.title("Chromatine Structure")
     plt.xlabel("Histone Position")
     plt.ylabel("Histone")
 
-    if polymerase_positions is not None and np.any(polymerase_positions):
+    if polymerase_positions:
+        # Draw arrows indicating polymerase positions
         for position in polymerase_positions:
             plt.arrow(position, -0.2, 0, -0.1, color='red', head_width=0.5, head_length=0.1)
 
+# Function to update the plot in each animation frame
 def update(frame):
-    global polymerase_count_over_time, active_histone_count_over_time, acetylated_histone_count_over_time, methylated_histone_count_over_time
-    global polymerases
-
-    deleted_positions = np.array(0)
-    polymerase_positions = np.array(0)
+    deleted_positions = []  # Keep track of deleted positions for regeneration
+    polymerase_positions = []  # Clear the polymerase_positions list
 
     for polymerase in polymerases:
-        polymerase.move()
-        polymerase.change_histones()
-        deleted_positions = np.append(deleted_positions, polymerase.position)
-        polymerase_positions = np.append(polymerase_positions, polymerase.position)
+        polymerase.move(chromatine)
+        polymerase.change_histones(chromatine)
+        deleted_positions.append(polymerase.position)
+        polymerase_positions.append(polymerase.position)  # Append the current position
 
-    if random.random() < chromatine.adding_poly_proba(adding_position):
+    # Randomly add new polymerase at the beginning of the chromatine with a certain probability
+    if np.random.random() < chromatine.adding_poly_proba(adding_position):  # Adjust the probability as needed
+        # Add new polymerases with non-overlapping random positions
         chromatine.add_polymerases(1, existing_polymerase_positions, adding_position)
         new_polymerase_positions = existing_polymerase_positions[-1:]
-        new_polymerases = np.array([Polymerase(chromatine, position=int(pos), temperature=1.0) for pos in new_polymerase_positions])
-        polymerases = np.concatenate([polymerases, new_polymerases])
+        new_polymerases = [Polymerase(chromatine, position=pos, temperature=1.0) for pos in new_polymerase_positions]
+        polymerases.extend(new_polymerases)
 
-    chromatine.regenerate_histones(deleted_positions)
+    # Regenerate histones at deleted positions
+    if np.random.random() < 0.4:
+        chromatine.regenerate_histones(deleted_positions)
 
+    # Change the next histones based on the influence of first neighbors
     for position in existing_polymerase_positions:
         chromatine.change_next_histones(position)
 
-    polymerase_count_over_time = np.append(polymerase_count_over_time, polymerases.shape[0])
+    # Update the number of polymerases and active histones lists
+    polymerase_count_over_time.append(len(polymerases))
     active_histone_count = np.sum(np.isin(chromatine.histones, ['M', 'A']))
     acetylated_histone_count = np.sum(chromatine.histones == 'A')
     methylated_histone_count = np.sum(chromatine.histones == 'M')
-    active_histone_count_over_time = np.append(active_histone_count_over_time, active_histone_count)
-    acetylated_histone_count_over_time = np.append(acetylated_histone_count_over_time, acetylated_histone_count)
-    methylated_histone_count_over_time = np.append(methylated_histone_count_over_time, methylated_histone_count)
+    active_histone_count_over_time.append(active_histone_count)
+    acetylated_histone_count_over_time.append(acetylated_histone_count)
+    methylated_histone_count_over_time.append(methylated_histone_count)
 
+    # Pad polymerase_count_over_time with zeros if needed
+    polymerase_count_over_time.extend([0] * (frame + 2 - len(polymerase_count_over_time)))
+    acetylated_histone_count_over_time.extend([0] * (frame + 1 - len(acetylated_histone_count_over_time)))
+    methylated_histone_count_over_time.extend([0] * (frame + 1 - len(methylated_histone_count_over_time)))
+    active_histone_count_over_time.extend([0] * (frame + 1 - len(active_histone_count_over_time)))
+
+    # Clear the previous frame after updating the data
     axs[0, 0].clear()
     axs[0, 1].clear()
     axs[1, 1].clear()
@@ -149,24 +187,29 @@ def update(frame):
     axs[0, 1].set_ylabel('Number of Histones')
     axs[0, 1].legend()
 
+    # Visualize chromatine structure with arrows indicating polymerase positions
     visualize_chromatine(chromatine.histones, polymerase_positions=polymerase_positions)
 
 # Parameters for simulation
 chromatine_size = 50
-polymerase_count = 1
+polymerase_count = 0
 simulation_steps = 100
 adding_position = 25
 
 # Initialize chromatine and polymerases with a specified temperature
 chromatine = Chromatine(chromatine_size)
-polymerases = np.array([Polymerase(chromatine, temperature=1.0) for _ in range(polymerase_count)])
-existing_polymerase_positions = np.array([polymerase.position for polymerase in polymerases])
+polymerases = [Polymerase(chromatine, temperature=1.0) for _ in range(polymerase_count)]
 
-polymerase_count_over_time = np.array([polymerase_count])
-active_histone_count_over_time = np.array([chromatine_size])
-acetylated_histone_count_over_time = np.array([0])
-methylated_histone_count_over_time = np.array([chromatine_size])
+# Track existing polymerase positions using a list to avoid duplicates
+existing_polymerase_positions = [polymerase.position for polymerase in polymerases]
 
+# Lists to store the number of polymerases and active histones over time
+polymerase_count_over_time = []
+active_histone_count_over_time = []
+acetylated_histone_count_over_time = []
+methylated_histone_count_over_time = []
+
+# Create an animated plot
 fig, axs = plt.subplots(2, 2, figsize=(12, 8))
 ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
 plt.show()

@@ -31,8 +31,8 @@ class Chromatine:
         local_density = sum(1 for histone in self.histones[start_index:end_index] if histone in {'M', 'A'})
 
         # Linear function parameters (you may adjust these)
-        slope = 1e-5  # Adjust the slope to control the influence of local density
-        intercept = 1e-2  # Adjust the intercept to control the baseline probability
+        slope = 1e-4  # Adjust the slope to control the influence of local density
+        intercept = 1e-1 # Adjust the intercept to control the baseline probability
 
         # Calculate the probability of adding a new polymerase
         probability = slope * local_density + intercept
