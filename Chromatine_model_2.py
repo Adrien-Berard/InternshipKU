@@ -8,7 +8,7 @@ class Chromatine:
         # Initialize chromatine with histones
         self.histones = np.full(histones_count, 'M', dtype='U1')
 
-        # Randomly set approximately 10% of histones to 'U' (unmodified)
+        # Randomly set approximately 30% of histones to 'U' (unmodified)
         num_unmodified = int(0.3 * histones_count)
         unmodified_positions = np.random.choice(histones_count, size=num_unmodified, replace=False)
         self.histones[unmodified_positions] = 'U'
@@ -40,8 +40,8 @@ class Chromatine:
         local_density = np.sum(np.isin(self.histones[start_index:end_index], ['M', 'A']))
 
         # Linear function parameters (you may adjust these)
-        slope = 1e-4  # Adjust the slope to control the influence of local density
-        intercept = 1e-1 # Adjust the intercept to control the baseline probability
+        slope = 1e-5  # Adjust the slope to control the influence of local density
+        intercept = 1e-5 # Adjust the intercept to control the baseline probability
 
         # Calculate the probability of adding a new polymerase
         probability = slope * local_density + intercept
@@ -50,40 +50,42 @@ class Chromatine:
 
     def change_next_histones(self, position):
         # Simulate the influence of neighbors on the next histones
-        if 0 <= position < len(self.histones) - 1:
+        if 0 <= position < len(self.histones) - 2:
             current_histone = self.histones[position]
             next_histone = self.histones[position + 1]
+            next_next_histone = self.histones[position + 2]
 
-            # Transition U A  -> U U 
-            if current_histone == 'U' and next_histone == 'A':
+            # Transition U A U -> U U U
+            if current_histone == 'U' and next_histone == 'A' and next_next_histone == 'U':
                 # If the next histone is Acetylated, change the next histone to Unmodified
                 self.histones[position + 1] = 'U'
 
-            # Transition U M -> U U 
-            elif current_histone == 'U' and next_histone == 'M':
-                # If the next histone is Methylated, change the next histone to Unmodified
+            # Transition U M U -> U U U
+            elif current_histone == 'U' and next_histone == 'M' and next_next_histone == 'U':
+                # If the next histone is Unmodified, change the next histone to Unmodified
                 self.histones[position + 1] = 'U'
 
-            # Transition A U  -> A A 
-            elif current_histone == 'A' and next_histone == 'U':
+            # Transition A U A -> A A A
+            elif current_histone == 'A' and next_histone == 'U' and next_next_histone == 'A':
                 # If the next histone is Unmodified, change the next histone to Acetylated
                 self.histones[position + 1] = 'A'
 
-            # Transition A M  -> A A 
-            elif current_histone == 'A' and next_histone == 'M':
+            # Transition A M A -> A A A
+            elif current_histone == 'A' and next_histone == 'M' and next_next_histone == 'A':
                 # If the next histone is Methylated, change the next histone to Acetylated
                 self.histones[position + 1] = 'A'
 
-            # Transition M A  -> M M 
-            elif current_histone == 'M' and next_histone == 'A':
+            # Transition M A M -> M M M
+            elif current_histone == 'M' and next_histone == 'A' and next_next_histone == 'M':
                 # If the next histone is Acetylated, change the next histone to Methylated
                 self.histones[position + 1] = 'M'
 
-            # Transition M U  -> M M 
-            elif current_histone == 'M' and next_histone == 'U':
+            # Transition M U M -> M M M
+            elif current_histone == 'M' and next_histone == 'U' and next_next_histone == 'M':
                 # If the next histone is Unmodified, change the next histone to Methylated
                 self.histones[position + 1] = 'M'
 
+            # Add more conditions and transitions as needed
 class Polymerase:
     def __init__(self, chromatine, position=10, temperature=1.0):
         # Initialize polymerase with a reference to the chromatine, a starting position, and a temperature for movement
@@ -157,12 +159,12 @@ def update(frame):
         polymerases.extend(new_polymerases)
 
     # Change the next histones based on the influence of first neighbors
-    for position in existing_polymerase_positions:
+    for position in range(1,chromatine_size):
         chromatine.change_next_histones(position)
 
     # Regenerate histones at unmodified positions
-    if np.random.random() < 0.4:
-        chromatine.regenerate_histones(deleted_positions)
+    #if np.random.random() < 0.4:
+    #   chromatine.regenerate_histones(deleted_positions)
 
     # Update the number of polymerases and active histones lists
     polymerase_count_over_time.append(len(polymerases))
@@ -207,9 +209,9 @@ def update(frame):
 
 # Parameters for simulation
 chromatine_size = 50
-polymerase_count = 1
+polymerase_count = 0
 simulation_steps = 100
-adding_position = 25
+adding_position = chromatine_size//2
 
 # Initialize chromatine and polymerases with a specified temperature
 chromatine = Chromatine(chromatine_size)
