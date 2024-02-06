@@ -40,7 +40,7 @@ class Chromatine:
 
         # Linear function parameters (you may adjust these)
         slope = 1e-5  # Adjust the slope to control the influence of local density
-        intercept = 1e-5 # Adjust the intercept to control the baseline probability
+        intercept = 1e-1 # Adjust the intercept to control the baseline probability
 
         # Calculate the probability of adding a new polymerase
         probability = slope * local_density + intercept
@@ -204,6 +204,10 @@ def update(frame):
     # Visualize chromatine structure with arrows indicating polymerase positions
     visualize_chromatine(chromatine.histones, polymerase_positions=polymerase_positions)
 
+
+# Set seed for reproducibility
+np.random.seed(42)
+
 # Parameters for simulation
 chromatine_size = 50
 polymerase_count = 0
@@ -229,7 +233,3 @@ unmodified_histone_count_over_time = []
 fig, axs = plt.subplots(2, 2, figsize=(12, 8))
 ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
 plt.show()
-
-#p recrutement 
-#p' changement
-#
