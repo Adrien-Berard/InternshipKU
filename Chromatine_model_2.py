@@ -57,37 +57,31 @@ class Chromatine:
             if current_histone == 'U' and next_histone == 'A':
                 # If the next histone is Acetylated, change the next histone to Unmodified
                 self.histones[position + 1] = 'U'
-                print('UU')
 
             # Transition U M -> U U
             elif current_histone == 'U' and next_histone == 'M':
                 # If the next histone is Unmodified, change the next histone to Unmodified
                 self.histones[position + 1] = 'U'
-                print('UU')
 
             # Transition A U -> A A
             elif current_histone == 'A' and next_histone == 'U':
                 # If the next histone is Unmodified, change the next histone to Acetylated
                 self.histones[position + 1] = 'A'
-                print('AA')
 
             # Transition A M -> A A
             elif current_histone == 'A' and next_histone == 'M':
                 # If the next histone is Methylated, change the next histone to Acetylated
                 self.histones[position + 1] = 'A'
-                print('AA')
 
             # Transition M A -> M M
             elif current_histone == 'M' and next_histone == 'A':
                 # If the next histone is Acetylated, change the next histone to Methylated
                 self.histones[position + 1] = 'M'
-                print('MM')
 
             # Transition M U -> M M
             elif current_histone == 'M' and next_histone == 'U':
                 # If the next histone is Unmodified, change the next histone to Methylated
                 self.histones[position + 1] = 'M'
-                print('MM')
 
             # Add more conditions and transitions as needed
 
@@ -156,7 +150,7 @@ def update(frame):
 
     #Change the next histones based on the influence of first neighbors
     for position in range(1, chromatine_size):
-       if np.random.random() <0.2:
+       if np.random.random() <0.2: # Better defining of this probability 
            chromatine.change_next_histones(position)
 
     # Regenerate histones at unmodified positions
