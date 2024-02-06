@@ -51,13 +51,9 @@ class Chromatine:
         # Simulate the influence of neighbors on the next histones
         if 1 <= position < len(self.histones) - 1:
             current_histone = self.histones[position]
-            #next_histone = self.histones[position + 1]
 
             # Calculate the influence of vicinity on the recruitment probability
-            #start_index = max(0, position - vicinity_size)
-            #end_index = min(len(self.histones), position + vicinity_size + 1)
-            #local_density = np.sum(np.isin(self.histones[start_index:end_index], ['M', 'A']))
-            adjusted_p_recruitment = p_recruitment / (1e-1*nth_neighbor)  # Add 1 to avoid division by zero
+            adjusted_p_recruitment = p_recruitment / (1e-1 * nth_neighbor)  # Add 1 to avoid division by zero
             if adjusted_p_recruitment > 1:
                 adjusted_p_recruitment = 1
 
@@ -70,6 +66,9 @@ class Chromatine:
                         nth_histone = self.histones[nth_position]
 
                         # Implement changes based on the nth neighbor
+                        transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
+                        transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
+
                         if current_histone == 'U' and nth_histone == 'A':
                             self.histones[nth_position] = 'U'
                         elif current_histone == 'U' and nth_histone == 'M':
@@ -121,6 +120,8 @@ class Polymerase:
         # Simulate the histone change process by polymerase
         if 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'M':
             chromatine.histones[self.position] = 'A'
+            transition_key = f"Polymerase_M_to_A"
+            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
 
 def visualize_chromatine(histones, polymerase_positions=None):
     # Display chromatine state as a bar chart
@@ -152,8 +153,8 @@ def update(frame):
         chromatine.change_next_histones(position, p_recruitment=0.2, p_change=0.3, nth_neighbor=np.random.randint(1,chromatine_size), vicinity_size=5)
 
     # Regenerate histones at unmodified positions
-    #if np.random.random() < 0.4:
-    #   chromatine.regenerate_histones(deleted_positions)
+    # if np.random.random() < 0.4:
+    #    chromatine.regenerate_histones(deleted_positions)
 
     # Randomly add new polymerase at the beginning of the chromatine with a certain probability
     if np.random.random() < chromatine.adding_poly_proba(adding_position):  # Adjust the probability as needed
@@ -204,7 +205,6 @@ def update(frame):
     # Visualize chromatine structure with arrows indicating polymerase positions
     visualize_chromatine(chromatine.histones, polymerase_positions=polymerase_positions)
 
-
 # Set seed for reproducibility
 np.random.seed(42)
 
@@ -229,7 +229,14 @@ acetylated_histone_count_over_time = []
 methylated_histone_count_over_time = []
 unmodified_histone_count_over_time = []
 
+# Dictionary to store transitions and their counts
+transitions_dict = {}
+
 # Create an animated plot
 fig, axs = plt.subplots(2, 2, figsize=(12, 8))
 ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
+plt.show()
+
+# Display the transitions dictionary after the simulation
+plt.bar(transitions_dict.keys(), transitions_dict.values(), color='g')
 plt.show()
