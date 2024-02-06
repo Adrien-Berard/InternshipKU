@@ -40,50 +40,48 @@ class Chromatine:
 
         # Linear function parameters (you may adjust these)
         slope = 1e-5  # Adjust the slope to control the influence of local density
-        intercept = 1e-1 # Adjust the intercept to control the baseline probability
+        intercept = 1e-5 # Adjust the intercept to control the baseline probability
 
         # Calculate the probability of adding a new polymerase
         probability = slope * local_density + intercept
 
         return probability
 
-    def change_next_histones(self, position):
+    def change_next_histones(self, position, p_recruitment, p_change, nth_neighbor=1, vicinity_size=5):
         # Simulate the influence of neighbors on the next histones
         if 1 <= position < len(self.histones) - 1:
             current_histone = self.histones[position]
-            next_histone = self.histones[position + 1]
+            #next_histone = self.histones[position + 1]
 
-            # Transition U A -> U U
-            if current_histone == 'U' and next_histone == 'A':
-                # If the next histone is Acetylated, change the next histone to Unmodified
-                self.histones[position + 1] = 'U'
+            # Calculate the influence of vicinity on the recruitment probability
+            #start_index = max(0, position - vicinity_size)
+            #end_index = min(len(self.histones), position + vicinity_size + 1)
+            #local_density = np.sum(np.isin(self.histones[start_index:end_index], ['M', 'A']))
+            adjusted_p_recruitment = p_recruitment / (1e-1*nth_neighbor)  # Add 1 to avoid division by zero
+            if adjusted_p_recruitment > 1:
+                adjusted_p_recruitment = 1
 
-            # Transition U M -> U U
-            elif current_histone == 'U' and next_histone == 'M':
-                # If the next histone is Unmodified, change the next histone to Unmodified
-                self.histones[position + 1] = 'U'
+            # Probabilistically recruit an enzyme
+            if np.random.random() < adjusted_p_recruitment:
+                # Apply changes with probability p_change
+                if np.random.random() < p_change:
+                    nth_position = position + nth_neighbor
+                    if nth_position < len(self.histones):
+                        nth_histone = self.histones[nth_position]
 
-            # Transition A U -> A A
-            elif current_histone == 'A' and next_histone == 'U':
-                # If the next histone is Unmodified, change the next histone to Acetylated
-                self.histones[position + 1] = 'A'
-
-            # Transition A M -> A A
-            elif current_histone == 'A' and next_histone == 'M':
-                # If the next histone is Methylated, change the next histone to Acetylated
-                self.histones[position + 1] = 'A'
-
-            # Transition M A -> M M
-            elif current_histone == 'M' and next_histone == 'A':
-                # If the next histone is Acetylated, change the next histone to Methylated
-                self.histones[position + 1] = 'M'
-
-            # Transition M U -> M M
-            elif current_histone == 'M' and next_histone == 'U':
-                # If the next histone is Unmodified, change the next histone to Methylated
-                self.histones[position + 1] = 'M'
-
-            # Add more conditions and transitions as needed
+                        # Implement changes based on the nth neighbor
+                        if current_histone == 'U' and nth_histone == 'A':
+                            self.histones[nth_position] = 'U'
+                        elif current_histone == 'U' and nth_histone == 'M':
+                            self.histones[nth_position] = 'U'
+                        elif current_histone == 'A' and nth_histone == 'U':
+                            self.histones[nth_position] = 'A'
+                        elif current_histone == 'A' and nth_histone == 'M':
+                            self.histones[nth_position] = 'A'
+                        elif current_histone == 'M' and nth_histone == 'A':
+                            self.histones[nth_position] = 'M'
+                        elif current_histone == 'M' and nth_histone == 'U':
+                            self.histones[nth_position] = 'M'
 
 class Polymerase:
     def __init__(self, chromatine, position=10, temperature=1.0):
@@ -148,10 +146,10 @@ def update(frame):
         polymerase_positions.append(polymerase.position)  # Append the current position
         deleted_positions.append(polymerase.position)
 
-    #Change the next histones based on the influence of first neighbors
+    # Change the next histones based on the influence of first neighbors
     for position in range(1, chromatine_size):
-       if np.random.random() <0.2: # Better defining of this probability 
-           chromatine.change_next_histones(position)
+        # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
+        chromatine.change_next_histones(position, p_recruitment=0.2, p_change=0.3, nth_neighbor=np.random.randint(1,chromatine_size), vicinity_size=5)
 
     # Regenerate histones at unmodified positions
     #if np.random.random() < 0.4:
