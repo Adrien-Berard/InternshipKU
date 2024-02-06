@@ -226,7 +226,7 @@ np.random.seed(42)
 # Parameters for simulation
 chromatine_size = 50
 polymerase_count = 0
-simulation_steps = 1000
+simulation_steps = 200
 adding_position = 10
 end_of_replication_position = chromatine_size - 10
 
