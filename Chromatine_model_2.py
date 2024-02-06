@@ -65,22 +65,37 @@ class Chromatine:
                     if nth_position < len(self.histones):
                         nth_histone = self.histones[nth_position]
 
-                        # Implement changes based on the nth neighbor
-                        transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
-                        transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
 
                         if current_histone == 'U' and nth_histone == 'A':
                             self.histones[nth_position] = 'U'
+                            # Implement changes based on the nth neighbor
+                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
+                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
                         elif current_histone == 'U' and nth_histone == 'M':
                             self.histones[nth_position] = 'U'
+                            # Implement changes based on the nth neighbor
+                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
+                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
                         elif current_histone == 'A' and nth_histone == 'U':
                             self.histones[nth_position] = 'A'
+                            # Implement changes based on the nth neighbor
+                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
+                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
                         elif current_histone == 'A' and nth_histone == 'M':
                             self.histones[nth_position] = 'A'
+                            # Implement changes based on the nth neighbor
+                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
+                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
                         elif current_histone == 'M' and nth_histone == 'A':
                             self.histones[nth_position] = 'M'
+                            # Implement changes based on the nth neighbor
+                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
+                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
                         elif current_histone == 'M' and nth_histone == 'U':
                             self.histones[nth_position] = 'M'
+                            # Implement changes based on the nth neighbor
+                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
+                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
 
 class Polymerase:
     def __init__(self, chromatine, position=10, temperature=1.0):
