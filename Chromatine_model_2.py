@@ -132,7 +132,7 @@ class Polymerase:
 def visualize_chromatine(histones, polymerase_positions=None):
     # Display chromatine state as a bar chart
     plt.bar(range(len(histones)), [1] * len(histones),
-            color=[('gray' if hist == 'U' else 'blue' if hist == 'M' else 'green' if hist == 'A' else 'red') for hist in histones])
+            color=[('olive' if hist == 'U' else 'red' if hist == 'M' else 'blue' if hist == 'A' else 'green') for hist in histones])
     plt.title("Chromatine Structure")
     plt.xlabel("Histone Position")
     plt.ylabel("Histone")
@@ -140,7 +140,7 @@ def visualize_chromatine(histones, polymerase_positions=None):
     if polymerase_positions:
         # Draw arrows indicating polymerase positions
         for position in polymerase_positions:
-            plt.arrow(position, -0.2, 0, -0.1, color='red', head_width=0.5, head_length=0.1)
+            plt.arrow(position, -0.2, 0, -0.1, color='black', head_width=0.5, head_length=0.1)
 
 # Function to update the plot in each animation frame
 def update(frame):
@@ -154,8 +154,8 @@ def update(frame):
         deleted_positions.append(polymerase.position)
 
     # Change the next histones based on the influence of first neighbors
-    for position in range(1, chromatine_size):
-        chromatine.change_next_histones(position)
+    #for position in range(1, chromatine_size):
+    #    chromatine.change_next_histones(position)
 
     # Regenerate histones at unmodified positions
     #if np.random.random() < 0.4:
@@ -198,10 +198,10 @@ def update(frame):
     axs[0, 0].set_xlabel('Time Steps')
     axs[0, 0].set_ylabel('Number of polymerases')
 
-    axs[0, 1].plot(range(len(active_histone_count_over_time)), active_histone_count_over_time, marker='o', color='red', label='Active Histones')
-    axs[0, 1].plot(range(len(acetylated_histone_count_over_time)), acetylated_histone_count_over_time, marker='o', color='green', label="Acetylated Histones")
-    axs[0, 1].plot(range(len(methylated_histone_count_over_time)), methylated_histone_count_over_time, marker='o', color='blue', label="Methylated Histones")
-    axs[0, 1].plot(range(len(unmodified_histone_count_over_time)), unmodified_histone_count_over_time, marker='o', color='gray', label="Unmodified Histones")
+    axs[0, 1].plot(range(len(active_histone_count_over_time)), active_histone_count_over_time, marker='o', color='orange', label='Active Histones')
+    axs[0, 1].plot(range(len(acetylated_histone_count_over_time)), acetylated_histone_count_over_time, marker='o', color='blue', label="Acetylated Histones")
+    axs[0, 1].plot(range(len(methylated_histone_count_over_time)), methylated_histone_count_over_time, marker='o', color='red', label="Methylated Histones")
+    axs[0, 1].plot(range(len(unmodified_histone_count_over_time)), unmodified_histone_count_over_time, marker='o', color= "olive", label="Unmodified Histones")
     axs[0, 1].set_title('Number of Active Histones Over Time')
     axs[0, 1].set_xlabel('Time Steps')
     axs[0, 1].set_ylabel('Number of Histones')
