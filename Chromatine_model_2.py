@@ -226,7 +226,7 @@ np.random.seed(42)
 # Parameters for simulation
 chromatine_size = 50
 polymerase_count = 0
-simulation_steps = 100
+simulation_steps = 1000
 adding_position = 10
 end_of_replication_position = chromatine_size - 10
 
@@ -253,5 +253,9 @@ ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
 plt.show()
 
 # Display the transitions dictionary after the simulation
+fig, ax = plt.subplots(layout='constrained',figsize=(11, 7))
 plt.bar(transitions_dict.keys(), transitions_dict.values(), color='g')
+ax.set_ylabel('Number of transitions')
+ax.set_title('Number of transitions in function of their types')
+ax.legend(loc='upper left', ncols=3)
 plt.show()
