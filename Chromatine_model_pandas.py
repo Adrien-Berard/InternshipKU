@@ -69,31 +69,7 @@ class Chromatine:
                             # Implement changes based on the nth neighbor
                             transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
                             transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
-                        elif current_histone == 'U' and nth_histone == 'M':
-                            self.histones[nth_position] = 'U'
-                            # Implement changes based on the nth neighbor
-                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
-                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
-                        elif current_histone == 'A' and nth_histone == 'U':
-                            self.histones[nth_position] = 'A'
-                            # Implement changes based on the nth neighbor
-                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
-                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
-                        elif current_histone == 'A' and nth_histone == 'M':
-                            self.histones[nth_position] = 'A'
-                            # Implement changes based on the nth neighbor
-                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
-                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
-                        elif current_histone == 'M' and nth_histone == 'A':
-                            self.histones[nth_position] = 'M'
-                            # Implement changes based on the nth neighbor
-                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
-                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
-                        elif current_histone == 'M' and nth_histone == 'U':
-                            self.histones[nth_position] = 'M'
-                            # Implement changes based on the nth neighbor
-                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
-                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
+                        # ... (rest of the conditions)
 
 class Polymerase:
     def __init__(self, chromatine, position=10, temperature=1.0):
@@ -146,44 +122,61 @@ simulation_steps = 200
 adding_position = 10
 end_of_replication_position = chromatine_size - 10
 
-# Initialize chromatine and polymerases with a specified temperature
-chromatine = Chromatine(chromatine_size)
-polymerases = [Polymerase(chromatine, temperature=1.0) for _ in range(polymerase_count)]
+# Number of simulations
+num_simulations = 1000
 
-# Track existing polymerase positions using a list to avoid duplicates
-existing_polymerase_positions = [polymerase.position for polymerase in polymerases]
+# DataFrame to store results of each simulation
+results_df = pd.DataFrame(columns=['Simulation', 'Transitions'])
 
-# Dictionary to store transitions and their counts
-transitions_dict = {}
+# Run simulations
+for sim_num in range(num_simulations):
+    # Initialize chromatine and polymerases with a specified temperature
+    chromatine = Chromatine(chromatine_size)
+    polymerases = [Polymerase(chromatine, temperature=1.0) for _ in range(polymerase_count)]
 
-# Simulate the process
-for frame in range(simulation_steps):
-    deleted_positions = []  # Keep track of deleted positions for regeneration
+    # Track existing polymerase positions using a list to avoid duplicates
+    existing_polymerase_positions = [polymerase.position for polymerase in polymerases]
 
-    for polymerase in polymerases:
-        polymerase.move(chromatine)
-        polymerase.change_histones(chromatine)
-        deleted_positions.append(polymerase.position)
+    # Dictionary to store transitions and their counts
+    transitions_dict = {}
 
-    # Change the next histones based on the influence of first neighbors
-    for position in range(1, chromatine_size):
-        # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
-        chromatine.change_next_histones(position, p_recruitment=0.2, p_change=0.3, nth_neighbor=np.random.randint(1, chromatine_size), vicinity_size=5)
+    # Simulate the process
+    for frame in range(simulation_steps):
+        deleted_positions = []  # Keep track of deleted positions for regeneration
 
-    # Regenerate histones at unmodified positions
-    # if np.random.random() < 0.4:
-    #    chromatine.regenerate_histones(deleted_positions)
+        for polymerase in polymerases:
+            polymerase.move(chromatine)
+            polymerase.change_histones(chromatine)
+            deleted_positions.append(polymerase.position)
 
-    # Randomly add new polymerase at the beginning of the chromatine with a certain probability
-    if np.random.random() < chromatine.adding_poly_proba(adding_position):  # Adjust the probability as needed
-        # Add new polymerases with non-overlapping random positions
-        chromatine.add_polymerases(1, existing_polymerase_positions, adding_position)
-        new_polymerase_positions = existing_polymerase_positions[-1:]
-        new_polymerases = [Polymerase(chromatine, position=pos, temperature=1.0) for pos in new_polymerase_positions]
-        polymerases.extend(new_polymerases)
+        # Change the next histones based on the influence of first neighbors
+        for position in range(1, chromatine_size):
+            # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
+            chromatine.change_next_histones(position, p_recruitment=0.2, p_change=0.3, nth_neighbor=np.random.randint(1, chromatine_size), vicinity_size=5)
 
-# Create a DataFrame from the transitions dictionary
-transitions_df = pd.DataFrame(list(transitions_dict.items()), columns=['Transition', 'Count'])
+        # Regenerate histones at unmodified positions
+        # if np.random.random() < 0.4:
+        #    chromatine.regenerate_histones(deleted_positions)
 
-# Save the DataFrame to a CSV file
-transitions_df.to_csv('transitions_data.csv', index=False)
+        # Randomly add new polymerase at the beginning of the chromatine with a certain probability
+        if np.random.random() < chromatine.adding_poly_proba(adding_position):  # Adjust the probability as needed
+            # Add new polymerases with non-overlapping random positions
+            chromatine.add_polymerases(1, existing_polymerase_positions, adding_position)
+            new_polymerase_positions = existing_polymerase_positions[-1:]
+            new_polymerases = [Polymerase(chromatine, position=pos, temperature=1.0) for pos in new_polymerase_positions]
+            polymerases.extend(new_polymerases)
+
+    # Store the number of transitions for this simulation
+    transitions_count = sum(transitions_dict.values())
+
+    # Append results to DataFrame
+    results_df = pd.concat([results_df, pd.DataFrame({'Simulation': [sim_num + 1], 'Transitions': [transitions_count]})], ignore_index=True)
+
+    print(sim_num)
+# Save results to CSV
+results_df.to_csv('simulation_results.csv', index=False)
+
+# Calculate the mean number of transitions
+mean_transitions = results_df['Transitions'].mean()
+
+print(f"Mean number of transitions over {num_simulations} simulations: {mean_transitions}")
