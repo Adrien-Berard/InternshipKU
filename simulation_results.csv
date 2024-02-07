@@ -1,1001 +1,1001 @@
 Simulation,Transitions
-1,218
-2,197
-3,237
-4,232
-5,235
-6,230
-7,219
-8,183
-9,163
-10,189
-11,181
-12,250
-13,212
-14,232
-15,187
-16,179
-17,258
-18,205
-19,184
-20,205
-21,206
-22,154
-23,160
-24,232
-25,202
-26,225
-27,226
-28,194
-29,165
-30,221
-31,234
-32,194
-33,221
-34,160
-35,224
-36,229
-37,237
-38,251
-39,210
-40,213
-41,218
-42,213
-43,147
-44,257
-45,269
-46,217
-47,237
-48,215
-49,237
-50,233
-51,204
-52,230
-53,153
-54,228
-55,242
-56,195
-57,197
-58,211
-59,201
-60,203
-61,236
-62,235
-63,224
-64,149
-65,215
-66,224
-67,237
-68,190
-69,219
-70,274
-71,219
-72,225
-73,178
-74,203
-75,237
-76,192
-77,251
-78,264
-79,247
-80,253
-81,270
-82,231
-83,222
-84,222
-85,167
-86,209
-87,219
-88,229
-89,228
-90,224
-91,251
-92,210
-93,276
-94,247
-95,193
-96,139
-97,256
-98,210
-99,209
-100,221
-101,243
-102,222
-103,182
-104,198
-105,239
-106,204
-107,232
-108,196
-109,255
-110,215
-111,244
-112,216
-113,220
-114,232
-115,248
-116,249
-117,156
-118,221
-119,182
-120,203
-121,215
-122,256
-123,229
-124,216
-125,213
-126,183
-127,188
-128,249
-129,226
-130,188
-131,217
-132,168
-133,234
-134,220
-135,196
-136,222
-137,213
-138,215
-139,247
-140,223
-141,186
-142,196
-143,269
-144,212
-145,214
-146,187
-147,202
-148,253
-149,207
-150,204
-151,226
-152,241
-153,222
-154,225
-155,230
-156,221
-157,185
-158,211
-159,230
-160,238
-161,247
-162,183
-163,223
-164,196
-165,197
-166,246
-167,224
-168,155
-169,216
-170,219
-171,242
-172,205
-173,180
-174,203
-175,266
-176,181
-177,251
-178,208
-179,194
-180,225
-181,254
-182,186
-183,216
-184,189
-185,214
-186,218
-187,211
-188,237
-189,210
-190,192
-191,220
-192,251
-193,216
-194,191
-195,233
-196,269
-197,242
-198,231
-199,252
-200,205
-201,233
-202,245
-203,230
-204,231
-205,211
-206,222
-207,228
-208,227
-209,227
-210,258
-211,109
-212,228
-213,231
-214,197
-215,197
-216,160
-217,210
-218,204
-219,231
-220,218
-221,265
-222,218
-223,234
-224,172
-225,226
-226,243
-227,224
-228,192
-229,208
-230,257
-231,192
-232,227
-233,193
-234,213
-235,244
-236,217
-237,189
-238,199
-239,280
-240,188
-241,237
-242,217
-243,217
-244,250
-245,204
-246,223
-247,241
-248,200
-249,207
-250,185
-251,228
-252,220
-253,235
-254,193
-255,160
-256,225
-257,248
-258,224
-259,187
-260,217
-261,263
-262,223
-263,216
-264,204
-265,277
-266,158
-267,234
-268,204
-269,227
-270,180
-271,229
-272,226
-273,211
-274,192
-275,199
-276,212
-277,193
-278,253
-279,253
-280,198
-281,249
-282,239
-283,191
-284,211
-285,223
-286,137
-287,180
-288,173
-289,224
-290,203
-291,253
-292,176
-293,203
-294,214
-295,229
-296,230
-297,200
-298,151
-299,198
-300,215
-301,229
-302,238
-303,219
-304,188
-305,209
-306,187
-307,202
-308,224
-309,250
-310,201
-311,216
-312,135
-313,234
-314,185
-315,228
-316,183
-317,224
-318,202
-319,210
-320,237
-321,266
-322,201
-323,251
-324,195
-325,216
-326,220
-327,178
-328,203
-329,229
-330,235
-331,222
-332,213
-333,238
-334,212
-335,270
-336,216
-337,219
-338,175
-339,214
-340,211
-341,234
-342,196
-343,215
-344,254
-345,252
-346,237
-347,208
-348,252
-349,209
-350,227
-351,244
-352,212
-353,201
-354,209
-355,168
-356,195
-357,224
-358,203
-359,203
-360,148
-361,221
-362,222
-363,227
-364,186
-365,270
-366,215
-367,222
-368,209
-369,205
-370,209
-371,217
-372,235
-373,161
-374,195
-375,209
-376,184
-377,273
-378,199
-379,247
-380,233
-381,216
-382,205
-383,256
-384,228
-385,233
-386,199
-387,223
-388,179
-389,221
-390,227
-391,237
-392,241
-393,237
-394,234
-395,205
-396,227
-397,196
-398,236
-399,242
-400,228
-401,251
-402,221
-403,251
-404,245
-405,218
-406,215
-407,207
-408,255
-409,199
-410,198
-411,231
-412,220
-413,158
-414,224
-415,192
-416,212
-417,212
-418,215
-419,235
-420,183
-421,206
-422,193
-423,242
-424,173
-425,228
-426,223
-427,242
-428,228
-429,213
-430,241
-431,209
-432,229
-433,191
-434,221
-435,183
-436,258
-437,227
-438,256
-439,267
-440,255
-441,230
-442,222
-443,259
-444,259
-445,159
-446,222
-447,243
-448,219
-449,232
-450,246
-451,229
-452,236
-453,263
-454,235
-455,217
-456,199
-457,215
-458,175
-459,233
-460,170
-461,233
-462,247
-463,192
-464,227
-465,216
-466,197
-467,194
-468,185
-469,121
-470,205
-471,190
-472,192
-473,192
-474,161
-475,257
-476,230
-477,240
-478,241
-479,217
-480,220
-481,209
-482,246
-483,211
-484,213
-485,248
-486,200
-487,222
-488,224
-489,214
-490,193
-491,213
-492,210
-493,203
-494,173
-495,203
-496,208
-497,214
-498,189
-499,208
-500,190
-501,190
-502,203
-503,173
-504,237
-505,217
-506,239
-507,218
-508,248
-509,234
-510,249
-511,257
-512,218
-513,242
-514,204
-515,216
-516,257
-517,186
-518,194
-519,224
-520,287
-521,228
-522,233
-523,215
-524,261
-525,252
-526,234
-527,208
-528,264
-529,221
-530,219
-531,250
-532,215
-533,237
-534,229
-535,244
-536,215
-537,215
-538,173
-539,251
-540,225
-541,242
-542,213
-543,198
-544,179
-545,189
-546,251
-547,248
-548,205
-549,223
-550,182
-551,216
-552,168
-553,177
-554,237
-555,235
-556,195
-557,208
-558,208
-559,234
-560,211
-561,214
-562,267
-563,190
-564,206
-565,236
-566,232
-567,230
-568,185
-569,226
-570,244
-571,228
-572,229
-573,194
-574,255
-575,184
-576,226
-577,168
-578,236
-579,240
-580,168
-581,217
-582,259
-583,212
-584,230
-585,226
-586,248
-587,219
-588,206
-589,244
-590,194
-591,249
-592,150
-593,211
-594,192
-595,204
-596,253
-597,230
-598,234
-599,220
-600,248
-601,149
-602,237
-603,206
-604,196
-605,251
-606,206
-607,188
-608,207
-609,188
-610,229
-611,236
-612,242
-613,214
-614,246
-615,204
-616,212
-617,178
-618,177
-619,170
-620,237
-621,225
-622,188
-623,180
-624,211
-625,193
-626,237
-627,201
-628,196
-629,229
-630,194
-631,205
-632,248
-633,185
-634,216
-635,209
-636,241
-637,228
-638,140
-639,233
-640,199
-641,219
-642,218
-643,224
-644,222
-645,234
-646,215
-647,206
-648,226
-649,221
-650,225
-651,243
-652,207
-653,251
-654,213
-655,235
-656,195
-657,209
-658,250
-659,219
-660,224
-661,222
-662,241
-663,209
-664,206
-665,213
-666,164
-667,193
-668,241
-669,209
-670,220
-671,181
-672,216
-673,234
-674,235
-675,215
-676,248
-677,229
-678,223
-679,252
-680,253
-681,230
-682,216
-683,246
-684,212
-685,245
-686,213
-687,205
-688,262
-689,219
-690,210
-691,174
-692,229
-693,261
-694,229
-695,217
-696,203
-697,209
-698,221
-699,203
-700,198
-701,264
-702,194
-703,224
-704,210
-705,212
-706,235
-707,187
-708,242
-709,224
-710,209
-711,218
-712,214
-713,237
-714,208
-715,225
-716,230
-717,205
-718,209
-719,226
-720,208
-721,216
-722,228
-723,231
-724,263
-725,132
-726,235
-727,230
-728,253
-729,255
-730,217
-731,219
-732,245
-733,245
-734,204
-735,229
-736,219
-737,247
-738,205
-739,231
-740,248
-741,227
-742,246
-743,241
-744,181
-745,192
-746,264
-747,145
-748,191
-749,232
-750,201
-751,242
-752,243
-753,200
-754,229
-755,250
-756,244
-757,165
-758,217
-759,197
-760,196
-761,181
-762,231
-763,254
-764,209
-765,225
-766,224
-767,223
-768,234
-769,206
-770,208
-771,208
-772,236
-773,223
-774,259
-775,227
-776,210
-777,238
-778,229
-779,233
-780,180
-781,238
-782,229
-783,119
-784,195
-785,208
-786,235
-787,187
-788,236
-789,147
-790,201
-791,238
-792,219
-793,265
-794,207
-795,216
-796,234
-797,164
-798,196
-799,197
-800,207
-801,221
-802,217
-803,219
-804,203
-805,213
-806,179
-807,230
-808,203
-809,237
-810,225
-811,192
-812,231
-813,179
-814,136
-815,235
-816,153
-817,230
-818,215
-819,249
-820,254
-821,227
-822,211
-823,84
-824,216
-825,170
-826,201
-827,237
-828,150
-829,230
-830,220
-831,217
-832,172
-833,196
-834,231
-835,195
-836,201
-837,261
-838,223
-839,217
-840,197
-841,232
-842,165
-843,200
-844,224
-845,231
-846,237
-847,218
-848,222
-849,218
-850,228
-851,180
-852,225
-853,223
-854,191
-855,222
-856,213
-857,214
-858,193
-859,252
-860,198
-861,220
-862,217
-863,212
-864,260
-865,215
-866,214
-867,260
-868,219
-869,235
-870,155
-871,233
-872,198
-873,205
-874,258
-875,207
-876,200
-877,165
-878,172
-879,191
-880,204
-881,202
-882,204
-883,192
-884,194
-885,268
-886,248
-887,243
-888,215
-889,208
-890,202
-891,216
-892,259
-893,238
-894,220
-895,247
-896,239
-897,211
-898,249
-899,205
-900,191
-901,188
-902,221
-903,193
-904,209
-905,232
-906,221
-907,208
-908,223
-909,181
-910,181
-911,276
-912,156
-913,244
-914,270
-915,203
-916,221
-917,242
-918,200
-919,228
-920,212
-921,189
-922,236
-923,140
-924,211
-925,214
-926,136
-927,150
-928,197
-929,199
-930,232
-931,221
-932,216
-933,219
-934,197
-935,233
-936,227
-937,212
-938,223
-939,253
-940,200
-941,183
-942,172
-943,257
-944,194
-945,223
-946,226
-947,260
-948,210
-949,243
-950,201
-951,236
-952,167
-953,194
-954,219
-955,212
-956,216
-957,212
-958,199
-959,237
-960,187
-961,232
-962,167
-963,217
-964,199
-965,244
-966,220
-967,207
-968,205
-969,283
-970,234
-971,207
-972,247
-973,251
-974,252
-975,207
-976,153
-977,223
-978,198
-979,217
-980,233
-981,232
-982,189
-983,208
-984,255
-985,198
-986,254
-987,224
-988,159
-989,205
-990,239
-991,211
-992,173
-993,232
-994,198
-995,151
-996,198
-997,194
-998,229
-999,232
-1000,204
+1,"{'U_and_M_to_U_and_U': 21, 'M_and_U_to_M_and_M': 47, 'Polymerase_M_to_A': 44, 'M_and_A_to_M_and_M': 37, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 31, 'A_and_U_to_A_and_A': 17}"
+2,"{'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 42, 'A_and_M_to_A_and_A': 24, 'M_and_A_to_M_and_M': 62, 'M_and_U_to_M_and_M': 22, 'A_and_U_to_A_and_A': 19, 'U_and_A_to_U_and_U': 8}"
+3,"{'U_and_M_to_U_and_U': 28, 'Polymerase_M_to_A': 31, 'M_and_U_to_M_and_M': 32, 'A_and_M_to_A_and_A': 20, 'U_and_A_to_U_and_U': 46, 'M_and_A_to_M_and_M': 29, 'A_and_U_to_A_and_A': 51}"
+4,"{'M_and_U_to_M_and_M': 43, 'U_and_M_to_U_and_U': 38, 'Polymerase_M_to_A': 35, 'A_and_U_to_A_and_A': 22, 'M_and_A_to_M_and_M': 21, 'U_and_A_to_U_and_U': 53, 'A_and_M_to_A_and_A': 20}"
+5,"{'U_and_M_to_U_and_U': 20, 'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 44, 'A_and_U_to_A_and_A': 31, 'A_and_M_to_A_and_A': 24, 'M_and_A_to_M_and_M': 42, 'U_and_A_to_U_and_U': 38}"
+6,"{'Polymerase_M_to_A': 38, 'M_and_U_to_M_and_M': 41, 'M_and_A_to_M_and_M': 36, 'A_and_U_to_A_and_A': 27, 'A_and_M_to_A_and_A': 18, 'U_and_M_to_U_and_U': 31, 'U_and_A_to_U_and_U': 39}"
+7,"{'U_and_M_to_U_and_U': 43, 'M_and_U_to_M_and_M': 40, 'Polymerase_M_to_A': 34, 'A_and_U_to_A_and_A': 35, 'M_and_A_to_M_and_M': 28, 'U_and_A_to_U_and_U': 32, 'A_and_M_to_A_and_A': 7}"
+8,"{'Polymerase_M_to_A': 33, 'U_and_M_to_U_and_U': 27, 'M_and_A_to_M_and_M': 7, 'M_and_U_to_M_and_M': 37, 'U_and_A_to_U_and_U': 49, 'A_and_U_to_A_and_A': 24, 'A_and_M_to_A_and_A': 6}"
+9,"{'M_and_U_to_M_and_M': 20, 'U_and_M_to_U_and_U': 21, 'Polymerase_M_to_A': 25, 'A_and_U_to_A_and_A': 20, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 53, 'M_and_A_to_M_and_M': 8}"
+10,"{'M_and_U_to_M_and_M': 26, 'U_and_M_to_U_and_U': 17, 'Polymerase_M_to_A': 50, 'A_and_M_to_A_and_A': 30, 'M_and_A_to_M_and_M': 50, 'A_and_U_to_A_and_A': 4, 'U_and_A_to_U_and_U': 12}"
+11,"{'M_and_U_to_M_and_M': 23, 'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 31, 'M_and_A_to_M_and_M': 17, 'A_and_M_to_A_and_A': 14, 'U_and_A_to_U_and_U': 44, 'A_and_U_to_A_and_A': 23}"
+12,"{'U_and_M_to_U_and_U': 24, 'M_and_U_to_M_and_M': 40, 'Polymerase_M_to_A': 45, 'U_and_A_to_U_and_U': 35, 'A_and_M_to_A_and_A': 29, 'A_and_U_to_A_and_A': 30, 'M_and_A_to_M_and_M': 47}"
+13,"{'U_and_M_to_U_and_U': 17, 'Polymerase_M_to_A': 54, 'M_and_U_to_M_and_M': 23, 'M_and_A_to_M_and_M': 72, 'A_and_U_to_A_and_A': 13, 'A_and_M_to_A_and_A': 28, 'U_and_A_to_U_and_U': 5}"
+14,"{'M_and_U_to_M_and_M': 35, 'U_and_M_to_U_and_U': 50, 'Polymerase_M_to_A': 27, 'A_and_M_to_A_and_A': 17, 'U_and_A_to_U_and_U': 29, 'A_and_U_to_A_and_A': 36, 'M_and_A_to_M_and_M': 38}"
+15,"{'M_and_U_to_M_and_M': 37, 'U_and_M_to_U_and_U': 30, 'Polymerase_M_to_A': 36, 'M_and_A_to_M_and_M': 37, 'A_and_M_to_A_and_A': 21, 'A_and_U_to_A_and_A': 17, 'U_and_A_to_U_and_U': 9}"
+16,"{'U_and_M_to_U_and_U': 21, 'M_and_U_to_M_and_M': 25, 'Polymerase_M_to_A': 35, 'A_and_U_to_A_and_A': 15, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 44, 'U_and_A_to_U_and_U': 13}"
+17,"{'M_and_U_to_M_and_M': 45, 'U_and_M_to_U_and_U': 36, 'Polymerase_M_to_A': 57, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 21, 'M_and_A_to_M_and_M': 55, 'U_and_A_to_U_and_U': 25}"
+18,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 31, 'A_and_M_to_A_and_A': 25, 'A_and_U_to_A_and_A': 29, 'M_and_A_to_M_and_M': 46, 'U_and_A_to_U_and_U': 15}"
+19,"{'U_and_M_to_U_and_U': 15, 'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 48, 'M_and_A_to_M_and_M': 55, 'U_and_A_to_U_and_U': 9, 'A_and_M_to_A_and_A': 20, 'A_and_U_to_A_and_A': 13}"
+20,"{'M_and_U_to_M_and_M': 54, 'U_and_M_to_U_and_U': 31, 'Polymerase_M_to_A': 28, 'A_and_U_to_A_and_A': 21, 'A_and_M_to_A_and_A': 13, 'U_and_A_to_U_and_U': 37, 'M_and_A_to_M_and_M': 21}"
+21,"{'U_and_M_to_U_and_U': 6, 'Polymerase_M_to_A': 55, 'M_and_U_to_M_and_M': 18, 'M_and_A_to_M_and_M': 68, 'A_and_M_to_A_and_A': 33, 'U_and_A_to_U_and_U': 12, 'A_and_U_to_A_and_A': 14}"
+22,"{'M_and_U_to_M_and_M': 13, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 16, 'A_and_U_to_A_and_A': 33, 'A_and_M_to_A_and_A': 10, 'U_and_A_to_U_and_U': 51, 'M_and_A_to_M_and_M': 5}"
+23,"{'U_and_M_to_U_and_U': 39, 'Polymerase_M_to_A': 16, 'M_and_U_to_M_and_M': 41, 'A_and_M_to_A_and_A': 7, 'A_and_U_to_A_and_A': 19, 'U_and_A_to_U_and_U': 36, 'M_and_A_to_M_and_M': 2}"
+24,"{'M_and_U_to_M_and_M': 33, 'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 31, 'M_and_A_to_M_and_M': 35, 'A_and_M_to_A_and_A': 22, 'U_and_A_to_U_and_U': 37, 'A_and_U_to_A_and_A': 40}"
+25,"{'M_and_U_to_M_and_M': 23, 'U_and_M_to_U_and_U': 17, 'Polymerase_M_to_A': 45, 'U_and_A_to_U_and_U': 15, 'A_and_U_to_A_and_A': 24, 'A_and_M_to_A_and_A': 25, 'M_and_A_to_M_and_M': 53}"
+26,"{'M_and_U_to_M_and_M': 56, 'U_and_M_to_U_and_U': 33, 'Polymerase_M_to_A': 36, 'U_and_A_to_U_and_U': 43, 'A_and_U_to_A_and_A': 17, 'A_and_M_to_A_and_A': 17, 'M_and_A_to_M_and_M': 23}"
+27,"{'U_and_M_to_U_and_U': 24, 'Polymerase_M_to_A': 51, 'M_and_U_to_M_and_M': 36, 'A_and_U_to_A_and_A': 17, 'M_and_A_to_M_and_M': 56, 'A_and_M_to_A_and_A': 18, 'U_and_A_to_U_and_U': 24}"
+28,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 30, 'Polymerase_M_to_A': 25, 'M_and_A_to_M_and_M': 8, 'A_and_M_to_A_and_A': 14, 'U_and_A_to_U_and_U': 59, 'A_and_U_to_A_and_A': 36}"
+29,"{'M_and_U_to_M_and_M': 17, 'Polymerase_M_to_A': 47, 'U_and_A_to_U_and_U': 4, 'U_and_M_to_U_and_U': 7, 'A_and_M_to_A_and_A': 28, 'A_and_U_to_A_and_A': 8, 'M_and_A_to_M_and_M': 54}"
+30,"{'U_and_M_to_U_and_U': 28, 'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 42, 'A_and_M_to_A_and_A': 20, 'M_and_A_to_M_and_M': 32, 'U_and_A_to_U_and_U': 40, 'A_and_U_to_A_and_A': 27}"
+31,"{'U_and_M_to_U_and_U': 13, 'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 53, 'U_and_A_to_U_and_U': 24, 'M_and_A_to_M_and_M': 66, 'A_and_M_to_A_and_A': 29, 'A_and_U_to_A_and_A': 20}"
+32,"{'M_and_U_to_M_and_M': 26, 'U_and_M_to_U_and_U': 36, 'Polymerase_M_to_A': 32, 'M_and_A_to_M_and_M': 19, 'A_and_M_to_A_and_A': 8, 'U_and_A_to_U_and_U': 43, 'A_and_U_to_A_and_A': 30}"
+33,"{'M_and_U_to_M_and_M': 37, 'U_and_M_to_U_and_U': 24, 'Polymerase_M_to_A': 49, 'M_and_A_to_M_and_M': 42, 'U_and_A_to_U_and_U': 29, 'A_and_M_to_A_and_A': 16, 'A_and_U_to_A_and_A': 24}"
+34,"{'M_and_U_to_M_and_M': 15, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 17, 'A_and_M_to_A_and_A': 13, 'A_and_U_to_A_and_A': 30, 'M_and_A_to_M_and_M': 8, 'U_and_A_to_U_and_U': 50}"
+35,"{'M_and_U_to_M_and_M': 37, 'U_and_M_to_U_and_U': 22, 'Polymerase_M_to_A': 42, 'A_and_M_to_A_and_A': 24, 'U_and_A_to_U_and_U': 30, 'M_and_A_to_M_and_M': 43, 'A_and_U_to_A_and_A': 26}"
+36,"{'M_and_U_to_M_and_M': 42, 'U_and_M_to_U_and_U': 38, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 14, 'U_and_A_to_U_and_U': 42, 'A_and_U_to_A_and_A': 32, 'M_and_A_to_M_and_M': 27}"
+37,"{'M_and_U_to_M_and_M': 40, 'Polymerase_M_to_A': 41, 'U_and_M_to_U_and_U': 36, 'A_and_U_to_A_and_A': 27, 'U_and_A_to_U_and_U': 52, 'M_and_A_to_M_and_M': 25, 'A_and_M_to_A_and_A': 16}"
+38,"{'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 59, 'M_and_U_to_M_and_M': 41, 'A_and_M_to_A_and_A': 26, 'U_and_A_to_U_and_U': 44, 'M_and_A_to_M_and_M': 44, 'A_and_U_to_A_and_A': 22}"
+39,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 21, 'Polymerase_M_to_A': 55, 'A_and_U_to_A_and_A': 10, 'M_and_A_to_M_and_M': 59, 'A_and_M_to_A_and_A': 27, 'U_and_A_to_U_and_U': 6}"
+40,"{'U_and_M_to_U_and_U': 14, 'Polymerase_M_to_A': 52, 'M_and_U_to_M_and_M': 31, 'A_and_M_to_A_and_A': 29, 'A_and_U_to_A_and_A': 13, 'M_and_A_to_M_and_M': 58, 'U_and_A_to_U_and_U': 16}"
+41,"{'U_and_M_to_U_and_U': 29, 'M_and_U_to_M_and_M': 27, 'Polymerase_M_to_A': 40, 'M_and_A_to_M_and_M': 37, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 34, 'U_and_A_to_U_and_U': 32}"
+42,"{'U_and_M_to_U_and_U': 17, 'M_and_U_to_M_and_M': 21, 'Polymerase_M_to_A': 56, 'M_and_A_to_M_and_M': 68, 'A_and_U_to_A_and_A': 16, 'A_and_M_to_A_and_A': 30, 'U_and_A_to_U_and_U': 5}"
+43,"{'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 11, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 59, 'M_and_U_to_M_and_M': 6, 'A_and_U_to_A_and_A': 42}"
+44,"{'U_and_M_to_U_and_U': 45, 'M_and_U_to_M_and_M': 39, 'Polymerase_M_to_A': 33, 'U_and_A_to_U_and_U': 54, 'M_and_A_to_M_and_M': 22, 'A_and_M_to_A_and_A': 12, 'A_and_U_to_A_and_A': 52}"
+45,"{'Polymerase_M_to_A': 35, 'U_and_M_to_U_and_U': 45, 'M_and_U_to_M_and_M': 50, 'U_and_A_to_U_and_U': 57, 'A_and_M_to_A_and_A': 14, 'M_and_A_to_M_and_M': 23, 'A_and_U_to_A_and_A': 45}"
+46,"{'M_and_U_to_M_and_M': 42, 'U_and_M_to_U_and_U': 30, 'Polymerase_M_to_A': 32, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 49, 'M_and_A_to_M_and_M': 19, 'A_and_U_to_A_and_A': 29}"
+47,"{'M_and_U_to_M_and_M': 40, 'Polymerase_M_to_A': 41, 'U_and_M_to_U_and_U': 23, 'A_and_U_to_A_and_A': 19, 'A_and_M_to_A_and_A': 33, 'U_and_A_to_U_and_U': 31, 'M_and_A_to_M_and_M': 50}"
+48,"{'M_and_U_to_M_and_M': 25, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 44, 'A_and_M_to_A_and_A': 19, 'M_and_A_to_M_and_M': 58, 'A_and_U_to_A_and_A': 29, 'U_and_A_to_U_and_U': 13}"
+49,"{'M_and_U_to_M_and_M': 44, 'U_and_M_to_U_and_U': 25, 'Polymerase_M_to_A': 45, 'U_and_A_to_U_and_U': 39, 'A_and_U_to_A_and_A': 27, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 39}"
+50,"{'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 41, 'U_and_A_to_U_and_U': 33, 'U_and_M_to_U_and_U': 31, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 34, 'M_and_A_to_M_and_M': 43}"
+51,"{'U_and_M_to_U_and_U': 33, 'M_and_U_to_M_and_M': 37, 'Polymerase_M_to_A': 31, 'A_and_M_to_A_and_A': 22, 'A_and_U_to_A_and_A': 22, 'U_and_A_to_U_and_U': 31, 'M_and_A_to_M_and_M': 28}"
+52,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 19, 'Polymerase_M_to_A': 50, 'A_and_U_to_A_and_A': 19, 'M_and_A_to_M_and_M': 56, 'U_and_A_to_U_and_U': 25, 'A_and_M_to_A_and_A': 32}"
+53,"{'U_and_M_to_U_and_U': 29, 'M_and_U_to_M_and_M': 19, 'Polymerase_M_to_A': 21, 'U_and_A_to_U_and_U': 44, 'A_and_M_to_A_and_A': 9, 'A_and_U_to_A_and_A': 25, 'M_and_A_to_M_and_M': 6}"
+54,"{'U_and_M_to_U_and_U': 37, 'M_and_U_to_M_and_M': 44, 'Polymerase_M_to_A': 39, 'M_and_A_to_M_and_M': 32, 'A_and_M_to_A_and_A': 15, 'U_and_A_to_U_and_U': 35, 'A_and_U_to_A_and_A': 26}"
+55,"{'U_and_M_to_U_and_U': 14, 'Polymerase_M_to_A': 62, 'M_and_U_to_M_and_M': 26, 'A_and_M_to_A_and_A': 27, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 66, 'U_and_A_to_U_and_U': 24}"
+56,"{'M_and_U_to_M_and_M': 17, 'U_and_M_to_U_and_U': 14, 'Polymerase_M_to_A': 47, 'A_and_M_to_A_and_A': 22, 'U_and_A_to_U_and_U': 8, 'A_and_U_to_A_and_A': 20, 'M_and_A_to_M_and_M': 67}"
+57,"{'U_and_M_to_U_and_U': 27, 'M_and_U_to_M_and_M': 37, 'Polymerase_M_to_A': 31, 'A_and_M_to_A_and_A': 22, 'U_and_A_to_U_and_U': 18, 'A_and_U_to_A_and_A': 22, 'M_and_A_to_M_and_M': 40}"
+58,"{'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 38, 'U_and_M_to_U_and_U': 24, 'M_and_A_to_M_and_M': 43, 'A_and_U_to_A_and_A': 25, 'A_and_M_to_A_and_A': 25, 'U_and_A_to_U_and_U': 22}"
+59,"{'M_and_U_to_M_and_M': 16, 'Polymerase_M_to_A': 52, 'U_and_M_to_U_and_U': 8, 'A_and_M_to_A_and_A': 34, 'M_and_A_to_M_and_M': 68, 'U_and_A_to_U_and_U': 8, 'A_and_U_to_A_and_A': 15}"
+60,"{'M_and_U_to_M_and_M': 26, 'U_and_M_to_U_and_U': 19, 'Polymerase_M_to_A': 49, 'A_and_M_to_A_and_A': 19, 'U_and_A_to_U_and_U': 13, 'M_and_A_to_M_and_M': 57, 'A_and_U_to_A_and_A': 20}"
+61,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 13, 'Polymerase_M_to_A': 63, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 67, 'A_and_U_to_A_and_A': 15, 'U_and_A_to_U_and_U': 20}"
+62,"{'M_and_U_to_M_and_M': 44, 'Polymerase_M_to_A': 42, 'U_and_M_to_U_and_U': 33, 'U_and_A_to_U_and_U': 42, 'M_and_A_to_M_and_M': 31, 'A_and_M_to_A_and_A': 14, 'A_and_U_to_A_and_A': 29}"
+63,"{'M_and_U_to_M_and_M': 35, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 44, 'M_and_A_to_M_and_M': 42, 'A_and_U_to_A_and_A': 24, 'A_and_M_to_A_and_A': 26, 'U_and_A_to_U_and_U': 38}"
+64,"{'U_and_M_to_U_and_U': 20, 'M_and_U_to_M_and_M': 9, 'Polymerase_M_to_A': 17, 'A_and_M_to_A_and_A': 10, 'A_and_U_to_A_and_A': 34, 'M_and_A_to_M_and_M': 4, 'U_and_A_to_U_and_U': 55}"
+65,"{'M_and_U_to_M_and_M': 22, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 28, 'A_and_M_to_A_and_A': 19, 'M_and_A_to_M_and_M': 29, 'A_and_U_to_A_and_A': 42, 'U_and_A_to_U_and_U': 49}"
+66,"{'U_and_M_to_U_and_U': 27, 'M_and_U_to_M_and_M': 48, 'Polymerase_M_to_A': 43, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 40, 'U_and_A_to_U_and_U': 28, 'A_and_U_to_A_and_A': 22}"
+67,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 32, 'Polymerase_M_to_A': 49, 'M_and_A_to_M_and_M': 60, 'A_and_M_to_A_and_A': 22, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 17}"
+68,"{'U_and_M_to_U_and_U': 40, 'M_and_U_to_M_and_M': 46, 'Polymerase_M_to_A': 26, 'A_and_M_to_A_and_A': 7, 'A_and_U_to_A_and_A': 19, 'M_and_A_to_M_and_M': 9, 'U_and_A_to_U_and_U': 43}"
+69,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 47, 'A_and_U_to_A_and_A': 26, 'A_and_M_to_A_and_A': 24, 'M_and_A_to_M_and_M': 53, 'U_and_A_to_U_and_U': 25}"
+70,"{'M_and_U_to_M_and_M': 48, 'U_and_M_to_U_and_U': 36, 'Polymerase_M_to_A': 52, 'U_and_A_to_U_and_U': 48, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 38, 'A_and_U_to_A_and_A': 34}"
+71,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 38, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 51, 'A_and_U_to_A_and_A': 29, 'M_and_A_to_M_and_M': 16}"
+72,"{'U_and_M_to_U_and_U': 12, 'M_and_U_to_M_and_M': 23, 'Polymerase_M_to_A': 56, 'A_and_U_to_A_and_A': 21, 'A_and_M_to_A_and_A': 31, 'U_and_A_to_U_and_U': 21, 'M_and_A_to_M_and_M': 61}"
+73,"{'U_and_M_to_U_and_U': 46, 'M_and_U_to_M_and_M': 25, 'Polymerase_M_to_A': 13, 'A_and_U_to_A_and_A': 43, 'U_and_A_to_U_and_U': 51}"
+74,"{'M_and_U_to_M_and_M': 22, 'U_and_M_to_U_and_U': 21, 'Polymerase_M_to_A': 39, 'M_and_A_to_M_and_M': 40, 'A_and_U_to_A_and_A': 29, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 29}"
+75,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 30, 'Polymerase_M_to_A': 42, 'A_and_U_to_A_and_A': 36, 'M_and_A_to_M_and_M': 47, 'A_and_M_to_A_and_A': 24, 'U_and_A_to_U_and_U': 26}"
+76,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 32, 'Polymerase_M_to_A': 25, 'A_and_M_to_A_and_A': 8, 'U_and_A_to_U_and_U': 54, 'A_and_U_to_A_and_A': 36, 'M_and_A_to_M_and_M': 7}"
+77,"{'M_and_U_to_M_and_M': 45, 'U_and_M_to_U_and_U': 31, 'Polymerase_M_to_A': 44, 'A_and_U_to_A_and_A': 34, 'A_and_M_to_A_and_A': 19, 'U_and_A_to_U_and_U': 42, 'M_and_A_to_M_and_M': 36}"
+78,"{'U_and_M_to_U_and_U': 43, 'M_and_U_to_M_and_M': 42, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 19, 'U_and_A_to_U_and_U': 51, 'A_and_U_to_A_and_A': 44, 'M_and_A_to_M_and_M': 31}"
+79,"{'M_and_U_to_M_and_M': 36, 'U_and_M_to_U_and_U': 14, 'Polymerase_M_to_A': 62, 'A_and_M_to_A_and_A': 28, 'M_and_A_to_M_and_M': 60, 'A_and_U_to_A_and_A': 17, 'U_and_A_to_U_and_U': 30}"
+80,"{'M_and_U_to_M_and_M': 38, 'U_and_M_to_U_and_U': 22, 'Polymerase_M_to_A': 46, 'A_and_M_to_A_and_A': 29, 'A_and_U_to_A_and_A': 29, 'M_and_A_to_M_and_M': 55, 'U_and_A_to_U_and_U': 34}"
+81,"{'M_and_U_to_M_and_M': 46, 'Polymerase_M_to_A': 47, 'U_and_M_to_U_and_U': 38, 'A_and_M_to_A_and_A': 14, 'A_and_U_to_A_and_A': 35, 'M_and_A_to_M_and_M': 48, 'U_and_A_to_U_and_U': 42}"
+82,"{'M_and_U_to_M_and_M': 22, 'Polymerase_M_to_A': 51, 'U_and_M_to_U_and_U': 21, 'M_and_A_to_M_and_M': 67, 'A_and_M_to_A_and_A': 23, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 19}"
+83,"{'U_and_M_to_U_and_U': 17, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 48, 'A_and_U_to_A_and_A': 22, 'M_and_A_to_M_and_M': 42, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 36}"
+84,"{'U_and_M_to_U_and_U': 37, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 45, 'A_and_U_to_A_and_A': 26, 'U_and_A_to_U_and_U': 18, 'M_and_A_to_M_and_M': 45, 'A_and_M_to_A_and_A': 18}"
+85,"{'M_and_U_to_M_and_M': 20, 'U_and_M_to_U_and_U': 35, 'Polymerase_M_to_A': 11, 'U_and_A_to_U_and_U': 50, 'A_and_U_to_A_and_A': 42, 'A_and_M_to_A_and_A': 9}"
+86,"{'M_and_U_to_M_and_M': 23, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 36, 'M_and_A_to_M_and_M': 41, 'A_and_M_to_A_and_A': 34, 'U_and_A_to_U_and_U': 30, 'A_and_U_to_A_and_A': 19}"
+87,"{'U_and_M_to_U_and_U': 21, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 54, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 65, 'U_and_A_to_U_and_U': 9, 'A_and_U_to_A_and_A': 16}"
+88,"{'M_and_U_to_M_and_M': 36, 'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 44, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 31, 'A_and_U_to_A_and_A': 30, 'U_and_A_to_U_and_U': 41}"
+89,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 23, 'Polymerase_M_to_A': 49, 'M_and_A_to_M_and_M': 59, 'A_and_M_to_A_and_A': 18, 'U_and_A_to_U_and_U': 21, 'A_and_U_to_A_and_A': 29}"
+90,"{'M_and_U_to_M_and_M': 41, 'U_and_M_to_U_and_U': 23, 'Polymerase_M_to_A': 44, 'A_and_U_to_A_and_A': 17, 'A_and_M_to_A_and_A': 25, 'M_and_A_to_M_and_M': 50, 'U_and_A_to_U_and_U': 24}"
+91,"{'U_and_M_to_U_and_U': 50, 'Polymerase_M_to_A': 31, 'M_and_U_to_M_and_M': 50, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 52, 'A_and_U_to_A_and_A': 33, 'M_and_A_to_M_and_M': 19}"
+92,"{'U_and_M_to_U_and_U': 41, 'M_and_U_to_M_and_M': 51, 'Polymerase_M_to_A': 32, 'A_and_M_to_A_and_A': 10, 'U_and_A_to_U_and_U': 42, 'M_and_A_to_M_and_M': 11, 'A_and_U_to_A_and_A': 23}"
+93,"{'U_and_M_to_U_and_U': 40, 'M_and_U_to_M_and_M': 44, 'Polymerase_M_to_A': 41, 'A_and_U_to_A_and_A': 42, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 48, 'M_and_A_to_M_and_M': 40}"
+94,"{'M_and_U_to_M_and_M': 39, 'U_and_M_to_U_and_U': 21, 'Polymerase_M_to_A': 53, 'A_and_M_to_A_and_A': 24, 'U_and_A_to_U_and_U': 31, 'A_and_U_to_A_and_A': 22, 'M_and_A_to_M_and_M': 57}"
+95,"{'Polymerase_M_to_A': 27, 'U_and_M_to_U_and_U': 24, 'M_and_U_to_M_and_M': 34, 'M_and_A_to_M_and_M': 14, 'U_and_A_to_U_and_U': 50, 'A_and_M_to_A_and_A': 18, 'A_and_U_to_A_and_A': 26}"
+96,"{'U_and_M_to_U_and_U': 28, 'M_and_U_to_M_and_M': 9, 'Polymerase_M_to_A': 10, 'A_and_U_to_A_and_A': 35, 'A_and_M_to_A_and_A': 8, 'U_and_A_to_U_and_U': 47, 'M_and_A_to_M_and_M': 2}"
+97,"{'Polymerase_M_to_A': 45, 'U_and_M_to_U_and_U': 38, 'M_and_U_to_M_and_M': 47, 'A_and_U_to_A_and_A': 27, 'A_and_M_to_A_and_A': 20, 'U_and_A_to_U_and_U': 30, 'M_and_A_to_M_and_M': 49}"
+98,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 37, 'A_and_M_to_A_and_A': 15, 'M_and_A_to_M_and_M': 31, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 35}"
+99,"{'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 54, 'U_and_M_to_U_and_U': 18, 'A_and_M_to_A_and_A': 26, 'U_and_A_to_U_and_U': 18, 'M_and_A_to_M_and_M': 49, 'A_and_U_to_A_and_A': 9}"
+100,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 45, 'U_and_A_to_U_and_U': 29, 'M_and_A_to_M_and_M': 44, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 35}"
+101,"{'M_and_U_to_M_and_M': 66, 'U_and_M_to_U_and_U': 44, 'Polymerase_M_to_A': 32, 'A_and_M_to_A_and_A': 14, 'U_and_A_to_U_and_U': 37, 'A_and_U_to_A_and_A': 25, 'M_and_A_to_M_and_M': 25}"
+102,"{'M_and_U_to_M_and_M': 35, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 43, 'M_and_A_to_M_and_M': 43, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 28}"
+103,"{'U_and_M_to_U_and_U': 12, 'Polymerase_M_to_A': 38, 'M_and_U_to_M_and_M': 15, 'A_and_U_to_A_and_A': 20, 'M_and_A_to_M_and_M': 54, 'A_and_M_to_A_and_A': 35, 'U_and_A_to_U_and_U': 8}"
+104,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 32, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 40, 'M_and_A_to_M_and_M': 23, 'U_and_A_to_U_and_U': 40}"
+105,"{'U_and_M_to_U_and_U': 37, 'Polymerase_M_to_A': 44, 'M_and_U_to_M_and_M': 34, 'U_and_A_to_U_and_U': 52, 'M_and_A_to_M_and_M': 27, 'A_and_M_to_A_and_A': 10, 'A_and_U_to_A_and_A': 35}"
+106,"{'Polymerase_M_to_A': 50, 'M_and_U_to_M_and_M': 21, 'U_and_M_to_U_and_U': 10, 'M_and_A_to_M_and_M': 55, 'A_and_M_to_A_and_A': 22, 'U_and_A_to_U_and_U': 22, 'A_and_U_to_A_and_A': 24}"
+107,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 33, 'U_and_A_to_U_and_U': 40, 'A_and_M_to_A_and_A': 12, 'A_and_U_to_A_and_A': 43, 'M_and_A_to_M_and_M': 28}"
+108,"{'U_and_M_to_U_and_U': 16, 'M_and_U_to_M_and_M': 26, 'Polymerase_M_to_A': 50, 'M_and_A_to_M_and_M': 59, 'A_and_M_to_A_and_A': 30, 'A_and_U_to_A_and_A': 10, 'U_and_A_to_U_and_U': 5}"
+109,"{'M_and_U_to_M_and_M': 31, 'Polymerase_M_to_A': 54, 'U_and_M_to_U_and_U': 16, 'M_and_A_to_M_and_M': 67, 'A_and_M_to_A_and_A': 30, 'U_and_A_to_U_and_U': 29, 'A_and_U_to_A_and_A': 28}"
+110,"{'M_and_U_to_M_and_M': 48, 'U_and_M_to_U_and_U': 43, 'Polymerase_M_to_A': 29, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 42, 'A_and_U_to_A_and_A': 24, 'M_and_A_to_M_and_M': 20}"
+111,"{'U_and_M_to_U_and_U': 24, 'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 50, 'A_and_U_to_A_and_A': 25, 'M_and_A_to_M_and_M': 67, 'A_and_M_to_A_and_A': 32, 'U_and_A_to_U_and_U': 17}"
+112,"{'M_and_U_to_M_and_M': 28, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 42, 'A_and_U_to_A_and_A': 23, 'A_and_M_to_A_and_A': 26, 'U_and_A_to_U_and_U': 17, 'M_and_A_to_M_and_M': 54}"
+113,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 40, 'Polymerase_M_to_A': 33, 'M_and_A_to_M_and_M': 36, 'A_and_U_to_A_and_A': 31, 'U_and_A_to_U_and_U': 27, 'A_and_M_to_A_and_A': 18}"
+114,"{'U_and_M_to_U_and_U': 49, 'M_and_U_to_M_and_M': 55, 'Polymerase_M_to_A': 24, 'A_and_U_to_A_and_A': 36, 'A_and_M_to_A_and_A': 10, 'U_and_A_to_U_and_U': 50, 'M_and_A_to_M_and_M': 8}"
+115,"{'M_and_U_to_M_and_M': 50, 'U_and_M_to_U_and_U': 52, 'Polymerase_M_to_A': 34, 'M_and_A_to_M_and_M': 16, 'U_and_A_to_U_and_U': 51, 'A_and_U_to_A_and_A': 38, 'A_and_M_to_A_and_A': 7}"
+116,"{'M_and_U_to_M_and_M': 40, 'Polymerase_M_to_A': 45, 'U_and_M_to_U_and_U': 28, 'M_and_A_to_M_and_M': 46, 'A_and_M_to_A_and_A': 24, 'A_and_U_to_A_and_A': 34, 'U_and_A_to_U_and_U': 32}"
+117,"{'U_and_M_to_U_and_U': 9, 'Polymerase_M_to_A': 38, 'M_and_U_to_M_and_M': 10, 'A_and_M_to_A_and_A': 26, 'U_and_A_to_U_and_U': 1, 'M_and_A_to_M_and_M': 58, 'A_and_U_to_A_and_A': 14}"
+118,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 42, 'Polymerase_M_to_A': 38, 'A_and_U_to_A_and_A': 25, 'U_and_A_to_U_and_U': 27, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 40}"
+119,"{'M_and_U_to_M_and_M': 19, 'U_and_M_to_U_and_U': 12, 'Polymerase_M_to_A': 49, 'A_and_M_to_A_and_A': 28, 'M_and_A_to_M_and_M': 62, 'A_and_U_to_A_and_A': 10, 'U_and_A_to_U_and_U': 2}"
+120,"{'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 44, 'U_and_M_to_U_and_U': 12, 'A_and_M_to_A_and_A': 32, 'M_and_A_to_M_and_M': 54, 'U_and_A_to_U_and_U': 17, 'A_and_U_to_A_and_A': 20}"
+121,"{'U_and_M_to_U_and_U': 39, 'M_and_U_to_M_and_M': 44, 'Polymerase_M_to_A': 30, 'A_and_M_to_A_and_A': 12, 'A_and_U_to_A_and_A': 31, 'U_and_A_to_U_and_U': 40, 'M_and_A_to_M_and_M': 19}"
+122,"{'Polymerase_M_to_A': 40, 'U_and_M_to_U_and_U': 29, 'U_and_A_to_U_and_U': 38, 'M_and_U_to_M_and_M': 46, 'A_and_U_to_A_and_A': 33, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 43}"
+123,"{'M_and_U_to_M_and_M': 39, 'U_and_M_to_U_and_U': 25, 'Polymerase_M_to_A': 36, 'A_and_M_to_A_and_A': 21, 'M_and_A_to_M_and_M': 29, 'A_and_U_to_A_and_A': 38, 'U_and_A_to_U_and_U': 41}"
+124,"{'U_and_M_to_U_and_U': 25, 'M_and_U_to_M_and_M': 43, 'Polymerase_M_to_A': 37, 'A_and_M_to_A_and_A': 15, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 40, 'M_and_A_to_M_and_M': 28}"
+125,"{'M_and_U_to_M_and_M': 26, 'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 51, 'A_and_U_to_A_and_A': 12, 'A_and_M_to_A_and_A': 34, 'M_and_A_to_M_and_M': 67, 'U_and_A_to_U_and_U': 3}"
+126,"{'U_and_M_to_U_and_U': 19, 'M_and_U_to_M_and_M': 25, 'Polymerase_M_to_A': 43, 'M_and_A_to_M_and_M': 55, 'A_and_M_to_A_and_A': 25, 'A_and_U_to_A_and_A': 12, 'U_and_A_to_U_and_U': 4}"
+127,"{'M_and_U_to_M_and_M': 27, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 49, 'M_and_A_to_M_and_M': 44, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 14, 'A_and_U_to_A_and_A': 16}"
+128,"{'M_and_U_to_M_and_M': 50, 'U_and_M_to_U_and_U': 49, 'Polymerase_M_to_A': 40, 'U_and_A_to_U_and_U': 33, 'M_and_A_to_M_and_M': 37, 'A_and_U_to_A_and_A': 27, 'A_and_M_to_A_and_A': 13}"
+129,"{'M_and_U_to_M_and_M': 39, 'U_and_M_to_U_and_U': 36, 'Polymerase_M_to_A': 33, 'U_and_A_to_U_and_U': 47, 'A_and_M_to_A_and_A': 15, 'M_and_A_to_M_and_M': 22, 'A_and_U_to_A_and_A': 34}"
+130,"{'M_and_U_to_M_and_M': 28, 'U_and_M_to_U_and_U': 32, 'Polymerase_M_to_A': 30, 'A_and_M_to_A_and_A': 17, 'U_and_A_to_U_and_U': 40, 'M_and_A_to_M_and_M': 20, 'A_and_U_to_A_and_A': 21}"
+131,"{'M_and_U_to_M_and_M': 44, 'U_and_M_to_U_and_U': 39, 'Polymerase_M_to_A': 30, 'M_and_A_to_M_and_M': 19, 'A_and_M_to_A_and_A': 11, 'U_and_A_to_U_and_U': 43, 'A_and_U_to_A_and_A': 31}"
+132,"{'M_and_U_to_M_and_M': 15, 'Polymerase_M_to_A': 43, 'U_and_M_to_U_and_U': 7, 'A_and_U_to_A_and_A': 11, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 62, 'U_and_A_to_U_and_U': 4}"
+133,"{'U_and_M_to_U_and_U': 31, 'Polymerase_M_to_A': 39, 'M_and_U_to_M_and_M': 39, 'A_and_U_to_A_and_A': 30, 'M_and_A_to_M_and_M': 17, 'A_and_M_to_A_and_A': 13, 'U_and_A_to_U_and_U': 65}"
+134,"{'M_and_U_to_M_and_M': 25, 'Polymerase_M_to_A': 48, 'M_and_A_to_M_and_M': 57, 'U_and_M_to_U_and_U': 12, 'A_and_M_to_A_and_A': 26, 'A_and_U_to_A_and_A': 27, 'U_and_A_to_U_and_U': 25}"
+135,"{'M_and_U_to_M_and_M': 34, 'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 44, 'U_and_A_to_U_and_U': 22, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 37, 'A_and_M_to_A_and_A': 16}"
+136,"{'U_and_M_to_U_and_U': 36, 'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 33, 'M_and_A_to_M_and_M': 15, 'A_and_M_to_A_and_A': 11, 'U_and_A_to_U_and_U': 53, 'A_and_U_to_A_and_A': 36}"
+137,"{'M_and_U_to_M_and_M': 37, 'U_and_M_to_U_and_U': 37, 'Polymerase_M_to_A': 25, 'M_and_A_to_M_and_M': 21, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 37, 'U_and_A_to_U_and_U': 39}"
+138,"{'M_and_U_to_M_and_M': 52, 'U_and_M_to_U_and_U': 45, 'Polymerase_M_to_A': 28, 'U_and_A_to_U_and_U': 48, 'A_and_M_to_A_and_A': 9, 'M_and_A_to_M_and_M': 7, 'A_and_U_to_A_and_A': 26}"
+139,"{'M_and_U_to_M_and_M': 35, 'U_and_M_to_U_and_U': 35, 'Polymerase_M_to_A': 41, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 38, 'M_and_A_to_M_and_M': 33, 'U_and_A_to_U_and_U': 48}"
+140,"{'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 38, 'A_and_M_to_A_and_A': 24, 'M_and_A_to_M_and_M': 32, 'U_and_M_to_U_and_U': 33, 'A_and_U_to_A_and_A': 20, 'U_and_A_to_U_and_U': 35}"
+141,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 35, 'Polymerase_M_to_A': 23, 'A_and_U_to_A_and_A': 26, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 15, 'U_and_A_to_U_and_U': 37}"
+142,"{'M_and_U_to_M_and_M': 55, 'U_and_M_to_U_and_U': 52, 'Polymerase_M_to_A': 20, 'A_and_U_to_A_and_A': 22, 'A_and_M_to_A_and_A': 6, 'M_and_A_to_M_and_M': 8, 'U_and_A_to_U_and_U': 33}"
+143,"{'Polymerase_M_to_A': 42, 'U_and_M_to_U_and_U': 54, 'M_and_U_to_M_and_M': 43, 'M_and_A_to_M_and_M': 46, 'A_and_U_to_A_and_A': 36, 'A_and_M_to_A_and_A': 13, 'U_and_A_to_U_and_U': 35}"
+144,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 29, 'A_and_U_to_A_and_A': 40, 'U_and_A_to_U_and_U': 47, 'M_and_A_to_M_and_M': 17, 'A_and_M_to_A_and_A': 10}"
+145,"{'M_and_U_to_M_and_M': 46, 'U_and_M_to_U_and_U': 42, 'Polymerase_M_to_A': 28, 'A_and_U_to_A_and_A': 32, 'U_and_A_to_U_and_U': 46, 'A_and_M_to_A_and_A': 8, 'M_and_A_to_M_and_M': 12}"
+146,"{'M_and_U_to_M_and_M': 20, 'Polymerase_M_to_A': 39, 'U_and_M_to_U_and_U': 23, 'U_and_A_to_U_and_U': 13, 'A_and_M_to_A_and_A': 25, 'M_and_A_to_M_and_M': 51, 'A_and_U_to_A_and_A': 16}"
+147,"{'U_and_M_to_U_and_U': 36, 'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 20, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 55, 'M_and_A_to_M_and_M': 7, 'A_and_U_to_A_and_A': 37}"
+148,"{'M_and_U_to_M_and_M': 58, 'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 53, 'U_and_A_to_U_and_U': 28, 'A_and_M_to_A_and_A': 22, 'M_and_A_to_M_and_M': 45, 'A_and_U_to_A_and_A': 13}"
+149,"{'U_and_M_to_U_and_U': 27, 'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 37, 'M_and_A_to_M_and_M': 35, 'A_and_M_to_A_and_A': 27, 'A_and_U_to_A_and_A': 21, 'U_and_A_to_U_and_U': 22}"
+150,"{'M_and_U_to_M_and_M': 20, 'Polymerase_M_to_A': 50, 'A_and_M_to_A_and_A': 23, 'U_and_M_to_U_and_U': 17, 'A_and_U_to_A_and_A': 21, 'M_and_A_to_M_and_M': 45, 'U_and_A_to_U_and_U': 28}"
+151,"{'M_and_U_to_M_and_M': 39, 'Polymerase_M_to_A': 32, 'U_and_M_to_U_and_U': 24, 'A_and_M_to_A_and_A': 24, 'A_and_U_to_A_and_A': 37, 'M_and_A_to_M_and_M': 27, 'U_and_A_to_U_and_U': 43}"
+152,"{'U_and_M_to_U_and_U': 19, 'Polymerase_M_to_A': 63, 'A_and_U_to_A_and_A': 22, 'U_and_A_to_U_and_U': 23, 'M_and_U_to_M_and_M': 33, 'M_and_A_to_M_and_M': 61, 'A_and_M_to_A_and_A': 20}"
+153,"{'M_and_U_to_M_and_M': 30, 'Polymerase_M_to_A': 48, 'M_and_A_to_M_and_M': 52, 'A_and_U_to_A_and_A': 25, 'U_and_M_to_U_and_U': 15, 'U_and_A_to_U_and_U': 28, 'A_and_M_to_A_and_A': 24}"
+154,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 39, 'A_and_M_to_A_and_A': 21, 'M_and_A_to_M_and_M': 45, 'U_and_A_to_U_and_U': 26, 'A_and_U_to_A_and_A': 22}"
+155,"{'M_and_U_to_M_and_M': 34, 'U_and_M_to_U_and_U': 32, 'Polymerase_M_to_A': 35, 'M_and_A_to_M_and_M': 33, 'A_and_M_to_A_and_A': 15, 'A_and_U_to_A_and_A': 42, 'U_and_A_to_U_and_U': 39}"
+156,"{'M_and_U_to_M_and_M': 24, 'U_and_M_to_U_and_U': 11, 'Polymerase_M_to_A': 49, 'A_and_M_to_A_and_A': 37, 'M_and_A_to_M_and_M': 59, 'U_and_A_to_U_and_U': 21, 'A_and_U_to_A_and_A': 20}"
+157,"{'U_and_M_to_U_and_U': 15, 'M_and_U_to_M_and_M': 22, 'Polymerase_M_to_A': 50, 'A_and_U_to_A_and_A': 9, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 61, 'U_and_A_to_U_and_U': 1}"
+158,"{'M_and_U_to_M_and_M': 28, 'U_and_M_to_U_and_U': 22, 'Polymerase_M_to_A': 37, 'A_and_M_to_A_and_A': 28, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 49, 'U_and_A_to_U_and_U': 24}"
+159,"{'U_and_M_to_U_and_U': 30, 'M_and_U_to_M_and_M': 39, 'Polymerase_M_to_A': 42, 'A_and_M_to_A_and_A': 17, 'M_and_A_to_M_and_M': 41, 'A_and_U_to_A_and_A': 31, 'U_and_A_to_U_and_U': 30}"
+160,"{'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 48, 'M_and_U_to_M_and_M': 35, 'U_and_A_to_U_and_U': 25, 'A_and_U_to_A_and_A': 30, 'A_and_M_to_A_and_A': 22, 'M_and_A_to_M_and_M': 51}"
+161,"{'M_and_U_to_M_and_M': 50, 'Polymerase_M_to_A': 31, 'U_and_M_to_U_and_U': 37, 'A_and_U_to_A_and_A': 34, 'A_and_M_to_A_and_A': 18, 'U_and_A_to_U_and_U': 52, 'M_and_A_to_M_and_M': 25}"
+162,"{'Polymerase_M_to_A': 47, 'M_and_U_to_M_and_M': 23, 'U_and_M_to_U_and_U': 12, 'M_and_A_to_M_and_M': 53, 'A_and_U_to_A_and_A': 15, 'A_and_M_to_A_and_A': 22, 'U_and_A_to_U_and_U': 11}"
+163,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 11, 'M_and_A_to_M_and_M': 20, 'A_and_U_to_A_and_A': 37, 'U_and_A_to_U_and_U': 48}"
+164,"{'U_and_M_to_U_and_U': 17, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 49, 'A_and_M_to_A_and_A': 20, 'A_and_U_to_A_and_A': 12, 'M_and_A_to_M_and_M': 43, 'U_and_A_to_U_and_U': 21}"
+165,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 18, 'A_and_U_to_A_and_A': 39, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 17, 'U_and_A_to_U_and_U': 48}"
+166,"{'U_and_M_to_U_and_U': 41, 'M_and_U_to_M_and_M': 46, 'Polymerase_M_to_A': 38, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 21, 'U_and_A_to_U_and_U': 51, 'A_and_U_to_A_and_A': 31}"
+167,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 25, 'Polymerase_M_to_A': 51, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 62, 'A_and_U_to_A_and_A': 16, 'U_and_A_to_U_and_U': 12}"
+168,"{'U_and_M_to_U_and_U': 34, 'M_and_U_to_M_and_M': 22, 'Polymerase_M_to_A': 16, 'A_and_M_to_A_and_A': 9, 'M_and_A_to_M_and_M': 3, 'A_and_U_to_A_and_A': 27, 'U_and_A_to_U_and_U': 44}"
+169,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 22, 'Polymerase_M_to_A': 51, 'M_and_A_to_M_and_M': 55, 'A_and_U_to_A_and_A': 22, 'U_and_A_to_U_and_U': 17, 'A_and_M_to_A_and_A': 19}"
+170,"{'U_and_M_to_U_and_U': 38, 'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 34, 'A_and_U_to_A_and_A': 31, 'A_and_M_to_A_and_A': 12, 'U_and_A_to_U_and_U': 48, 'M_and_A_to_M_and_M': 18}"
+171,"{'U_and_M_to_U_and_U': 36, 'Polymerase_M_to_A': 44, 'A_and_M_to_A_and_A': 15, 'M_and_U_to_M_and_M': 44, 'M_and_A_to_M_and_M': 49, 'A_and_U_to_A_and_A': 29, 'U_and_A_to_U_and_U': 25}"
+172,"{'M_and_U_to_M_and_M': 18, 'U_and_M_to_U_and_U': 10, 'Polymerase_M_to_A': 65, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 12, 'M_and_A_to_M_and_M': 76, 'U_and_A_to_U_and_U': 5}"
+173,"{'U_and_M_to_U_and_U': 6, 'M_and_U_to_M_and_M': 22, 'Polymerase_M_to_A': 46, 'U_and_A_to_U_and_U': 3, 'A_and_M_to_A_and_A': 37, 'M_and_A_to_M_and_M': 64, 'A_and_U_to_A_and_A': 2}"
+174,"{'U_and_M_to_U_and_U': 51, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 30, 'M_and_A_to_M_and_M': 11, 'U_and_A_to_U_and_U': 40, 'A_and_M_to_A_and_A': 5, 'A_and_U_to_A_and_A': 25}"
+175,"{'U_and_M_to_U_and_U': 42, 'M_and_U_to_M_and_M': 53, 'Polymerase_M_to_A': 49, 'U_and_A_to_U_and_U': 31, 'M_and_A_to_M_and_M': 41, 'A_and_M_to_A_and_A': 18, 'A_and_U_to_A_and_A': 32}"
+176,"{'Polymerase_M_to_A': 49, 'M_and_U_to_M_and_M': 17, 'U_and_M_to_U_and_U': 5, 'U_and_A_to_U_and_U': 6, 'A_and_M_to_A_and_A': 32, 'A_and_U_to_A_and_A': 9, 'M_and_A_to_M_and_M': 63}"
+177,"{'M_and_U_to_M_and_M': 42, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 31, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 24, 'A_and_U_to_A_and_A': 37, 'U_and_A_to_U_and_U': 63}"
+178,"{'M_and_U_to_M_and_M': 21, 'U_and_M_to_U_and_U': 7, 'Polymerase_M_to_A': 62, 'M_and_A_to_M_and_M': 75, 'A_and_M_to_A_and_A': 42, 'A_and_U_to_A_and_A': 1}"
+179,"{'M_and_U_to_M_and_M': 18, 'U_and_M_to_U_and_U': 7, 'Polymerase_M_to_A': 55, 'A_and_U_to_A_and_A': 4, 'A_and_M_to_A_and_A': 36, 'M_and_A_to_M_and_M': 74}"
+180,"{'M_and_U_to_M_and_M': 35, 'U_and_M_to_U_and_U': 32, 'Polymerase_M_to_A': 30, 'U_and_A_to_U_and_U': 51, 'A_and_U_to_A_and_A': 48, 'A_and_M_to_A_and_A': 8, 'M_and_A_to_M_and_M': 21}"
+181,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 51, 'A_and_M_to_A_and_A': 31, 'U_and_A_to_U_and_U': 33, 'A_and_U_to_A_and_A': 18, 'M_and_A_to_M_and_M': 51}"
+182,"{'M_and_U_to_M_and_M': 19, 'U_and_M_to_U_and_U': 13, 'Polymerase_M_to_A': 37, 'M_and_A_to_M_and_M': 55, 'A_and_M_to_A_and_A': 29, 'A_and_U_to_A_and_A': 20, 'U_and_A_to_U_and_U': 13}"
+183,"{'U_and_M_to_U_and_U': 19, 'M_and_U_to_M_and_M': 25, 'Polymerase_M_to_A': 46, 'A_and_M_to_A_and_A': 33, 'M_and_A_to_M_and_M': 62, 'A_and_U_to_A_and_A': 20, 'U_and_A_to_U_and_U': 11}"
+184,"{'U_and_M_to_U_and_U': 19, 'Polymerase_M_to_A': 33, 'M_and_U_to_M_and_M': 28, 'M_and_A_to_M_and_M': 44, 'U_and_A_to_U_and_U': 16, 'A_and_M_to_A_and_A': 27, 'A_and_U_to_A_and_A': 22}"
+185,"{'Polymerase_M_to_A': 31, 'M_and_A_to_M_and_M': 24, 'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 38, 'A_and_M_to_A_and_A': 16, 'A_and_U_to_A_and_A': 30, 'U_and_A_to_U_and_U': 43}"
+186,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 30, 'Polymerase_M_to_A': 27, 'M_and_A_to_M_and_M': 30, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 40, 'U_and_A_to_U_and_U': 39}"
+187,"{'M_and_U_to_M_and_M': 35, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 40, 'M_and_A_to_M_and_M': 46, 'A_and_U_to_A_and_A': 23, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 18}"
+188,"{'U_and_M_to_U_and_U': 38, 'Polymerase_M_to_A': 38, 'M_and_U_to_M_and_M': 48, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 52, 'A_and_U_to_A_and_A': 33, 'M_and_A_to_M_and_M': 19}"
+189,"{'M_and_U_to_M_and_M': 39, 'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 28, 'A_and_M_to_A_and_A': 13, 'U_and_A_to_U_and_U': 49, 'A_and_U_to_A_and_A': 31, 'M_and_A_to_M_and_M': 16}"
+190,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 27, 'U_and_A_to_U_and_U': 48, 'A_and_U_to_A_and_A': 29, 'M_and_A_to_M_and_M': 11, 'A_and_M_to_A_and_A': 12}"
+191,"{'U_and_M_to_U_and_U': 42, 'M_and_U_to_M_and_M': 46, 'Polymerase_M_to_A': 29, 'U_and_A_to_U_and_U': 47, 'A_and_M_to_A_and_A': 7, 'A_and_U_to_A_and_A': 33, 'M_and_A_to_M_and_M': 16}"
+192,"{'U_and_M_to_U_and_U': 33, 'M_and_U_to_M_and_M': 43, 'Polymerase_M_to_A': 33, 'A_and_U_to_A_and_A': 47, 'M_and_A_to_M_and_M': 28, 'A_and_M_to_A_and_A': 15, 'U_and_A_to_U_and_U': 52}"
+193,"{'U_and_M_to_U_and_U': 27, 'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 31, 'U_and_A_to_U_and_U': 41, 'A_and_U_to_A_and_A': 33, 'A_and_M_to_A_and_A': 19, 'M_and_A_to_M_and_M': 27}"
+194,"{'M_and_U_to_M_and_M': 18, 'Polymerase_M_to_A': 37, 'U_and_M_to_U_and_U': 21, 'A_and_M_to_A_and_A': 14, 'M_and_A_to_M_and_M': 19, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 54}"
+195,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 55, 'U_and_A_to_U_and_U': 21, 'A_and_U_to_A_and_A': 26, 'A_and_M_to_A_and_A': 23, 'M_and_A_to_M_and_M': 58}"
+196,"{'U_and_M_to_U_and_U': 33, 'M_and_U_to_M_and_M': 45, 'Polymerase_M_to_A': 40, 'A_and_M_to_A_and_A': 28, 'A_and_U_to_A_and_A': 37, 'M_and_A_to_M_and_M': 43, 'U_and_A_to_U_and_U': 43}"
+197,"{'U_and_M_to_U_and_U': 41, 'M_and_U_to_M_and_M': 47, 'Polymerase_M_to_A': 41, 'M_and_A_to_M_and_M': 32, 'U_and_A_to_U_and_U': 34, 'A_and_M_to_A_and_A': 16, 'A_and_U_to_A_and_A': 31}"
+198,"{'U_and_M_to_U_and_U': 12, 'M_and_U_to_M_and_M': 21, 'Polymerase_M_to_A': 56, 'A_and_U_to_A_and_A': 17, 'A_and_M_to_A_and_A': 37, 'M_and_A_to_M_and_M': 77, 'U_and_A_to_U_and_U': 11}"
+199,"{'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 55, 'A_and_M_to_A_and_A': 27, 'U_and_M_to_U_and_U': 20, 'A_and_U_to_A_and_A': 26, 'U_and_A_to_U_and_U': 25, 'M_and_A_to_M_and_M': 67}"
+200,"{'U_and_M_to_U_and_U': 36, 'M_and_U_to_M_and_M': 52, 'Polymerase_M_to_A': 34, 'M_and_A_to_M_and_M': 21, 'A_and_U_to_A_and_A': 19, 'U_and_A_to_U_and_U': 31, 'A_and_M_to_A_and_A': 12}"
+201,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 61, 'A_and_U_to_A_and_A': 17, 'M_and_A_to_M_and_M': 66, 'U_and_A_to_U_and_U': 17, 'A_and_M_to_A_and_A': 27}"
+202,"{'M_and_U_to_M_and_M': 50, 'U_and_M_to_U_and_U': 44, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 15, 'A_and_U_to_A_and_A': 34, 'M_and_A_to_M_and_M': 22, 'U_and_A_to_U_and_U': 46}"
+203,"{'M_and_U_to_M_and_M': 38, 'U_and_M_to_U_and_U': 23, 'Polymerase_M_to_A': 47, 'M_and_A_to_M_and_M': 45, 'U_and_A_to_U_and_U': 29, 'A_and_M_to_A_and_A': 25, 'A_and_U_to_A_and_A': 23}"
+204,"{'M_and_U_to_M_and_M': 40, 'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 49, 'A_and_U_to_A_and_A': 20, 'U_and_A_to_U_and_U': 22, 'A_and_M_to_A_and_A': 24, 'M_and_A_to_M_and_M': 47}"
+205,"{'M_and_U_to_M_and_M': 38, 'U_and_M_to_U_and_U': 28, 'Polymerase_M_to_A': 32, 'A_and_U_to_A_and_A': 28, 'M_and_A_to_M_and_M': 27, 'A_and_M_to_A_and_A': 18, 'U_and_A_to_U_and_U': 40}"
+206,"{'M_and_U_to_M_and_M': 36, 'U_and_M_to_U_and_U': 24, 'Polymerase_M_to_A': 36, 'M_and_A_to_M_and_M': 37, 'U_and_A_to_U_and_U': 35, 'A_and_U_to_A_and_A': 35, 'A_and_M_to_A_and_A': 19}"
+207,"{'U_and_M_to_U_and_U': 27, 'M_and_U_to_M_and_M': 43, 'Polymerase_M_to_A': 53, 'A_and_M_to_A_and_A': 18, 'U_and_A_to_U_and_U': 26, 'M_and_A_to_M_and_M': 41, 'A_and_U_to_A_and_A': 20}"
+208,"{'U_and_M_to_U_and_U': 21, 'M_and_U_to_M_and_M': 30, 'Polymerase_M_to_A': 30, 'A_and_U_to_A_and_A': 45, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 32, 'U_and_A_to_U_and_U': 43}"
+209,"{'U_and_M_to_U_and_U': 29, 'M_and_U_to_M_and_M': 40, 'Polymerase_M_to_A': 31, 'U_and_A_to_U_and_U': 54, 'A_and_U_to_A_and_A': 33, 'M_and_A_to_M_and_M': 22, 'A_and_M_to_A_and_A': 18}"
+210,"{'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 68, 'U_and_M_to_U_and_U': 12, 'U_and_A_to_U_and_U': 29, 'A_and_U_to_A_and_A': 22, 'A_and_M_to_A_and_A': 28, 'M_and_A_to_M_and_M': 66}"
+211,"{'M_and_U_to_M_and_M': 18, 'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 16, 'A_and_M_to_A_and_A': 10, 'U_and_A_to_U_and_U': 28, 'M_and_A_to_M_and_M': 3, 'A_and_U_to_A_and_A': 5}"
+212,"{'M_and_U_to_M_and_M': 43, 'U_and_M_to_U_and_U': 22, 'Polymerase_M_to_A': 51, 'U_and_A_to_U_and_U': 30, 'A_and_U_to_A_and_A': 18, 'A_and_M_to_A_and_A': 23, 'M_and_A_to_M_and_M': 41}"
+213,"{'U_and_M_to_U_and_U': 23, 'Polymerase_M_to_A': 47, 'M_and_U_to_M_and_M': 32, 'M_and_A_to_M_and_M': 63, 'A_and_U_to_A_and_A': 20, 'A_and_M_to_A_and_A': 31, 'U_and_A_to_U_and_U': 15}"
+214,"{'U_and_M_to_U_and_U': 43, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 23, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 48, 'M_and_A_to_M_and_M': 13, 'A_and_U_to_A_and_A': 33}"
+215,"{'U_and_M_to_U_and_U': 12, 'M_and_U_to_M_and_M': 14, 'Polymerase_M_to_A': 43, 'A_and_M_to_A_and_A': 28, 'M_and_A_to_M_and_M': 66, 'A_and_U_to_A_and_A': 23, 'U_and_A_to_U_and_U': 11}"
+216,"{'U_and_M_to_U_and_U': 27, 'M_and_U_to_M_and_M': 17, 'Polymerase_M_to_A': 21, 'A_and_M_to_A_and_A': 4, 'A_and_U_to_A_and_A': 36, 'U_and_A_to_U_and_U': 54, 'M_and_A_to_M_and_M': 1}"
+217,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 30, 'Polymerase_M_to_A': 49, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 22, 'M_and_A_to_M_and_M': 51, 'U_and_A_to_U_and_U': 9}"
+218,"{'Polymerase_M_to_A': 32, 'A_and_M_to_A_and_A': 27, 'M_and_U_to_M_and_M': 27, 'U_and_M_to_U_and_U': 28, 'M_and_A_to_M_and_M': 36, 'U_and_A_to_U_and_U': 30, 'A_and_U_to_A_and_A': 24}"
+219,"{'U_and_M_to_U_and_U': 41, 'M_and_U_to_M_and_M': 47, 'Polymerase_M_to_A': 39, 'A_and_U_to_A_and_A': 34, 'A_and_M_to_A_and_A': 12, 'M_and_A_to_M_and_M': 26, 'U_and_A_to_U_and_U': 32}"
+220,"{'U_and_M_to_U_and_U': 30, 'M_and_U_to_M_and_M': 23, 'Polymerase_M_to_A': 41, 'M_and_A_to_M_and_M': 37, 'A_and_U_to_A_and_A': 38, 'A_and_M_to_A_and_A': 14, 'U_and_A_to_U_and_U': 35}"
+221,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 42, 'Polymerase_M_to_A': 57, 'A_and_M_to_A_and_A': 25, 'M_and_A_to_M_and_M': 59, 'A_and_U_to_A_and_A': 23, 'U_and_A_to_U_and_U': 27}"
+222,"{'Polymerase_M_to_A': 48, 'U_and_M_to_U_and_U': 18, 'M_and_U_to_M_and_M': 32, 'M_and_A_to_M_and_M': 63, 'A_and_U_to_A_and_A': 15, 'A_and_M_to_A_and_A': 28, 'U_and_A_to_U_and_U': 14}"
+223,"{'M_and_U_to_M_and_M': 45, 'Polymerase_M_to_A': 45, 'U_and_M_to_U_and_U': 38, 'A_and_U_to_A_and_A': 21, 'U_and_A_to_U_and_U': 28, 'M_and_A_to_M_and_M': 42, 'A_and_M_to_A_and_A': 15}"
+224,"{'U_and_M_to_U_and_U': 28, 'M_and_U_to_M_and_M': 15, 'Polymerase_M_to_A': 19, 'A_and_U_to_A_and_A': 37, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 58, 'M_and_A_to_M_and_M': 6}"
+225,"{'M_and_U_to_M_and_M': 48, 'U_and_M_to_U_and_U': 39, 'Polymerase_M_to_A': 41, 'M_and_A_to_M_and_M': 33, 'A_and_U_to_A_and_A': 27, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 22}"
+226,"{'M_and_U_to_M_and_M': 39, 'U_and_M_to_U_and_U': 35, 'Polymerase_M_to_A': 41, 'U_and_A_to_U_and_U': 33, 'A_and_U_to_A_and_A': 40, 'M_and_A_to_M_and_M': 40, 'A_and_M_to_A_and_A': 15}"
+227,"{'U_and_M_to_U_and_U': 37, 'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 39, 'U_and_A_to_U_and_U': 35, 'A_and_M_to_A_and_A': 20, 'M_and_A_to_M_and_M': 36, 'A_and_U_to_A_and_A': 21}"
+228,"{'M_and_U_to_M_and_M': 25, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 35, 'M_and_A_to_M_and_M': 10, 'A_and_U_to_A_and_A': 29, 'A_and_M_to_A_and_A': 8, 'U_and_A_to_U_and_U': 59}"
+229,"{'M_and_U_to_M_and_M': 19, 'U_and_M_to_U_and_U': 11, 'Polymerase_M_to_A': 60, 'A_and_M_to_A_and_A': 29, 'A_and_U_to_A_and_A': 10, 'M_and_A_to_M_and_M': 75, 'U_and_A_to_U_and_U': 4}"
+230,"{'U_and_M_to_U_and_U': 45, 'Polymerase_M_to_A': 35, 'M_and_U_to_M_and_M': 51, 'A_and_M_to_A_and_A': 14, 'A_and_U_to_A_and_A': 35, 'U_and_A_to_U_and_U': 51, 'M_and_A_to_M_and_M': 26}"
+231,"{'M_and_U_to_M_and_M': 42, 'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 10, 'M_and_A_to_M_and_M': 22, 'U_and_A_to_U_and_U': 29, 'A_and_U_to_A_and_A': 21}"
+232,"{'U_and_M_to_U_and_U': 49, 'M_and_U_to_M_and_M': 54, 'Polymerase_M_to_A': 31, 'A_and_M_to_A_and_A': 12, 'M_and_A_to_M_and_M': 18, 'U_and_A_to_U_and_U': 37, 'A_and_U_to_A_and_A': 26}"
+233,"{'M_and_U_to_M_and_M': 17, 'U_and_M_to_U_and_U': 10, 'Polymerase_M_to_A': 51, 'A_and_M_to_A_and_A': 30, 'M_and_A_to_M_and_M': 69, 'A_and_U_to_A_and_A': 12, 'U_and_A_to_U_and_U': 4}"
+234,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 45, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 52, 'A_and_U_to_A_and_A': 22, 'U_and_A_to_U_and_U': 17}"
+235,"{'U_and_M_to_U_and_U': 34, 'M_and_U_to_M_and_M': 46, 'Polymerase_M_to_A': 38, 'A_and_M_to_A_and_A': 17, 'M_and_A_to_M_and_M': 31, 'A_and_U_to_A_and_A': 32, 'U_and_A_to_U_and_U': 46}"
+236,"{'U_and_M_to_U_and_U': 19, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 55, 'A_and_M_to_A_and_A': 30, 'M_and_A_to_M_and_M': 63, 'U_and_A_to_U_and_U': 8, 'A_and_U_to_A_and_A': 8}"
+237,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 23, 'Polymerase_M_to_A': 42, 'M_and_A_to_M_and_M': 44, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 24, 'U_and_A_to_U_and_U': 15}"
+238,"{'Polymerase_M_to_A': 41, 'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 37, 'U_and_A_to_U_and_U': 29, 'M_and_A_to_M_and_M': 37, 'A_and_U_to_A_and_A': 20, 'A_and_M_to_A_and_A': 13}"
+239,"{'M_and_U_to_M_and_M': 26, 'U_and_M_to_U_and_U': 25, 'Polymerase_M_to_A': 65, 'A_and_M_to_A_and_A': 26, 'A_and_U_to_A_and_A': 34, 'U_and_A_to_U_and_U': 21, 'M_and_A_to_M_and_M': 83}"
+240,"{'U_and_M_to_U_and_U': 21, 'M_and_U_to_M_and_M': 17, 'Polymerase_M_to_A': 26, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 48, 'M_and_A_to_M_and_M': 23, 'A_and_U_to_A_and_A': 30}"
+241,"{'U_and_M_to_U_and_U': 41, 'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 25, 'A_and_M_to_A_and_A': 14, 'A_and_U_to_A_and_A': 54, 'M_and_A_to_M_and_M': 20, 'U_and_A_to_U_and_U': 54}"
+242,"{'M_and_U_to_M_and_M': 36, 'U_and_M_to_U_and_U': 30, 'Polymerase_M_to_A': 35, 'M_and_A_to_M_and_M': 23, 'A_and_M_to_A_and_A': 11, 'U_and_A_to_U_and_U': 47, 'A_and_U_to_A_and_A': 35}"
+243,"{'M_and_U_to_M_and_M': 39, 'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 46, 'A_and_M_to_A_and_A': 21, 'M_and_A_to_M_and_M': 39, 'U_and_A_to_U_and_U': 33, 'A_and_U_to_A_and_A': 19}"
+244,"{'U_and_M_to_U_and_U': 25, 'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 46, 'U_and_A_to_U_and_U': 41, 'M_and_A_to_M_and_M': 42, 'A_and_M_to_A_and_A': 22, 'A_and_U_to_A_and_A': 38}"
+245,"{'M_and_U_to_M_and_M': 13, 'U_and_M_to_U_and_U': 8, 'Polymerase_M_to_A': 48, 'A_and_U_to_A_and_A': 15, 'A_and_M_to_A_and_A': 37, 'U_and_A_to_U_and_U': 5, 'M_and_A_to_M_and_M': 78}"
+246,"{'M_and_U_to_M_and_M': 26, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 62, 'M_and_A_to_M_and_M': 74, 'A_and_M_to_A_and_A': 30, 'U_and_A_to_U_and_U': 6, 'A_and_U_to_A_and_A': 10}"
+247,"{'U_and_M_to_U_and_U': 52, 'M_and_U_to_M_and_M': 51, 'Polymerase_M_to_A': 27, 'A_and_M_to_A_and_A': 10, 'A_and_U_to_A_and_A': 38, 'U_and_A_to_U_and_U': 50, 'M_and_A_to_M_and_M': 13}"
+248,"{'M_and_U_to_M_and_M': 19, 'U_and_M_to_U_and_U': 14, 'Polymerase_M_to_A': 54, 'A_and_U_to_A_and_A': 11, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 73, 'U_and_A_to_U_and_U': 2}"
+249,"{'U_and_M_to_U_and_U': 23, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 24, 'U_and_A_to_U_and_U': 45, 'A_and_M_to_A_and_A': 25, 'A_and_U_to_A_and_A': 33, 'M_and_A_to_M_and_M': 24}"
+250,"{'U_and_M_to_U_and_U': 47, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 24, 'U_and_A_to_U_and_U': 44, 'A_and_M_to_A_and_A': 8, 'M_and_A_to_M_and_M': 4, 'A_and_U_to_A_and_A': 17}"
+251,"{'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 45, 'U_and_M_to_U_and_U': 21, 'M_and_A_to_M_and_M': 30, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 33, 'U_and_A_to_U_and_U': 50}"
+252,"{'M_and_U_to_M_and_M': 34, 'U_and_M_to_U_and_U': 19, 'Polymerase_M_to_A': 49, 'A_and_M_to_A_and_A': 21, 'M_and_A_to_M_and_M': 51, 'U_and_A_to_U_and_U': 25, 'A_and_U_to_A_and_A': 21}"
+253,"{'U_and_M_to_U_and_U': 51, 'M_and_U_to_M_and_M': 46, 'Polymerase_M_to_A': 42, 'M_and_A_to_M_and_M': 40, 'A_and_M_to_A_and_A': 14, 'U_and_A_to_U_and_U': 20, 'A_and_U_to_A_and_A': 22}"
+254,"{'U_and_M_to_U_and_U': 48, 'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 19, 'A_and_U_to_A_and_A': 45, 'A_and_M_to_A_and_A': 1, 'M_and_A_to_M_and_M': 10, 'U_and_A_to_U_and_U': 46}"
+255,"{'U_and_M_to_U_and_U': 28, 'Polymerase_M_to_A': 23, 'M_and_U_to_M_and_M': 17, 'M_and_A_to_M_and_M': 9, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 43, 'A_and_U_to_A_and_A': 31}"
+256,"{'U_and_M_to_U_and_U': 41, 'M_and_U_to_M_and_M': 45, 'Polymerase_M_to_A': 35, 'M_and_A_to_M_and_M': 26, 'U_and_A_to_U_and_U': 37, 'A_and_M_to_A_and_A': 14, 'A_and_U_to_A_and_A': 27}"
+257,"{'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 56, 'U_and_M_to_U_and_U': 18, 'A_and_M_to_A_and_A': 29, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 25, 'M_and_A_to_M_and_M': 64}"
+258,"{'M_and_U_to_M_and_M': 38, 'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 45, 'M_and_A_to_M_and_M': 42, 'A_and_M_to_A_and_A': 17, 'U_and_A_to_U_and_U': 27, 'A_and_U_to_A_and_A': 26}"
+259,"{'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 23, 'U_and_M_to_U_and_U': 49, 'A_and_M_to_A_and_A': 8, 'M_and_A_to_M_and_M': 14, 'U_and_A_to_U_and_U': 39, 'A_and_U_to_A_and_A': 22}"
+260,"{'M_and_U_to_M_and_M': 27, 'U_and_M_to_U_and_U': 22, 'Polymerase_M_to_A': 38, 'A_and_M_to_A_and_A': 23, 'A_and_U_to_A_and_A': 34, 'M_and_A_to_M_and_M': 49, 'U_and_A_to_U_and_U': 24}"
+261,"{'U_and_M_to_U_and_U': 41, 'M_and_U_to_M_and_M': 42, 'Polymerase_M_to_A': 51, 'A_and_M_to_A_and_A': 22, 'M_and_A_to_M_and_M': 56, 'A_and_U_to_A_and_A': 22, 'U_and_A_to_U_and_U': 29}"
+262,"{'U_and_M_to_U_and_U': 43, 'M_and_U_to_M_and_M': 43, 'Polymerase_M_to_A': 32, 'M_and_A_to_M_and_M': 14, 'U_and_A_to_U_and_U': 48, 'A_and_M_to_A_and_A': 9, 'A_and_U_to_A_and_A': 34}"
+263,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 30, 'A_and_M_to_A_and_A': 21, 'M_and_A_to_M_and_M': 23, 'A_and_U_to_A_and_A': 26, 'U_and_A_to_U_and_U': 43}"
+264,"{'M_and_U_to_M_and_M': 22, 'U_and_M_to_U_and_U': 12, 'Polymerase_M_to_A': 53, 'A_and_M_to_A_and_A': 35, 'M_and_A_to_M_and_M': 74, 'A_and_U_to_A_and_A': 6, 'U_and_A_to_U_and_U': 2}"
+265,"{'Polymerase_M_to_A': 43, 'U_and_A_to_U_and_U': 49, 'U_and_M_to_U_and_U': 43, 'M_and_U_to_M_and_M': 58, 'A_and_M_to_A_and_A': 23, 'A_and_U_to_A_and_A': 28, 'M_and_A_to_M_and_M': 33}"
+266,"{'M_and_U_to_M_and_M': 23, 'U_and_M_to_U_and_U': 22, 'Polymerase_M_to_A': 18, 'U_and_A_to_U_and_U': 53, 'M_and_A_to_M_and_M': 3, 'A_and_M_to_A_and_A': 20, 'A_and_U_to_A_and_A': 19}"
+267,"{'U_and_M_to_U_and_U': 44, 'Polymerase_M_to_A': 26, 'M_and_U_to_M_and_M': 29, 'A_and_U_to_A_and_A': 40, 'U_and_A_to_U_and_U': 51, 'A_and_M_to_A_and_A': 19, 'M_and_A_to_M_and_M': 25}"
+268,"{'U_and_M_to_U_and_U': 24, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 35, 'U_and_A_to_U_and_U': 29, 'A_and_M_to_A_and_A': 15, 'A_and_U_to_A_and_A': 33, 'M_and_A_to_M_and_M': 35}"
+269,"{'M_and_U_to_M_and_M': 42, 'U_and_M_to_U_and_U': 24, 'Polymerase_M_to_A': 50, 'M_and_A_to_M_and_M': 47, 'U_and_A_to_U_and_U': 26, 'A_and_U_to_A_and_A': 19, 'A_and_M_to_A_and_A': 19}"
+270,"{'U_and_M_to_U_and_U': 36, 'M_and_U_to_M_and_M': 30, 'Polymerase_M_to_A': 21, 'A_and_U_to_A_and_A': 32, 'A_and_M_to_A_and_A': 8, 'U_and_A_to_U_and_U': 47, 'M_and_A_to_M_and_M': 6}"
+271,"{'M_and_U_to_M_and_M': 21, 'Polymerase_M_to_A': 55, 'U_and_M_to_U_and_U': 21, 'A_and_M_to_A_and_A': 21, 'A_and_U_to_A_and_A': 27, 'U_and_A_to_U_and_U': 13, 'M_and_A_to_M_and_M': 71}"
+272,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 45, 'A_and_M_to_A_and_A': 27, 'U_and_A_to_U_and_U': 21, 'A_and_U_to_A_and_A': 24, 'M_and_A_to_M_and_M': 53}"
+273,"{'Polymerase_M_to_A': 36, 'M_and_U_to_M_and_M': 25, 'U_and_M_to_U_and_U': 18, 'A_and_M_to_A_and_A': 33, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 56, 'U_and_A_to_U_and_U': 20}"
+274,"{'Polymerase_M_to_A': 50, 'M_and_U_to_M_and_M': 15, 'U_and_M_to_U_and_U': 4, 'A_and_M_to_A_and_A': 38, 'A_and_U_to_A_and_A': 9, 'U_and_A_to_U_and_U': 5, 'M_and_A_to_M_and_M': 71}"
+275,"{'M_and_U_to_M_and_M': 25, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 38, 'A_and_M_to_A_and_A': 26, 'U_and_A_to_U_and_U': 24, 'A_and_U_to_A_and_A': 28, 'M_and_A_to_M_and_M': 43}"
+276,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 21, 'Polymerase_M_to_A': 46, 'U_and_A_to_U_and_U': 21, 'M_and_A_to_M_and_M': 46, 'A_and_U_to_A_and_A': 27, 'A_and_M_to_A_and_A': 22}"
+277,"{'M_and_U_to_M_and_M': 28, 'U_and_M_to_U_and_U': 12, 'Polymerase_M_to_A': 45, 'A_and_U_to_A_and_A': 18, 'A_and_M_to_A_and_A': 19, 'U_and_A_to_U_and_U': 25, 'M_and_A_to_M_and_M': 46}"
+278,"{'U_and_M_to_U_and_U': 40, 'Polymerase_M_to_A': 40, 'M_and_U_to_M_and_M': 37, 'A_and_M_to_A_and_A': 17, 'U_and_A_to_U_and_U': 32, 'A_and_U_to_A_and_A': 36, 'M_and_A_to_M_and_M': 51}"
+279,"{'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 43, 'M_and_U_to_M_and_M': 46, 'A_and_U_to_A_and_A': 33, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 52, 'M_and_A_to_M_and_M': 34}"
+280,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 45, 'Polymerase_M_to_A': 32, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 43, 'M_and_A_to_M_and_M': 12, 'A_and_U_to_A_and_A': 22}"
+281,"{'U_and_M_to_U_and_U': 35, 'Polymerase_M_to_A': 50, 'M_and_U_to_M_and_M': 41, 'M_and_A_to_M_and_M': 40, 'A_and_U_to_A_and_A': 40, 'A_and_M_to_A_and_A': 8, 'U_and_A_to_U_and_U': 35}"
+282,"{'M_and_U_to_M_and_M': 45, 'U_and_M_to_U_and_U': 32, 'Polymerase_M_to_A': 50, 'A_and_M_to_A_and_A': 15, 'U_and_A_to_U_and_U': 33, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 41}"
+283,"{'M_and_U_to_M_and_M': 28, 'U_and_M_to_U_and_U': 18, 'Polymerase_M_to_A': 37, 'M_and_A_to_M_and_M': 55, 'U_and_A_to_U_and_U': 11, 'A_and_M_to_A_and_A': 26, 'A_and_U_to_A_and_A': 16}"
+284,"{'M_and_U_to_M_and_M': 26, 'Polymerase_M_to_A': 42, 'U_and_M_to_U_and_U': 34, 'M_and_A_to_M_and_M': 52, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 22, 'U_and_A_to_U_and_U': 16}"
+285,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 23, 'Polymerase_M_to_A': 52, 'A_and_M_to_A_and_A': 36, 'A_and_U_to_A_and_A': 12, 'M_and_A_to_M_and_M': 54, 'U_and_A_to_U_and_U': 14}"
+286,"{'U_and_M_to_U_and_U': 14, 'M_and_U_to_M_and_M': 20, 'Polymerase_M_to_A': 33, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 5, 'A_and_U_to_A_and_A': 13, 'M_and_A_to_M_and_M': 29}"
+287,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 32, 'M_and_A_to_M_and_M': 12, 'A_and_U_to_A_and_A': 16, 'A_and_M_to_A_and_A': 8, 'U_and_A_to_U_and_U': 43}"
+288,"{'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 43, 'U_and_M_to_U_and_U': 15, 'M_and_A_to_M_and_M': 46, 'A_and_M_to_A_and_A': 22, 'A_and_U_to_A_and_A': 9, 'U_and_A_to_U_and_U': 9}"
+289,"{'M_and_U_to_M_and_M': 27, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 47, 'U_and_A_to_U_and_U': 32, 'A_and_U_to_A_and_A': 33, 'A_and_M_to_A_and_A': 23, 'M_and_A_to_M_and_M': 47}"
+290,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 21, 'U_and_A_to_U_and_U': 56, 'A_and_M_to_A_and_A': 16, 'A_and_U_to_A_and_A': 33, 'M_and_A_to_M_and_M': 11}"
+291,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 48, 'Polymerase_M_to_A': 48, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 34, 'U_and_A_to_U_and_U': 52, 'M_and_A_to_M_and_M': 32}"
+292,"{'U_and_M_to_U_and_U': 37, 'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 23, 'U_and_A_to_U_and_U': 47, 'M_and_A_to_M_and_M': 7, 'A_and_U_to_A_and_A': 24, 'A_and_M_to_A_and_A': 9}"
+293,"{'M_and_U_to_M_and_M': 23, 'U_and_M_to_U_and_U': 8, 'Polymerase_M_to_A': 58, 'U_and_A_to_U_and_U': 13, 'A_and_M_to_A_and_A': 34, 'A_and_U_to_A_and_A': 13, 'M_and_A_to_M_and_M': 54}"
+294,"{'U_and_M_to_U_and_U': 21, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 33, 'A_and_U_to_A_and_A': 39, 'A_and_M_to_A_and_A': 22, 'M_and_A_to_M_and_M': 29, 'U_and_A_to_U_and_U': 37}"
+295,"{'Polymerase_M_to_A': 43, 'U_and_M_to_U_and_U': 30, 'M_and_U_to_M_and_M': 41, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 30, 'M_and_A_to_M_and_M': 39, 'A_and_U_to_A_and_A': 25}"
+296,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 13, 'Polymerase_M_to_A': 55, 'A_and_U_to_A_and_A': 25, 'M_and_A_to_M_and_M': 57, 'U_and_A_to_U_and_U': 26, 'A_and_M_to_A_and_A': 25}"
+297,"{'M_and_U_to_M_and_M': 24, 'U_and_M_to_U_and_U': 13, 'Polymerase_M_to_A': 45, 'M_and_A_to_M_and_M': 53, 'A_and_M_to_A_and_A': 31, 'A_and_U_to_A_and_A': 18, 'U_and_A_to_U_and_U': 16}"
+298,"{'U_and_M_to_U_and_U': 40, 'Polymerase_M_to_A': 17, 'M_and_U_to_M_and_M': 31, 'A_and_U_to_A_and_A': 20, 'U_and_A_to_U_and_U': 34, 'A_and_M_to_A_and_A': 5, 'M_and_A_to_M_and_M': 4}"
+299,"{'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 24, 'M_and_U_to_M_and_M': 22, 'A_and_U_to_A_and_A': 43, 'A_and_M_to_A_and_A': 10, 'M_and_A_to_M_and_M': 12, 'U_and_A_to_U_and_U': 53}"
+300,"{'M_and_U_to_M_and_M': 33, 'U_and_M_to_U_and_U': 25, 'Polymerase_M_to_A': 43, 'U_and_A_to_U_and_U': 12, 'A_and_M_to_A_and_A': 27, 'A_and_U_to_A_and_A': 19, 'M_and_A_to_M_and_M': 56}"
+301,"{'U_and_M_to_U_and_U': 37, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 29, 'A_and_U_to_A_and_A': 46, 'A_and_M_to_A_and_A': 10, 'U_and_A_to_U_and_U': 56, 'M_and_A_to_M_and_M': 17}"
+302,"{'U_and_M_to_U_and_U': 39, 'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 42, 'A_and_M_to_A_and_A': 23, 'A_and_U_to_A_and_A': 21, 'U_and_A_to_U_and_U': 25, 'M_and_A_to_M_and_M': 52}"
+303,"{'U_and_M_to_U_and_U': 50, 'M_and_U_to_M_and_M': 43, 'Polymerase_M_to_A': 28, 'A_and_M_to_A_and_A': 10, 'U_and_A_to_U_and_U': 47, 'A_and_U_to_A_and_A': 27, 'M_and_A_to_M_and_M': 14}"
+304,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 23, 'Polymerase_M_to_A': 22, 'A_and_M_to_A_and_A': 11, 'A_and_U_to_A_and_A': 38, 'M_and_A_to_M_and_M': 8, 'U_and_A_to_U_and_U': 54}"
+305,"{'M_and_U_to_M_and_M': 64, 'U_and_M_to_U_and_U': 50, 'Polymerase_M_to_A': 36, 'A_and_M_to_A_and_A': 5, 'U_and_A_to_U_and_U': 32, 'M_and_A_to_M_and_M': 10, 'A_and_U_to_A_and_A': 12}"
+306,"{'M_and_U_to_M_and_M': 15, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 20, 'M_and_A_to_M_and_M': 10, 'A_and_M_to_A_and_A': 12, 'A_and_U_to_A_and_A': 44, 'U_and_A_to_U_and_U': 59}"
+307,"{'U_and_M_to_U_and_U': 51, 'M_and_U_to_M_and_M': 46, 'Polymerase_M_to_A': 26, 'U_and_A_to_U_and_U': 45, 'A_and_U_to_A_and_A': 24, 'A_and_M_to_A_and_A': 4, 'M_and_A_to_M_and_M': 6}"
+308,"{'M_and_U_to_M_and_M': 37, 'U_and_M_to_U_and_U': 37, 'Polymerase_M_to_A': 35, 'A_and_M_to_A_and_A': 15, 'M_and_A_to_M_and_M': 38, 'A_and_U_to_A_and_A': 35, 'U_and_A_to_U_and_U': 27}"
+309,"{'M_and_U_to_M_and_M': 46, 'U_and_M_to_U_and_U': 35, 'Polymerase_M_to_A': 56, 'A_and_U_to_A_and_A': 27, 'A_and_M_to_A_and_A': 14, 'U_and_A_to_U_and_U': 26, 'M_and_A_to_M_and_M': 46}"
+310,"{'M_and_U_to_M_and_M': 35, 'U_and_M_to_U_and_U': 40, 'Polymerase_M_to_A': 23, 'A_and_M_to_A_and_A': 7, 'A_and_U_to_A_and_A': 42, 'M_and_A_to_M_and_M': 9, 'U_and_A_to_U_and_U': 45}"
+311,"{'M_and_U_to_M_and_M': 13, 'Polymerase_M_to_A': 51, 'U_and_M_to_U_and_U': 7, 'A_and_M_to_A_and_A': 39, 'M_and_A_to_M_and_M': 73, 'A_and_U_to_A_and_A': 18, 'U_and_A_to_U_and_U': 15}"
+312,"{'M_and_U_to_M_and_M': 24, 'U_and_M_to_U_and_U': 33, 'Polymerase_M_to_A': 19, 'M_and_A_to_M_and_M': 4, 'U_and_A_to_U_and_U': 35, 'A_and_M_to_A_and_A': 10, 'A_and_U_to_A_and_A': 10}"
+313,"{'U_and_M_to_U_and_U': 28, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 58, 'M_and_A_to_M_and_M': 66, 'U_and_A_to_U_and_U': 9, 'A_and_M_to_A_and_A': 21, 'A_and_U_to_A_and_A': 19}"
+314,"{'Polymerase_M_to_A': 56, 'M_and_U_to_M_and_M': 15, 'U_and_M_to_U_and_U': 11, 'M_and_A_to_M_and_M': 63, 'A_and_U_to_A_and_A': 13, 'A_and_M_to_A_and_A': 24, 'U_and_A_to_U_and_U': 3}"
+315,"{'M_and_U_to_M_and_M': 40, 'U_and_M_to_U_and_U': 40, 'Polymerase_M_to_A': 27, 'A_and_U_to_A_and_A': 45, 'U_and_A_to_U_and_U': 55, 'A_and_M_to_A_and_A': 8, 'M_and_A_to_M_and_M': 13}"
+316,"{'M_and_U_to_M_and_M': 12, 'Polymerase_M_to_A': 46, 'U_and_M_to_U_and_U': 3, 'A_and_M_to_A_and_A': 42, 'U_and_A_to_U_and_U': 2, 'M_and_A_to_M_and_M': 70, 'A_and_U_to_A_and_A': 8}"
+317,"{'U_and_M_to_U_and_U': 38, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 23, 'M_and_A_to_M_and_M': 15, 'A_and_M_to_A_and_A': 13, 'A_and_U_to_A_and_A': 47, 'U_and_A_to_U_and_U': 60}"
+318,"{'M_and_U_to_M_and_M': 20, 'U_and_M_to_U_and_U': 30, 'Polymerase_M_to_A': 27, 'M_and_A_to_M_and_M': 12, 'U_and_A_to_U_and_U': 60, 'A_and_M_to_A_and_A': 8, 'A_and_U_to_A_and_A': 45}"
+319,"{'M_and_U_to_M_and_M': 30, 'Polymerase_M_to_A': 28, 'U_and_M_to_U_and_U': 31, 'A_and_M_to_A_and_A': 17, 'U_and_A_to_U_and_U': 30, 'A_and_U_to_A_and_A': 40, 'M_and_A_to_M_and_M': 34}"
+320,"{'M_and_U_to_M_and_M': 26, 'U_and_M_to_U_and_U': 16, 'Polymerase_M_to_A': 59, 'M_and_A_to_M_and_M': 70, 'A_and_M_to_A_and_A': 25, 'U_and_A_to_U_and_U': 19, 'A_and_U_to_A_and_A': 22}"
+321,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 50, 'Polymerase_M_to_A': 50, 'A_and_M_to_A_and_A': 26, 'U_and_A_to_U_and_U': 41, 'M_and_A_to_M_and_M': 43, 'A_and_U_to_A_and_A': 25}"
+322,"{'U_and_M_to_U_and_U': 19, 'M_and_U_to_M_and_M': 27, 'Polymerase_M_to_A': 47, 'M_and_A_to_M_and_M': 57, 'A_and_U_to_A_and_A': 16, 'U_and_A_to_U_and_U': 9, 'A_and_M_to_A_and_A': 26}"
+323,"{'U_and_M_to_U_and_U': 33, 'M_and_U_to_M_and_M': 46, 'Polymerase_M_to_A': 49, 'M_and_A_to_M_and_M': 46, 'A_and_U_to_A_and_A': 26, 'A_and_M_to_A_and_A': 20, 'U_and_A_to_U_and_U': 31}"
+324,"{'U_and_M_to_U_and_U': 26, 'M_and_U_to_M_and_M': 18, 'Polymerase_M_to_A': 25, 'A_and_U_to_A_and_A': 39, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 17, 'U_and_A_to_U_and_U': 54}"
+325,"{'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 49, 'M_and_U_to_M_and_M': 29, 'A_and_U_to_A_and_A': 27, 'M_and_A_to_M_and_M': 54, 'A_and_M_to_A_and_A': 15, 'U_and_A_to_U_and_U': 15}"
+326,"{'M_and_U_to_M_and_M': 40, 'U_and_M_to_U_and_U': 23, 'Polymerase_M_to_A': 55, 'M_and_A_to_M_and_M': 49, 'A_and_U_to_A_and_A': 17, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 20}"
+327,"{'U_and_M_to_U_and_U': 13, 'M_and_U_to_M_and_M': 27, 'Polymerase_M_to_A': 43, 'M_and_A_to_M_and_M': 46, 'A_and_M_to_A_and_A': 25, 'U_and_A_to_U_and_U': 12, 'A_and_U_to_A_and_A': 12}"
+328,"{'U_and_M_to_U_and_U': 17, 'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 52, 'A_and_U_to_A_and_A': 5, 'A_and_M_to_A_and_A': 34, 'M_and_A_to_M_and_M': 57, 'U_and_A_to_U_and_U': 6}"
+329,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 35, 'A_and_U_to_A_and_A': 49, 'U_and_A_to_U_and_U': 70, 'M_and_A_to_M_and_M': 10, 'A_and_M_to_A_and_A': 7}"
+330,"{'M_and_U_to_M_and_M': 40, 'U_and_M_to_U_and_U': 37, 'Polymerase_M_to_A': 29, 'A_and_M_to_A_and_A': 16, 'A_and_U_to_A_and_A': 36, 'M_and_A_to_M_and_M': 20, 'U_and_A_to_U_and_U': 57}"
+331,"{'M_and_U_to_M_and_M': 27, 'U_and_M_to_U_and_U': 33, 'Polymerase_M_to_A': 31, 'A_and_U_to_A_and_A': 45, 'M_and_A_to_M_and_M': 15, 'U_and_A_to_U_and_U': 62, 'A_and_M_to_A_and_A': 9}"
+332,"{'U_and_M_to_U_and_U': 25, 'M_and_U_to_M_and_M': 16, 'Polymerase_M_to_A': 21, 'A_and_U_to_A_and_A': 58, 'U_and_A_to_U_and_U': 63, 'M_and_A_to_M_and_M': 13, 'A_and_M_to_A_and_A': 17}"
+333,"{'U_and_M_to_U_and_U': 28, 'M_and_U_to_M_and_M': 40, 'Polymerase_M_to_A': 42, 'M_and_A_to_M_and_M': 52, 'A_and_U_to_A_and_A': 27, 'U_and_A_to_U_and_U': 29, 'A_and_M_to_A_and_A': 20}"
+334,"{'U_and_M_to_U_and_U': 23, 'M_and_U_to_M_and_M': 37, 'Polymerase_M_to_A': 45, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 30, 'M_and_A_to_M_and_M': 37, 'A_and_U_to_A_and_A': 24}"
+335,"{'M_and_U_to_M_and_M': 49, 'U_and_M_to_U_and_U': 47, 'Polymerase_M_to_A': 46, 'U_and_A_to_U_and_U': 37, 'M_and_A_to_M_and_M': 42, 'A_and_U_to_A_and_A': 36, 'A_and_M_to_A_and_A': 13}"
+336,"{'U_and_M_to_U_and_U': 26, 'M_and_U_to_M_and_M': 25, 'Polymerase_M_to_A': 49, 'M_and_A_to_M_and_M': 53, 'A_and_U_to_A_and_A': 29, 'A_and_M_to_A_and_A': 12, 'U_and_A_to_U_and_U': 22}"
+337,"{'M_and_U_to_M_and_M': 57, 'Polymerase_M_to_A': 24, 'U_and_M_to_U_and_U': 49, 'A_and_M_to_A_and_A': 10, 'A_and_U_to_A_and_A': 24, 'M_and_A_to_M_and_M': 8, 'U_and_A_to_U_and_U': 47}"
+338,"{'U_and_M_to_U_and_U': 44, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 17, 'A_and_U_to_A_and_A': 27, 'U_and_A_to_U_and_U': 37, 'A_and_M_to_A_and_A': 9, 'M_and_A_to_M_and_M': 7}"
+339,"{'M_and_U_to_M_and_M': 33, 'U_and_M_to_U_and_U': 13, 'Polymerase_M_to_A': 51, 'U_and_A_to_U_and_U': 18, 'A_and_M_to_A_and_A': 30, 'A_and_U_to_A_and_A': 13, 'M_and_A_to_M_and_M': 56}"
+340,"{'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 45, 'M_and_U_to_M_and_M': 23, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 61, 'A_and_U_to_A_and_A': 24, 'U_and_A_to_U_and_U': 12}"
+341,"{'U_and_M_to_U_and_U': 45, 'M_and_U_to_M_and_M': 40, 'Polymerase_M_to_A': 32, 'M_and_A_to_M_and_M': 19, 'U_and_A_to_U_and_U': 53, 'A_and_M_to_A_and_A': 11, 'A_and_U_to_A_and_A': 34}"
+342,"{'M_and_U_to_M_and_M': 19, 'U_and_M_to_U_and_U': 30, 'Polymerase_M_to_A': 31, 'A_and_U_to_A_and_A': 29, 'M_and_A_to_M_and_M': 26, 'A_and_M_to_A_and_A': 19, 'U_and_A_to_U_and_U': 42}"
+343,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 22, 'A_and_U_to_A_and_A': 34, 'U_and_A_to_U_and_U': 21, 'M_and_A_to_M_and_M': 44}"
+344,"{'Polymerase_M_to_A': 38, 'M_and_U_to_M_and_M': 41, 'M_and_A_to_M_and_M': 34, 'U_and_M_to_U_and_U': 37, 'A_and_M_to_A_and_A': 21, 'A_and_U_to_A_and_A': 38, 'U_and_A_to_U_and_U': 45}"
+345,"{'Polymerase_M_to_A': 57, 'U_and_M_to_U_and_U': 21, 'M_and_U_to_M_and_M': 38, 'U_and_A_to_U_and_U': 33, 'A_and_M_to_A_and_A': 24, 'M_and_A_to_M_and_M': 58, 'A_and_U_to_A_and_A': 21}"
+346,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 53, 'A_and_M_to_A_and_A': 25, 'M_and_A_to_M_and_M': 59, 'U_and_A_to_U_and_U': 24, 'A_and_U_to_A_and_A': 25}"
+347,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 40, 'A_and_U_to_A_and_A': 21, 'M_and_A_to_M_and_M': 45, 'A_and_M_to_A_and_A': 20, 'U_and_A_to_U_and_U': 13}"
+348,"{'M_and_U_to_M_and_M': 54, 'Polymerase_M_to_A': 43, 'U_and_M_to_U_and_U': 35, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 43, 'M_and_A_to_M_and_M': 30, 'A_and_U_to_A_and_A': 31}"
+349,"{'M_and_U_to_M_and_M': 47, 'U_and_M_to_U_and_U': 50, 'Polymerase_M_to_A': 29, 'A_and_U_to_A_and_A': 25, 'M_and_A_to_M_and_M': 12, 'A_and_M_to_A_and_A': 6, 'U_and_A_to_U_and_U': 40}"
+350,"{'M_and_U_to_M_and_M': 47, 'U_and_M_to_U_and_U': 53, 'Polymerase_M_to_A': 26, 'A_and_M_to_A_and_A': 17, 'M_and_A_to_M_and_M': 30, 'A_and_U_to_A_and_A': 32, 'U_and_A_to_U_and_U': 22}"
+351,"{'M_and_U_to_M_and_M': 36, 'U_and_M_to_U_and_U': 30, 'Polymerase_M_to_A': 53, 'M_and_A_to_M_and_M': 58, 'A_and_U_to_A_and_A': 26, 'A_and_M_to_A_and_A': 19, 'U_and_A_to_U_and_U': 22}"
+352,"{'M_and_U_to_M_and_M': 39, 'U_and_M_to_U_and_U': 18, 'Polymerase_M_to_A': 52, 'A_and_U_to_A_and_A': 13, 'M_and_A_to_M_and_M': 45, 'U_and_A_to_U_and_U': 24, 'A_and_M_to_A_and_A': 21}"
+353,"{'M_and_U_to_M_and_M': 18, 'U_and_M_to_U_and_U': 9, 'Polymerase_M_to_A': 57, 'M_and_A_to_M_and_M': 78, 'A_and_U_to_A_and_A': 7, 'A_and_M_to_A_and_A': 30, 'U_and_A_to_U_and_U': 2}"
+354,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 53, 'U_and_A_to_U_and_U': 18, 'A_and_U_to_A_and_A': 21, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 51}"
+355,"{'U_and_M_to_U_and_U': 38, 'M_and_U_to_M_and_M': 43, 'Polymerase_M_to_A': 20, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 29, 'A_and_U_to_A_and_A': 19, 'M_and_A_to_M_and_M': 10}"
+356,"{'M_and_U_to_M_and_M': 46, 'U_and_M_to_U_and_U': 30, 'Polymerase_M_to_A': 32, 'A_and_U_to_A_and_A': 18, 'A_and_M_to_A_and_A': 12, 'M_and_A_to_M_and_M': 13, 'U_and_A_to_U_and_U': 44}"
+357,"{'U_and_M_to_U_and_U': 17, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 57, 'A_and_M_to_A_and_A': 24, 'M_and_A_to_M_and_M': 59, 'A_and_U_to_A_and_A': 18, 'U_and_A_to_U_and_U': 21}"
+358,"{'U_and_M_to_U_and_U': 9, 'M_and_U_to_M_and_M': 22, 'Polymerase_M_to_A': 58, 'A_and_U_to_A_and_A': 9, 'A_and_M_to_A_and_A': 30, 'U_and_A_to_U_and_U': 7, 'M_and_A_to_M_and_M': 68}"
+359,"{'M_and_U_to_M_and_M': 28, 'U_and_M_to_U_and_U': 11, 'Polymerase_M_to_A': 51, 'A_and_U_to_A_and_A': 16, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 46, 'U_and_A_to_U_and_U': 25}"
+360,"{'U_and_M_to_U_and_U': 6, 'M_and_U_to_M_and_M': 14, 'Polymerase_M_to_A': 52, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 6, 'M_and_A_to_M_and_M': 53}"
+361,"{'U_and_M_to_U_and_U': 45, 'M_and_U_to_M_and_M': 39, 'Polymerase_M_to_A': 28, 'A_and_M_to_A_and_A': 12, 'U_and_A_to_U_and_U': 37, 'A_and_U_to_A_and_A': 34, 'M_and_A_to_M_and_M': 26}"
+362,"{'M_and_U_to_M_and_M': 20, 'Polymerase_M_to_A': 67, 'M_and_A_to_M_and_M': 77, 'A_and_M_to_A_and_A': 33, 'U_and_M_to_U_and_U': 9, 'A_and_U_to_A_and_A': 10, 'U_and_A_to_U_and_U': 6}"
+363,"{'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 36, 'U_and_M_to_U_and_U': 27, 'A_and_M_to_A_and_A': 24, 'A_and_U_to_A_and_A': 28, 'M_and_A_to_M_and_M': 37, 'U_and_A_to_U_and_U': 34}"
+364,"{'Polymerase_M_to_A': 37, 'M_and_U_to_M_and_M': 19, 'U_and_M_to_U_and_U': 18, 'A_and_U_to_A_and_A': 26, 'U_and_A_to_U_and_U': 49, 'M_and_A_to_M_and_M': 21, 'A_and_M_to_A_and_A': 16}"
+365,"{'U_and_M_to_U_and_U': 40, 'M_and_U_to_M_and_M': 44, 'Polymerase_M_to_A': 38, 'M_and_A_to_M_and_M': 39, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 47, 'A_and_U_to_A_and_A': 46}"
+366,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 16, 'Polymerase_M_to_A': 53, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 58, 'U_and_A_to_U_and_U': 17, 'A_and_U_to_A_and_A': 14}"
+367,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 42, 'A_and_U_to_A_and_A': 26, 'A_and_M_to_A_and_A': 20, 'M_and_A_to_M_and_M': 46, 'U_and_A_to_U_and_U': 19}"
+368,"{'U_and_M_to_U_and_U': 56, 'M_and_U_to_M_and_M': 55, 'Polymerase_M_to_A': 21, 'A_and_M_to_A_and_A': 7, 'M_and_A_to_M_and_M': 15, 'A_and_U_to_A_and_A': 24, 'U_and_A_to_U_and_U': 31}"
+369,"{'U_and_M_to_U_and_U': 34, 'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 46, 'A_and_M_to_A_and_A': 20, 'M_and_A_to_M_and_M': 47, 'A_and_U_to_A_and_A': 17, 'U_and_A_to_U_and_U': 12}"
+370,"{'U_and_M_to_U_and_U': 19, 'M_and_U_to_M_and_M': 23, 'Polymerase_M_to_A': 55, 'A_and_M_to_A_and_A': 23, 'M_and_A_to_M_and_M': 60, 'A_and_U_to_A_and_A': 20, 'U_and_A_to_U_and_U': 9}"
+371,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 30, 'U_and_A_to_U_and_U': 49, 'A_and_U_to_A_and_A': 40, 'A_and_M_to_A_and_A': 14, 'M_and_A_to_M_and_M': 21}"
+372,"{'U_and_M_to_U_and_U': 21, 'Polymerase_M_to_A': 55, 'M_and_U_to_M_and_M': 30, 'A_and_M_to_A_and_A': 22, 'M_and_A_to_M_and_M': 62, 'A_and_U_to_A_and_A': 25, 'U_and_A_to_U_and_U': 20}"
+373,"{'M_and_U_to_M_and_M': 21, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 38, 'A_and_U_to_A_and_A': 7, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 48, 'U_and_A_to_U_and_U': 5}"
+374,"{'M_and_U_to_M_and_M': 12, 'U_and_M_to_U_and_U': 12, 'Polymerase_M_to_A': 57, 'A_and_M_to_A_and_A': 19, 'M_and_A_to_M_and_M': 70, 'A_and_U_to_A_and_A': 20, 'U_and_A_to_U_and_U': 5}"
+375,"{'U_and_M_to_U_and_U': 18, 'Polymerase_M_to_A': 42, 'M_and_U_to_M_and_M': 34, 'A_and_M_to_A_and_A': 28, 'U_and_A_to_U_and_U': 27, 'A_and_U_to_A_and_A': 19, 'M_and_A_to_M_and_M': 41}"
+376,"{'U_and_M_to_U_and_U': 11, 'M_and_U_to_M_and_M': 21, 'Polymerase_M_to_A': 51, 'M_and_A_to_M_and_M': 63, 'A_and_M_to_A_and_A': 24, 'A_and_U_to_A_and_A': 8, 'U_and_A_to_U_and_U': 6}"
+377,"{'M_and_U_to_M_and_M': 65, 'U_and_M_to_U_and_U': 40, 'Polymerase_M_to_A': 51, 'A_and_M_to_A_and_A': 15, 'U_and_A_to_U_and_U': 49, 'M_and_A_to_M_and_M': 30, 'A_and_U_to_A_and_A': 23}"
+378,"{'U_and_M_to_U_and_U': 10, 'M_and_U_to_M_and_M': 20, 'Polymerase_M_to_A': 54, 'U_and_A_to_U_and_U': 2, 'A_and_M_to_A_and_A': 37, 'A_and_U_to_A_and_A': 6, 'M_and_A_to_M_and_M': 70}"
+379,"{'U_and_M_to_U_and_U': 43, 'M_and_U_to_M_and_M': 49, 'Polymerase_M_to_A': 35, 'M_and_A_to_M_and_M': 33, 'A_and_M_to_A_and_A': 19, 'U_and_A_to_U_and_U': 37, 'A_and_U_to_A_and_A': 31}"
+380,"{'U_and_M_to_U_and_U': 36, 'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 43, 'A_and_M_to_A_and_A': 8, 'A_and_U_to_A_and_A': 37, 'U_and_A_to_U_and_U': 55, 'M_and_A_to_M_and_M': 25}"
+381,"{'U_and_M_to_U_and_U': 49, 'M_and_U_to_M_and_M': 45, 'Polymerase_M_to_A': 35, 'A_and_M_to_A_and_A': 13, 'M_and_A_to_M_and_M': 27, 'A_and_U_to_A_and_A': 16, 'U_and_A_to_U_and_U': 31}"
+382,"{'Polymerase_M_to_A': 39, 'U_and_M_to_U_and_U': 21, 'U_and_A_to_U_and_U': 35, 'M_and_U_to_M_and_M': 29, 'A_and_M_to_A_and_A': 17, 'M_and_A_to_M_and_M': 31, 'A_and_U_to_A_and_A': 33}"
+383,"{'U_and_M_to_U_and_U': 30, 'M_and_U_to_M_and_M': 46, 'Polymerase_M_to_A': 52, 'A_and_U_to_A_and_A': 31, 'M_and_A_to_M_and_M': 36, 'A_and_M_to_A_and_A': 17, 'U_and_A_to_U_and_U': 44}"
+384,"{'M_and_U_to_M_and_M': 27, 'Polymerase_M_to_A': 32, 'U_and_M_to_U_and_U': 32, 'A_and_U_to_A_and_A': 44, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 27, 'U_and_A_to_U_and_U': 48}"
+385,"{'U_and_M_to_U_and_U': 45, 'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 39, 'U_and_A_to_U_and_U': 37, 'M_and_A_to_M_and_M': 37, 'A_and_M_to_A_and_A': 15, 'A_and_U_to_A_and_A': 31}"
+386,"{'M_and_U_to_M_and_M': 33, 'U_and_M_to_U_and_U': 32, 'Polymerase_M_to_A': 48, 'M_and_A_to_M_and_M': 38, 'A_and_M_to_A_and_A': 10, 'U_and_A_to_U_and_U': 18, 'A_and_U_to_A_and_A': 20}"
+387,"{'U_and_M_to_U_and_U': 17, 'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 48, 'A_and_U_to_A_and_A': 17, 'A_and_M_to_A_and_A': 34, 'U_and_A_to_U_and_U': 9, 'M_and_A_to_M_and_M': 74}"
+388,"{'U_and_M_to_U_and_U': 20, 'M_and_U_to_M_and_M': 19, 'Polymerase_M_to_A': 37, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 49, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 10}"
+389,"{'M_and_U_to_M_and_M': 26, 'Polymerase_M_to_A': 45, 'M_and_A_to_M_and_M': 50, 'U_and_M_to_U_and_U': 15, 'A_and_U_to_A_and_A': 25, 'A_and_M_to_A_and_A': 29, 'U_and_A_to_U_and_U': 31}"
+390,"{'M_and_U_to_M_and_M': 39, 'U_and_M_to_U_and_U': 35, 'Polymerase_M_to_A': 40, 'A_and_M_to_A_and_A': 20, 'M_and_A_to_M_and_M': 37, 'A_and_U_to_A_and_A': 26, 'U_and_A_to_U_and_U': 30}"
+391,"{'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 53, 'M_and_U_to_M_and_M': 30, 'A_and_M_to_A_and_A': 36, 'M_and_A_to_M_and_M': 69, 'A_and_U_to_A_and_A': 17, 'U_and_A_to_U_and_U': 12}"
+392,"{'U_and_M_to_U_and_U': 33, 'M_and_U_to_M_and_M': 51, 'Polymerase_M_to_A': 41, 'U_and_A_to_U_and_U': 44, 'A_and_M_to_A_and_A': 13, 'A_and_U_to_A_and_A': 34, 'M_and_A_to_M_and_M': 25}"
+393,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 47, 'Polymerase_M_to_A': 39, 'U_and_A_to_U_and_U': 42, 'A_and_U_to_A_and_A': 33, 'M_and_A_to_M_and_M': 36, 'A_and_M_to_A_and_A': 10}"
+394,"{'U_and_M_to_U_and_U': 13, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 61, 'A_and_M_to_A_and_A': 30, 'M_and_A_to_M_and_M': 62, 'U_and_A_to_U_and_U': 20, 'A_and_U_to_A_and_A': 20}"
+395,"{'U_and_M_to_U_and_U': 11, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 41, 'A_and_M_to_A_and_A': 26, 'A_and_U_to_A_and_A': 19, 'M_and_A_to_M_and_M': 49, 'U_and_A_to_U_and_U': 26}"
+396,"{'U_and_M_to_U_and_U': 43, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 37, 'A_and_U_to_A_and_A': 27, 'A_and_M_to_A_and_A': 15, 'M_and_A_to_M_and_M': 41, 'U_and_A_to_U_and_U': 23}"
+397,"{'U_and_M_to_U_and_U': 38, 'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 24, 'A_and_M_to_A_and_A': 4, 'U_and_A_to_U_and_U': 49, 'A_and_U_to_A_and_A': 35, 'M_and_A_to_M_and_M': 8}"
+398,"{'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 42, 'U_and_M_to_U_and_U': 27, 'M_and_A_to_M_and_M': 31, 'A_and_M_to_A_and_A': 20, 'U_and_A_to_U_and_U': 45, 'A_and_U_to_A_and_A': 35}"
+399,"{'M_and_U_to_M_and_M': 49, 'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 32, 'A_and_U_to_A_and_A': 40, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 57, 'M_and_A_to_M_and_M': 14}"
+400,"{'M_and_U_to_M_and_M': 19, 'U_and_M_to_U_and_U': 13, 'Polymerase_M_to_A': 52, 'A_and_M_to_A_and_A': 39, 'A_and_U_to_A_and_A': 17, 'M_and_A_to_M_and_M': 80, 'U_and_A_to_U_and_U': 8}"
+401,"{'M_and_U_to_M_and_M': 38, 'U_and_M_to_U_and_U': 44, 'Polymerase_M_to_A': 38, 'A_and_M_to_A_and_A': 20, 'A_and_U_to_A_and_A': 32, 'M_and_A_to_M_and_M': 35, 'U_and_A_to_U_and_U': 44}"
+402,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 57, 'Polymerase_M_to_A': 39, 'M_and_A_to_M_and_M': 20, 'U_and_A_to_U_and_U': 41, 'A_and_M_to_A_and_A': 14, 'A_and_U_to_A_and_A': 15}"
+403,"{'U_and_M_to_U_and_U': 48, 'M_and_U_to_M_and_M': 44, 'Polymerase_M_to_A': 31, 'M_and_A_to_M_and_M': 33, 'U_and_A_to_U_and_U': 43, 'A_and_M_to_A_and_A': 13, 'A_and_U_to_A_and_A': 39}"
+404,"{'M_and_U_to_M_and_M': 37, 'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 41, 'M_and_A_to_M_and_M': 35, 'U_and_A_to_U_and_U': 47, 'A_and_U_to_A_and_A': 39, 'A_and_M_to_A_and_A': 17}"
+405,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 35, 'Polymerase_M_to_A': 30, 'M_and_A_to_M_and_M': 14, 'A_and_U_to_A_and_A': 37, 'A_and_M_to_A_and_A': 11, 'U_and_A_to_U_and_U': 61}"
+406,"{'M_and_U_to_M_and_M': 25, 'U_and_M_to_U_and_U': 14, 'Polymerase_M_to_A': 51, 'A_and_U_to_A_and_A': 16, 'A_and_M_to_A_and_A': 33, 'M_and_A_to_M_and_M': 63, 'U_and_A_to_U_and_U': 13}"
+407,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 37, 'Polymerase_M_to_A': 27, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 38, 'M_and_A_to_M_and_M': 20, 'A_and_U_to_A_and_A': 37}"
+408,"{'U_and_M_to_U_and_U': 42, 'Polymerase_M_to_A': 38, 'M_and_U_to_M_and_M': 46, 'M_and_A_to_M_and_M': 18, 'A_and_U_to_A_and_A': 37, 'U_and_A_to_U_and_U': 59, 'A_and_M_to_A_and_A': 15}"
+409,"{'M_and_U_to_M_and_M': 22, 'U_and_M_to_U_and_U': 12, 'Polymerase_M_to_A': 55, 'A_and_U_to_A_and_A': 11, 'M_and_A_to_M_and_M': 65, 'A_and_M_to_A_and_A': 28, 'U_and_A_to_U_and_U': 6}"
+410,"{'Polymerase_M_to_A': 44, 'U_and_M_to_U_and_U': 23, 'A_and_U_to_A_and_A': 10, 'M_and_A_to_M_and_M': 47, 'M_and_U_to_M_and_M': 25, 'A_and_M_to_A_and_A': 27, 'U_and_A_to_U_and_U': 22}"
+411,"{'M_and_U_to_M_and_M': 39, 'U_and_M_to_U_and_U': 33, 'Polymerase_M_to_A': 30, 'A_and_U_to_A_and_A': 36, 'A_and_M_to_A_and_A': 17, 'M_and_A_to_M_and_M': 23, 'U_and_A_to_U_and_U': 53}"
+412,"{'U_and_M_to_U_and_U': 42, 'M_and_U_to_M_and_M': 37, 'Polymerase_M_to_A': 37, 'A_and_U_to_A_and_A': 25, 'M_and_A_to_M_and_M': 39, 'A_and_M_to_A_and_A': 18, 'U_and_A_to_U_and_U': 22}"
+413,"{'U_and_M_to_U_and_U': 30, 'M_and_U_to_M_and_M': 18, 'Polymerase_M_to_A': 21, 'A_and_M_to_A_and_A': 10, 'A_and_U_to_A_and_A': 25, 'U_and_A_to_U_and_U': 43, 'M_and_A_to_M_and_M': 11}"
+414,"{'Polymerase_M_to_A': 32, 'A_and_U_to_A_and_A': 39, 'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 29, 'M_and_A_to_M_and_M': 24, 'A_and_M_to_A_and_A': 19, 'U_and_A_to_U_and_U': 49}"
+415,"{'M_and_U_to_M_and_M': 16, 'U_and_M_to_U_and_U': 7, 'Polymerase_M_to_A': 49, 'A_and_M_to_A_and_A': 42, 'U_and_A_to_U_and_U': 2, 'M_and_A_to_M_and_M': 69, 'A_and_U_to_A_and_A': 7}"
+416,"{'U_and_M_to_U_and_U': 14, 'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 43, 'U_and_A_to_U_and_U': 32, 'A_and_M_to_A_and_A': 23, 'M_and_A_to_M_and_M': 41, 'A_and_U_to_A_and_A': 23}"
+417,"{'U_and_M_to_U_and_U': 38, 'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 30, 'U_and_A_to_U_and_U': 49, 'A_and_U_to_A_and_A': 34, 'M_and_A_to_M_and_M': 17, 'A_and_M_to_A_and_A': 12}"
+418,"{'U_and_M_to_U_and_U': 12, 'M_and_U_to_M_and_M': 27, 'Polymerase_M_to_A': 54, 'U_and_A_to_U_and_U': 17, 'M_and_A_to_M_and_M': 65, 'A_and_M_to_A_and_A': 24, 'A_and_U_to_A_and_A': 16}"
+419,"{'U_and_M_to_U_and_U': 37, 'Polymerase_M_to_A': 19, 'M_and_U_to_M_and_M': 45, 'A_and_M_to_A_and_A': 20, 'A_and_U_to_A_and_A': 41, 'U_and_A_to_U_and_U': 55, 'M_and_A_to_M_and_M': 18}"
+420,"{'U_and_M_to_U_and_U': 39, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 29, 'U_and_A_to_U_and_U': 44, 'A_and_M_to_A_and_A': 7, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 13}"
+421,"{'M_and_U_to_M_and_M': 28, 'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 32, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 36, 'M_and_A_to_M_and_M': 33, 'U_and_A_to_U_and_U': 38}"
+422,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 19, 'Polymerase_M_to_A': 51, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 52, 'U_and_A_to_U_and_U': 10, 'A_and_U_to_A_and_A': 12}"
+423,"{'U_and_M_to_U_and_U': 19, 'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 61, 'M_and_A_to_M_and_M': 67, 'U_and_A_to_U_and_U': 17, 'A_and_U_to_A_and_A': 21, 'A_and_M_to_A_and_A': 28}"
+424,"{'Polymerase_M_to_A': 32, 'M_and_U_to_M_and_M': 18, 'A_and_M_to_A_and_A': 14, 'U_and_M_to_U_and_U': 21, 'A_and_U_to_A_and_A': 28, 'M_and_A_to_M_and_M': 15, 'U_and_A_to_U_and_U': 45}"
+425,"{'U_and_M_to_U_and_U': 38, 'M_and_U_to_M_and_M': 50, 'Polymerase_M_to_A': 37, 'U_and_A_to_U_and_U': 27, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 25, 'M_and_A_to_M_and_M': 34}"
+426,"{'U_and_M_to_U_and_U': 30, 'M_and_U_to_M_and_M': 51, 'Polymerase_M_to_A': 39, 'A_and_U_to_A_and_A': 21, 'U_and_A_to_U_and_U': 33, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 33}"
+427,"{'U_and_M_to_U_and_U': 29, 'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 33, 'M_and_A_to_M_and_M': 43, 'A_and_U_to_A_and_A': 37, 'U_and_A_to_U_and_U': 39, 'A_and_M_to_A_and_A': 26}"
+428,"{'U_and_M_to_U_and_U': 36, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 31, 'M_and_A_to_M_and_M': 25, 'A_and_M_to_A_and_A': 15, 'A_and_U_to_A_and_A': 42, 'U_and_A_to_U_and_U': 46}"
+429,"{'M_and_U_to_M_and_M': 21, 'U_and_M_to_U_and_U': 14, 'Polymerase_M_to_A': 43, 'A_and_M_to_A_and_A': 34, 'A_and_U_to_A_and_A': 20, 'M_and_A_to_M_and_M': 68, 'U_and_A_to_U_and_U': 13}"
+430,"{'U_and_M_to_U_and_U': 19, 'Polymerase_M_to_A': 54, 'M_and_U_to_M_and_M': 26, 'A_and_U_to_A_and_A': 27, 'A_and_M_to_A_and_A': 30, 'M_and_A_to_M_and_M': 66, 'U_and_A_to_U_and_U': 19}"
+431,"{'M_and_U_to_M_and_M': 40, 'U_and_M_to_U_and_U': 33, 'Polymerase_M_to_A': 42, 'A_and_U_to_A_and_A': 28, 'A_and_M_to_A_and_A': 9, 'M_and_A_to_M_and_M': 32, 'U_and_A_to_U_and_U': 25}"
+432,"{'U_and_M_to_U_and_U': 29, 'M_and_U_to_M_and_M': 30, 'Polymerase_M_to_A': 45, 'A_and_M_to_A_and_A': 37, 'A_and_U_to_A_and_A': 19, 'U_and_A_to_U_and_U': 5, 'M_and_A_to_M_and_M': 64}"
+433,"{'U_and_M_to_U_and_U': 27, 'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 25, 'A_and_M_to_A_and_A': 7, 'A_and_U_to_A_and_A': 35, 'M_and_A_to_M_and_M': 8, 'U_and_A_to_U_and_U': 53}"
+434,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 39, 'Polymerase_M_to_A': 43, 'A_and_U_to_A_and_A': 25, 'M_and_A_to_M_and_M': 47, 'U_and_A_to_U_and_U': 17, 'A_and_M_to_A_and_A': 18}"
+435,"{'M_and_U_to_M_and_M': 18, 'U_and_M_to_U_and_U': 14, 'Polymerase_M_to_A': 38, 'A_and_M_to_A_and_A': 28, 'A_and_U_to_A_and_A': 18, 'U_and_A_to_U_and_U': 7, 'M_and_A_to_M_and_M': 60}"
+436,"{'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 46, 'U_and_M_to_U_and_U': 37, 'A_and_U_to_A_and_A': 32, 'A_and_M_to_A_and_A': 21, 'M_and_A_to_M_and_M': 45, 'U_and_A_to_U_and_U': 45}"
+437,"{'M_and_U_to_M_and_M': 34, 'U_and_M_to_U_and_U': 36, 'Polymerase_M_to_A': 27, 'A_and_M_to_A_and_A': 18, 'A_and_U_to_A_and_A': 41, 'M_and_A_to_M_and_M': 25, 'U_and_A_to_U_and_U': 46}"
+438,"{'M_and_U_to_M_and_M': 41, 'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 57, 'M_and_A_to_M_and_M': 64, 'A_and_U_to_A_and_A': 26, 'U_and_A_to_U_and_U': 18, 'A_and_M_to_A_and_A': 16}"
+439,"{'M_and_U_to_M_and_M': 41, 'U_and_M_to_U_and_U': 37, 'Polymerase_M_to_A': 51, 'A_and_U_to_A_and_A': 32, 'M_and_A_to_M_and_M': 42, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 43}"
+440,"{'U_and_M_to_U_and_U': 38, 'M_and_U_to_M_and_M': 45, 'Polymerase_M_to_A': 40, 'U_and_A_to_U_and_U': 37, 'M_and_A_to_M_and_M': 39, 'A_and_U_to_A_and_A': 40, 'A_and_M_to_A_and_A': 16}"
+441,"{'Polymerase_M_to_A': 32, 'U_and_M_to_U_and_U': 43, 'M_and_U_to_M_and_M': 36, 'U_and_A_to_U_and_U': 46, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 35, 'M_and_A_to_M_and_M': 21}"
+442,"{'M_and_U_to_M_and_M': 34, 'U_and_M_to_U_and_U': 39, 'Polymerase_M_to_A': 29, 'A_and_U_to_A_and_A': 41, 'U_and_A_to_U_and_U': 49, 'M_and_A_to_M_and_M': 18, 'A_and_M_to_A_and_A': 12}"
+443,"{'M_and_U_to_M_and_M': 53, 'U_and_M_to_U_and_U': 45, 'Polymerase_M_to_A': 48, 'A_and_U_to_A_and_A': 32, 'A_and_M_to_A_and_A': 8, 'M_and_A_to_M_and_M': 25, 'U_and_A_to_U_and_U': 48}"
+444,"{'U_and_M_to_U_and_U': 47, 'Polymerase_M_to_A': 46, 'M_and_U_to_M_and_M': 50, 'A_and_M_to_A_and_A': 13, 'U_and_A_to_U_and_U': 41, 'A_and_U_to_A_and_A': 30, 'M_and_A_to_M_and_M': 32}"
+445,"{'U_and_M_to_U_and_U': 23, 'M_and_U_to_M_and_M': 11, 'Polymerase_M_to_A': 15, 'M_and_A_to_M_and_M': 5, 'A_and_U_to_A_and_A': 37, 'A_and_M_to_A_and_A': 12, 'U_and_A_to_U_and_U': 56}"
+446,"{'M_and_U_to_M_and_M': 24, 'U_and_M_to_U_and_U': 19, 'Polymerase_M_to_A': 50, 'U_and_A_to_U_and_U': 23, 'A_and_U_to_A_and_A': 33, 'M_and_A_to_M_and_M': 53, 'A_and_M_to_A_and_A': 20}"
+447,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 45, 'A_and_M_to_A_and_A': 14, 'A_and_U_to_A_and_A': 38, 'U_and_A_to_U_and_U': 58, 'M_and_A_to_M_and_M': 28}"
+448,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 13, 'Polymerase_M_to_A': 53, 'M_and_A_to_M_and_M': 56, 'A_and_M_to_A_and_A': 35, 'U_and_A_to_U_and_U': 18, 'A_and_U_to_A_and_A': 15}"
+449,"{'M_and_U_to_M_and_M': 21, 'Polymerase_M_to_A': 60, 'M_and_A_to_M_and_M': 80, 'U_and_M_to_U_and_U': 13, 'A_and_U_to_A_and_A': 15, 'A_and_M_to_A_and_A': 34, 'U_and_A_to_U_and_U': 9}"
+450,"{'M_and_U_to_M_and_M': 47, 'U_and_M_to_U_and_U': 38, 'Polymerase_M_to_A': 37, 'M_and_A_to_M_and_M': 29, 'A_and_M_to_A_and_A': 11, 'A_and_U_to_A_and_A': 39, 'U_and_A_to_U_and_U': 45}"
+451,"{'M_and_U_to_M_and_M': 39, 'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 53, 'M_and_A_to_M_and_M': 53, 'A_and_M_to_A_and_A': 25, 'A_and_U_to_A_and_A': 15, 'U_and_A_to_U_and_U': 24}"
+452,"{'Polymerase_M_to_A': 26, 'U_and_M_to_U_and_U': 38, 'A_and_U_to_A_and_A': 38, 'M_and_U_to_M_and_M': 44, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 57, 'M_and_A_to_M_and_M': 17}"
+453,"{'U_and_M_to_U_and_U': 21, 'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 63, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 63, 'A_and_U_to_A_and_A': 21, 'U_and_A_to_U_and_U': 31}"
+454,"{'U_and_M_to_U_and_U': 30, 'M_and_U_to_M_and_M': 37, 'Polymerase_M_to_A': 47, 'M_and_A_to_M_and_M': 55, 'U_and_A_to_U_and_U': 22, 'A_and_M_to_A_and_A': 21, 'A_and_U_to_A_and_A': 23}"
+455,"{'M_and_U_to_M_and_M': 30, 'Polymerase_M_to_A': 53, 'U_and_M_to_U_and_U': 17, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 44, 'U_and_A_to_U_and_U': 27, 'A_and_U_to_A_and_A': 28}"
+456,"{'U_and_M_to_U_and_U': 33, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 44, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 46, 'A_and_U_to_A_and_A': 8, 'U_and_A_to_U_and_U': 1}"
+457,"{'M_and_U_to_M_and_M': 22, 'U_and_M_to_U_and_U': 7, 'Polymerase_M_to_A': 57, 'A_and_M_to_A_and_A': 46, 'M_and_A_to_M_and_M': 75, 'U_and_A_to_U_and_U': 4, 'A_and_U_to_A_and_A': 4}"
+458,"{'M_and_U_to_M_and_M': 17, 'Polymerase_M_to_A': 25, 'U_and_M_to_U_and_U': 26, 'M_and_A_to_M_and_M': 14, 'A_and_M_to_A_and_A': 15, 'U_and_A_to_U_and_U': 44, 'A_and_U_to_A_and_A': 34}"
+459,"{'U_and_M_to_U_and_U': 41, 'M_and_U_to_M_and_M': 43, 'Polymerase_M_to_A': 29, 'A_and_U_to_A_and_A': 47, 'U_and_A_to_U_and_U': 49, 'M_and_A_to_M_and_M': 16, 'A_and_M_to_A_and_A': 8}"
+460,"{'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 25, 'U_and_A_to_U_and_U': 55, 'M_and_A_to_M_and_M': 5, 'M_and_U_to_M_and_M': 20, 'A_and_M_to_A_and_A': 5, 'A_and_U_to_A_and_A': 34}"
+461,"{'M_and_U_to_M_and_M': 33, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 43, 'A_and_U_to_A_and_A': 27, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 31, 'M_and_A_to_M_and_M': 49}"
+462,"{'U_and_M_to_U_and_U': 57, 'M_and_U_to_M_and_M': 50, 'Polymerase_M_to_A': 39, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 35, 'M_and_A_to_M_and_M': 29, 'A_and_U_to_A_and_A': 28}"
+463,"{'U_and_M_to_U_and_U': 15, 'M_and_U_to_M_and_M': 17, 'Polymerase_M_to_A': 48, 'U_and_A_to_U_and_U': 7, 'A_and_U_to_A_and_A': 20, 'A_and_M_to_A_and_A': 25, 'M_and_A_to_M_and_M': 60}"
+464,"{'U_and_M_to_U_and_U': 42, 'M_and_U_to_M_and_M': 49, 'Polymerase_M_to_A': 40, 'A_and_M_to_A_and_A': 15, 'M_and_A_to_M_and_M': 26, 'A_and_U_to_A_and_A': 22, 'U_and_A_to_U_and_U': 33}"
+465,"{'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 34, 'M_and_U_to_M_and_M': 42, 'M_and_A_to_M_and_M': 35, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 28, 'A_and_U_to_A_and_A': 27}"
+466,"{'M_and_U_to_M_and_M': 35, 'U_and_M_to_U_and_U': 45, 'Polymerase_M_to_A': 33, 'M_and_A_to_M_and_M': 19, 'A_and_M_to_A_and_A': 5, 'A_and_U_to_A_and_A': 22, 'U_and_A_to_U_and_U': 38}"
+467,"{'Polymerase_M_to_A': 51, 'U_and_M_to_U_and_U': 8, 'M_and_U_to_M_and_M': 10, 'M_and_A_to_M_and_M': 67, 'A_and_U_to_A_and_A': 21, 'U_and_A_to_U_and_U': 9, 'A_and_M_to_A_and_A': 28}"
+468,"{'U_and_M_to_U_and_U': 13, 'M_and_U_to_M_and_M': 31, 'Polymerase_M_to_A': 47, 'A_and_M_to_A_and_A': 31, 'U_and_A_to_U_and_U': 7, 'A_and_U_to_A_and_A': 4, 'M_and_A_to_M_and_M': 52}"
+469,"{'U_and_M_to_U_and_U': 19, 'Polymerase_M_to_A': 20, 'A_and_U_to_A_and_A': 19, 'M_and_U_to_M_and_M': 10, 'U_and_A_to_U_and_U': 44, 'A_and_M_to_A_and_A': 7, 'M_and_A_to_M_and_M': 2}"
+470,"{'U_and_M_to_U_and_U': 40, 'M_and_U_to_M_and_M': 39, 'Polymerase_M_to_A': 23, 'U_and_A_to_U_and_U': 43, 'A_and_M_to_A_and_A': 11, 'A_and_U_to_A_and_A': 36, 'M_and_A_to_M_and_M': 13}"
+471,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 27, 'Polymerase_M_to_A': 23, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 14, 'U_and_A_to_U_and_U': 51, 'A_and_U_to_A_and_A': 26}"
+472,"{'U_and_M_to_U_and_U': 23, 'M_and_U_to_M_and_M': 21, 'Polymerase_M_to_A': 46, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 58, 'A_and_U_to_A_and_A': 14, 'U_and_A_to_U_and_U': 4}"
+473,"{'U_and_M_to_U_and_U': 30, 'M_and_U_to_M_and_M': 20, 'Polymerase_M_to_A': 21, 'U_and_A_to_U_and_U': 64, 'A_and_M_to_A_and_A': 10, 'A_and_U_to_A_and_A': 41, 'M_and_A_to_M_and_M': 6}"
+474,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 19, 'Polymerase_M_to_A': 23, 'A_and_U_to_A_and_A': 25, 'A_and_M_to_A_and_A': 10, 'U_and_A_to_U_and_U': 41, 'M_and_A_to_M_and_M': 12}"
+475,"{'M_and_U_to_M_and_M': 42, 'U_and_M_to_U_and_U': 41, 'Polymerase_M_to_A': 45, 'U_and_A_to_U_and_U': 29, 'M_and_A_to_M_and_M': 48, 'A_and_U_to_A_and_A': 31, 'A_and_M_to_A_and_A': 21}"
+476,"{'M_and_U_to_M_and_M': 51, 'U_and_M_to_U_and_U': 47, 'Polymerase_M_to_A': 27, 'A_and_M_to_A_and_A': 8, 'A_and_U_to_A_and_A': 34, 'U_and_A_to_U_and_U': 41, 'M_and_A_to_M_and_M': 22}"
+477,"{'U_and_M_to_U_and_U': 25, 'M_and_U_to_M_and_M': 43, 'Polymerase_M_to_A': 51, 'M_and_A_to_M_and_M': 41, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 24, 'U_and_A_to_U_and_U': 37}"
+478,"{'M_and_U_to_M_and_M': 46, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 20, 'U_and_M_to_U_and_U': 39, 'U_and_A_to_U_and_U': 48, 'A_and_U_to_A_and_A': 34, 'M_and_A_to_M_and_M': 20}"
+479,"{'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 37, 'U_and_A_to_U_and_U': 28, 'M_and_A_to_M_and_M': 46, 'U_and_M_to_U_and_U': 16, 'A_and_U_to_A_and_A': 20}"
+480,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 54, 'Polymerase_M_to_A': 31, 'A_and_M_to_A_and_A': 10, 'M_and_A_to_M_and_M': 22, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 40}"
+481,"{'M_and_U_to_M_and_M': 41, 'U_and_M_to_U_and_U': 36, 'Polymerase_M_to_A': 27, 'A_and_U_to_A_and_A': 26, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 46, 'M_and_A_to_M_and_M': 17}"
+482,"{'Polymerase_M_to_A': 40, 'U_and_M_to_U_and_U': 28, 'M_and_U_to_M_and_M': 42, 'M_and_A_to_M_and_M': 36, 'A_and_U_to_A_and_A': 32, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 45}"
+483,"{'M_and_U_to_M_and_M': 28, 'U_and_M_to_U_and_U': 17, 'Polymerase_M_to_A': 34, 'A_and_U_to_A_and_A': 35, 'M_and_A_to_M_and_M': 34, 'A_and_M_to_A_and_A': 29, 'U_and_A_to_U_and_U': 34}"
+484,"{'M_and_U_to_M_and_M': 35, 'U_and_M_to_U_and_U': 30, 'Polymerase_M_to_A': 30, 'A_and_U_to_A_and_A': 42, 'U_and_A_to_U_and_U': 37, 'A_and_M_to_A_and_A': 15, 'M_and_A_to_M_and_M': 24}"
+485,"{'M_and_U_to_M_and_M': 44, 'U_and_M_to_U_and_U': 33, 'Polymerase_M_to_A': 35, 'A_and_M_to_A_and_A': 20, 'U_and_A_to_U_and_U': 49, 'M_and_A_to_M_and_M': 24, 'A_and_U_to_A_and_A': 43}"
+486,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 30, 'M_and_A_to_M_and_M': 10, 'A_and_U_to_A_and_A': 31, 'U_and_A_to_U_and_U': 58, 'A_and_M_to_A_and_A': 15}"
+487,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 21, 'A_and_U_to_A_and_A': 27, 'M_and_A_to_M_and_M': 20, 'U_and_A_to_U_and_U': 62}"
+488,"{'Polymerase_M_to_A': 65, 'U_and_M_to_U_and_U': 7, 'A_and_M_to_A_and_A': 35, 'M_and_U_to_M_and_M': 23, 'U_and_A_to_U_and_U': 8, 'M_and_A_to_M_and_M': 80, 'A_and_U_to_A_and_A': 6}"
+489,"{'M_and_U_to_M_and_M': 21, 'Polymerase_M_to_A': 62, 'M_and_A_to_M_and_M': 75, 'U_and_M_to_U_and_U': 13, 'A_and_M_to_A_and_A': 26, 'A_and_U_to_A_and_A': 12, 'U_and_A_to_U_and_U': 5}"
+490,"{'U_and_M_to_U_and_U': 34, 'M_and_U_to_M_and_M': 31, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 25, 'U_and_A_to_U_and_U': 32, 'A_and_U_to_A_and_A': 21}"
+491,"{'U_and_M_to_U_and_U': 24, 'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 30, 'U_and_A_to_U_and_U': 45, 'A_and_U_to_A_and_A': 41, 'A_and_M_to_A_and_A': 13, 'M_and_A_to_M_and_M': 25}"
+492,"{'U_and_M_to_U_and_U': 24, 'M_and_U_to_M_and_M': 25, 'Polymerase_M_to_A': 52, 'A_and_M_to_A_and_A': 13, 'A_and_U_to_A_and_A': 29, 'M_and_A_to_M_and_M': 52, 'U_and_A_to_U_and_U': 15}"
+493,"{'M_and_U_to_M_and_M': 38, 'U_and_M_to_U_and_U': 33, 'Polymerase_M_to_A': 30, 'A_and_M_to_A_and_A': 7, 'U_and_A_to_U_and_U': 52, 'A_and_U_to_A_and_A': 34, 'M_and_A_to_M_and_M': 9}"
+494,"{'U_and_M_to_U_and_U': 30, 'M_and_U_to_M_and_M': 25, 'Polymerase_M_to_A': 24, 'A_and_M_to_A_and_A': 12, 'M_and_A_to_M_and_M': 7, 'U_and_A_to_U_and_U': 48, 'A_and_U_to_A_and_A': 27}"
+495,"{'U_and_M_to_U_and_U': 26, 'M_and_U_to_M_and_M': 21, 'Polymerase_M_to_A': 33, 'M_and_A_to_M_and_M': 46, 'A_and_M_to_A_and_A': 21, 'A_and_U_to_A_and_A': 36, 'U_and_A_to_U_and_U': 20}"
+496,"{'M_and_U_to_M_and_M': 34, 'U_and_M_to_U_and_U': 32, 'Polymerase_M_to_A': 41, 'A_and_M_to_A_and_A': 25, 'U_and_A_to_U_and_U': 25, 'A_and_U_to_A_and_A': 13, 'M_and_A_to_M_and_M': 38}"
+497,"{'U_and_M_to_U_and_U': 33, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 42, 'M_and_A_to_M_and_M': 36, 'U_and_A_to_U_and_U': 33, 'A_and_U_to_A_and_A': 28, 'A_and_M_to_A_and_A': 14}"
+498,"{'M_and_U_to_M_and_M': 13, 'U_and_M_to_U_and_U': 16, 'Polymerase_M_to_A': 24, 'M_and_A_to_M_and_M': 14, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 60, 'A_and_U_to_A_and_A': 41}"
+499,"{'U_and_M_to_U_and_U': 33, 'Polymerase_M_to_A': 28, 'A_and_M_to_A_and_A': 13, 'M_and_U_to_M_and_M': 30, 'M_and_A_to_M_and_M': 11, 'A_and_U_to_A_and_A': 36, 'U_and_A_to_U_and_U': 57}"
+500,"{'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 33, 'A_and_M_to_A_and_A': 19, 'M_and_U_to_M_and_M': 29, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 42, 'U_and_A_to_U_and_U': 18}"
+501,"{'M_and_U_to_M_and_M': 23, 'U_and_M_to_U_and_U': 17, 'Polymerase_M_to_A': 38, 'A_and_U_to_A_and_A': 13, 'A_and_M_to_A_and_A': 33, 'U_and_A_to_U_and_U': 4, 'M_and_A_to_M_and_M': 62}"
+502,"{'U_and_M_to_U_and_U': 19, 'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 45, 'M_and_A_to_M_and_M': 50, 'A_and_U_to_A_and_A': 26, 'A_and_M_to_A_and_A': 18, 'U_and_A_to_U_and_U': 21}"
+503,"{'M_and_U_to_M_and_M': 20, 'U_and_M_to_U_and_U': 10, 'Polymerase_M_to_A': 45, 'U_and_A_to_U_and_U': 2, 'A_and_U_to_A_and_A': 6, 'A_and_M_to_A_and_A': 33, 'M_and_A_to_M_and_M': 57}"
+504,"{'Polymerase_M_to_A': 59, 'A_and_M_to_A_and_A': 27, 'U_and_M_to_U_and_U': 13, 'M_and_U_to_M_and_M': 32, 'U_and_A_to_U_and_U': 24, 'A_and_U_to_A_and_A': 18, 'M_and_A_to_M_and_M': 64}"
+505,"{'M_and_U_to_M_and_M': 39, 'Polymerase_M_to_A': 51, 'A_and_M_to_A_and_A': 18, 'A_and_U_to_A_and_A': 15, 'U_and_M_to_U_and_U': 19, 'U_and_A_to_U_and_U': 28, 'M_and_A_to_M_and_M': 47}"
+506,"{'M_and_U_to_M_and_M': 52, 'U_and_M_to_U_and_U': 38, 'Polymerase_M_to_A': 43, 'A_and_U_to_A_and_A': 20, 'M_and_A_to_M_and_M': 47, 'U_and_A_to_U_and_U': 24, 'A_and_M_to_A_and_A': 15}"
+507,"{'U_and_M_to_U_and_U': 41, 'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 35, 'U_and_A_to_U_and_U': 33, 'A_and_U_to_A_and_A': 33, 'A_and_M_to_A_and_A': 10, 'M_and_A_to_M_and_M': 31}"
+508,"{'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 48, 'U_and_M_to_U_and_U': 19, 'A_and_M_to_A_and_A': 32, 'U_and_A_to_U_and_U': 34, 'A_and_U_to_A_and_A': 26, 'M_and_A_to_M_and_M': 54}"
+509,"{'U_and_M_to_U_and_U': 17, 'Polymerase_M_to_A': 61, 'M_and_U_to_M_and_M': 29, 'A_and_U_to_A_and_A': 25, 'M_and_A_to_M_and_M': 56, 'A_and_M_to_A_and_A': 24, 'U_and_A_to_U_and_U': 22}"
+510,"{'M_and_U_to_M_and_M': 46, 'U_and_M_to_U_and_U': 40, 'Polymerase_M_to_A': 43, 'A_and_M_to_A_and_A': 19, 'U_and_A_to_U_and_U': 35, 'A_and_U_to_A_and_A': 27, 'M_and_A_to_M_and_M': 39}"
+511,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 46, 'A_and_M_to_A_and_A': 24, 'A_and_U_to_A_and_A': 32, 'U_and_A_to_U_and_U': 39, 'M_and_A_to_M_and_M': 52}"
+512,"{'U_and_M_to_U_and_U': 36, 'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 35, 'M_and_A_to_M_and_M': 47, 'A_and_U_to_A_and_A': 18, 'A_and_M_to_A_and_A': 26, 'U_and_A_to_U_and_U': 20}"
+513,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 31, 'U_and_A_to_U_and_U': 45, 'A_and_M_to_A_and_A': 25, 'M_and_A_to_M_and_M': 32, 'A_and_U_to_A_and_A': 42}"
+514,"{'M_and_U_to_M_and_M': 46, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 34, 'M_and_A_to_M_and_M': 25, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 33, 'A_and_U_to_A_and_A': 18}"
+515,"{'Polymerase_M_to_A': 30, 'U_and_M_to_U_and_U': 36, 'A_and_M_to_A_and_A': 10, 'M_and_U_to_M_and_M': 24, 'U_and_A_to_U_and_U': 59, 'A_and_U_to_A_and_A': 40, 'M_and_A_to_M_and_M': 17}"
+516,"{'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 54, 'U_and_M_to_U_and_U': 26, 'M_and_A_to_M_and_M': 51, 'A_and_M_to_A_and_A': 27, 'A_and_U_to_A_and_A': 26, 'U_and_A_to_U_and_U': 38}"
+517,"{'M_and_U_to_M_and_M': 16, 'U_and_M_to_U_and_U': 12, 'Polymerase_M_to_A': 38, 'A_and_M_to_A_and_A': 34, 'A_and_U_to_A_and_A': 18, 'M_and_A_to_M_and_M': 61, 'U_and_A_to_U_and_U': 7}"
+518,"{'M_and_U_to_M_and_M': 18, 'U_and_M_to_U_and_U': 8, 'Polymerase_M_to_A': 54, 'M_and_A_to_M_and_M': 71, 'A_and_U_to_A_and_A': 4, 'A_and_M_to_A_and_A': 39}"
+519,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 36, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 39, 'M_and_A_to_M_and_M': 48, 'U_and_A_to_U_and_U': 33}"
+520,"{'M_and_U_to_M_and_M': 51, 'Polymerase_M_to_A': 47, 'U_and_M_to_U_and_U': 38, 'A_and_U_to_A_and_A': 39, 'U_and_A_to_U_and_U': 74, 'M_and_A_to_M_and_M': 21, 'A_and_M_to_A_and_A': 17}"
+521,"{'U_and_M_to_U_and_U': 24, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 50, 'M_and_A_to_M_and_M': 57, 'A_and_M_to_A_and_A': 22, 'A_and_U_to_A_and_A': 29, 'U_and_A_to_U_and_U': 18}"
+522,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 31, 'Polymerase_M_to_A': 31, 'A_and_M_to_A_and_A': 15, 'A_and_U_to_A_and_A': 49, 'M_and_A_to_M_and_M': 15, 'U_and_A_to_U_and_U': 62}"
+523,"{'M_and_U_to_M_and_M': 22, 'Polymerase_M_to_A': 53, 'M_and_A_to_M_and_M': 70, 'U_and_M_to_U_and_U': 12, 'A_and_U_to_A_and_A': 17, 'A_and_M_to_A_and_A': 29, 'U_and_A_to_U_and_U': 12}"
+524,"{'U_and_M_to_U_and_U': 43, 'M_and_U_to_M_and_M': 52, 'Polymerase_M_to_A': 41, 'A_and_U_to_A_and_A': 33, 'M_and_A_to_M_and_M': 36, 'U_and_A_to_U_and_U': 43, 'A_and_M_to_A_and_A': 13}"
+525,"{'M_and_U_to_M_and_M': 60, 'U_and_M_to_U_and_U': 50, 'Polymerase_M_to_A': 40, 'U_and_A_to_U_and_U': 33, 'A_and_U_to_A_and_A': 28, 'M_and_A_to_M_and_M': 28, 'A_and_M_to_A_and_A': 13}"
+526,"{'U_and_M_to_U_and_U': 53, 'M_and_U_to_M_and_M': 65, 'Polymerase_M_to_A': 27, 'A_and_U_to_A_and_A': 26, 'U_and_A_to_U_and_U': 42, 'A_and_M_to_A_and_A': 8, 'M_and_A_to_M_and_M': 13}"
+527,"{'M_and_U_to_M_and_M': 34, 'U_and_M_to_U_and_U': 11, 'Polymerase_M_to_A': 53, 'M_and_A_to_M_and_M': 53, 'U_and_A_to_U_and_U': 20, 'A_and_M_to_A_and_A': 25, 'A_and_U_to_A_and_A': 12}"
+528,"{'M_and_U_to_M_and_M': 38, 'U_and_M_to_U_and_U': 41, 'Polymerase_M_to_A': 42, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 43, 'A_and_U_to_A_and_A': 37, 'M_and_A_to_M_and_M': 42}"
+529,"{'M_and_U_to_M_and_M': 47, 'U_and_M_to_U_and_U': 31, 'Polymerase_M_to_A': 42, 'U_and_A_to_U_and_U': 48, 'A_and_U_to_A_and_A': 27, 'M_and_A_to_M_and_M': 18, 'A_and_M_to_A_and_A': 8}"
+530,"{'U_and_M_to_U_and_U': 34, 'M_and_U_to_M_and_M': 39, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 9, 'M_and_A_to_M_and_M': 18, 'U_and_A_to_U_and_U': 50, 'A_and_U_to_A_and_A': 35}"
+531,"{'U_and_M_to_U_and_U': 18, 'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 61, 'U_and_A_to_U_and_U': 23, 'M_and_A_to_M_and_M': 66, 'A_and_U_to_A_and_A': 24, 'A_and_M_to_A_and_A': 29}"
+532,"{'U_and_M_to_U_and_U': 18, 'M_and_U_to_M_and_M': 39, 'Polymerase_M_to_A': 47, 'M_and_A_to_M_and_M': 34, 'A_and_M_to_A_and_A': 20, 'U_and_A_to_U_and_U': 38, 'A_and_U_to_A_and_A': 19}"
+533,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 39, 'Polymerase_M_to_A': 54, 'M_and_A_to_M_and_M': 53, 'A_and_M_to_A_and_A': 25, 'U_and_A_to_U_and_U': 24, 'A_and_U_to_A_and_A': 20}"
+534,"{'Polymerase_M_to_A': 31, 'U_and_M_to_U_and_U': 45, 'M_and_U_to_M_and_M': 58, 'M_and_A_to_M_and_M': 10, 'U_and_A_to_U_and_U': 50, 'A_and_U_to_A_and_A': 27, 'A_and_M_to_A_and_A': 8}"
+535,"{'Polymerase_M_to_A': 43, 'M_and_U_to_M_and_M': 27, 'U_and_M_to_U_and_U': 29, 'M_and_A_to_M_and_M': 52, 'A_and_M_to_A_and_A': 25, 'A_and_U_to_A_and_A': 32, 'U_and_A_to_U_and_U': 36}"
+536,"{'M_and_U_to_M_and_M': 16, 'U_and_M_to_U_and_U': 4, 'Polymerase_M_to_A': 50, 'A_and_M_to_A_and_A': 49, 'A_and_U_to_A_and_A': 10, 'M_and_A_to_M_and_M': 78, 'U_and_A_to_U_and_U': 8}"
+537,"{'M_and_U_to_M_and_M': 23, 'Polymerase_M_to_A': 63, 'U_and_M_to_U_and_U': 8, 'A_and_M_to_A_and_A': 31, 'A_and_U_to_A_and_A': 11, 'U_and_A_to_U_and_U': 11, 'M_and_A_to_M_and_M': 68}"
+538,"{'U_and_M_to_U_and_U': 41, 'M_and_U_to_M_and_M': 18, 'Polymerase_M_to_A': 11, 'U_and_A_to_U_and_U': 49, 'A_and_M_to_A_and_A': 6, 'A_and_U_to_A_and_A': 43, 'M_and_A_to_M_and_M': 5}"
+539,"{'U_and_M_to_U_and_U': 27, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 56, 'A_and_U_to_A_and_A': 32, 'A_and_M_to_A_and_A': 22, 'U_and_A_to_U_and_U': 21, 'M_and_A_to_M_and_M': 65}"
+540,"{'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 51, 'U_and_M_to_U_and_U': 17, 'A_and_M_to_A_and_A': 34, 'M_and_A_to_M_and_M': 56, 'A_and_U_to_A_and_A': 16, 'U_and_A_to_U_and_U': 19}"
+541,"{'U_and_M_to_U_and_U': 24, 'M_and_U_to_M_and_M': 30, 'Polymerase_M_to_A': 41, 'A_and_M_to_A_and_A': 27, 'A_and_U_to_A_and_A': 35, 'U_and_A_to_U_and_U': 52, 'M_and_A_to_M_and_M': 33}"
+542,"{'M_and_U_to_M_and_M': 43, 'U_and_M_to_U_and_U': 32, 'Polymerase_M_to_A': 31, 'A_and_U_to_A_and_A': 30, 'A_and_M_to_A_and_A': 13, 'M_and_A_to_M_and_M': 22, 'U_and_A_to_U_and_U': 42}"
+543,"{'M_and_U_to_M_and_M': 47, 'U_and_M_to_U_and_U': 39, 'Polymerase_M_to_A': 27, 'U_and_A_to_U_and_U': 41, 'A_and_M_to_A_and_A': 5, 'A_and_U_to_A_and_A': 29, 'M_and_A_to_M_and_M': 10}"
+544,"{'M_and_U_to_M_and_M': 12, 'U_and_M_to_U_and_U': 21, 'Polymerase_M_to_A': 21, 'U_and_A_to_U_and_U': 61, 'A_and_M_to_A_and_A': 8, 'A_and_U_to_A_and_A': 52, 'M_and_A_to_M_and_M': 4}"
+545,"{'M_and_U_to_M_and_M': 16, 'Polymerase_M_to_A': 61, 'U_and_M_to_U_and_U': 4, 'M_and_A_to_M_and_M': 67, 'U_and_A_to_U_and_U': 1, 'A_and_M_to_A_and_A': 36, 'A_and_U_to_A_and_A': 4}"
+546,"{'U_and_M_to_U_and_U': 44, 'Polymerase_M_to_A': 37, 'M_and_A_to_M_and_M': 29, 'M_and_U_to_M_and_M': 51, 'A_and_M_to_A_and_A': 16, 'A_and_U_to_A_and_A': 30, 'U_and_A_to_U_and_U': 44}"
+547,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 39, 'Polymerase_M_to_A': 30, 'M_and_A_to_M_and_M': 29, 'U_and_A_to_U_and_U': 47, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 49}"
+548,"{'U_and_M_to_U_and_U': 21, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 45, 'A_and_U_to_A_and_A': 27, 'M_and_A_to_M_and_M': 49, 'A_and_M_to_A_and_A': 15, 'U_and_A_to_U_and_U': 20}"
+549,"{'M_and_U_to_M_and_M': 40, 'U_and_M_to_U_and_U': 50, 'Polymerase_M_to_A': 30, 'A_and_M_to_A_and_A': 7, 'A_and_U_to_A_and_A': 37, 'U_and_A_to_U_and_U': 39, 'M_and_A_to_M_and_M': 20}"
+550,"{'U_and_M_to_U_and_U': 15, 'M_and_U_to_M_and_M': 20, 'Polymerase_M_to_A': 43, 'A_and_U_to_A_and_A': 15, 'A_and_M_to_A_and_A': 29, 'M_and_A_to_M_and_M': 55, 'U_and_A_to_U_and_U': 5}"
+551,"{'Polymerase_M_to_A': 53, 'M_and_U_to_M_and_M': 14, 'M_and_A_to_M_and_M': 83, 'A_and_M_to_A_and_A': 43, 'U_and_M_to_U_and_U': 9, 'A_and_U_to_A_and_A': 12, 'U_and_A_to_U_and_U': 2}"
+552,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 35, 'Polymerase_M_to_A': 21, 'A_and_M_to_A_and_A': 12, 'U_and_A_to_U_and_U': 42, 'A_and_U_to_A_and_A': 19, 'M_and_A_to_M_and_M': 8}"
+553,"{'U_and_M_to_U_and_U': 44, 'Polymerase_M_to_A': 23, 'M_and_U_to_M_and_M': 38, 'A_and_M_to_A_and_A': 11, 'M_and_A_to_M_and_M': 13, 'U_and_A_to_U_and_U': 32, 'A_and_U_to_A_and_A': 16}"
+554,"{'M_and_U_to_M_and_M': 37, 'Polymerase_M_to_A': 41, 'A_and_M_to_A_and_A': 24, 'U_and_A_to_U_and_U': 45, 'U_and_M_to_U_and_U': 32, 'A_and_U_to_A_and_A': 28, 'M_and_A_to_M_and_M': 30}"
+555,"{'M_and_U_to_M_and_M': 42, 'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 47, 'A_and_M_to_A_and_A': 13, 'A_and_U_to_A_and_A': 29, 'U_and_A_to_U_and_U': 29, 'M_and_A_to_M_and_M': 41}"
+556,"{'U_and_M_to_U_and_U': 39, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 26, 'M_and_A_to_M_and_M': 16, 'A_and_M_to_A_and_A': 11, 'U_and_A_to_U_and_U': 44, 'A_and_U_to_A_and_A': 31}"
+557,"{'U_and_M_to_U_and_U': 16, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 55, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 69, 'A_and_U_to_A_and_A': 8, 'U_and_A_to_U_and_U': 5}"
+558,"{'U_and_M_to_U_and_U': 34, 'M_and_U_to_M_and_M': 30, 'Polymerase_M_to_A': 28, 'A_and_U_to_A_and_A': 41, 'M_and_A_to_M_and_M': 20, 'A_and_M_to_A_and_A': 8, 'U_and_A_to_U_and_U': 47}"
+559,"{'M_and_U_to_M_and_M': 41, 'U_and_M_to_U_and_U': 40, 'Polymerase_M_to_A': 36, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 30, 'U_and_A_to_U_and_U': 39, 'A_and_U_to_A_and_A': 32}"
+560,"{'U_and_M_to_U_and_U': 28, 'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 25, 'A_and_U_to_A_and_A': 30, 'M_and_A_to_M_and_M': 39, 'U_and_A_to_U_and_U': 23}"
+561,"{'Polymerase_M_to_A': 32, 'U_and_M_to_U_and_U': 25, 'M_and_U_to_M_and_M': 33, 'M_and_A_to_M_and_M': 37, 'A_and_U_to_A_and_A': 29, 'A_and_M_to_A_and_A': 24, 'U_and_A_to_U_and_U': 34}"
+562,"{'U_and_M_to_U_and_U': 30, 'M_and_U_to_M_and_M': 52, 'Polymerase_M_to_A': 47, 'U_and_A_to_U_and_U': 40, 'A_and_M_to_A_and_A': 28, 'A_and_U_to_A_and_A': 26, 'M_and_A_to_M_and_M': 44}"
+563,"{'M_and_U_to_M_and_M': 22, 'U_and_M_to_U_and_U': 10, 'Polymerase_M_to_A': 58, 'M_and_A_to_M_and_M': 70, 'A_and_U_to_A_and_A': 2, 'A_and_M_to_A_and_A': 28}"
+564,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 25, 'Polymerase_M_to_A': 33, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 24, 'M_and_A_to_M_and_M': 23, 'U_and_A_to_U_and_U': 50}"
+565,"{'M_and_U_to_M_and_M': 55, 'U_and_M_to_U_and_U': 38, 'Polymerase_M_to_A': 40, 'U_and_A_to_U_and_U': 33, 'A_and_U_to_A_and_A': 28, 'A_and_M_to_A_and_A': 14, 'M_and_A_to_M_and_M': 28}"
+566,"{'U_and_M_to_U_and_U': 45, 'M_and_U_to_M_and_M': 45, 'Polymerase_M_to_A': 23, 'A_and_M_to_A_and_A': 13, 'M_and_A_to_M_and_M': 15, 'A_and_U_to_A_and_A': 39, 'U_and_A_to_U_and_U': 52}"
+567,"{'Polymerase_M_to_A': 33, 'M_and_U_to_M_and_M': 42, 'U_and_M_to_U_and_U': 35, 'A_and_M_to_A_and_A': 17, 'U_and_A_to_U_and_U': 31, 'M_and_A_to_M_and_M': 39, 'A_and_U_to_A_and_A': 33}"
+568,"{'M_and_U_to_M_and_M': 23, 'U_and_M_to_U_and_U': 24, 'Polymerase_M_to_A': 27, 'A_and_U_to_A_and_A': 24, 'M_and_A_to_M_and_M': 19, 'A_and_M_to_A_and_A': 22, 'U_and_A_to_U_and_U': 46}"
+569,"{'M_and_U_to_M_and_M': 41, 'U_and_M_to_U_and_U': 41, 'Polymerase_M_to_A': 26, 'A_and_M_to_A_and_A': 14, 'A_and_U_to_A_and_A': 38, 'M_and_A_to_M_and_M': 27, 'U_and_A_to_U_and_U': 39}"
+570,"{'U_and_M_to_U_and_U': 25, 'M_and_U_to_M_and_M': 37, 'Polymerase_M_to_A': 58, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 21, 'A_and_U_to_A_and_A': 20, 'M_and_A_to_M_and_M': 60}"
+571,"{'U_and_M_to_U_and_U': 16, 'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 45, 'A_and_U_to_A_and_A': 27, 'U_and_A_to_U_and_U': 38, 'M_and_A_to_M_and_M': 50, 'A_and_M_to_A_and_A': 20}"
+572,"{'M_and_U_to_M_and_M': 33, 'U_and_M_to_U_and_U': 30, 'Polymerase_M_to_A': 40, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 38, 'A_and_U_to_A_and_A': 27, 'U_and_A_to_U_and_U': 35}"
+573,"{'U_and_M_to_U_and_U': 41, 'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 13, 'U_and_A_to_U_and_U': 49, 'A_and_M_to_A_and_A': 11, 'A_and_U_to_A_and_A': 35, 'M_and_A_to_M_and_M': 9}"
+574,"{'U_and_M_to_U_and_U': 38, 'M_and_U_to_M_and_M': 37, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 20, 'A_and_U_to_A_and_A': 39, 'M_and_A_to_M_and_M': 39, 'U_and_A_to_U_and_U': 48}"
+575,"{'U_and_M_to_U_and_U': 13, 'M_and_U_to_M_and_M': 30, 'Polymerase_M_to_A': 52, 'M_and_A_to_M_and_M': 45, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 12, 'A_and_U_to_A_and_A': 9}"
+576,"{'M_and_U_to_M_and_M': 38, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 40, 'A_and_U_to_A_and_A': 32, 'M_and_A_to_M_and_M': 36, 'U_and_A_to_U_and_U': 38, 'A_and_M_to_A_and_A': 15}"
+577,"{'M_and_U_to_M_and_M': 11, 'U_and_M_to_U_and_U': 16, 'Polymerase_M_to_A': 22, 'M_and_A_to_M_and_M': 4, 'A_and_M_to_A_and_A': 11, 'A_and_U_to_A_and_A': 40, 'U_and_A_to_U_and_U': 64}"
+578,"{'M_and_U_to_M_and_M': 51, 'U_and_M_to_U_and_U': 45, 'Polymerase_M_to_A': 39, 'U_and_A_to_U_and_U': 31, 'M_and_A_to_M_and_M': 31, 'A_and_M_to_A_and_A': 10, 'A_and_U_to_A_and_A': 29}"
+579,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 23, 'Polymerase_M_to_A': 48, 'A_and_M_to_A_and_A': 21, 'M_and_A_to_M_and_M': 64, 'A_and_U_to_A_and_A': 29, 'U_and_A_to_U_and_U': 24}"
+580,"{'M_and_U_to_M_and_M': 38, 'U_and_M_to_U_and_U': 47, 'Polymerase_M_to_A': 23, 'U_and_A_to_U_and_U': 31, 'A_and_M_to_A_and_A': 7, 'M_and_A_to_M_and_M': 9, 'A_and_U_to_A_and_A': 13}"
+581,"{'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 42, 'U_and_M_to_U_and_U': 13, 'A_and_M_to_A_and_A': 40, 'M_and_A_to_M_and_M': 57, 'U_and_A_to_U_and_U': 19, 'A_and_U_to_A_and_A': 18}"
+582,"{'U_and_M_to_U_and_U': 38, 'M_and_U_to_M_and_M': 49, 'Polymerase_M_to_A': 36, 'A_and_M_to_A_and_A': 22, 'A_and_U_to_A_and_A': 34, 'M_and_A_to_M_and_M': 24, 'U_and_A_to_U_and_U': 56}"
+583,"{'Polymerase_M_to_A': 27, 'M_and_U_to_M_and_M': 34, 'U_and_M_to_U_and_U': 26, 'U_and_A_to_U_and_U': 37, 'A_and_U_to_A_and_A': 41, 'A_and_M_to_A_and_A': 20, 'M_and_A_to_M_and_M': 27}"
+584,"{'M_and_U_to_M_and_M': 41, 'U_and_M_to_U_and_U': 31, 'Polymerase_M_to_A': 36, 'M_and_A_to_M_and_M': 35, 'U_and_A_to_U_and_U': 32, 'A_and_U_to_A_and_A': 25, 'A_and_M_to_A_and_A': 30}"
+585,"{'Polymerase_M_to_A': 59, 'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 9, 'A_and_M_to_A_and_A': 32, 'A_and_U_to_A_and_A': 13, 'M_and_A_to_M_and_M': 63, 'U_and_A_to_U_and_U': 20}"
+586,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 41, 'A_and_M_to_A_and_A': 25, 'M_and_A_to_M_and_M': 34, 'A_and_U_to_A_and_A': 26, 'U_and_A_to_U_and_U': 46}"
+587,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 30, 'Polymerase_M_to_A': 29, 'A_and_U_to_A_and_A': 43, 'M_and_A_to_M_and_M': 14, 'U_and_A_to_U_and_U': 61, 'A_and_M_to_A_and_A': 13}"
+588,"{'M_and_U_to_M_and_M': 17, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 47, 'A_and_U_to_A_and_A': 21, 'A_and_M_to_A_and_A': 34, 'U_and_A_to_U_and_U': 9, 'M_and_A_to_M_and_M': 63}"
+589,"{'U_and_M_to_U_and_U': 21, 'Polymerase_M_to_A': 59, 'M_and_U_to_M_and_M': 22, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 80, 'A_and_M_to_A_and_A': 28, 'U_and_A_to_U_and_U': 11}"
+590,"{'Polymerase_M_to_A': 17, 'A_and_U_to_A_and_A': 52, 'U_and_M_to_U_and_U': 32, 'A_and_M_to_A_and_A': 11, 'M_and_U_to_M_and_M': 17, 'U_and_A_to_U_and_U': 55, 'M_and_A_to_M_and_M': 10}"
+591,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 40, 'Polymerase_M_to_A': 44, 'A_and_U_to_A_and_A': 39, 'M_and_A_to_M_and_M': 32, 'U_and_A_to_U_and_U': 49, 'A_and_M_to_A_and_A': 14}"
+592,"{'U_and_M_to_U_and_U': 14, 'M_and_U_to_M_and_M': 18, 'Polymerase_M_to_A': 35, 'A_and_U_to_A_and_A': 14, 'M_and_A_to_M_and_M': 44, 'U_and_A_to_U_and_U': 3, 'A_and_M_to_A_and_A': 22}"
+593,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 11, 'Polymerase_M_to_A': 39, 'M_and_A_to_M_and_M': 50, 'A_and_M_to_A_and_A': 35, 'U_and_A_to_U_and_U': 27, 'A_and_U_to_A_and_A': 20}"
+594,"{'M_and_U_to_M_and_M': 23, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 42, 'A_and_M_to_A_and_A': 12, 'U_and_A_to_U_and_U': 44, 'A_and_U_to_A_and_A': 20, 'M_and_A_to_M_and_M': 24}"
+595,"{'U_and_M_to_U_and_U': 16, 'M_and_U_to_M_and_M': 27, 'Polymerase_M_to_A': 43, 'M_and_A_to_M_and_M': 53, 'A_and_M_to_A_and_A': 27, 'A_and_U_to_A_and_A': 21, 'U_and_A_to_U_and_U': 17}"
+596,"{'Polymerase_M_to_A': 37, 'U_and_M_to_U_and_U': 41, 'A_and_U_to_A_and_A': 27, 'M_and_A_to_M_and_M': 36, 'A_and_M_to_A_and_A': 22, 'M_and_U_to_M_and_M': 50, 'U_and_A_to_U_and_U': 40}"
+597,"{'U_and_M_to_U_and_U': 25, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 40, 'A_and_U_to_A_and_A': 28, 'A_and_M_to_A_and_A': 25, 'U_and_A_to_U_and_U': 32, 'M_and_A_to_M_and_M': 39}"
+598,"{'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 39, 'U_and_M_to_U_and_U': 36, 'M_and_A_to_M_and_M': 31, 'A_and_M_to_A_and_A': 12, 'U_and_A_to_U_and_U': 38, 'A_and_U_to_A_and_A': 40}"
+599,"{'U_and_M_to_U_and_U': 23, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 38, 'A_and_U_to_A_and_A': 42, 'A_and_M_to_A_and_A': 19, 'M_and_A_to_M_and_M': 23, 'U_and_A_to_U_and_U': 47}"
+600,"{'U_and_M_to_U_and_U': 38, 'M_and_U_to_M_and_M': 46, 'Polymerase_M_to_A': 36, 'A_and_U_to_A_and_A': 40, 'M_and_A_to_M_and_M': 23, 'A_and_M_to_A_and_A': 14, 'U_and_A_to_U_and_U': 51}"
+601,"{'M_and_U_to_M_and_M': 37, 'Polymerase_M_to_A': 19, 'U_and_M_to_U_and_U': 40, 'M_and_A_to_M_and_M': 5, 'U_and_A_to_U_and_U': 31, 'A_and_M_to_A_and_A': 3, 'A_and_U_to_A_and_A': 14}"
+602,"{'M_and_U_to_M_and_M': 27, 'U_and_M_to_U_and_U': 17, 'Polymerase_M_to_A': 61, 'M_and_A_to_M_and_M': 65, 'A_and_M_to_A_and_A': 29, 'U_and_A_to_U_and_U': 17, 'A_and_U_to_A_and_A': 21}"
+603,"{'U_and_M_to_U_and_U': 16, 'M_and_U_to_M_and_M': 23, 'Polymerase_M_to_A': 50, 'U_and_A_to_U_and_U': 10, 'A_and_M_to_A_and_A': 32, 'M_and_A_to_M_and_M': 57, 'A_and_U_to_A_and_A': 18}"
+604,"{'U_and_M_to_U_and_U': 37, 'Polymerase_M_to_A': 29, 'M_and_U_to_M_and_M': 34, 'A_and_U_to_A_and_A': 24, 'U_and_A_to_U_and_U': 47, 'A_and_M_to_A_and_A': 11, 'M_and_A_to_M_and_M': 14}"
+605,"{'M_and_U_to_M_and_M': 53, 'U_and_M_to_U_and_U': 42, 'Polymerase_M_to_A': 45, 'U_and_A_to_U_and_U': 43, 'A_and_U_to_A_and_A': 22, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 30}"
+606,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 11, 'Polymerase_M_to_A': 52, 'M_and_A_to_M_and_M': 58, 'U_and_A_to_U_and_U': 19, 'A_and_U_to_A_and_A': 13, 'A_and_M_to_A_and_A': 21}"
+607,"{'M_and_U_to_M_and_M': 53, 'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 33, 'A_and_U_to_A_and_A': 17, 'A_and_M_to_A_and_A': 7, 'M_and_A_to_M_and_M': 16, 'U_and_A_to_U_and_U': 28}"
+608,"{'M_and_U_to_M_and_M': 24, 'U_and_M_to_U_and_U': 32, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 15, 'M_and_A_to_M_and_M': 24, 'A_and_U_to_A_and_A': 33, 'U_and_A_to_U_and_U': 45}"
+609,"{'M_and_U_to_M_and_M': 46, 'U_and_M_to_U_and_U': 23, 'Polymerase_M_to_A': 30, 'A_and_M_to_A_and_A': 16, 'A_and_U_to_A_and_A': 18, 'U_and_A_to_U_and_U': 38, 'M_and_A_to_M_and_M': 17}"
+610,"{'U_and_M_to_U_and_U': 19, 'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 31, 'A_and_M_to_A_and_A': 31, 'A_and_U_to_A_and_A': 33, 'U_and_A_to_U_and_U': 45, 'M_and_A_to_M_and_M': 34}"
+611,"{'M_and_U_to_M_and_M': 38, 'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 46, 'A_and_U_to_A_and_A': 25, 'U_and_A_to_U_and_U': 30, 'A_and_M_to_A_and_A': 24, 'M_and_A_to_M_and_M': 53}"
+612,"{'U_and_M_to_U_and_U': 53, 'M_and_U_to_M_and_M': 56, 'Polymerase_M_to_A': 37, 'M_and_A_to_M_and_M': 26, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 22, 'U_and_A_to_U_and_U': 31}"
+613,"{'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 28, 'U_and_M_to_U_and_U': 39, 'M_and_A_to_M_and_M': 23, 'A_and_U_to_A_and_A': 34, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 41}"
+614,"{'U_and_M_to_U_and_U': 14, 'Polymerase_M_to_A': 43, 'A_and_M_to_A_and_A': 30, 'M_and_U_to_M_and_M': 31, 'A_and_U_to_A_and_A': 36, 'M_and_A_to_M_and_M': 52, 'U_and_A_to_U_and_U': 40}"
+615,"{'M_and_U_to_M_and_M': 26, 'Polymerase_M_to_A': 28, 'U_and_M_to_U_and_U': 28, 'A_and_M_to_A_and_A': 15, 'U_and_A_to_U_and_U': 56, 'M_and_A_to_M_and_M': 15, 'A_and_U_to_A_and_A': 36}"
+616,"{'M_and_U_to_M_and_M': 19, 'Polymerase_M_to_A': 55, 'U_and_A_to_U_and_U': 4, 'U_and_M_to_U_and_U': 7, 'M_and_A_to_M_and_M': 74, 'A_and_M_to_A_and_A': 47, 'A_and_U_to_A_and_A': 6}"
+617,"{'M_and_U_to_M_and_M': 19, 'U_and_M_to_U_and_U': 7, 'Polymerase_M_to_A': 58, 'A_and_M_to_A_and_A': 22, 'M_and_A_to_M_and_M': 65, 'U_and_A_to_U_and_U': 2, 'A_and_U_to_A_and_A': 5}"
+618,"{'M_and_U_to_M_and_M': 14, 'U_and_M_to_U_and_U': 9, 'Polymerase_M_to_A': 49, 'A_and_M_to_A_and_A': 29, 'M_and_A_to_M_and_M': 67, 'A_and_U_to_A_and_A': 9}"
+619,"{'M_and_U_to_M_and_M': 41, 'U_and_M_to_U_and_U': 40, 'Polymerase_M_to_A': 28, 'M_and_A_to_M_and_M': 10, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 34, 'A_and_U_to_A_and_A': 8}"
+620,"{'M_and_U_to_M_and_M': 23, 'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 39, 'A_and_M_to_A_and_A': 24, 'A_and_U_to_A_and_A': 33, 'M_and_A_to_M_and_M': 40, 'U_and_A_to_U_and_U': 49}"
+621,"{'U_and_M_to_U_and_U': 54, 'M_and_U_to_M_and_M': 49, 'Polymerase_M_to_A': 32, 'U_and_A_to_U_and_U': 43, 'A_and_M_to_A_and_A': 7, 'A_and_U_to_A_and_A': 26, 'M_and_A_to_M_and_M': 14}"
+622,"{'M_and_U_to_M_and_M': 21, 'U_and_M_to_U_and_U': 4, 'Polymerase_M_to_A': 60, 'M_and_A_to_M_and_M': 67, 'A_and_M_to_A_and_A': 26, 'U_and_A_to_U_and_U': 6, 'A_and_U_to_A_and_A': 4}"
+623,"{'M_and_U_to_M_and_M': 45, 'U_and_M_to_U_and_U': 53, 'Polymerase_M_to_A': 17, 'A_and_M_to_A_and_A': 4, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 3, 'U_and_A_to_U_and_U': 35}"
+624,"{'U_and_M_to_U_and_U': 11, 'M_and_U_to_M_and_M': 21, 'Polymerase_M_to_A': 61, 'A_and_M_to_A_and_A': 31, 'U_and_A_to_U_and_U': 4, 'M_and_A_to_M_and_M': 74, 'A_and_U_to_A_and_A': 9}"
+625,"{'U_and_M_to_U_and_U': 42, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 21, 'A_and_M_to_A_and_A': 11, 'A_and_U_to_A_and_A': 27, 'U_and_A_to_U_and_U': 46, 'M_and_A_to_M_and_M': 12}"
+626,"{'M_and_U_to_M_and_M': 37, 'U_and_M_to_U_and_U': 32, 'Polymerase_M_to_A': 39, 'A_and_M_to_A_and_A': 25, 'M_and_A_to_M_and_M': 45, 'A_and_U_to_A_and_A': 26, 'U_and_A_to_U_and_U': 33}"
+627,"{'M_and_U_to_M_and_M': 39, 'U_and_M_to_U_and_U': 54, 'Polymerase_M_to_A': 21, 'U_and_A_to_U_and_U': 36, 'A_and_M_to_A_and_A': 5, 'A_and_U_to_A_and_A': 35, 'M_and_A_to_M_and_M': 11}"
+628,"{'U_and_M_to_U_and_U': 17, 'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 38, 'A_and_U_to_A_and_A': 15, 'M_and_A_to_M_and_M': 56, 'U_and_A_to_U_and_U': 12}"
+629,"{'U_and_M_to_U_and_U': 25, 'Polymerase_M_to_A': 55, 'A_and_M_to_A_and_A': 12, 'M_and_U_to_M_and_M': 36, 'M_and_A_to_M_and_M': 45, 'A_and_U_to_A_and_A': 25, 'U_and_A_to_U_and_U': 31}"
+630,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 19, 'Polymerase_M_to_A': 46, 'U_and_A_to_U_and_U': 21, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 40, 'A_and_U_to_A_and_A': 22}"
+631,"{'U_and_M_to_U_and_U': 12, 'M_and_U_to_M_and_M': 30, 'Polymerase_M_to_A': 59, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 43, 'U_and_A_to_U_and_U': 26, 'A_and_U_to_A_and_A': 19}"
+632,"{'M_and_U_to_M_and_M': 36, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 39, 'A_and_M_to_A_and_A': 18, 'A_and_U_to_A_and_A': 44, 'M_and_A_to_M_and_M': 41, 'U_and_A_to_U_and_U': 43}"
+633,"{'U_and_M_to_U_and_U': 50, 'M_and_U_to_M_and_M': 44, 'Polymerase_M_to_A': 20, 'U_and_A_to_U_and_U': 34, 'A_and_U_to_A_and_A': 24, 'A_and_M_to_A_and_A': 6, 'M_and_A_to_M_and_M': 7}"
+634,"{'U_and_M_to_U_and_U': 42, 'Polymerase_M_to_A': 27, 'M_and_U_to_M_and_M': 44, 'A_and_M_to_A_and_A': 6, 'U_and_A_to_U_and_U': 50, 'A_and_U_to_A_and_A': 33, 'M_and_A_to_M_and_M': 14}"
+635,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 28, 'U_and_A_to_U_and_U': 47, 'A_and_M_to_A_and_A': 19, 'M_and_A_to_M_and_M': 26, 'A_and_U_to_A_and_A': 38}"
+636,"{'M_and_U_to_M_and_M': 40, 'U_and_M_to_U_and_U': 28, 'Polymerase_M_to_A': 44, 'M_and_A_to_M_and_M': 41, 'A_and_U_to_A_and_A': 37, 'A_and_M_to_A_and_A': 14, 'U_and_A_to_U_and_U': 37}"
+637,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 49, 'Polymerase_M_to_A': 44, 'A_and_M_to_A_and_A': 17, 'M_and_A_to_M_and_M': 31, 'U_and_A_to_U_and_U': 32, 'A_and_U_to_A_and_A': 23}"
+638,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 7, 'Polymerase_M_to_A': 15, 'A_and_M_to_A_and_A': 6, 'M_and_A_to_M_and_M': 2, 'U_and_A_to_U_and_U': 52, 'A_and_U_to_A_and_A': 36}"
+639,"{'U_and_M_to_U_and_U': 25, 'Polymerase_M_to_A': 48, 'M_and_U_to_M_and_M': 40, 'U_and_A_to_U_and_U': 33, 'A_and_M_to_A_and_A': 14, 'A_and_U_to_A_and_A': 29, 'M_and_A_to_M_and_M': 44}"
+640,"{'M_and_U_to_M_and_M': 39, 'U_and_M_to_U_and_U': 52, 'Polymerase_M_to_A': 22, 'A_and_U_to_A_and_A': 34, 'A_and_M_to_A_and_A': 5, 'M_and_A_to_M_and_M': 14, 'U_and_A_to_U_and_U': 33}"
+641,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 24, 'Polymerase_M_to_A': 45, 'U_and_A_to_U_and_U': 19, 'M_and_A_to_M_and_M': 56, 'A_and_M_to_A_and_A': 28, 'A_and_U_to_A_and_A': 18}"
+642,"{'U_and_M_to_U_and_U': 37, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 40, 'A_and_M_to_A_and_A': 18, 'A_and_U_to_A_and_A': 24, 'M_and_A_to_M_and_M': 44, 'U_and_A_to_U_and_U': 21}"
+643,"{'M_and_U_to_M_and_M': 40, 'Polymerase_M_to_A': 52, 'U_and_M_to_U_and_U': 21, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 25, 'M_and_A_to_M_and_M': 49, 'A_and_U_to_A_and_A': 16}"
+644,"{'U_and_M_to_U_and_U': 17, 'M_and_U_to_M_and_M': 31, 'Polymerase_M_to_A': 52, 'A_and_U_to_A_and_A': 18, 'M_and_A_to_M_and_M': 58, 'U_and_A_to_U_and_U': 19, 'A_and_M_to_A_and_A': 27}"
+645,"{'U_and_M_to_U_and_U': 11, 'Polymerase_M_to_A': 57, 'M_and_U_to_M_and_M': 18, 'A_and_M_to_A_and_A': 41, 'A_and_U_to_A_and_A': 12, 'M_and_A_to_M_and_M': 90, 'U_and_A_to_U_and_U': 5}"
+646,"{'M_and_U_to_M_and_M': 48, 'U_and_M_to_U_and_U': 32, 'Polymerase_M_to_A': 27, 'A_and_M_to_A_and_A': 14, 'M_and_A_to_M_and_M': 14, 'A_and_U_to_A_and_A': 31, 'U_and_A_to_U_and_U': 49}"
+647,"{'M_and_U_to_M_and_M': 19, 'U_and_M_to_U_and_U': 14, 'Polymerase_M_to_A': 50, 'U_and_A_to_U_and_U': 12, 'M_and_A_to_M_and_M': 63, 'A_and_M_to_A_and_A': 29, 'A_and_U_to_A_and_A': 19}"
+648,"{'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 31, 'U_and_M_to_U_and_U': 34, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 21, 'A_and_U_to_A_and_A': 41, 'M_and_A_to_M_and_M': 54}"
+649,"{'M_and_U_to_M_and_M': 37, 'U_and_M_to_U_and_U': 31, 'Polymerase_M_to_A': 29, 'M_and_A_to_M_and_M': 13, 'A_and_M_to_A_and_A': 13, 'U_and_A_to_U_and_U': 54, 'A_and_U_to_A_and_A': 44}"
+650,"{'M_and_U_to_M_and_M': 43, 'U_and_M_to_U_and_U': 45, 'Polymerase_M_to_A': 28, 'A_and_U_to_A_and_A': 38, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 49, 'M_and_A_to_M_and_M': 13}"
+651,"{'Polymerase_M_to_A': 52, 'M_and_U_to_M_and_M': 35, 'U_and_M_to_U_and_U': 27, 'A_and_M_to_A_and_A': 18, 'U_and_A_to_U_and_U': 40, 'M_and_A_to_M_and_M': 43, 'A_and_U_to_A_and_A': 28}"
+652,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 37, 'Polymerase_M_to_A': 24, 'M_and_A_to_M_and_M': 11, 'A_and_U_to_A_and_A': 36, 'A_and_M_to_A_and_A': 11, 'U_and_A_to_U_and_U': 57}"
+653,"{'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 45, 'M_and_U_to_M_and_M': 41, 'M_and_A_to_M_and_M': 55, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 26, 'A_and_M_to_A_and_A': 27}"
+654,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 30, 'Polymerase_M_to_A': 37, 'A_and_U_to_A_and_A': 24, 'A_and_M_to_A_and_A': 29, 'M_and_A_to_M_and_M': 52, 'U_and_A_to_U_and_U': 19}"
+655,"{'U_and_M_to_U_and_U': 47, 'Polymerase_M_to_A': 34, 'M_and_U_to_M_and_M': 37, 'A_and_U_to_A_and_A': 35, 'A_and_M_to_A_and_A': 11, 'U_and_A_to_U_and_U': 44, 'M_and_A_to_M_and_M': 27}"
+656,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 21, 'Polymerase_M_to_A': 35, 'U_and_A_to_U_and_U': 20, 'A_and_M_to_A_and_A': 26, 'A_and_U_to_A_and_A': 24, 'M_and_A_to_M_and_M': 37}"
+657,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 37, 'Polymerase_M_to_A': 34, 'M_and_A_to_M_and_M': 26, 'U_and_A_to_U_and_U': 36, 'A_and_U_to_A_and_A': 32, 'A_and_M_to_A_and_A': 14}"
+658,"{'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 55, 'A_and_M_to_A_and_A': 22, 'U_and_M_to_U_and_U': 25, 'U_and_A_to_U_and_U': 28, 'A_and_U_to_A_and_A': 27, 'M_and_A_to_M_and_M': 52}"
+659,"{'U_and_M_to_U_and_U': 36, 'M_and_U_to_M_and_M': 31, 'Polymerase_M_to_A': 27, 'A_and_M_to_A_and_A': 18, 'U_and_A_to_U_and_U': 49, 'M_and_A_to_M_and_M': 22, 'A_and_U_to_A_and_A': 36}"
+660,"{'U_and_M_to_U_and_U': 28, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 51, 'U_and_A_to_U_and_U': 12, 'A_and_M_to_A_and_A': 24, 'A_and_U_to_A_and_A': 19, 'M_and_A_to_M_and_M': 57}"
+661,"{'U_and_M_to_U_and_U': 25, 'Polymerase_M_to_A': 45, 'M_and_U_to_M_and_M': 24, 'U_and_A_to_U_and_U': 18, 'A_and_M_to_A_and_A': 21, 'A_and_U_to_A_and_A': 31, 'M_and_A_to_M_and_M': 58}"
+662,"{'M_and_U_to_M_and_M': 42, 'U_and_M_to_U_and_U': 46, 'Polymerase_M_to_A': 36, 'A_and_M_to_A_and_A': 15, 'A_and_U_to_A_and_A': 34, 'U_and_A_to_U_and_U': 36, 'M_and_A_to_M_and_M': 32}"
+663,"{'M_and_U_to_M_and_M': 28, 'U_and_M_to_U_and_U': 18, 'Polymerase_M_to_A': 48, 'A_and_U_to_A_and_A': 13, 'M_and_A_to_M_and_M': 65, 'A_and_M_to_A_and_A': 25, 'U_and_A_to_U_and_U': 12}"
+664,"{'Polymerase_M_to_A': 27, 'U_and_M_to_U_and_U': 23, 'M_and_U_to_M_and_M': 31, 'U_and_A_to_U_and_U': 57, 'A_and_U_to_A_and_A': 41, 'A_and_M_to_A_and_A': 14, 'M_and_A_to_M_and_M': 13}"
+665,"{'U_and_M_to_U_and_U': 13, 'Polymerase_M_to_A': 44, 'M_and_U_to_M_and_M': 32, 'A_and_M_to_A_and_A': 23, 'A_and_U_to_A_and_A': 27, 'M_and_A_to_M_and_M': 39, 'U_and_A_to_U_and_U': 35}"
+666,"{'U_and_M_to_U_and_U': 34, 'M_and_U_to_M_and_M': 25, 'Polymerase_M_to_A': 18, 'A_and_M_to_A_and_A': 9, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 46, 'M_and_A_to_M_and_M': 4}"
+667,"{'Polymerase_M_to_A': 41, 'U_and_A_to_U_and_U': 1, 'M_and_U_to_M_and_M': 16, 'U_and_M_to_U_and_U': 10, 'A_and_M_to_A_and_A': 46, 'A_and_U_to_A_and_A': 9, 'M_and_A_to_M_and_M': 70}"
+668,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 47, 'Polymerase_M_to_A': 45, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 33, 'A_and_U_to_A_and_A': 26, 'U_and_A_to_U_and_U': 40}"
+669,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 40, 'M_and_A_to_M_and_M': 45, 'A_and_M_to_A_and_A': 26, 'U_and_A_to_U_and_U': 20, 'A_and_U_to_A_and_A': 21}"
+670,"{'Polymerase_M_to_A': 44, 'U_and_M_to_U_and_U': 22, 'M_and_A_to_M_and_M': 41, 'M_and_U_to_M_and_M': 23, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 34, 'U_and_A_to_U_and_U': 39}"
+671,"{'M_and_U_to_M_and_M': 26, 'U_and_M_to_U_and_U': 12, 'Polymerase_M_to_A': 54, 'A_and_U_to_A_and_A': 2, 'M_and_A_to_M_and_M': 55, 'A_and_M_to_A_and_A': 31, 'U_and_A_to_U_and_U': 1}"
+672,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 12, 'Polymerase_M_to_A': 51, 'M_and_A_to_M_and_M': 47, 'A_and_M_to_A_and_A': 28, 'U_and_A_to_U_and_U': 28, 'A_and_U_to_A_and_A': 20}"
+673,"{'M_and_U_to_M_and_M': 47, 'U_and_M_to_U_and_U': 41, 'Polymerase_M_to_A': 39, 'A_and_M_to_A_and_A': 13, 'U_and_A_to_U_and_U': 28, 'A_and_U_to_A_and_A': 28, 'M_and_A_to_M_and_M': 38}"
+674,"{'M_and_U_to_M_and_M': 33, 'U_and_M_to_U_and_U': 31, 'Polymerase_M_to_A': 42, 'A_and_U_to_A_and_A': 32, 'U_and_A_to_U_and_U': 31, 'A_and_M_to_A_and_A': 19, 'M_and_A_to_M_and_M': 47}"
+675,"{'M_and_U_to_M_and_M': 24, 'U_and_M_to_U_and_U': 6, 'Polymerase_M_to_A': 54, 'U_and_A_to_U_and_U': 12, 'A_and_M_to_A_and_A': 44, 'M_and_A_to_M_and_M': 66, 'A_and_U_to_A_and_A': 9}"
+676,"{'Polymerase_M_to_A': 68, 'A_and_U_to_A_and_A': 21, 'U_and_M_to_U_and_U': 17, 'M_and_U_to_M_and_M': 28, 'M_and_A_to_M_and_M': 74, 'A_and_M_to_A_and_A': 20, 'U_and_A_to_U_and_U': 20}"
+677,"{'M_and_U_to_M_and_M': 39, 'U_and_M_to_U_and_U': 31, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 25, 'U_and_A_to_U_and_U': 37, 'A_and_U_to_A_and_A': 30, 'M_and_A_to_M_and_M': 33}"
+678,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 23, 'Polymerase_M_to_A': 48, 'A_and_U_to_A_and_A': 34, 'U_and_A_to_U_and_U': 32, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 39}"
+679,"{'U_and_M_to_U_and_U': 42, 'M_and_U_to_M_and_M': 54, 'Polymerase_M_to_A': 39, 'A_and_U_to_A_and_A': 39, 'M_and_A_to_M_and_M': 17, 'A_and_M_to_A_and_A': 4, 'U_and_A_to_U_and_U': 57}"
+680,"{'Polymerase_M_to_A': 50, 'A_and_M_to_A_and_A': 14, 'M_and_U_to_M_and_M': 42, 'U_and_M_to_U_and_U': 32, 'U_and_A_to_U_and_U': 54, 'M_and_A_to_M_and_M': 33, 'A_and_U_to_A_and_A': 28}"
+681,"{'M_and_U_to_M_and_M': 33, 'U_and_M_to_U_and_U': 22, 'Polymerase_M_to_A': 47, 'A_and_U_to_A_and_A': 17, 'A_and_M_to_A_and_A': 32, 'M_and_A_to_M_and_M': 54, 'U_and_A_to_U_and_U': 25}"
+682,"{'U_and_M_to_U_and_U': 20, 'M_and_U_to_M_and_M': 25, 'Polymerase_M_to_A': 55, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 22, 'M_and_A_to_M_and_M': 64, 'U_and_A_to_U_and_U': 13}"
+683,"{'U_and_M_to_U_and_U': 26, 'M_and_U_to_M_and_M': 40, 'Polymerase_M_to_A': 50, 'A_and_M_to_A_and_A': 37, 'M_and_A_to_M_and_M': 62, 'U_and_A_to_U_and_U': 17, 'A_and_U_to_A_and_A': 14}"
+684,"{'M_and_U_to_M_and_M': 28, 'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 51, 'A_and_M_to_A_and_A': 22, 'U_and_A_to_U_and_U': 13, 'M_and_A_to_M_and_M': 58, 'A_and_U_to_A_and_A': 20}"
+685,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 44, 'U_and_A_to_U_and_U': 34, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 45, 'A_and_U_to_A_and_A': 34}"
+686,"{'U_and_M_to_U_and_U': 39, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 32, 'A_and_U_to_A_and_A': 29, 'A_and_M_to_A_and_A': 14, 'M_and_A_to_M_and_M': 17, 'U_and_A_to_U_and_U': 41}"
+687,"{'M_and_U_to_M_and_M': 49, 'U_and_M_to_U_and_U': 48, 'Polymerase_M_to_A': 21, 'A_and_M_to_A_and_A': 4, 'U_and_A_to_U_and_U': 38, 'A_and_U_to_A_and_A': 31, 'M_and_A_to_M_and_M': 14}"
+688,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 45, 'Polymerase_M_to_A': 46, 'M_and_A_to_M_and_M': 40, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 41, 'A_and_U_to_A_and_A': 37}"
+689,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 22, 'Polymerase_M_to_A': 33, 'A_and_M_to_A_and_A': 32, 'A_and_U_to_A_and_A': 29, 'U_and_A_to_U_and_U': 31, 'M_and_A_to_M_and_M': 42}"
+690,"{'M_and_U_to_M_and_M': 34, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 48, 'A_and_M_to_A_and_A': 21, 'M_and_A_to_M_and_M': 44, 'A_and_U_to_A_and_A': 22, 'U_and_A_to_U_and_U': 26}"
+691,"{'U_and_M_to_U_and_U': 14, 'M_and_U_to_M_and_M': 16, 'Polymerase_M_to_A': 51, 'A_and_U_to_A_and_A': 16, 'M_and_A_to_M_and_M': 53, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 3}"
+692,"{'M_and_U_to_M_and_M': 42, 'U_and_M_to_U_and_U': 31, 'Polymerase_M_to_A': 35, 'A_and_M_to_A_and_A': 25, 'M_and_A_to_M_and_M': 37, 'A_and_U_to_A_and_A': 29, 'U_and_A_to_U_and_U': 30}"
+693,"{'U_and_M_to_U_and_U': 36, 'M_and_U_to_M_and_M': 47, 'Polymerase_M_to_A': 53, 'A_and_U_to_A_and_A': 27, 'M_and_A_to_M_and_M': 44, 'U_and_A_to_U_and_U': 35, 'A_and_M_to_A_and_A': 19}"
+694,"{'U_and_M_to_U_and_U': 41, 'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 32, 'A_and_U_to_A_and_A': 28, 'A_and_M_to_A_and_A': 25, 'M_and_A_to_M_and_M': 42, 'U_and_A_to_U_and_U': 23}"
+695,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 22, 'Polymerase_M_to_A': 50, 'A_and_U_to_A_and_A': 24, 'U_and_A_to_U_and_U': 23, 'A_and_M_to_A_and_A': 20, 'M_and_A_to_M_and_M': 46}"
+696,"{'M_and_U_to_M_and_M': 23, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 43, 'A_and_U_to_A_and_A': 22, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 58, 'U_and_A_to_U_and_U': 15}"
+697,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 37, 'Polymerase_M_to_A': 29, 'M_and_A_to_M_and_M': 20, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 44, 'A_and_U_to_A_and_A': 39}"
+698,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 31, 'Polymerase_M_to_A': 33, 'A_and_M_to_A_and_A': 12, 'M_and_A_to_M_and_M': 21, 'U_and_A_to_U_and_U': 45, 'A_and_U_to_A_and_A': 44}"
+699,"{'M_and_U_to_M_and_M': 14, 'U_and_M_to_U_and_U': 9, 'Polymerase_M_to_A': 51, 'M_and_A_to_M_and_M': 72, 'A_and_U_to_A_and_A': 18, 'A_and_M_to_A_and_A': 30, 'U_and_A_to_U_and_U': 9}"
+700,"{'M_and_U_to_M_and_M': 41, 'U_and_M_to_U_and_U': 30, 'Polymerase_M_to_A': 35, 'A_and_M_to_A_and_A': 20, 'M_and_A_to_M_and_M': 40, 'U_and_A_to_U_and_U': 16, 'A_and_U_to_A_and_A': 16}"
+701,"{'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 33, 'U_and_M_to_U_and_U': 39, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 51, 'M_and_A_to_M_and_M': 31, 'A_and_U_to_A_and_A': 53}"
+702,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 24, 'Polymerase_M_to_A': 44, 'U_and_A_to_U_and_U': 9, 'A_and_U_to_A_and_A': 18, 'A_and_M_to_A_and_A': 20, 'M_and_A_to_M_and_M': 49}"
+703,"{'U_and_M_to_U_and_U': 19, 'Polymerase_M_to_A': 54, 'M_and_A_to_M_and_M': 64, 'M_and_U_to_M_and_M': 29, 'U_and_A_to_U_and_U': 14, 'A_and_U_to_A_and_A': 19, 'A_and_M_to_A_and_A': 25}"
+704,"{'U_and_M_to_U_and_U': 20, 'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 56, 'A_and_M_to_A_and_A': 21, 'M_and_A_to_M_and_M': 57, 'U_and_A_to_U_and_U': 11, 'A_and_U_to_A_and_A': 13}"
+705,"{'M_and_U_to_M_and_M': 15, 'U_and_M_to_U_and_U': 21, 'Polymerase_M_to_A': 44, 'A_and_U_to_A_and_A': 30, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 66, 'U_and_A_to_U_and_U': 9}"
+706,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 42, 'Polymerase_M_to_A': 32, 'M_and_A_to_M_and_M': 37, 'A_and_U_to_A_and_A': 34, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 34}"
+707,"{'M_and_U_to_M_and_M': 17, 'U_and_M_to_U_and_U': 24, 'Polymerase_M_to_A': 41, 'A_and_U_to_A_and_A': 28, 'A_and_M_to_A_and_A': 17, 'M_and_A_to_M_and_M': 33, 'U_and_A_to_U_and_U': 27}"
+708,"{'U_and_M_to_U_and_U': 42, 'M_and_U_to_M_and_M': 55, 'Polymerase_M_to_A': 35, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 49, 'M_and_A_to_M_and_M': 18, 'A_and_U_to_A_and_A': 34}"
+709,"{'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 32, 'U_and_M_to_U_and_U': 31, 'A_and_M_to_A_and_A': 16, 'A_and_U_to_A_and_A': 34, 'M_and_A_to_M_and_M': 15, 'U_and_A_to_U_and_U': 55}"
+710,"{'M_and_U_to_M_and_M': 16, 'Polymerase_M_to_A': 59, 'U_and_M_to_U_and_U': 8, 'A_and_M_to_A_and_A': 32, 'M_and_A_to_M_and_M': 73, 'A_and_U_to_A_and_A': 14, 'U_and_A_to_U_and_U': 7}"
+711,"{'M_and_U_to_M_and_M': 39, 'Polymerase_M_to_A': 27, 'U_and_M_to_U_and_U': 25, 'A_and_M_to_A_and_A': 13, 'U_and_A_to_U_and_U': 57, 'A_and_U_to_A_and_A': 43, 'M_and_A_to_M_and_M': 14}"
+712,"{'U_and_M_to_U_and_U': 7, 'Polymerase_M_to_A': 44, 'M_and_U_to_M_and_M': 16, 'A_and_M_to_A_and_A': 38, 'A_and_U_to_A_and_A': 28, 'M_and_A_to_M_and_M': 59, 'U_and_A_to_U_and_U': 22}"
+713,"{'M_and_U_to_M_and_M': 44, 'Polymerase_M_to_A': 31, 'U_and_M_to_U_and_U': 26, 'M_and_A_to_M_and_M': 26, 'A_and_M_to_A_and_A': 28, 'A_and_U_to_A_and_A': 33, 'U_and_A_to_U_and_U': 49}"
+714,"{'U_and_M_to_U_and_U': 61, 'M_and_U_to_M_and_M': 45, 'Polymerase_M_to_A': 22, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 12, 'U_and_A_to_U_and_U': 38, 'A_and_M_to_A_and_A': 7}"
+715,"{'U_and_M_to_U_and_U': 16, 'M_and_U_to_M_and_M': 26, 'Polymerase_M_to_A': 54, 'A_and_M_to_A_and_A': 28, 'U_and_A_to_U_and_U': 11, 'M_and_A_to_M_and_M': 74, 'A_and_U_to_A_and_A': 16}"
+716,"{'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 31, 'U_and_M_to_U_and_U': 46, 'U_and_A_to_U_and_U': 44, 'A_and_U_to_A_and_A': 34, 'A_and_M_to_A_and_A': 14, 'M_and_A_to_M_and_M': 26}"
+717,"{'U_and_M_to_U_and_U': 17, 'M_and_U_to_M_and_M': 23, 'Polymerase_M_to_A': 63, 'M_and_A_to_M_and_M': 67, 'A_and_M_to_A_and_A': 22, 'A_and_U_to_A_and_A': 11, 'U_and_A_to_U_and_U': 2}"
+718,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 16, 'Polymerase_M_to_A': 45, 'U_and_A_to_U_and_U': 19, 'A_and_U_to_A_and_A': 18, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 54}"
+719,"{'Polymerase_M_to_A': 37, 'U_and_M_to_U_and_U': 30, 'M_and_U_to_M_and_M': 41, 'M_and_A_to_M_and_M': 28, 'U_and_A_to_U_and_U': 43, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 28}"
+720,"{'U_and_M_to_U_and_U': 12, 'M_and_U_to_M_and_M': 27, 'Polymerase_M_to_A': 48, 'A_and_M_to_A_and_A': 44, 'M_and_A_to_M_and_M': 61, 'A_and_U_to_A_and_A': 7, 'U_and_A_to_U_and_U': 9}"
+721,"{'U_and_M_to_U_and_U': 11, 'Polymerase_M_to_A': 64, 'M_and_A_to_M_and_M': 73, 'M_and_U_to_M_and_M': 18, 'U_and_A_to_U_and_U': 9, 'A_and_M_to_A_and_A': 26, 'A_and_U_to_A_and_A': 15}"
+722,"{'U_and_M_to_U_and_U': 34, 'M_and_U_to_M_and_M': 42, 'Polymerase_M_to_A': 43, 'A_and_U_to_A_and_A': 24, 'U_and_A_to_U_and_U': 44, 'M_and_A_to_M_and_M': 24, 'A_and_M_to_A_and_A': 17}"
+723,"{'U_and_M_to_U_and_U': 20, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 42, 'A_and_M_to_A_and_A': 27, 'A_and_U_to_A_and_A': 27, 'M_and_A_to_M_and_M': 46, 'U_and_A_to_U_and_U': 35}"
+724,"{'M_and_U_to_M_and_M': 51, 'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 50, 'M_and_A_to_M_and_M': 44, 'A_and_M_to_A_and_A': 18, 'U_and_A_to_U_and_U': 37, 'A_and_U_to_A_and_A': 29}"
+725,"{'M_and_U_to_M_and_M': 16, 'U_and_M_to_U_and_U': 22, 'Polymerase_M_to_A': 23, 'M_and_A_to_M_and_M': 2, 'U_and_A_to_U_and_U': 45, 'A_and_M_to_A_and_A': 8, 'A_and_U_to_A_and_A': 16}"
+726,"{'M_and_U_to_M_and_M': 50, 'Polymerase_M_to_A': 43, 'U_and_M_to_U_and_U': 36, 'A_and_M_to_A_and_A': 11, 'M_and_A_to_M_and_M': 34, 'U_and_A_to_U_and_U': 35, 'A_and_U_to_A_and_A': 26}"
+727,"{'M_and_U_to_M_and_M': 27, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 51, 'U_and_A_to_U_and_U': 22, 'A_and_U_to_A_and_A': 35, 'M_and_A_to_M_and_M': 56, 'A_and_M_to_A_and_A': 13}"
+728,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 51, 'Polymerase_M_to_A': 45, 'U_and_A_to_U_and_U': 54, 'A_and_M_to_A_and_A': 15, 'A_and_U_to_A_and_A': 32, 'M_and_A_to_M_and_M': 21}"
+729,"{'M_and_U_to_M_and_M': 39, 'Polymerase_M_to_A': 42, 'U_and_M_to_U_and_U': 38, 'U_and_A_to_U_and_U': 46, 'A_and_U_to_A_and_A': 36, 'M_and_A_to_M_and_M': 38, 'A_and_M_to_A_and_A': 16}"
+730,"{'M_and_U_to_M_and_M': 44, 'Polymerase_M_to_A': 28, 'U_and_M_to_U_and_U': 40, 'A_and_M_to_A_and_A': 10, 'M_and_A_to_M_and_M': 9, 'U_and_A_to_U_and_U': 52, 'A_and_U_to_A_and_A': 34}"
+731,"{'M_and_U_to_M_and_M': 28, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 54, 'A_and_M_to_A_and_A': 32, 'U_and_A_to_U_and_U': 18, 'A_and_U_to_A_and_A': 17, 'M_and_A_to_M_and_M': 55}"
+732,"{'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 44, 'U_and_M_to_U_and_U': 40, 'A_and_U_to_A_and_A': 29, 'M_and_A_to_M_and_M': 41, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 36}"
+733,"{'U_and_M_to_U_and_U': 18, 'M_and_U_to_M_and_M': 19, 'Polymerase_M_to_A': 64, 'A_and_M_to_A_and_A': 36, 'M_and_A_to_M_and_M': 84, 'A_and_U_to_A_and_A': 19, 'U_and_A_to_U_and_U': 5}"
+734,"{'M_and_U_to_M_and_M': 34, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 33, 'A_and_M_to_A_and_A': 19, 'M_and_A_to_M_and_M': 32, 'U_and_A_to_U_and_U': 29, 'A_and_U_to_A_and_A': 31}"
+735,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 35, 'Polymerase_M_to_A': 42, 'A_and_U_to_A_and_A': 19, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 46, 'U_and_A_to_U_and_U': 29}"
+736,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 37, 'Polymerase_M_to_A': 46, 'M_and_A_to_M_and_M': 38, 'A_and_U_to_A_and_A': 32, 'U_and_A_to_U_and_U': 23, 'A_and_M_to_A_and_A': 11}"
+737,"{'U_and_M_to_U_and_U': 33, 'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 42, 'U_and_A_to_U_and_U': 46, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 44, 'A_and_U_to_A_and_A': 26}"
+738,"{'M_and_U_to_M_and_M': 49, 'U_and_M_to_U_and_U': 56, 'Polymerase_M_to_A': 18, 'A_and_U_to_A_and_A': 24, 'A_and_M_to_A_and_A': 12, 'U_and_A_to_U_and_U': 32, 'M_and_A_to_M_and_M': 14}"
+739,"{'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 42, 'U_and_M_to_U_and_U': 37, 'A_and_U_to_A_and_A': 29, 'M_and_A_to_M_and_M': 33, 'A_and_M_to_A_and_A': 15, 'U_and_A_to_U_and_U': 40}"
+740,"{'M_and_U_to_M_and_M': 40, 'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 46, 'M_and_A_to_M_and_M': 42, 'U_and_A_to_U_and_U': 36, 'A_and_U_to_A_and_A': 34, 'A_and_M_to_A_and_A': 21}"
+741,"{'M_and_U_to_M_and_M': 45, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 31, 'A_and_M_to_A_and_A': 15, 'U_and_A_to_U_and_U': 61, 'A_and_U_to_A_and_A': 35, 'M_and_A_to_M_and_M': 13}"
+742,"{'M_and_U_to_M_and_M': 42, 'U_and_M_to_U_and_U': 44, 'Polymerase_M_to_A': 37, 'A_and_M_to_A_and_A': 14, 'U_and_A_to_U_and_U': 45, 'M_and_A_to_M_and_M': 31, 'A_and_U_to_A_and_A': 33}"
+743,"{'U_and_M_to_U_and_U': 24, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 42, 'U_and_A_to_U_and_U': 51, 'A_and_M_to_A_and_A': 16, 'A_and_U_to_A_and_A': 44, 'M_and_A_to_M_and_M': 31}"
+744,"{'M_and_U_to_M_and_M': 14, 'Polymerase_M_to_A': 28, 'A_and_M_to_A_and_A': 17, 'U_and_M_to_U_and_U': 14, 'M_and_A_to_M_and_M': 12, 'A_and_U_to_A_and_A': 35, 'U_and_A_to_U_and_U': 61}"
+745,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 30, 'Polymerase_M_to_A': 27, 'A_and_M_to_A_and_A': 25, 'U_and_A_to_U_and_U': 36, 'A_and_U_to_A_and_A': 25, 'M_and_A_to_M_and_M': 20}"
+746,"{'U_and_M_to_U_and_U': 34, 'M_and_U_to_M_and_M': 48, 'Polymerase_M_to_A': 52, 'A_and_M_to_A_and_A': 17, 'M_and_A_to_M_and_M': 47, 'U_and_A_to_U_and_U': 36, 'A_and_U_to_A_and_A': 30}"
+747,"{'M_and_U_to_M_and_M': 9, 'U_and_M_to_U_and_U': 28, 'Polymerase_M_to_A': 12, 'M_and_A_to_M_and_M': 4, 'A_and_M_to_A_and_A': 7, 'A_and_U_to_A_and_A': 35, 'U_and_A_to_U_and_U': 50}"
+748,"{'M_and_U_to_M_and_M': 38, 'U_and_M_to_U_and_U': 33, 'Polymerase_M_to_A': 23, 'A_and_U_to_A_and_A': 25, 'M_and_A_to_M_and_M': 16, 'U_and_A_to_U_and_U': 40, 'A_and_M_to_A_and_A': 16}"
+749,"{'M_and_U_to_M_and_M': 20, 'U_and_M_to_U_and_U': 14, 'Polymerase_M_to_A': 60, 'A_and_M_to_A_and_A': 31, 'A_and_U_to_A_and_A': 19, 'U_and_A_to_U_and_U': 10, 'M_and_A_to_M_and_M': 78}"
+750,"{'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 31, 'U_and_M_to_U_and_U': 34, 'U_and_A_to_U_and_U': 45, 'A_and_U_to_A_and_A': 28, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 23}"
+751,"{'U_and_M_to_U_and_U': 36, 'Polymerase_M_to_A': 34, 'M_and_U_to_M_and_M': 44, 'A_and_M_to_A_and_A': 18, 'A_and_U_to_A_and_A': 38, 'U_and_A_to_U_and_U': 37, 'M_and_A_to_M_and_M': 35}"
+752,"{'Polymerase_M_to_A': 31, 'M_and_U_to_M_and_M': 37, 'U_and_M_to_U_and_U': 40, 'A_and_U_to_A_and_A': 36, 'A_and_M_to_A_and_A': 21, 'M_and_A_to_M_and_M': 27, 'U_and_A_to_U_and_U': 51}"
+753,"{'M_and_U_to_M_and_M': 11, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 15, 'M_and_A_to_M_and_M': 9, 'A_and_M_to_A_and_A': 11, 'A_and_U_to_A_and_A': 58, 'U_and_A_to_U_and_U': 69}"
+754,"{'U_and_M_to_U_and_U': 27, 'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 42, 'A_and_M_to_A_and_A': 19, 'M_and_A_to_M_and_M': 49, 'A_and_U_to_A_and_A': 31, 'U_and_A_to_U_and_U': 26}"
+755,"{'Polymerase_M_to_A': 36, 'U_and_M_to_U_and_U': 36, 'M_and_U_to_M_and_M': 44, 'U_and_A_to_U_and_U': 53, 'A_and_M_to_A_and_A': 14, 'A_and_U_to_A_and_A': 45, 'M_and_A_to_M_and_M': 22}"
+756,"{'M_and_U_to_M_and_M': 36, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 45, 'M_and_A_to_M_and_M': 42, 'U_and_A_to_U_and_U': 40, 'A_and_M_to_A_and_A': 23, 'A_and_U_to_A_and_A': 32}"
+757,"{'M_and_U_to_M_and_M': 18, 'U_and_M_to_U_and_U': 28, 'Polymerase_M_to_A': 16, 'A_and_U_to_A_and_A': 38, 'M_and_A_to_M_and_M': 1, 'U_and_A_to_U_and_U': 55, 'A_and_M_to_A_and_A': 9}"
+758,"{'U_and_M_to_U_and_U': 59, 'M_and_U_to_M_and_M': 60, 'Polymerase_M_to_A': 17, 'A_and_M_to_A_and_A': 13, 'M_and_A_to_M_and_M': 9, 'U_and_A_to_U_and_U': 35, 'A_and_U_to_A_and_A': 24}"
+759,"{'M_and_U_to_M_and_M': 33, 'U_and_M_to_U_and_U': 43, 'Polymerase_M_to_A': 29, 'M_and_A_to_M_and_M': 19, 'A_and_M_to_A_and_A': 11, 'U_and_A_to_U_and_U': 39, 'A_and_U_to_A_and_A': 23}"
+760,"{'M_and_U_to_M_and_M': 14, 'U_and_M_to_U_and_U': 6, 'Polymerase_M_to_A': 51, 'M_and_A_to_M_and_M': 80, 'A_and_M_to_A_and_A': 38, 'A_and_U_to_A_and_A': 7}"
+761,"{'M_and_U_to_M_and_M': 12, 'U_and_M_to_U_and_U': 25, 'Polymerase_M_to_A': 21, 'M_and_A_to_M_and_M': 9, 'A_and_U_to_A_and_A': 42, 'A_and_M_to_A_and_A': 10, 'U_and_A_to_U_and_U': 62}"
+762,"{'U_and_M_to_U_and_U': 20, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 38, 'A_and_U_to_A_and_A': 31, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 37, 'M_and_A_to_M_and_M': 41}"
+763,"{'M_and_U_to_M_and_M': 52, 'U_and_M_to_U_and_U': 47, 'Polymerase_M_to_A': 31, 'M_and_A_to_M_and_M': 23, 'A_and_M_to_A_and_A': 10, 'U_and_A_to_U_and_U': 51, 'A_and_U_to_A_and_A': 40}"
+764,"{'U_and_M_to_U_and_U': 23, 'M_and_U_to_M_and_M': 31, 'Polymerase_M_to_A': 45, 'A_and_M_to_A_and_A': 26, 'A_and_U_to_A_and_A': 15, 'M_and_A_to_M_and_M': 61, 'U_and_A_to_U_and_U': 8}"
+765,"{'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 49, 'U_and_M_to_U_and_U': 21, 'M_and_A_to_M_and_M': 65, 'A_and_M_to_A_and_A': 30, 'A_and_U_to_A_and_A': 16, 'U_and_A_to_U_and_U': 12}"
+766,"{'M_and_U_to_M_and_M': 37, 'U_and_M_to_U_and_U': 35, 'Polymerase_M_to_A': 41, 'A_and_M_to_A_and_A': 20, 'M_and_A_to_M_and_M': 33, 'U_and_A_to_U_and_U': 36, 'A_and_U_to_A_and_A': 22}"
+767,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 17, 'Polymerase_M_to_A': 50, 'A_and_M_to_A_and_A': 22, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 55, 'U_and_A_to_U_and_U': 24}"
+768,"{'U_and_M_to_U_and_U': 45, 'M_and_U_to_M_and_M': 53, 'Polymerase_M_to_A': 33, 'U_and_A_to_U_and_U': 21, 'A_and_U_to_A_and_A': 26, 'M_and_A_to_M_and_M': 36, 'A_and_M_to_A_and_A': 20}"
+769,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 23, 'Polymerase_M_to_A': 48, 'A_and_U_to_A_and_A': 16, 'M_and_A_to_M_and_M': 47, 'A_and_M_to_A_and_A': 24, 'U_and_A_to_U_and_U': 18}"
+770,"{'U_and_M_to_U_and_U': 41, 'M_and_U_to_M_and_M': 53, 'Polymerase_M_to_A': 32, 'U_and_A_to_U_and_U': 39, 'M_and_A_to_M_and_M': 10, 'A_and_U_to_A_and_A': 22, 'A_and_M_to_A_and_A': 11}"
+771,"{'M_and_U_to_M_and_M': 39, 'U_and_M_to_U_and_U': 25, 'Polymerase_M_to_A': 37, 'A_and_M_to_A_and_A': 17, 'U_and_A_to_U_and_U': 40, 'A_and_U_to_A_and_A': 27, 'M_and_A_to_M_and_M': 23}"
+772,"{'U_and_M_to_U_and_U': 37, 'Polymerase_M_to_A': 42, 'M_and_U_to_M_and_M': 47, 'U_and_A_to_U_and_U': 49, 'A_and_U_to_A_and_A': 29, 'A_and_M_to_A_and_A': 11, 'M_and_A_to_M_and_M': 21}"
+773,"{'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 55, 'A_and_M_to_A_and_A': 22, 'U_and_M_to_U_and_U': 12, 'M_and_A_to_M_and_M': 54, 'A_and_U_to_A_and_A': 21, 'U_and_A_to_U_and_U': 30}"
+774,"{'U_and_M_to_U_and_U': 44, 'M_and_U_to_M_and_M': 45, 'Polymerase_M_to_A': 45, 'M_and_A_to_M_and_M': 36, 'A_and_U_to_A_and_A': 31, 'A_and_M_to_A_and_A': 19, 'U_and_A_to_U_and_U': 39}"
+775,"{'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 39, 'U_and_M_to_U_and_U': 23, 'U_and_A_to_U_and_U': 53, 'M_and_A_to_M_and_M': 22, 'A_and_M_to_A_and_A': 16, 'A_and_U_to_A_and_A': 39}"
+776,"{'U_and_M_to_U_and_U': 19, 'M_and_U_to_M_and_M': 30, 'Polymerase_M_to_A': 46, 'M_and_A_to_M_and_M': 49, 'A_and_M_to_A_and_A': 26, 'U_and_A_to_U_and_U': 19, 'A_and_U_to_A_and_A': 21}"
+777,"{'U_and_M_to_U_and_U': 40, 'Polymerase_M_to_A': 30, 'M_and_U_to_M_and_M': 38, 'A_and_M_to_A_and_A': 12, 'A_and_U_to_A_and_A': 44, 'U_and_A_to_U_and_U': 55, 'M_and_A_to_M_and_M': 19}"
+778,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 43, 'Polymerase_M_to_A': 33, 'M_and_A_to_M_and_M': 18, 'A_and_M_to_A_and_A': 14, 'A_and_U_to_A_and_A': 33, 'U_and_A_to_U_and_U': 56}"
+779,"{'U_and_M_to_U_and_U': 24, 'M_and_U_to_M_and_M': 31, 'Polymerase_M_to_A': 51, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 52, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 29}"
+780,"{'Polymerase_M_to_A': 22, 'M_and_U_to_M_and_M': 24, 'U_and_M_to_U_and_U': 34, 'U_and_A_to_U_and_U': 55, 'M_and_A_to_M_and_M': 5, 'A_and_M_to_A_and_A': 8, 'A_and_U_to_A_and_A': 32}"
+781,"{'Polymerase_M_to_A': 51, 'M_and_U_to_M_and_M': 33, 'U_and_M_to_U_and_U': 22, 'U_and_A_to_U_and_U': 32, 'A_and_U_to_A_and_A': 35, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 49}"
+782,"{'M_and_U_to_M_and_M': 44, 'U_and_M_to_U_and_U': 40, 'Polymerase_M_to_A': 31, 'M_and_A_to_M_and_M': 22, 'A_and_U_to_A_and_A': 38, 'U_and_A_to_U_and_U': 42, 'A_and_M_to_A_and_A': 12}"
+783,"{'M_and_U_to_M_and_M': 9, 'Polymerase_M_to_A': 16, 'U_and_M_to_U_and_U': 16, 'U_and_A_to_U_and_U': 44, 'A_and_M_to_A_and_A': 15, 'M_and_A_to_M_and_M': 3, 'A_and_U_to_A_and_A': 16}"
+784,"{'U_and_M_to_U_and_U': 21, 'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 35, 'A_and_M_to_A_and_A': 34, 'M_and_A_to_M_and_M': 49, 'A_and_U_to_A_and_A': 17, 'U_and_A_to_U_and_U': 10}"
+785,"{'U_and_M_to_U_and_U': 28, 'M_and_U_to_M_and_M': 18, 'Polymerase_M_to_A': 22, 'A_and_M_to_A_and_A': 12, 'M_and_A_to_M_and_M': 12, 'A_and_U_to_A_and_A': 52, 'U_and_A_to_U_and_U': 64}"
+786,"{'U_and_M_to_U_and_U': 33, 'M_and_U_to_M_and_M': 48, 'Polymerase_M_to_A': 33, 'M_and_A_to_M_and_M': 20, 'A_and_U_to_A_and_A': 39, 'U_and_A_to_U_and_U': 43, 'A_and_M_to_A_and_A': 19}"
+787,"{'U_and_M_to_U_and_U': 12, 'M_and_U_to_M_and_M': 17, 'Polymerase_M_to_A': 57, 'A_and_U_to_A_and_A': 16, 'U_and_A_to_U_and_U': 6, 'M_and_A_to_M_and_M': 62, 'A_and_M_to_A_and_A': 17}"
+788,"{'M_and_U_to_M_and_M': 29, 'Polymerase_M_to_A': 48, 'U_and_M_to_U_and_U': 26, 'A_and_M_to_A_and_A': 25, 'A_and_U_to_A_and_A': 28, 'M_and_A_to_M_and_M': 38, 'U_and_A_to_U_and_U': 42}"
+789,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 23, 'Polymerase_M_to_A': 19, 'U_and_A_to_U_and_U': 38, 'M_and_A_to_M_and_M': 6, 'A_and_U_to_A_and_A': 17, 'A_and_M_to_A_and_A': 9}"
+790,"{'U_and_M_to_U_and_U': 28, 'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 35, 'A_and_U_to_A_and_A': 30, 'A_and_M_to_A_and_A': 12, 'M_and_A_to_M_and_M': 34, 'U_and_A_to_U_and_U': 27}"
+791,"{'U_and_M_to_U_and_U': 25, 'M_and_U_to_M_and_M': 42, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 19, 'M_and_A_to_M_and_M': 29, 'U_and_A_to_U_and_U': 49, 'A_and_U_to_A_and_A': 40}"
+792,"{'U_and_M_to_U_and_U': 33, 'M_and_U_to_M_and_M': 45, 'Polymerase_M_to_A': 40, 'A_and_U_to_A_and_A': 20, 'M_and_A_to_M_and_M': 11, 'U_and_A_to_U_and_U': 58, 'A_and_M_to_A_and_A': 12}"
+793,"{'M_and_U_to_M_and_M': 40, 'U_and_M_to_U_and_U': 21, 'Polymerase_M_to_A': 61, 'A_and_U_to_A_and_A': 9, 'A_and_M_to_A_and_A': 45, 'M_and_A_to_M_and_M': 75, 'U_and_A_to_U_and_U': 14}"
+794,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 22, 'Polymerase_M_to_A': 38, 'M_and_A_to_M_and_M': 50, 'A_and_M_to_A_and_A': 20, 'A_and_U_to_A_and_A': 34, 'U_and_A_to_U_and_U': 21}"
+795,"{'U_and_M_to_U_and_U': 15, 'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 47, 'U_and_A_to_U_and_U': 22, 'A_and_U_to_A_and_A': 28, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 54}"
+796,"{'U_and_M_to_U_and_U': 39, 'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 28, 'A_and_U_to_A_and_A': 47, 'A_and_M_to_A_and_A': 11, 'U_and_A_to_U_and_U': 49, 'M_and_A_to_M_and_M': 22}"
+797,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 23, 'Polymerase_M_to_A': 39, 'M_and_A_to_M_and_M': 37, 'A_and_M_to_A_and_A': 26, 'A_and_U_to_A_and_A': 8, 'U_and_A_to_U_and_U': 1}"
+798,"{'U_and_M_to_U_and_U': 24, 'M_and_U_to_M_and_M': 20, 'Polymerase_M_to_A': 31, 'M_and_A_to_M_and_M': 33, 'A_and_M_to_A_and_A': 28, 'A_and_U_to_A_and_A': 27, 'U_and_A_to_U_and_U': 33}"
+799,"{'M_and_U_to_M_and_M': 25, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 33, 'A_and_M_to_A_and_A': 10, 'M_and_A_to_M_and_M': 12, 'A_and_U_to_A_and_A': 34, 'U_and_A_to_U_and_U': 56}"
+800,"{'M_and_U_to_M_and_M': 38, 'Polymerase_M_to_A': 41, 'U_and_A_to_U_and_U': 34, 'U_and_M_to_U_and_U': 14, 'M_and_A_to_M_and_M': 38, 'A_and_U_to_A_and_A': 24, 'A_and_M_to_A_and_A': 18}"
+801,"{'M_and_U_to_M_and_M': 38, 'U_and_M_to_U_and_U': 42, 'Polymerase_M_to_A': 33, 'A_and_M_to_A_and_A': 15, 'M_and_A_to_M_and_M': 27, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 38}"
+802,"{'U_and_M_to_U_and_U': 18, 'M_and_U_to_M_and_M': 27, 'Polymerase_M_to_A': 49, 'A_and_U_to_A_and_A': 19, 'U_and_A_to_U_and_U': 13, 'M_and_A_to_M_and_M': 69, 'A_and_M_to_A_and_A': 22}"
+803,"{'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 41, 'U_and_M_to_U_and_U': 25, 'A_and_M_to_A_and_A': 20, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 30, 'U_and_A_to_U_and_U': 39}"
+804,"{'U_and_M_to_U_and_U': 16, 'M_and_U_to_M_and_M': 18, 'Polymerase_M_to_A': 36, 'A_and_U_to_A_and_A': 30, 'M_and_A_to_M_and_M': 51, 'A_and_M_to_A_and_A': 26, 'U_and_A_to_U_and_U': 26}"
+805,"{'U_and_M_to_U_and_U': 7, 'M_and_U_to_M_and_M': 17, 'Polymerase_M_to_A': 47, 'A_and_U_to_A_and_A': 25, 'A_and_M_to_A_and_A': 31, 'U_and_A_to_U_and_U': 21, 'M_and_A_to_M_and_M': 65}"
+806,"{'U_and_M_to_U_and_U': 15, 'M_and_U_to_M_and_M': 22, 'Polymerase_M_to_A': 43, 'A_and_M_to_A_and_A': 25, 'M_and_A_to_M_and_M': 54, 'A_and_U_to_A_and_A': 14, 'U_and_A_to_U_and_U': 6}"
+807,"{'M_and_U_to_M_and_M': 37, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 29, 'A_and_U_to_A_and_A': 35, 'A_and_M_to_A_and_A': 28, 'M_and_A_to_M_and_M': 31, 'U_and_A_to_U_and_U': 43}"
+808,"{'U_and_M_to_U_and_U': 33, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 30, 'A_and_U_to_A_and_A': 26, 'A_and_M_to_A_and_A': 14, 'U_and_A_to_U_and_U': 58, 'M_and_A_to_M_and_M': 9}"
+809,"{'M_and_U_to_M_and_M': 34, 'U_and_M_to_U_and_U': 31, 'Polymerase_M_to_A': 50, 'M_and_A_to_M_and_M': 42, 'A_and_U_to_A_and_A': 31, 'A_and_M_to_A_and_A': 13, 'U_and_A_to_U_and_U': 36}"
+810,"{'U_and_M_to_U_and_U': 32, 'Polymerase_M_to_A': 32, 'M_and_U_to_M_and_M': 52, 'U_and_A_to_U_and_U': 40, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 31, 'M_and_A_to_M_and_M': 21}"
+811,"{'U_and_M_to_U_and_U': 12, 'M_and_U_to_M_and_M': 23, 'Polymerase_M_to_A': 48, 'U_and_A_to_U_and_U': 19, 'M_and_A_to_M_and_M': 46, 'A_and_U_to_A_and_A': 23, 'A_and_M_to_A_and_A': 21}"
+812,"{'U_and_M_to_U_and_U': 39, 'M_and_U_to_M_and_M': 52, 'Polymerase_M_to_A': 34, 'M_and_A_to_M_and_M': 34, 'U_and_A_to_U_and_U': 30, 'A_and_U_to_A_and_A': 28, 'A_and_M_to_A_and_A': 14}"
+813,"{'M_and_U_to_M_and_M': 24, 'U_and_M_to_U_and_U': 17, 'Polymerase_M_to_A': 43, 'M_and_A_to_M_and_M': 42, 'A_and_U_to_A_and_A': 18, 'A_and_M_to_A_and_A': 24, 'U_and_A_to_U_and_U': 11}"
+814,"{'M_and_U_to_M_and_M': 15, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 17, 'U_and_A_to_U_and_U': 44, 'A_and_U_to_A_and_A': 22, 'A_and_M_to_A_and_A': 8, 'M_and_A_to_M_and_M': 3}"
+815,"{'M_and_U_to_M_and_M': 43, 'U_and_M_to_U_and_U': 25, 'Polymerase_M_to_A': 38, 'M_and_A_to_M_and_M': 35, 'A_and_M_to_A_and_A': 26, 'A_and_U_to_A_and_A': 31, 'U_and_A_to_U_and_U': 37}"
+816,"{'M_and_U_to_M_and_M': 14, 'U_and_M_to_U_and_U': 7, 'Polymerase_M_to_A': 45, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 52, 'A_and_U_to_A_and_A': 8}"
+817,"{'U_and_M_to_U_and_U': 21, 'M_and_U_to_M_and_M': 32, 'Polymerase_M_to_A': 49, 'A_and_M_to_A_and_A': 32, 'U_and_A_to_U_and_U': 20, 'A_and_U_to_A_and_A': 20, 'M_and_A_to_M_and_M': 56}"
+818,"{'U_and_M_to_U_and_U': 20, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 52, 'A_and_M_to_A_and_A': 20, 'M_and_A_to_M_and_M': 42, 'U_and_A_to_U_and_U': 26, 'A_and_U_to_A_and_A': 14}"
+819,"{'M_and_U_to_M_and_M': 42, 'Polymerase_M_to_A': 47, 'A_and_M_to_A_and_A': 14, 'U_and_M_to_U_and_U': 41, 'U_and_A_to_U_and_U': 36, 'A_and_U_to_A_and_A': 29, 'M_and_A_to_M_and_M': 40}"
+820,"{'M_and_U_to_M_and_M': 38, 'U_and_M_to_U_and_U': 28, 'Polymerase_M_to_A': 47, 'A_and_U_to_A_and_A': 41, 'U_and_A_to_U_and_U': 52, 'A_and_M_to_A_and_A': 13, 'M_and_A_to_M_and_M': 35}"
+821,"{'U_and_M_to_U_and_U': 18, 'M_and_U_to_M_and_M': 31, 'Polymerase_M_to_A': 48, 'A_and_M_to_A_and_A': 29, 'M_and_A_to_M_and_M': 48, 'A_and_U_to_A_and_A': 22, 'U_and_A_to_U_and_U': 31}"
+822,"{'U_and_M_to_U_and_U': 37, 'M_and_U_to_M_and_M': 49, 'Polymerase_M_to_A': 25, 'A_and_U_to_A_and_A': 32, 'A_and_M_to_A_and_A': 12, 'U_and_A_to_U_and_U': 47, 'M_and_A_to_M_and_M': 9}"
+823,"{'U_and_M_to_U_and_U': 41, 'M_and_U_to_M_and_M': 15, 'Polymerase_M_to_A': 9, 'U_and_A_to_U_and_U': 14, 'A_and_U_to_A_and_A': 5}"
+824,"{'M_and_U_to_M_and_M': 43, 'U_and_M_to_U_and_U': 47, 'Polymerase_M_to_A': 30, 'M_and_A_to_M_and_M': 28, 'A_and_M_to_A_and_A': 18, 'U_and_A_to_U_and_U': 26, 'A_and_U_to_A_and_A': 24}"
+825,"{'M_and_U_to_M_and_M': 27, 'U_and_M_to_U_and_U': 28, 'Polymerase_M_to_A': 27, 'M_and_A_to_M_and_M': 18, 'A_and_M_to_A_and_A': 15, 'A_and_U_to_A_and_A': 21, 'U_and_A_to_U_and_U': 34}"
+826,"{'Polymerase_M_to_A': 52, 'M_and_U_to_M_and_M': 17, 'U_and_M_to_U_and_U': 13, 'M_and_A_to_M_and_M': 74, 'A_and_U_to_A_and_A': 12, 'A_and_M_to_A_and_A': 32, 'U_and_A_to_U_and_U': 1}"
+827,"{'Polymerase_M_to_A': 44, 'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 44, 'A_and_U_to_A_and_A': 25, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 36, 'U_and_A_to_U_and_U': 40}"
+828,"{'Polymerase_M_to_A': 18, 'U_and_M_to_U_and_U': 31, 'A_and_U_to_A_and_A': 28, 'M_and_U_to_M_and_M': 16, 'A_and_M_to_A_and_A': 8, 'U_and_A_to_U_and_U': 42, 'M_and_A_to_M_and_M': 7}"
+829,"{'M_and_U_to_M_and_M': 40, 'Polymerase_M_to_A': 40, 'U_and_M_to_U_and_U': 29, 'M_and_A_to_M_and_M': 35, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 36, 'A_and_U_to_A_and_A': 34}"
+830,"{'M_and_U_to_M_and_M': 50, 'Polymerase_M_to_A': 49, 'U_and_M_to_U_and_U': 27, 'A_and_U_to_A_and_A': 16, 'U_and_A_to_U_and_U': 24, 'M_and_A_to_M_and_M': 41, 'A_and_M_to_A_and_A': 13}"
+831,"{'U_and_M_to_U_and_U': 35, 'Polymerase_M_to_A': 26, 'M_and_U_to_M_and_M': 25, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 45, 'U_and_A_to_U_and_U': 36, 'M_and_A_to_M_and_M': 31}"
+832,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 16, 'Polymerase_M_to_A': 16, 'A_and_U_to_A_and_A': 36, 'A_and_M_to_A_and_A': 17, 'M_and_A_to_M_and_M': 7, 'U_and_A_to_U_and_U': 58}"
+833,"{'U_and_M_to_U_and_U': 12, 'M_and_U_to_M_and_M': 18, 'Polymerase_M_to_A': 47, 'A_and_M_to_A_and_A': 35, 'M_and_A_to_M_and_M': 65, 'A_and_U_to_A_and_A': 11, 'U_and_A_to_U_and_U': 8}"
+834,"{'M_and_U_to_M_and_M': 43, 'U_and_M_to_U_and_U': 47, 'Polymerase_M_to_A': 37, 'U_and_A_to_U_and_U': 38, 'A_and_U_to_A_and_A': 29, 'M_and_A_to_M_and_M': 28, 'A_and_M_to_A_and_A': 9}"
+835,"{'U_and_M_to_U_and_U': 28, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 29, 'A_and_M_to_A_and_A': 18, 'U_and_A_to_U_and_U': 29, 'M_and_A_to_M_and_M': 32, 'A_and_U_to_A_and_A': 26}"
+836,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 28, 'U_and_A_to_U_and_U': 43, 'A_and_M_to_A_and_A': 15, 'M_and_A_to_M_and_M': 20, 'A_and_U_to_A_and_A': 34}"
+837,"{'U_and_M_to_U_and_U': 44, 'M_and_U_to_M_and_M': 59, 'Polymerase_M_to_A': 54, 'A_and_U_to_A_and_A': 22, 'M_and_A_to_M_and_M': 39, 'U_and_A_to_U_and_U': 30, 'A_and_M_to_A_and_A': 13}"
+838,"{'M_and_U_to_M_and_M': 33, 'U_and_M_to_U_and_U': 32, 'Polymerase_M_to_A': 35, 'U_and_A_to_U_and_U': 42, 'M_and_A_to_M_and_M': 25, 'A_and_U_to_A_and_A': 39, 'A_and_M_to_A_and_A': 17}"
+839,"{'U_and_M_to_U_and_U': 25, 'Polymerase_M_to_A': 26, 'M_and_U_to_M_and_M': 25, 'A_and_M_to_A_and_A': 21, 'A_and_U_to_A_and_A': 41, 'U_and_A_to_U_and_U': 62, 'M_and_A_to_M_and_M': 17}"
+840,"{'M_and_U_to_M_and_M': 36, 'U_and_M_to_U_and_U': 40, 'Polymerase_M_to_A': 22, 'M_and_A_to_M_and_M': 14, 'A_and_M_to_A_and_A': 17, 'A_and_U_to_A_and_A': 23, 'U_and_A_to_U_and_U': 45}"
+841,"{'U_and_M_to_U_and_U': 27, 'M_and_U_to_M_and_M': 44, 'Polymerase_M_to_A': 51, 'A_and_M_to_A_and_A': 22, 'M_and_A_to_M_and_M': 49, 'A_and_U_to_A_and_A': 16, 'U_and_A_to_U_and_U': 23}"
+842,"{'M_and_U_to_M_and_M': 22, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 34, 'M_and_A_to_M_and_M': 43, 'A_and_U_to_A_and_A': 16, 'A_and_M_to_A_and_A': 25, 'U_and_A_to_U_and_U': 10}"
+843,"{'U_and_M_to_U_and_U': 12, 'M_and_U_to_M_and_M': 23, 'Polymerase_M_to_A': 44, 'A_and_U_to_A_and_A': 20, 'A_and_M_to_A_and_A': 24, 'U_and_A_to_U_and_U': 18, 'M_and_A_to_M_and_M': 59}"
+844,"{'M_and_U_to_M_and_M': 34, 'U_and_M_to_U_and_U': 35, 'Polymerase_M_to_A': 27, 'U_and_A_to_U_and_U': 55, 'M_and_A_to_M_and_M': 13, 'A_and_U_to_A_and_A': 51, 'A_and_M_to_A_and_A': 9}"
+845,"{'M_and_U_to_M_and_M': 44, 'U_and_M_to_U_and_U': 38, 'Polymerase_M_to_A': 40, 'U_and_A_to_U_and_U': 30, 'A_and_U_to_A_and_A': 22, 'A_and_M_to_A_and_A': 22, 'M_and_A_to_M_and_M': 35}"
+846,"{'U_and_M_to_U_and_U': 51, 'M_and_U_to_M_and_M': 43, 'Polymerase_M_to_A': 31, 'A_and_U_to_A_and_A': 33, 'U_and_A_to_U_and_U': 39, 'M_and_A_to_M_and_M': 27, 'A_and_M_to_A_and_A': 13}"
+847,"{'M_and_U_to_M_and_M': 37, 'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 46, 'A_and_M_to_A_and_A': 26, 'A_and_U_to_A_and_A': 16, 'U_and_A_to_U_and_U': 19, 'M_and_A_to_M_and_M': 54}"
+848,"{'U_and_M_to_U_and_U': 12, 'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 58, 'A_and_M_to_A_and_A': 29, 'A_and_U_to_A_and_A': 17, 'M_and_A_to_M_and_M': 68, 'U_and_A_to_U_and_U': 14}"
+849,"{'U_and_M_to_U_and_U': 25, 'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 46, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 41, 'A_and_U_to_A_and_A': 24, 'U_and_A_to_U_and_U': 28}"
+850,"{'M_and_U_to_M_and_M': 45, 'U_and_M_to_U_and_U': 50, 'Polymerase_M_to_A': 34, 'M_and_A_to_M_and_M': 16, 'A_and_U_to_A_and_A': 33, 'A_and_M_to_A_and_A': 5, 'U_and_A_to_U_and_U': 45}"
+851,"{'M_and_U_to_M_and_M': 27, 'U_and_M_to_U_and_U': 16, 'Polymerase_M_to_A': 48, 'A_and_M_to_A_and_A': 24, 'A_and_U_to_A_and_A': 9, 'M_and_A_to_M_and_M': 49, 'U_and_A_to_U_and_U': 7}"
+852,"{'M_and_U_to_M_and_M': 37, 'Polymerase_M_to_A': 43, 'M_and_A_to_M_and_M': 41, 'U_and_M_to_U_and_U': 27, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 33, 'A_and_U_to_A_and_A': 21}"
+853,"{'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 30, 'A_and_U_to_A_and_A': 40, 'U_and_M_to_U_and_U': 28, 'M_and_A_to_M_and_M': 34, 'A_and_M_to_A_and_A': 19, 'U_and_A_to_U_and_U': 36}"
+854,"{'M_and_U_to_M_and_M': 25, 'U_and_M_to_U_and_U': 12, 'Polymerase_M_to_A': 45, 'A_and_M_to_A_and_A': 36, 'M_and_A_to_M_and_M': 51, 'A_and_U_to_A_and_A': 12, 'U_and_A_to_U_and_U': 10}"
+855,"{'U_and_M_to_U_and_U': 40, 'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 22, 'A_and_M_to_A_and_A': 13, 'U_and_A_to_U_and_U': 34, 'A_and_U_to_A_and_A': 43, 'M_and_A_to_M_and_M': 35}"
+856,"{'M_and_U_to_M_and_M': 33, 'U_and_M_to_U_and_U': 17, 'Polymerase_M_to_A': 44, 'A_and_M_to_A_and_A': 23, 'A_and_U_to_A_and_A': 27, 'M_and_A_to_M_and_M': 37, 'U_and_A_to_U_and_U': 32}"
+857,"{'M_and_U_to_M_and_M': 27, 'U_and_M_to_U_and_U': 23, 'Polymerase_M_to_A': 49, 'M_and_A_to_M_and_M': 58, 'A_and_M_to_A_and_A': 22, 'A_and_U_to_A_and_A': 23, 'U_and_A_to_U_and_U': 12}"
+858,"{'U_and_M_to_U_and_U': 11, 'M_and_U_to_M_and_M': 22, 'Polymerase_M_to_A': 52, 'M_and_A_to_M_and_M': 58, 'A_and_U_to_A_and_A': 11, 'A_and_M_to_A_and_A': 32, 'U_and_A_to_U_and_U': 7}"
+859,"{'M_and_U_to_M_and_M': 47, 'U_and_M_to_U_and_U': 33, 'Polymerase_M_to_A': 48, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 29, 'M_and_A_to_M_and_M': 47, 'A_and_M_to_A_and_A': 20}"
+860,"{'M_and_U_to_M_and_M': 8, 'U_and_M_to_U_and_U': 4, 'Polymerase_M_to_A': 55, 'A_and_M_to_A_and_A': 38, 'A_and_U_to_A_and_A': 13, 'M_and_A_to_M_and_M': 77, 'U_and_A_to_U_and_U': 3}"
+861,"{'Polymerase_M_to_A': 54, 'M_and_U_to_M_and_M': 24, 'U_and_M_to_U_and_U': 21, 'U_and_A_to_U_and_U': 9, 'A_and_U_to_A_and_A': 21, 'M_and_A_to_M_and_M': 67, 'A_and_M_to_A_and_A': 24}"
+862,"{'Polymerase_M_to_A': 39, 'U_and_M_to_U_and_U': 36, 'M_and_U_to_M_and_M': 29, 'U_and_A_to_U_and_U': 54, 'M_and_A_to_M_and_M': 21, 'A_and_U_to_A_and_A': 28, 'A_and_M_to_A_and_A': 10}"
+863,"{'U_and_M_to_U_and_U': 16, 'M_and_U_to_M_and_M': 19, 'Polymerase_M_to_A': 52, 'A_and_U_to_A_and_A': 14, 'A_and_M_to_A_and_A': 34, 'M_and_A_to_M_and_M': 75, 'U_and_A_to_U_and_U': 2}"
+864,"{'U_and_M_to_U_and_U': 41, 'Polymerase_M_to_A': 28, 'A_and_M_to_A_and_A': 23, 'M_and_A_to_M_and_M': 27, 'M_and_U_to_M_and_M': 44, 'A_and_U_to_A_and_A': 39, 'U_and_A_to_U_and_U': 58}"
+865,"{'U_and_M_to_U_and_U': 26, 'M_and_U_to_M_and_M': 39, 'Polymerase_M_to_A': 53, 'A_and_U_to_A_and_A': 16, 'A_and_M_to_A_and_A': 20, 'M_and_A_to_M_and_M': 47, 'U_and_A_to_U_and_U': 14}"
+866,"{'U_and_M_to_U_and_U': 21, 'M_and_U_to_M_and_M': 26, 'Polymerase_M_to_A': 58, 'M_and_A_to_M_and_M': 67, 'A_and_U_to_A_and_A': 12, 'A_and_M_to_A_and_A': 27, 'U_and_A_to_U_and_U': 3}"
+867,"{'U_and_M_to_U_and_U': 52, 'M_and_U_to_M_and_M': 57, 'Polymerase_M_to_A': 46, 'A_and_M_to_A_and_A': 13, 'M_and_A_to_M_and_M': 44, 'A_and_U_to_A_and_A': 26, 'U_and_A_to_U_and_U': 22}"
+868,"{'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 64, 'M_and_U_to_M_and_M': 22, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 19, 'U_and_A_to_U_and_U': 11, 'M_and_A_to_M_and_M': 69}"
+869,"{'M_and_U_to_M_and_M': 49, 'U_and_M_to_U_and_U': 39, 'Polymerase_M_to_A': 36, 'A_and_M_to_A_and_A': 19, 'M_and_A_to_M_and_M': 27, 'A_and_U_to_A_and_A': 31, 'U_and_A_to_U_and_U': 34}"
+870,"{'U_and_M_to_U_and_U': 23, 'M_and_U_to_M_and_M': 31, 'Polymerase_M_to_A': 22, 'A_and_M_to_A_and_A': 5, 'M_and_A_to_M_and_M': 4, 'U_and_A_to_U_and_U': 45, 'A_and_U_to_A_and_A': 25}"
+871,"{'U_and_M_to_U_and_U': 28, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 47, 'A_and_M_to_A_and_A': 21, 'M_and_A_to_M_and_M': 46, 'A_and_U_to_A_and_A': 21, 'U_and_A_to_U_and_U': 29}"
+872,"{'M_and_U_to_M_and_M': 23, 'U_and_M_to_U_and_U': 13, 'Polymerase_M_to_A': 45, 'A_and_M_to_A_and_A': 29, 'A_and_U_to_A_and_A': 19, 'M_and_A_to_M_and_M': 52, 'U_and_A_to_U_and_U': 17}"
+873,"{'U_and_M_to_U_and_U': 42, 'M_and_U_to_M_and_M': 27, 'Polymerase_M_to_A': 24, 'M_and_A_to_M_and_M': 15, 'A_and_U_to_A_and_A': 45, 'A_and_M_to_A_and_A': 5, 'U_and_A_to_U_and_U': 47}"
+874,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 46, 'Polymerase_M_to_A': 52, 'A_and_M_to_A_and_A': 21, 'A_and_U_to_A_and_A': 22, 'M_and_A_to_M_and_M': 51, 'U_and_A_to_U_and_U': 35}"
+875,"{'M_and_U_to_M_and_M': 40, 'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 24, 'A_and_M_to_A_and_A': 17, 'U_and_A_to_U_and_U': 50, 'A_and_U_to_A_and_A': 37, 'M_and_A_to_M_and_M': 10}"
+876,"{'U_and_M_to_U_and_U': 47, 'M_and_U_to_M_and_M': 36, 'Polymerase_M_to_A': 24, 'U_and_A_to_U_and_U': 45, 'A_and_M_to_A_and_A': 6, 'M_and_A_to_M_and_M': 8, 'A_and_U_to_A_and_A': 34}"
+877,"{'M_and_U_to_M_and_M': 18, 'U_and_M_to_U_and_U': 11, 'Polymerase_M_to_A': 44, 'A_and_U_to_A_and_A': 10, 'A_and_M_to_A_and_A': 26, 'M_and_A_to_M_and_M': 44, 'U_and_A_to_U_and_U': 12}"
+878,"{'U_and_M_to_U_and_U': 20, 'M_and_U_to_M_and_M': 23, 'Polymerase_M_to_A': 39, 'M_and_A_to_M_and_M': 49, 'A_and_U_to_A_and_A': 15, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 3}"
+879,"{'M_and_U_to_M_and_M': 19, 'Polymerase_M_to_A': 30, 'U_and_M_to_U_and_U': 23, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 46, 'A_and_U_to_A_and_A': 29, 'M_and_A_to_M_and_M': 23}"
+880,"{'M_and_U_to_M_and_M': 22, 'U_and_M_to_U_and_U': 23, 'Polymerase_M_to_A': 37, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 25, 'U_and_A_to_U_and_U': 44, 'A_and_U_to_A_and_A': 35}"
+881,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 22, 'Polymerase_M_to_A': 46, 'A_and_M_to_A_and_A': 23, 'A_and_U_to_A_and_A': 16, 'M_and_A_to_M_and_M': 52, 'U_and_A_to_U_and_U': 11}"
+882,"{'Polymerase_M_to_A': 53, 'A_and_M_to_A_and_A': 41, 'U_and_M_to_U_and_U': 8, 'M_and_U_to_M_and_M': 18, 'A_and_U_to_A_and_A': 8, 'M_and_A_to_M_and_M': 72, 'U_and_A_to_U_and_U': 4}"
+883,"{'U_and_M_to_U_and_U': 34, 'M_and_U_to_M_and_M': 21, 'Polymerase_M_to_A': 22, 'A_and_U_to_A_and_A': 43, 'M_and_A_to_M_and_M': 8, 'U_and_A_to_U_and_U': 58, 'A_and_M_to_A_and_A': 6}"
+884,"{'U_and_M_to_U_and_U': 20, 'M_and_U_to_M_and_M': 27, 'Polymerase_M_to_A': 41, 'A_and_M_to_A_and_A': 25, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 41, 'U_and_A_to_U_and_U': 17}"
+885,"{'M_and_U_to_M_and_M': 43, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 69, 'A_and_U_to_A_and_A': 18, 'M_and_A_to_M_and_M': 62, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 27}"
+886,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 53, 'Polymerase_M_to_A': 37, 'A_and_M_to_A_and_A': 21, 'M_and_A_to_M_and_M': 37, 'A_and_U_to_A_and_A': 25, 'U_and_A_to_U_and_U': 40}"
+887,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 46, 'Polymerase_M_to_A': 44, 'A_and_U_to_A_and_A': 27, 'A_and_M_to_A_and_A': 22, 'M_and_A_to_M_and_M': 45, 'U_and_A_to_U_and_U': 27}"
+888,"{'U_and_M_to_U_and_U': 50, 'M_and_U_to_M_and_M': 46, 'Polymerase_M_to_A': 26, 'M_and_A_to_M_and_M': 15, 'A_and_U_to_A_and_A': 35, 'A_and_M_to_A_and_A': 6, 'U_and_A_to_U_and_U': 37}"
+889,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 39, 'A_and_M_to_A_and_A': 32, 'M_and_A_to_M_and_M': 55, 'A_and_U_to_A_and_A': 16, 'U_and_A_to_U_and_U': 17}"
+890,"{'M_and_U_to_M_and_M': 33, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 39, 'A_and_M_to_A_and_A': 13, 'A_and_U_to_A_and_A': 28, 'M_and_A_to_M_and_M': 22, 'U_and_A_to_U_and_U': 41}"
+891,"{'U_and_M_to_U_and_U': 38, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 31, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 28, 'A_and_U_to_A_and_A': 37, 'U_and_A_to_U_and_U': 32}"
+892,"{'U_and_M_to_U_and_U': 56, 'M_and_U_to_M_and_M': 63, 'Polymerase_M_to_A': 35, 'U_and_A_to_U_and_U': 40, 'A_and_U_to_A_and_A': 33, 'A_and_M_to_A_and_A': 7, 'M_and_A_to_M_and_M': 25}"
+893,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 31, 'A_and_U_to_A_and_A': 29, 'U_and_A_to_U_and_U': 33, 'M_and_A_to_M_and_M': 44}"
+894,"{'U_and_M_to_U_and_U': 20, 'M_and_U_to_M_and_M': 28, 'Polymerase_M_to_A': 40, 'M_and_A_to_M_and_M': 28, 'A_and_U_to_A_and_A': 38, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 45}"
+895,"{'M_and_U_to_M_and_M': 43, 'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 45, 'A_and_U_to_A_and_A': 26, 'A_and_M_to_A_and_A': 26, 'U_and_A_to_U_and_U': 27, 'M_and_A_to_M_and_M': 51}"
+896,"{'M_and_U_to_M_and_M': 40, 'U_and_M_to_U_and_U': 22, 'Polymerase_M_to_A': 53, 'M_and_A_to_M_and_M': 42, 'A_and_U_to_A_and_A': 27, 'A_and_M_to_A_and_A': 22, 'U_and_A_to_U_and_U': 33}"
+897,"{'U_and_M_to_U_and_U': 30, 'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 31, 'U_and_A_to_U_and_U': 42, 'A_and_M_to_A_and_A': 12, 'A_and_U_to_A_and_A': 38, 'M_and_A_to_M_and_M': 23}"
+898,"{'U_and_M_to_U_and_U': 41, 'Polymerase_M_to_A': 36, 'M_and_U_to_M_and_M': 36, 'A_and_U_to_A_and_A': 42, 'U_and_A_to_U_and_U': 41, 'A_and_M_to_A_and_A': 15, 'M_and_A_to_M_and_M': 38}"
+899,"{'M_and_U_to_M_and_M': 34, 'U_and_M_to_U_and_U': 20, 'Polymerase_M_to_A': 46, 'A_and_M_to_A_and_A': 21, 'M_and_A_to_M_and_M': 51, 'U_and_A_to_U_and_U': 16, 'A_and_U_to_A_and_A': 17}"
+900,"{'M_and_U_to_M_and_M': 28, 'U_and_M_to_U_and_U': 31, 'Polymerase_M_to_A': 37, 'A_and_U_to_A_and_A': 22, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 31, 'U_and_A_to_U_and_U': 24}"
+901,"{'M_and_U_to_M_and_M': 18, 'U_and_M_to_U_and_U': 11, 'Polymerase_M_to_A': 50, 'M_and_A_to_M_and_M': 63, 'A_and_M_to_A_and_A': 30, 'U_and_A_to_U_and_U': 4, 'A_and_U_to_A_and_A': 12}"
+902,"{'U_and_M_to_U_and_U': 38, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 41, 'M_and_A_to_M_and_M': 38, 'A_and_M_to_A_and_A': 18, 'A_and_U_to_A_and_A': 21, 'U_and_A_to_U_and_U': 32}"
+903,"{'U_and_M_to_U_and_U': 10, 'M_and_U_to_M_and_M': 22, 'Polymerase_M_to_A': 48, 'A_and_M_to_A_and_A': 30, 'A_and_U_to_A_and_A': 14, 'U_and_A_to_U_and_U': 13, 'M_and_A_to_M_and_M': 56}"
+904,"{'M_and_U_to_M_and_M': 16, 'U_and_M_to_U_and_U': 21, 'Polymerase_M_to_A': 34, 'M_and_A_to_M_and_M': 27, 'A_and_M_to_A_and_A': 22, 'A_and_U_to_A_and_A': 37, 'U_and_A_to_U_and_U': 52}"
+905,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 18, 'Polymerase_M_to_A': 51, 'A_and_M_to_A_and_A': 32, 'A_and_U_to_A_and_A': 18, 'M_and_A_to_M_and_M': 61, 'U_and_A_to_U_and_U': 22}"
+906,"{'U_and_M_to_U_and_U': 27, 'M_and_U_to_M_and_M': 35, 'Polymerase_M_to_A': 41, 'A_and_U_to_A_and_A': 35, 'U_and_A_to_U_and_U': 29, 'M_and_A_to_M_and_M': 36, 'A_and_M_to_A_and_A': 18}"
+907,"{'U_and_M_to_U_and_U': 33, 'M_and_U_to_M_and_M': 40, 'Polymerase_M_to_A': 29, 'A_and_M_to_A_and_A': 17, 'U_and_A_to_U_and_U': 41, 'M_and_A_to_M_and_M': 15, 'A_and_U_to_A_and_A': 33}"
+908,"{'M_and_U_to_M_and_M': 26, 'Polymerase_M_to_A': 55, 'M_and_A_to_M_and_M': 69, 'U_and_M_to_U_and_U': 15, 'A_and_M_to_A_and_A': 36, 'U_and_A_to_U_and_U': 9, 'A_and_U_to_A_and_A': 13}"
+909,"{'M_and_U_to_M_and_M': 30, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 33, 'A_and_M_to_A_and_A': 14, 'M_and_A_to_M_and_M': 37, 'U_and_A_to_U_and_U': 20, 'A_and_U_to_A_and_A': 20}"
+910,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 18, 'Polymerase_M_to_A': 49, 'A_and_M_to_A_and_A': 17, 'U_and_A_to_U_and_U': 8, 'A_and_U_to_A_and_A': 9, 'M_and_A_to_M_and_M': 48}"
+911,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 44, 'Polymerase_M_to_A': 51, 'M_and_A_to_M_and_M': 50, 'A_and_U_to_A_and_A': 27, 'A_and_M_to_A_and_A': 29, 'U_and_A_to_U_and_U': 40}"
+912,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 20, 'Polymerase_M_to_A': 21, 'A_and_U_to_A_and_A': 23, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 45, 'M_and_A_to_M_and_M': 7}"
+913,"{'U_and_M_to_U_and_U': 26, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 51, 'A_and_M_to_A_and_A': 30, 'A_and_U_to_A_and_A': 22, 'U_and_A_to_U_and_U': 14, 'M_and_A_to_M_and_M': 68}"
+914,"{'U_and_M_to_U_and_U': 29, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 51, 'A_and_U_to_A_and_A': 40, 'M_and_A_to_M_and_M': 50, 'A_and_M_to_A_and_A': 20, 'U_and_A_to_U_and_U': 39}"
+915,"{'U_and_M_to_U_and_U': 17, 'M_and_U_to_M_and_M': 25, 'Polymerase_M_to_A': 43, 'A_and_M_to_A_and_A': 20, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 24, 'M_and_A_to_M_and_M': 46}"
+916,"{'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 36, 'M_and_U_to_M_and_M': 40, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 40, 'A_and_U_to_A_and_A': 32, 'M_and_A_to_M_and_M': 30}"
+917,"{'M_and_U_to_M_and_M': 58, 'U_and_M_to_U_and_U': 44, 'Polymerase_M_to_A': 37, 'A_and_U_to_A_and_A': 22, 'A_and_M_to_A_and_A': 15, 'U_and_A_to_U_and_U': 42, 'M_and_A_to_M_and_M': 24}"
+918,"{'M_and_U_to_M_and_M': 26, 'U_and_M_to_U_and_U': 34, 'Polymerase_M_to_A': 25, 'M_and_A_to_M_and_M': 17, 'A_and_U_to_A_and_A': 39, 'A_and_M_to_A_and_A': 9, 'U_and_A_to_U_and_U': 50}"
+919,"{'M_and_U_to_M_and_M': 26, 'U_and_M_to_U_and_U': 27, 'Polymerase_M_to_A': 53, 'A_and_U_to_A_and_A': 17, 'A_and_M_to_A_and_A': 30, 'M_and_A_to_M_and_M': 62, 'U_and_A_to_U_and_U': 13}"
+920,"{'M_and_U_to_M_and_M': 20, 'U_and_M_to_U_and_U': 12, 'Polymerase_M_to_A': 48, 'A_and_U_to_A_and_A': 10, 'A_and_M_to_A_and_A': 45, 'U_and_A_to_U_and_U': 4, 'M_and_A_to_M_and_M': 73}"
+921,"{'U_and_M_to_U_and_U': 6, 'M_and_U_to_M_and_M': 17, 'Polymerase_M_to_A': 45, 'A_and_M_to_A_and_A': 42, 'A_and_U_to_A_and_A': 9, 'M_and_A_to_M_and_M': 64, 'U_and_A_to_U_and_U': 6}"
+922,"{'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 52, 'M_and_U_to_M_and_M': 34, 'U_and_A_to_U_and_U': 20, 'A_and_M_to_A_and_A': 19, 'M_and_A_to_M_and_M': 58, 'A_and_U_to_A_and_A': 24}"
+923,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 18, 'Polymerase_M_to_A': 17, 'A_and_M_to_A_and_A': 10, 'M_and_A_to_M_and_M': 5, 'U_and_A_to_U_and_U': 38, 'A_and_U_to_A_and_A': 21}"
+924,"{'U_and_M_to_U_and_U': 17, 'M_and_U_to_M_and_M': 25, 'Polymerase_M_to_A': 49, 'M_and_A_to_M_and_M': 60, 'A_and_U_to_A_and_A': 20, 'U_and_A_to_U_and_U': 14, 'A_and_M_to_A_and_A': 26}"
+925,"{'M_and_U_to_M_and_M': 21, 'U_and_M_to_U_and_U': 10, 'Polymerase_M_to_A': 55, 'M_and_A_to_M_and_M': 72, 'A_and_M_to_A_and_A': 34, 'U_and_A_to_U_and_U': 9, 'A_and_U_to_A_and_A': 13}"
+926,"{'U_and_M_to_U_and_U': 24, 'M_and_U_to_M_and_M': 17, 'Polymerase_M_to_A': 25, 'M_and_A_to_M_and_M': 9, 'A_and_U_to_A_and_A': 12, 'U_and_A_to_U_and_U': 38, 'A_and_M_to_A_and_A': 11}"
+927,"{'U_and_M_to_U_and_U': 37, 'M_and_U_to_M_and_M': 27, 'Polymerase_M_to_A': 23, 'U_and_A_to_U_and_U': 38, 'A_and_U_to_A_and_A': 14, 'A_and_M_to_A_and_A': 6, 'M_and_A_to_M_and_M': 5}"
+928,"{'U_and_M_to_U_and_U': 37, 'M_and_U_to_M_and_M': 31, 'Polymerase_M_to_A': 31, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 35, 'A_and_U_to_A_and_A': 23, 'U_and_A_to_U_and_U': 22}"
+929,"{'U_and_M_to_U_and_U': 42, 'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 24, 'A_and_U_to_A_and_A': 52, 'M_and_A_to_M_and_M': 8, 'U_and_A_to_U_and_U': 49}"
+930,"{'U_and_M_to_U_and_U': 27, 'M_and_U_to_M_and_M': 42, 'Polymerase_M_to_A': 40, 'A_and_U_to_A_and_A': 23, 'U_and_A_to_U_and_U': 40, 'A_and_M_to_A_and_A': 25, 'M_and_A_to_M_and_M': 35}"
+931,"{'U_and_M_to_U_and_U': 39, 'M_and_U_to_M_and_M': 33, 'Polymerase_M_to_A': 31, 'A_and_U_to_A_and_A': 45, 'M_and_A_to_M_and_M': 18, 'U_and_A_to_U_and_U': 47, 'A_and_M_to_A_and_A': 8}"
+932,"{'M_and_U_to_M_and_M': 48, 'U_and_M_to_U_and_U': 29, 'Polymerase_M_to_A': 44, 'A_and_M_to_A_and_A': 20, 'M_and_A_to_M_and_M': 41, 'A_and_U_to_A_and_A': 11, 'U_and_A_to_U_and_U': 23}"
+933,"{'U_and_M_to_U_and_U': 18, 'M_and_U_to_M_and_M': 25, 'Polymerase_M_to_A': 45, 'A_and_M_to_A_and_A': 32, 'U_and_A_to_U_and_U': 13, 'A_and_U_to_A_and_A': 21, 'M_and_A_to_M_and_M': 65}"
+934,"{'M_and_U_to_M_and_M': 25, 'U_and_M_to_U_and_U': 16, 'Polymerase_M_to_A': 53, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 60, 'A_and_U_to_A_and_A': 11, 'U_and_A_to_U_and_U': 5}"
+935,"{'Polymerase_M_to_A': 46, 'M_and_U_to_M_and_M': 22, 'U_and_M_to_U_and_U': 31, 'A_and_U_to_A_and_A': 31, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 51, 'U_and_A_to_U_and_U': 34}"
+936,"{'M_and_U_to_M_and_M': 51, 'U_and_M_to_U_and_U': 49, 'Polymerase_M_to_A': 34, 'M_and_A_to_M_and_M': 30, 'U_and_A_to_U_and_U': 24, 'A_and_U_to_A_and_A': 28, 'A_and_M_to_A_and_A': 11}"
+937,"{'U_and_M_to_U_and_U': 14, 'Polymerase_M_to_A': 59, 'M_and_U_to_M_and_M': 23, 'A_and_M_to_A_and_A': 25, 'M_and_A_to_M_and_M': 62, 'U_and_A_to_U_and_U': 12, 'A_and_U_to_A_and_A': 17}"
+938,"{'U_and_M_to_U_and_U': 13, 'Polymerase_M_to_A': 54, 'M_and_A_to_M_and_M': 61, 'A_and_M_to_A_and_A': 30, 'M_and_U_to_M_and_M': 25, 'U_and_A_to_U_and_U': 19, 'A_and_U_to_A_and_A': 21}"
+939,"{'U_and_M_to_U_and_U': 15, 'M_and_U_to_M_and_M': 23, 'Polymerase_M_to_A': 60, 'A_and_U_to_A_and_A': 22, 'A_and_M_to_A_and_A': 37, 'M_and_A_to_M_and_M': 81, 'U_and_A_to_U_and_U': 15}"
+940,"{'Polymerase_M_to_A': 42, 'M_and_U_to_M_and_M': 28, 'U_and_M_to_U_and_U': 13, 'A_and_M_to_A_and_A': 25, 'U_and_A_to_U_and_U': 34, 'M_and_A_to_M_and_M': 41, 'A_and_U_to_A_and_A': 17}"
+941,"{'M_and_U_to_M_and_M': 26, 'Polymerase_M_to_A': 28, 'U_and_A_to_U_and_U': 52, 'U_and_M_to_U_and_U': 25, 'A_and_U_to_A_and_A': 27, 'M_and_A_to_M_and_M': 12, 'A_and_M_to_A_and_A': 13}"
+942,"{'M_and_U_to_M_and_M': 27, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 41, 'A_and_U_to_A_and_A': 12, 'M_and_A_to_M_and_M': 42, 'A_and_M_to_A_and_A': 24, 'U_and_A_to_U_and_U': 11}"
+943,"{'U_and_M_to_U_and_U': 45, 'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 39, 'M_and_A_to_M_and_M': 42, 'A_and_U_to_A_and_A': 34, 'A_and_M_to_A_and_A': 22, 'U_and_A_to_U_and_U': 34}"
+944,"{'M_and_U_to_M_and_M': 28, 'U_and_M_to_U_and_U': 31, 'Polymerase_M_to_A': 31, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 51, 'M_and_A_to_M_and_M': 15, 'A_and_U_to_A_and_A': 22}"
+945,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 44, 'Polymerase_M_to_A': 25, 'A_and_U_to_A_and_A': 40, 'M_and_A_to_M_and_M': 21, 'A_and_M_to_A_and_A': 13, 'U_and_A_to_U_and_U': 49}"
+946,"{'U_and_M_to_U_and_U': 38, 'M_and_U_to_M_and_M': 49, 'Polymerase_M_to_A': 36, 'A_and_M_to_A_and_A': 11, 'A_and_U_to_A_and_A': 28, 'U_and_A_to_U_and_U': 41, 'M_and_A_to_M_and_M': 23}"
+947,"{'M_and_U_to_M_and_M': 45, 'U_and_M_to_U_and_U': 17, 'Polymerase_M_to_A': 55, 'A_and_M_to_A_and_A': 29, 'U_and_A_to_U_and_U': 40, 'A_and_U_to_A_and_A': 24, 'M_and_A_to_M_and_M': 50}"
+948,"{'U_and_M_to_U_and_U': 14, 'M_and_U_to_M_and_M': 26, 'Polymerase_M_to_A': 55, 'A_and_M_to_A_and_A': 29, 'A_and_U_to_A_and_A': 10, 'M_and_A_to_M_and_M': 67, 'U_and_A_to_U_and_U': 9}"
+949,"{'M_and_U_to_M_and_M': 38, 'U_and_M_to_U_and_U': 44, 'Polymerase_M_to_A': 51, 'M_and_A_to_M_and_M': 49, 'A_and_M_to_A_and_A': 13, 'A_and_U_to_A_and_A': 26, 'U_and_A_to_U_and_U': 22}"
+950,"{'M_and_U_to_M_and_M': 26, 'U_and_M_to_U_and_U': 26, 'Polymerase_M_to_A': 37, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 27, 'U_and_A_to_U_and_U': 36, 'A_and_U_to_A_and_A': 33}"
+951,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 37, 'Polymerase_M_to_A': 35, 'A_and_M_to_A_and_A': 25, 'A_and_U_to_A_and_A': 33, 'U_and_A_to_U_and_U': 34, 'M_and_A_to_M_and_M': 40}"
+952,"{'M_and_U_to_M_and_M': 22, 'U_and_M_to_U_and_U': 13, 'Polymerase_M_to_A': 46, 'A_and_M_to_A_and_A': 29, 'A_and_U_to_A_and_A': 8, 'M_and_A_to_M_and_M': 47, 'U_and_A_to_U_and_U': 2}"
+953,"{'M_and_U_to_M_and_M': 21, 'U_and_M_to_U_and_U': 9, 'Polymerase_M_to_A': 53, 'A_and_M_to_A_and_A': 32, 'M_and_A_to_M_and_M': 61, 'A_and_U_to_A_and_A': 10, 'U_and_A_to_U_and_U': 8}"
+954,"{'U_and_M_to_U_and_U': 39, 'Polymerase_M_to_A': 37, 'M_and_A_to_M_and_M': 27, 'M_and_U_to_M_and_M': 48, 'A_and_U_to_A_and_A': 24, 'U_and_A_to_U_and_U': 32, 'A_and_M_to_A_and_A': 12}"
+955,"{'M_and_U_to_M_and_M': 19, 'U_and_M_to_U_and_U': 16, 'Polymerase_M_to_A': 61, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 68, 'A_and_U_to_A_and_A': 16, 'U_and_A_to_U_and_U': 5}"
+956,"{'M_and_U_to_M_and_M': 18, 'Polymerase_M_to_A': 57, 'M_and_A_to_M_and_M': 72, 'U_and_M_to_U_and_U': 12, 'A_and_U_to_A_and_A': 13, 'A_and_M_to_A_and_A': 39, 'U_and_A_to_U_and_U': 5}"
+957,"{'U_and_M_to_U_and_U': 34, 'M_and_U_to_M_and_M': 27, 'Polymerase_M_to_A': 33, 'A_and_M_to_A_and_A': 21, 'A_and_U_to_A_and_A': 31, 'M_and_A_to_M_and_M': 35, 'U_and_A_to_U_and_U': 31}"
+958,"{'U_and_M_to_U_and_U': 9, 'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 51, 'A_and_M_to_A_and_A': 33, 'M_and_A_to_M_and_M': 60, 'U_and_A_to_U_and_U': 11, 'A_and_U_to_A_and_A': 11}"
+959,"{'U_and_M_to_U_and_U': 31, 'M_and_U_to_M_and_M': 44, 'Polymerase_M_to_A': 39, 'A_and_M_to_A_and_A': 19, 'A_and_U_to_A_and_A': 28, 'M_and_A_to_M_and_M': 30, 'U_and_A_to_U_and_U': 46}"
+960,"{'U_and_M_to_U_and_U': 22, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 34, 'U_and_A_to_U_and_U': 30, 'A_and_M_to_A_and_A': 21, 'A_and_U_to_A_and_A': 21, 'M_and_A_to_M_and_M': 25}"
+961,"{'U_and_M_to_U_and_U': 24, 'Polymerase_M_to_A': 46, 'M_and_U_to_M_and_M': 36, 'U_and_A_to_U_and_U': 37, 'A_and_U_to_A_and_A': 33, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 40}"
+962,"{'M_and_U_to_M_and_M': 9, 'Polymerase_M_to_A': 35, 'U_and_M_to_U_and_U': 10, 'A_and_M_to_A_and_A': 30, 'A_and_U_to_A_and_A': 23, 'U_and_A_to_U_and_U': 7, 'M_and_A_to_M_and_M': 53}"
+963,"{'U_and_M_to_U_and_U': 38, 'Polymerase_M_to_A': 36, 'M_and_U_to_M_and_M': 29, 'M_and_A_to_M_and_M': 26, 'U_and_A_to_U_and_U': 46, 'A_and_U_to_A_and_A': 36, 'A_and_M_to_A_and_A': 6}"
+964,"{'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 22, 'Polymerase_M_to_A': 33, 'A_and_U_to_A_and_A': 34, 'A_and_M_to_A_and_A': 16, 'U_and_A_to_U_and_U': 32, 'M_and_A_to_M_and_M': 31}"
+965,"{'U_and_M_to_U_and_U': 32, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 32, 'A_and_U_to_A_and_A': 44, 'M_and_A_to_M_and_M': 25, 'A_and_M_to_A_and_A': 23, 'U_and_A_to_U_and_U': 54}"
+966,"{'U_and_M_to_U_and_U': 34, 'M_and_U_to_M_and_M': 26, 'Polymerase_M_to_A': 16, 'A_and_M_to_A_and_A': 22, 'A_and_U_to_A_and_A': 46, 'M_and_A_to_M_and_M': 13, 'U_and_A_to_U_and_U': 63}"
+967,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 35, 'Polymerase_M_to_A': 37, 'A_and_M_to_A_and_A': 16, 'M_and_A_to_M_and_M': 28, 'U_and_A_to_U_and_U': 34, 'A_and_U_to_A_and_A': 25}"
+968,"{'U_and_M_to_U_and_U': 45, 'M_and_U_to_M_and_M': 47, 'Polymerase_M_to_A': 29, 'A_and_U_to_A_and_A': 28, 'M_and_A_to_M_and_M': 11, 'U_and_A_to_U_and_U': 39, 'A_and_M_to_A_and_A': 6}"
+969,"{'U_and_M_to_U_and_U': 56, 'M_and_U_to_M_and_M': 61, 'Polymerase_M_to_A': 45, 'A_and_M_to_A_and_A': 17, 'U_and_A_to_U_and_U': 36, 'M_and_A_to_M_and_M': 38, 'A_and_U_to_A_and_A': 30}"
+970,"{'M_and_U_to_M_and_M': 25, 'U_and_M_to_U_and_U': 11, 'Polymerase_M_to_A': 59, 'M_and_A_to_M_and_M': 73, 'A_and_U_to_A_and_A': 12, 'U_and_A_to_U_and_U': 12, 'A_and_M_to_A_and_A': 42}"
+971,"{'M_and_U_to_M_and_M': 23, 'U_and_M_to_U_and_U': 24, 'Polymerase_M_to_A': 34, 'A_and_M_to_A_and_A': 24, 'A_and_U_to_A_and_A': 33, 'U_and_A_to_U_and_U': 17, 'M_and_A_to_M_and_M': 52}"
+972,"{'M_and_U_to_M_and_M': 34, 'U_and_M_to_U_and_U': 15, 'Polymerase_M_to_A': 54, 'M_and_A_to_M_and_M': 55, 'U_and_A_to_U_and_U': 34, 'A_and_U_to_A_and_A': 25, 'A_and_M_to_A_and_A': 30}"
+973,"{'Polymerase_M_to_A': 54, 'M_and_U_to_M_and_M': 31, 'U_and_M_to_U_and_U': 18, 'A_and_M_to_A_and_A': 32, 'A_and_U_to_A_and_A': 23, 'M_and_A_to_M_and_M': 70, 'U_and_A_to_U_and_U': 23}"
+974,"{'U_and_M_to_U_and_U': 35, 'M_and_U_to_M_and_M': 27, 'Polymerase_M_to_A': 39, 'A_and_M_to_A_and_A': 18, 'M_and_A_to_M_and_M': 35, 'A_and_U_to_A_and_A': 43, 'U_and_A_to_U_and_U': 55}"
+975,"{'U_and_M_to_U_and_U': 48, 'M_and_U_to_M_and_M': 31, 'Polymerase_M_to_A': 27, 'U_and_A_to_U_and_U': 36, 'A_and_M_to_A_and_A': 10, 'A_and_U_to_A_and_A': 31, 'M_and_A_to_M_and_M': 24}"
+976,"{'Polymerase_M_to_A': 23, 'M_and_U_to_M_and_M': 15, 'A_and_M_to_A_and_A': 9, 'U_and_M_to_U_and_U': 25, 'M_and_A_to_M_and_M': 9, 'A_and_U_to_A_and_A': 25, 'U_and_A_to_U_and_U': 47}"
+977,"{'M_and_U_to_M_and_M': 32, 'U_and_M_to_U_and_U': 42, 'Polymerase_M_to_A': 22, 'U_and_A_to_U_and_U': 55, 'A_and_U_to_A_and_A': 51, 'A_and_M_to_A_and_A': 10, 'M_and_A_to_M_and_M': 11}"
+978,"{'U_and_M_to_U_and_U': 5, 'M_and_U_to_M_and_M': 16, 'Polymerase_M_to_A': 57, 'M_and_A_to_M_and_M': 80, 'A_and_M_to_A_and_A': 34, 'A_and_U_to_A_and_A': 5, 'U_and_A_to_U_and_U': 1}"
+979,"{'Polymerase_M_to_A': 42, 'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 20, 'A_and_M_to_A_and_A': 28, 'U_and_A_to_U_and_U': 32, 'M_and_A_to_M_and_M': 41, 'A_and_U_to_A_and_A': 25}"
+980,"{'M_and_U_to_M_and_M': 33, 'U_and_M_to_U_and_U': 23, 'Polymerase_M_to_A': 39, 'U_and_A_to_U_and_U': 26, 'M_and_A_to_M_and_M': 52, 'A_and_U_to_A_and_A': 29, 'A_and_M_to_A_and_A': 31}"
+981,"{'U_and_M_to_U_and_U': 49, 'M_and_U_to_M_and_M': 44, 'Polymerase_M_to_A': 30, 'U_and_A_to_U_and_U': 41, 'A_and_M_to_A_and_A': 12, 'A_and_U_to_A_and_A': 32, 'M_and_A_to_M_and_M': 24}"
+982,"{'M_and_U_to_M_and_M': 15, 'U_and_M_to_U_and_U': 6, 'Polymerase_M_to_A': 47, 'A_and_M_to_A_and_A': 41, 'M_and_A_to_M_and_M': 74, 'A_and_U_to_A_and_A': 6}"
+983,"{'M_and_U_to_M_and_M': 41, 'Polymerase_M_to_A': 31, 'U_and_M_to_U_and_U': 32, 'M_and_A_to_M_and_M': 19, 'A_and_M_to_A_and_A': 18, 'U_and_A_to_U_and_U': 45, 'A_and_U_to_A_and_A': 22}"
+984,"{'M_and_U_to_M_and_M': 57, 'U_and_M_to_U_and_U': 45, 'Polymerase_M_to_A': 44, 'A_and_M_to_A_and_A': 11, 'U_and_A_to_U_and_U': 34, 'A_and_U_to_A_and_A': 29, 'M_and_A_to_M_and_M': 35}"
+985,"{'M_and_U_to_M_and_M': 20, 'U_and_M_to_U_and_U': 11, 'Polymerase_M_to_A': 52, 'M_and_A_to_M_and_M': 59, 'A_and_M_to_A_and_A': 21, 'U_and_A_to_U_and_U': 16, 'A_and_U_to_A_and_A': 19}"
+986,"{'M_and_U_to_M_and_M': 42, 'U_and_M_to_U_and_U': 37, 'Polymerase_M_to_A': 38, 'A_and_M_to_A_and_A': 12, 'A_and_U_to_A_and_A': 43, 'U_and_A_to_U_and_U': 43, 'M_and_A_to_M_and_M': 39}"
+987,"{'M_and_U_to_M_and_M': 43, 'U_and_M_to_U_and_U': 51, 'Polymerase_M_to_A': 24, 'U_and_A_to_U_and_U': 53, 'M_and_A_to_M_and_M': 11, 'A_and_M_to_A_and_A': 7, 'A_and_U_to_A_and_A': 35}"
+988,"{'M_and_U_to_M_and_M': 24, 'U_and_M_to_U_and_U': 42, 'Polymerase_M_to_A': 15, 'A_and_M_to_A_and_A': 4, 'M_and_A_to_M_and_M': 2, 'A_and_U_to_A_and_A': 30, 'U_and_A_to_U_and_U': 42}"
+989,"{'U_and_M_to_U_and_U': 13, 'M_and_U_to_M_and_M': 23, 'Polymerase_M_to_A': 48, 'M_and_A_to_M_and_M': 64, 'A_and_U_to_A_and_A': 12, 'U_and_A_to_U_and_U': 7, 'A_and_M_to_A_and_A': 38}"
+990,"{'U_and_M_to_U_and_U': 40, 'M_and_U_to_M_and_M': 45, 'Polymerase_M_to_A': 31, 'M_and_A_to_M_and_M': 29, 'A_and_M_to_A_and_A': 14, 'A_and_U_to_A_and_A': 38, 'U_and_A_to_U_and_U': 42}"
+991,"{'M_and_U_to_M_and_M': 25, 'U_and_M_to_U_and_U': 12, 'Polymerase_M_to_A': 55, 'A_and_M_to_A_and_A': 44, 'M_and_A_to_M_and_M': 73, 'A_and_U_to_A_and_A': 2}"
+992,"{'M_and_U_to_M_and_M': 15, 'Polymerase_M_to_A': 47, 'U_and_M_to_U_and_U': 3, 'A_and_M_to_A_and_A': 37, 'M_and_A_to_M_and_M': 68, 'A_and_U_to_A_and_A': 3}"
+993,"{'M_and_U_to_M_and_M': 42, 'U_and_M_to_U_and_U': 28, 'Polymerase_M_to_A': 42, 'A_and_U_to_A_and_A': 30, 'A_and_M_to_A_and_A': 20, 'U_and_A_to_U_and_U': 37, 'M_and_A_to_M_and_M': 33}"
+994,"{'U_and_M_to_U_and_U': 24, 'M_and_U_to_M_and_M': 34, 'Polymerase_M_to_A': 37, 'M_and_A_to_M_and_M': 34, 'U_and_A_to_U_and_U': 30, 'A_and_U_to_A_and_A': 29, 'A_and_M_to_A_and_A': 10}"
+995,"{'U_and_M_to_U_and_U': 7, 'M_and_U_to_M_and_M': 16, 'Polymerase_M_to_A': 42, 'A_and_M_to_A_and_A': 27, 'M_and_A_to_M_and_M': 50, 'A_and_U_to_A_and_A': 7, 'U_and_A_to_U_and_U': 2}"
+996,"{'U_and_M_to_U_and_U': 16, 'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 46, 'A_and_M_to_A_and_A': 37, 'M_and_A_to_M_and_M': 60, 'A_and_U_to_A_and_A': 11, 'U_and_A_to_U_and_U': 4}"
+997,"{'M_and_U_to_M_and_M': 25, 'U_and_M_to_U_and_U': 13, 'Polymerase_M_to_A': 42, 'A_and_M_to_A_and_A': 31, 'U_and_A_to_U_and_U': 16, 'M_and_A_to_M_and_M': 48, 'A_and_U_to_A_and_A': 19}"
+998,"{'M_and_U_to_M_and_M': 29, 'U_and_M_to_U_and_U': 19, 'Polymerase_M_to_A': 51, 'U_and_A_to_U_and_U': 34, 'M_and_A_to_M_and_M': 48, 'A_and_M_to_A_and_A': 28, 'A_and_U_to_A_and_A': 20}"
+999,"{'U_and_M_to_U_and_U': 18, 'M_and_U_to_M_and_M': 25, 'Polymerase_M_to_A': 56, 'A_and_M_to_A_and_A': 30, 'A_and_U_to_A_and_A': 17, 'U_and_A_to_U_and_U': 9, 'M_and_A_to_M_and_M': 77}"
+1000,"{'M_and_U_to_M_and_M': 24, 'Polymerase_M_to_A': 55, 'U_and_M_to_U_and_U': 11, 'A_and_M_to_A_and_A': 28, 'A_and_U_to_A_and_A': 11, 'M_and_A_to_M_and_M': 65, 'U_and_A_to_U_and_U': 10}"

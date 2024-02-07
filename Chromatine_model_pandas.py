@@ -149,7 +149,7 @@ adding_position = 10
 end_of_replication_position = chromatine_size - 10
 
 # Number of simulations
-num_simulations = 1000
+num_simulations = 5000
 
 # Initialize lists to store results of each simulation
 results_list = []
