@@ -13,7 +13,7 @@ recruitment_probability = 0.2
 change_probability = 0.3
 
 # Number of simulations
-num_simulations = 5000
+num_simulations = 1000
 
 # Linear function parameters for adding_poly_proba
 slope = 1e-5
