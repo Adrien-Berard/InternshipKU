@@ -12,10 +12,10 @@ end_of_replication_position = chromatine_size - 15
 
 # Simulation-specific parameters
 histone_modification_percentage = 0.3
-recruitment_probability = 0.2
+recruitment_probability = 1
 change_probability = 0.3
-regeneration_probability = 0.4
-adding_polymerase_probability = 0.4
+regeneration_probability = 0.3
+adding_polymerase_probability = 0.3
 vicinity_size = 5
 
 # Linear function parameters
@@ -86,16 +86,18 @@ class Chromatine:
                     if nth_position < len(self.histones):
                         nth_histone = self.histones[nth_position]
 
-                        if current_histone == 'U' and nth_histone == 'A':
-                            self.histones[nth_position] = 'U'
-                        elif current_histone == 'U' and nth_histone == 'M':
-                            self.histones[nth_position] = 'U'
-                        elif current_histone == 'A' and nth_histone == 'U':
+                        #if current_histone == 'U' and nth_histone == 'A':
+                        #    self.histones[nth_position] = 'U'
+                        #elif current_histone == 'U' and nth_histone == 'M':
+                        #    self.histones[nth_position] = 'U'
+                        if current_histone == 'A' and nth_histone == 'U':
                             self.histones[nth_position] = 'A'
                         elif current_histone == 'A' and nth_histone == 'M':
                             self.histones[nth_position] = 'A'
                         elif current_histone == 'M' and nth_histone == 'U':
                             self.histones[nth_position] = 'M'
+                        elif current_histone == 'M' and nth_histone == 'A':
+                            self.histones[nth_position] = 'U'
 
 class Polymerase:
     def __init__(self, chromatine, position=10, temperature=1.0):
