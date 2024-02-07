@@ -1,15 +1,14 @@
 import random
 import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
+import pandas as pd
 
 class Chromatine:
     def __init__(self, histones_count):
         # Initialize chromatine with histones
         self.histones = np.full(histones_count, 'M', dtype='U1')
 
-        # Randomly set approximately 10% of histones to 'U' (unmodified)
-        num_unmodified = int(0.1 * histones_count)
+        # Randomly set approximately 30% of histones to 'U' (unmodified)
+        num_unmodified = int(0.3 * histones_count)
         unmodified_positions = np.random.choice(histones_count, size=num_unmodified, replace=False)
         self.histones[unmodified_positions] = 'U'
 
@@ -64,7 +63,6 @@ class Chromatine:
                     nth_position = position + nth_neighbor
                     if nth_position < len(self.histones):
                         nth_histone = self.histones[nth_position]
-
 
                         if current_histone == 'U' and nth_histone == 'A':
                             self.histones[nth_position] = 'U'
@@ -138,88 +136,6 @@ class Polymerase:
             transition_key = f"Polymerase_M_to_A"
             transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
 
-def visualize_chromatine(histones, polymerase_positions=None):
-    # Display chromatine state as a bar chart
-    plt.bar(range(len(histones)), [1] * len(histones),
-            color=[('olive' if hist == 'U' else 'red' if hist == 'M' else 'blue' if hist == 'A' else 'green') for hist in histones])
-    plt.title("Chromatine Structure")
-    plt.xlabel("Histone Position")
-    plt.ylabel("Histone")
-
-    if polymerase_positions:
-        # Draw arrows indicating polymerase positions
-        for position in polymerase_positions:
-            plt.arrow(position, -0.2, 0, -0.1, color='black', head_width=0.5, head_length=0.1)
-
-# Function to update the plot in each animation frame
-def update(frame):
-    deleted_positions = []  # Keep track of deleted positions for regeneration
-    polymerase_positions = []  # Clear the polymerase_positions list
-
-    for polymerase in polymerases:
-        polymerase.move(chromatine)
-        polymerase.change_histones(chromatine)
-        polymerase_positions.append(polymerase.position)  # Append the current position
-        deleted_positions.append(polymerase.position)
-
-    # Change the next histones based on the influence of first neighbors
-    for position in range(1, chromatine_size):
-        # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
-        chromatine.change_next_histones(position, p_recruitment=0.2, p_change=0.3, nth_neighbor=np.random.randint(1,chromatine_size), vicinity_size=5)
-
-    # Regenerate histones at unmodified positions
-    # if np.random.random() < 0.4:
-    #    chromatine.regenerate_histones(deleted_positions)
-
-    # Randomly add new polymerase at the beginning of the chromatine with a certain probability
-    if np.random.random() < chromatine.adding_poly_proba(adding_position):  # Adjust the probability as needed
-        # Add new polymerases with non-overlapping random positions
-        chromatine.add_polymerases(1, existing_polymerase_positions, adding_position)
-        new_polymerase_positions = existing_polymerase_positions[-1:]
-        new_polymerases = [Polymerase(chromatine, position=pos, temperature=1.0) for pos in new_polymerase_positions]
-        polymerases.extend(new_polymerases)
-
-    # Update the number of polymerases and active histones lists
-    polymerase_count_over_time.append(len(polymerases))
-    active_histone_count = np.sum(np.isin(chromatine.histones, ['M', 'A']))
-    acetylated_histone_count = np.sum(chromatine.histones == 'A')
-    methylated_histone_count = np.sum(chromatine.histones == 'M')
-    unmodified_histone_count = np.sum(chromatine.histones == 'U')
-    active_histone_count_over_time.append(active_histone_count)
-    acetylated_histone_count_over_time.append(acetylated_histone_count)
-    methylated_histone_count_over_time.append(methylated_histone_count)
-    unmodified_histone_count_over_time.append(unmodified_histone_count)
-
-    # Only extend the lists if the frame is greater than the current length of the lists
-    if frame + 1 > len(polymerase_count_over_time):
-        polymerase_count_over_time.append(0)
-        acetylated_histone_count_over_time.append(0)
-        methylated_histone_count_over_time.append(0)
-        active_histone_count_over_time.append(0)
-        unmodified_histone_count_over_time.append(0)
-
-    # Clear the previous frame after updating the data
-    axs[0, 0].clear()
-    axs[0, 1].clear()
-    axs[1, 1].clear()
-
-    axs[0, 0].plot(range(1, len(polymerase_count_over_time) + 1), polymerase_count_over_time, marker='o')
-    axs[0, 0].set_title('Number of polymerases Over Time')
-    axs[0, 0].set_xlabel('Time Steps')
-    axs[0, 0].set_ylabel('Number of polymerases')
-
-    axs[0, 1].plot(range(len(active_histone_count_over_time)), active_histone_count_over_time, marker='o', color='orange', label='Active Histones')
-    axs[0, 1].plot(range(len(acetylated_histone_count_over_time)), acetylated_histone_count_over_time, marker='o', color='blue', label="Acetylated Histones")
-    axs[0, 1].plot(range(len(methylated_histone_count_over_time)), methylated_histone_count_over_time, marker='o', color='red', label="Methylated Histones")
-    axs[0, 1].plot(range(len(unmodified_histone_count_over_time)), unmodified_histone_count_over_time, marker='o', color= "olive", label="Unmodified Histones")
-    axs[0, 1].set_title('Number of Active Histones Over Time')
-    axs[0, 1].set_xlabel('Time Steps')
-    axs[0, 1].set_ylabel('Number of Histones')
-    axs[0, 1].legend()
-
-    # Visualize chromatine structure with arrows indicating polymerase positions
-    visualize_chromatine(chromatine.histones, polymerase_positions=polymerase_positions)
-
 # Set seed for reproducibility
 np.random.seed(42)
 
@@ -237,25 +153,37 @@ polymerases = [Polymerase(chromatine, temperature=1.0) for _ in range(polymerase
 # Track existing polymerase positions using a list to avoid duplicates
 existing_polymerase_positions = [polymerase.position for polymerase in polymerases]
 
-# Lists to store the number of polymerases and active histones over time
-polymerase_count_over_time = []
-active_histone_count_over_time = []
-acetylated_histone_count_over_time = []
-methylated_histone_count_over_time = []
-unmodified_histone_count_over_time = []
-
 # Dictionary to store transitions and their counts
 transitions_dict = {}
 
-# Create an animated plot
-fig, axs = plt.subplots(2, 2, figsize=(12, 8))
-ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
-plt.show()
+# Simulate the process
+for frame in range(simulation_steps):
+    deleted_positions = []  # Keep track of deleted positions for regeneration
 
-# Display the transitions dictionary after the simulation
-fig, ax = plt.subplots(layout='constrained',figsize=(11, 7))
-plt.bar(transitions_dict.keys(), transitions_dict.values(), color='g')
-ax.set_ylabel('Number of transitions')
-ax.set_title('Number of transitions in function of their types')
-ax.legend(loc='upper left', ncols=3)
-plt.show()
+    for polymerase in polymerases:
+        polymerase.move(chromatine)
+        polymerase.change_histones(chromatine)
+        deleted_positions.append(polymerase.position)
+
+    # Change the next histones based on the influence of first neighbors
+    for position in range(1, chromatine_size):
+        # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
+        chromatine.change_next_histones(position, p_recruitment=0.2, p_change=0.3, nth_neighbor=np.random.randint(1, chromatine_size), vicinity_size=5)
+
+    # Regenerate histones at unmodified positions
+    # if np.random.random() < 0.4:
+    #    chromatine.regenerate_histones(deleted_positions)
+
+    # Randomly add new polymerase at the beginning of the chromatine with a certain probability
+    if np.random.random() < chromatine.adding_poly_proba(adding_position):  # Adjust the probability as needed
+        # Add new polymerases with non-overlapping random positions
+        chromatine.add_polymerases(1, existing_polymerase_positions, adding_position)
+        new_polymerase_positions = existing_polymerase_positions[-1:]
+        new_polymerases = [Polymerase(chromatine, position=pos, temperature=1.0) for pos in new_polymerase_positions]
+        polymerases.extend(new_polymerases)
+
+# Create a DataFrame from the transitions dictionary
+transitions_df = pd.DataFrame(list(transitions_dict.items()), columns=['Transition', 'Count'])
+
+# Save the DataFrame to a CSV file
+transitions_df.to_csv('transitions_data.csv', index=False)
