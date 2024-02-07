@@ -224,11 +224,11 @@ def update(frame):
 np.random.seed(42)
 
 # Parameters for simulation
-chromatine_size = 50
+chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 200
-adding_position = 10
-end_of_replication_position = chromatine_size - 10
+simulation_steps = 500
+adding_position = 15
+end_of_replication_position = chromatine_size - 15
 
 # Initialize chromatine and polymerases with a specified temperature
 chromatine = Chromatine(chromatine_size)
