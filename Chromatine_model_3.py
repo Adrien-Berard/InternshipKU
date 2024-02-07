@@ -1,12 +1,12 @@
 import random
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
+from matplotlib.animation import FuncAnimation, PillowWriter
 
 # Parameters for simulation
 chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 200
+simulation_steps = 100
 adding_position = 15
 end_of_replication_position = chromatine_size - 15
 
@@ -240,6 +240,13 @@ transitions_dict = {}
 # Create an animated plot
 fig, axs = plt.subplots(2, 2, figsize=(12, 8))
 ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
+
+# Save the animation as a video (e.g., in mp4 format)
+ani.save('animated_3stateschromatine.gif',   writer=PillowWriter(fps=10))
+
+from IPython.display import HTML
+HTML(ani.to_jshtml())
+
 plt.show()
 
 # Display the transitions dictionary after the simulation
