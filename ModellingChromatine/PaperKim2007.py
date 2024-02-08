@@ -16,7 +16,7 @@ end_of_replication_position = chromatine_size - 15
 # Simulation-specific parameters
 histone_modification_percentage = 0.3
 recruitment_probability = 1
-alpha = 2/3
+alpha = 10/11
 change_probability = alpha
 regeneration_probability = 0.3
 adding_polymerase_probability = 0.3
@@ -80,7 +80,8 @@ class Chromatine:
             current_histone = self.histones[position]
 
             # Calculate the influence of vicinity on the recruitment probability
-            adjusted_p_recruitment = p_recruitment / (1e-1 * nth_neighbor)  # Add 1 to avoid division by zero
+            adjusted_p_recruitment = p_recruitment
+            # adjusted_p_recruitment = p_recruitment / (1e-1 * nth_neighbor)  # Add 1 to avoid division by zero
             if adjusted_p_recruitment > 1:
                 adjusted_p_recruitment = 1
 
@@ -238,7 +239,7 @@ def update(frame):
 
     axs[1, 0].plot(range(len(noisy_changes_count_over_time)), noisy_changes_count_over_time, color='purple', label='Noisy Changes')
     axs[1, 0].plot(range(len(enzyme_changes_count_over_time)), enzyme_changes_count_over_time, color='cyan', label='Enzyme Changes')
-    axs[1, 0].set_title('Number of Noisy/Enzyme Changes Over Time given F = '+str(int(F)))
+    axs[1, 0].set_title('Number of Noisy/Enzyme Changes Over Time given F = '+str(F))
     axs[1, 0].set_xlabel('Time Steps')
     axs[1, 0].set_ylabel('Number of Noisy/Enzyme Changes')
     axs[1, 0].legend()
@@ -272,7 +273,7 @@ ani = FuncAnimation(fig, update, frames=simulation_steps, interval = 50,repeat=F
 
 
 # Define the filename based on the value of F and the length of the simulation
-# gif_filename = f'animated_3states_chromatine_F_{F}_steps_{simulation_steps}_starting_polymerases_{intercept}.gif'
+mp4_filename = f'animated_3states_chromatine_F_{F}_steps_{simulation_steps}_starting_polymerases_{intercept}.mp4'
 
 # # Save the animation
 # ani.save(gif_filename)
@@ -280,7 +281,7 @@ ani = FuncAnimation(fig, update, frames=simulation_steps, interval = 50,repeat=F
 # plt.show()
 
 # Save the animation as a video file
-video_filename = 'animated_chromatine.mp4'
+video_filename = mp4_filename
 ani.save(video_filename, writer='ffmpeg', fps=20)
 
 print("Done")
