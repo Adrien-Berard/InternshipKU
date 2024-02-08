@@ -1,18 +1,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation, PillowWriter
+from matplotlib.animation import FuncAnimation, PillowWriter, FFMpegWriter
 
 # Parameters for simulation
 chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 150
+simulation_steps = 800
 adding_position = 15
 end_of_replication_position = chromatine_size - 15
 
 # Simulation-specific parameters
 histone_modification_percentage = 0.3
 recruitment_probability = 1
-alpha = 0.3
+alpha = 0.9
 change_probability = alpha
 regeneration_probability = 0.3
 adding_polymerase_probability = 0.3
@@ -22,7 +22,7 @@ F = alpha/(1 - alpha)
 
 # Linear function parameters
 slope = 1e-5
-intercept = 1e-4
+intercept = 0
 
 # Polymerase movement probabilities
 left_movement_probability = 1/2
@@ -223,10 +223,10 @@ def update(frame):
     axs[0, 0].set_xlabel('Time Steps')
     axs[0, 0].set_ylabel('Number of polymerases')
 
-    axs[0, 1].plot(range(len(active_histone_count_over_time)), active_histone_count_over_time, marker='o', color='orange', label='Active Histones')
+    #axs[0, 1].plot(range(len(active_histone_count_over_time)), active_histone_count_over_time, marker='o', color='orange', label='Active Histones')
     axs[0, 1].plot(range(len(acetylated_histone_count_over_time)), acetylated_histone_count_over_time, marker='o', color='blue', label="Acetylated Histones")
     axs[0, 1].plot(range(len(methylated_histone_count_over_time)), methylated_histone_count_over_time, marker='o', color='red', label="Methylated Histones")
-    axs[0, 1].plot(range(len(unmodified_histone_count_over_time)), unmodified_histone_count_over_time, marker='o', color="olive", label="Unmodified Histones")
+    #axs[0, 1].plot(range(len(unmodified_histone_count_over_time)), unmodified_histone_count_over_time, marker='o', color="olive", label="Unmodified Histones")
     axs[0, 1].set_title('Number of Active Histones Over Time')
     axs[0, 1].set_xlabel('Time Steps')
     axs[0, 1].set_ylabel('Number of Histones')
@@ -266,14 +266,16 @@ transitions_dict = {}
 fig, axs = plt.subplots(2, 2, figsize=(12, 8))
 ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
 
-# Save the animation as a video (e.g., in mp4 format)
-#ani.save('animated_3stateschromatine.gif',   writer=PillowWriter(fps=10))
+# Define the filename based on the value of F and the length of the simulation
+mp4_filename = f'animated_3states_chromatine_F_{F}_steps_{simulation_steps}.mp4'
 
+# Save the animation as an MP4 file
+ani.save(mp4_filename, writer=FFMpegWriter(fps=10))
 plt.show()
 
 # Display the transitions dictionary after the simulation
-fig, ax = plt.subplots(figsize=(11, 7))
-plt.bar(transitions_dict.keys(), transitions_dict.values(), color='g')
-ax.set_ylabel('Number of transitions')
-ax.set_title('Number of transitions in function of their types')
-plt.show()
+#fig, ax = plt.subplots(figsize=(11, 7))
+#plt.bar(transitions_dict.keys(), transitions_dict.values(), color='g')
+#ax.set_ylabel('Number of transitions')
+#ax.set_title('Number of transitions in function of their types')
+#plt.show()
