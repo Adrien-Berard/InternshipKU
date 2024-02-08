@@ -1,11 +1,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation, PillowWriter, FFMpegWriter
+from IPython import display
+import matplotlib
+matplotlib.use('Agg')
+
 
 # Parameters for simulation
 chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 800
+simulation_steps = 100
 adding_position = 15
 end_of_replication_position = chromatine_size - 15
 
@@ -142,7 +146,7 @@ class Polymerase:
 
     def change_histones(self, chromatine):
         # Simulate the histone change process by polymerase
-        if 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'M':
+        if 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'U':
             chromatine.histones[self.position] = 'A'
 
 def visualize_chromatine(histones, polymerase_positions=None):
@@ -224,17 +228,17 @@ def update(frame):
     axs[0, 0].set_ylabel('Number of polymerases')
 
     #axs[0, 1].plot(range(len(active_histone_count_over_time)), active_histone_count_over_time, marker='o', color='orange', label='Active Histones')
-    axs[0, 1].plot(range(len(acetylated_histone_count_over_time)), acetylated_histone_count_over_time, marker='o', color='blue', label="Acetylated Histones")
-    axs[0, 1].plot(range(len(methylated_histone_count_over_time)), methylated_histone_count_over_time, marker='o', color='red', label="Methylated Histones")
+    axs[0, 1].plot(range(len(acetylated_histone_count_over_time)), acetylated_histone_count_over_time, color='blue', label="Acetylated Histones")
+    axs[0, 1].plot(range(len(methylated_histone_count_over_time)), methylated_histone_count_over_time, color='red', label="Methylated Histones")
     #axs[0, 1].plot(range(len(unmodified_histone_count_over_time)), unmodified_histone_count_over_time, marker='o', color="olive", label="Unmodified Histones")
     axs[0, 1].set_title('Number of Active Histones Over Time')
     axs[0, 1].set_xlabel('Time Steps')
     axs[0, 1].set_ylabel('Number of Histones')
     axs[0, 1].legend()
 
-    axs[1, 0].plot(range(len(noisy_changes_count_over_time)), noisy_changes_count_over_time, marker='o', color='purple', label='Noisy Changes')
-    axs[1, 0].plot(range(len(enzyme_changes_count_over_time)), enzyme_changes_count_over_time, marker='o', color='cyan', label='Enzyme Changes')
-    axs[1, 0].set_title('Number of Noisy/Enzyme Changes Over Time given F = '+str(F))
+    axs[1, 0].plot(range(len(noisy_changes_count_over_time)), noisy_changes_count_over_time, color='purple', label='Noisy Changes')
+    axs[1, 0].plot(range(len(enzyme_changes_count_over_time)), enzyme_changes_count_over_time, color='cyan', label='Enzyme Changes')
+    axs[1, 0].set_title('Number of Noisy/Enzyme Changes Over Time given F = '+str(int(F)))
     axs[1, 0].set_xlabel('Time Steps')
     axs[1, 0].set_ylabel('Number of Noisy/Enzyme Changes')
     axs[1, 0].legend()
@@ -264,16 +268,26 @@ transitions_dict = {}
 
 # Create an animated plot
 fig, axs = plt.subplots(2, 2, figsize=(12, 8))
-ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
+ani = FuncAnimation(fig, update, frames=simulation_steps, interval = 50,repeat=False)
 
 
 # Define the filename based on the value of F and the length of the simulation
-gif_filename = f'animated_3states_chromatine_F_{F}_steps_{simulation_steps}.gif'
+# gif_filename = f'animated_3states_chromatine_F_{F}_steps_{simulation_steps}_starting_polymerases_{intercept}.gif'
 
-# Save the animation
-ani.save(gif_filename)
+# # Save the animation
+# ani.save(gif_filename)
 
-plt.show()
+# plt.show()
+
+# converting to an html5 video 
+video = ani.to_html5_video() 
+  
+# embedding for the video 
+html = display.HTML(video) 
+  
+# draw the animation 
+display.display(html) 
+plt.close() 
 
 # Display the transitions dictionary after the simulation
 #fig, ax = plt.subplots(figsize=(11, 7))
