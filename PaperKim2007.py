@@ -266,11 +266,16 @@ transitions_dict = {}
 fig, axs = plt.subplots(2, 2, figsize=(12, 8))
 ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
 
+import os
+print(os.environ['PATH'])
+
 # Define the filename based on the value of F and the length of the simulation
 mp4_filename = f'animated_3states_chromatine_F_{F}_steps_{simulation_steps}.mp4'
 
 # Save the animation as an MP4 file
-ani.save(mp4_filename, writer=FFMpegWriter(fps=10))
+FFwriter = FFMpegWriter(fps=10)
+ani.save(mp4_filename, writer = FFwriter)
+
 plt.show()
 
 # Display the transitions dictionary after the simulation
