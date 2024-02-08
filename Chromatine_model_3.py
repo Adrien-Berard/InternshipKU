@@ -242,10 +242,7 @@ fig, axs = plt.subplots(2, 2, figsize=(12, 8))
 ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
 
 # Save the animation as a video (e.g., in mp4 format)
-ani.save('animated_3stateschromatine.gif',   writer=PillowWriter(fps=10))
-
-from IPython.display import HTML
-HTML(ani.to_jshtml())
+ani.save('animated_3stateschromatine.gif')
 
 plt.show()
 

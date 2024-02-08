@@ -8,9 +8,12 @@ polymerase_count = 0
 simulation_steps = 200
 adding_position = 15
 end_of_replication_position = chromatine_size - 15
+
 vicinity_size = 5
-recruitment_probability = 0.2
+recruitment_probability = 1
+
 change_probability = 0.3
+F = change_probability / (1 - change_probability)
 
 # Number of simulations
 num_simulations = 1000
@@ -71,7 +74,7 @@ class Chromatine:
             current_histone = self.histones[position]
 
             # Calculate the influence of vicinity on the recruitment probability
-            adjusted_p_recruitment = p_recruitment / (1e-1 * nth_neighbor)  # Add 1 to avoid division by zero
+            adjusted_p_recruitment = p_recruitment / (nth_neighbor)  
             if adjusted_p_recruitment > 1:
                 adjusted_p_recruitment = 1
 
@@ -141,6 +144,7 @@ results_list = []
 # Run simulations
 for simulation in range(num_simulations):
     print(simulation)
+
     # Initialize chromatine and polymerases with a specified temperature
     chromatine = Chromatine(chromatine_size)
     polymerases = [Polymerase(chromatine, temperature=1.0) for _ in range(polymerase_count)]
