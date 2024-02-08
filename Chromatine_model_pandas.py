@@ -86,16 +86,16 @@ class Chromatine:
                     if nth_position < len(self.histones):
                         nth_histone = self.histones[nth_position]
 
-                        if current_histone == 'U' and nth_histone == 'A':
-                            self.histones[nth_position] = 'U'
-                        elif current_histone == 'U' and nth_histone == 'M':
-                            self.histones[nth_position] = 'U'
-                        elif current_histone == 'A' and nth_histone == 'U':
+                        #if current_histone == 'U' and nth_histone == 'A':
+                        #    self.histones[nth_position] = 'U'
+                        #elif current_histone == 'U' and nth_histone == 'M':
+                        #    self.histones[nth_position] = 'U'
+                        if current_histone == 'A' and nth_histone == 'U':
                             self.histones[nth_position] = 'A'
                         elif current_histone == 'A' and nth_histone == 'M':
-                            self.histones[nth_position] = 'A'
+                            self.histones[nth_position] = 'U'
                         elif current_histone == 'M' and nth_histone == 'A':
-                            self.histones[nth_position] = 'M'
+                            self.histones[nth_position] = 'U'
                         elif current_histone == 'M' and nth_histone == 'U':
                             self.histones[nth_position] = 'M'
 

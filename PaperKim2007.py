@@ -1,26 +1,28 @@
-import random
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
+from matplotlib.animation import FuncAnimation, PillowWriter
 
 # Parameters for simulation
 chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 200
+simulation_steps = 150
 adding_position = 15
 end_of_replication_position = chromatine_size - 15
 
 # Simulation-specific parameters
 histone_modification_percentage = 0.3
 recruitment_probability = 1
-change_probability = 0.3
+alpha = 0.3
+change_probability = alpha
 regeneration_probability = 0.3
 adding_polymerase_probability = 0.3
+noisy_transition_probability = 1 - alpha
 vicinity_size = 5
+F = alpha/(1 - alpha)
 
 # Linear function parameters
 slope = 1e-5
-intercept = 1e-2
+intercept = 1e-4
 
 # Polymerase movement probabilities
 left_movement_probability = 1/2
@@ -39,13 +41,13 @@ class Chromatine:
         unmodified_positions = np.random.choice(histones_count, size=num_unmodified, replace=False)
         self.histones[unmodified_positions] = 'U'
 
-    def regenerate_histones(self, positions_to_delete):
-        unmodified_positions = np.where(self.histones == 'U')[0]
-
-        # Ensure that the size of the sample is not greater than the size of the population
-        if len(unmodified_positions) >= len(positions_to_delete):
-            selected_positions = np.random.choice(unmodified_positions, size=len(positions_to_delete), replace=False)
-            self.histones[selected_positions] = 'A'
+    def noisy_transition(self, position, noisy_transition_probability,noisy_changes):
+        if np.random.random() < noisy_transition_probability:
+            previous = self.histones[position]
+            self.histones[position] = np.random.choice(['A', 'M', 'U'])
+            if previous != self.histones[position]:
+                noisy_changes += 1
+        return noisy_changes
 
     def add_polymerases(self, count, existing_polymerase_positions, adding_position):
         # Add a specified number of new polymerases at non-overlapping positions
@@ -68,7 +70,7 @@ class Chromatine:
 
         return probability
 
-    def change_next_histones(self, position, p_recruitment, p_change, nth_neighbor=1, vicinity_size=5):
+    def change_next_histones(self, position, p_recruitment, p_change,enzyme_changes, nth_neighbor=1, vicinity_size=5):
         # Simulate the influence of neighbors on the next histones
         if 1 <= position < len(self.histones) - 1:
             current_histone = self.histones[position]
@@ -92,12 +94,17 @@ class Chromatine:
                         #    self.histones[nth_position] = 'U'
                         if current_histone == 'A' and nth_histone == 'U':
                             self.histones[nth_position] = 'A'
+                            enzyme_changes += 1 
                         elif current_histone == 'A' and nth_histone == 'M':
-                            self.histones[nth_position] = 'A'
+                            self.histones[nth_position] = 'U'
+                            enzyme_changes += 1 
                         elif current_histone == 'M' and nth_histone == 'U':
                             self.histones[nth_position] = 'M'
+                            enzyme_changes += 1 
                         elif current_histone == 'M' and nth_histone == 'A':
                             self.histones[nth_position] = 'U'
+                            enzyme_changes += 1 
+        return enzyme_changes
 
 class Polymerase:
     def __init__(self, chromatine, position=10, temperature=1.0):
@@ -155,6 +162,8 @@ def visualize_chromatine(histones, polymerase_positions=None):
 def update(frame):
     deleted_positions = []  # Keep track of deleted positions for regeneration
     polymerase_positions = []  # Clear the polymerase_positions list
+    noisy_changes_count = 0
+    enzyme_changes_count = 0
 
     for polymerase in polymerases:
         polymerase.move(chromatine)
@@ -165,11 +174,12 @@ def update(frame):
     # Change the next histones based on the influence of first neighbors
     for position in range(1, chromatine_size):
         # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
-        chromatine.change_next_histones(position, p_recruitment=recruitment_probability, p_change=change_probability, nth_neighbor=np.random.randint(1, chromatine_size), vicinity_size=vicinity_size)
+        enzyme_changes_count = chromatine.change_next_histones(position, p_recruitment=recruitment_probability, p_change=change_probability, enzyme_changes = enzyme_changes_count,nth_neighbor=np.random.randint(1, chromatine_size), vicinity_size=vicinity_size)
+        noisy_changes_count = chromatine.noisy_transition(position,noisy_transition_probability,noisy_changes_count)
 
     # Regenerate histones at unmodified positions
-    if np.random.random() < regeneration_probability:
-        chromatine.regenerate_histones(deleted_positions)
+    #if np.random.random() < regeneration_probability:
+     #   chromatine.regenerate_histones(deleted_positions)
 
     # Randomly add new polymerase at the beginning of the chromatine with a certain probability
     if np.random.random() < chromatine.adding_poly_proba(adding_position):
@@ -189,6 +199,8 @@ def update(frame):
     acetylated_histone_count_over_time.append(acetylated_histone_count)
     methylated_histone_count_over_time.append(methylated_histone_count)
     unmodified_histone_count_over_time.append(unmodified_histone_count)
+    noisy_changes_count_over_time.append(noisy_changes_count)
+    enzyme_changes_count_over_time.append(enzyme_changes_count)
 
     # Only extend the lists if the frame is greater than the current length of the lists
     if frame + 1 > len(polymerase_count_over_time):
@@ -197,10 +209,13 @@ def update(frame):
         methylated_histone_count_over_time.append(0)
         active_histone_count_over_time.append(0)
         unmodified_histone_count_over_time.append(0)
+        noisy_changes_count_over_time.append(0)
+        enzyme_changes_count_over_time.append(0)
 
     # Clear the previous frame after updating the data
     axs[0, 0].clear()
     axs[0, 1].clear()
+    axs[1, 0].clear()
     axs[1, 1].clear()
 
     axs[0, 0].plot(range(1, len(polymerase_count_over_time) + 1), polymerase_count_over_time, marker='o')
@@ -217,7 +232,15 @@ def update(frame):
     axs[0, 1].set_ylabel('Number of Histones')
     axs[0, 1].legend()
 
+    axs[1, 0].plot(range(len(noisy_changes_count_over_time)), noisy_changes_count_over_time, marker='o', color='purple', label='Noisy Changes')
+    axs[1, 0].plot(range(len(enzyme_changes_count_over_time)), enzyme_changes_count_over_time, marker='o', color='cyan', label='Enzyme Changes')
+    axs[1, 0].set_title('Number of Noisy/Enzyme Changes Over Time given F = '+str(F))
+    axs[1, 0].set_xlabel('Time Steps')
+    axs[1, 0].set_ylabel('Number of Noisy/Enzyme Changes')
+    axs[1, 0].legend()
+
     # Visualize chromatine structure with arrows indicating polymerase positions
+    
     visualize_chromatine(chromatine.histones, polymerase_positions=polymerase_positions)
 
 # Initialize chromatine and polymerases with a specified temperature
@@ -233,6 +256,8 @@ active_histone_count_over_time = []
 acetylated_histone_count_over_time = []
 methylated_histone_count_over_time = []
 unmodified_histone_count_over_time = []
+noisy_changes_count_over_time = []
+enzyme_changes_count_over_time = []
 
 # Dictionary to store transitions and their counts
 transitions_dict = {}
@@ -240,11 +265,15 @@ transitions_dict = {}
 # Create an animated plot
 fig, axs = plt.subplots(2, 2, figsize=(12, 8))
 ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
+
+# Save the animation as a video (e.g., in mp4 format)
+#ani.save('animated_3stateschromatine.gif',   writer=PillowWriter(fps=10))
+
 plt.show()
 
 # Display the transitions dictionary after the simulation
-#fig, ax = plt.subplots(figsize=(11, 7))
-#plt.bar(transitions_dict.keys(), transitions_dict.values(), color='g')
-#ax.set_ylabel('Number of transitions')
-#ax.set_title('Number of transitions in function of their types')
-#plt.show()
+fig, ax = plt.subplots(figsize=(11, 7))
+plt.bar(transitions_dict.keys(), transitions_dict.values(), color='g')
+ax.set_ylabel('Number of transitions')
+ax.set_title('Number of transitions in function of their types')
+plt.show()

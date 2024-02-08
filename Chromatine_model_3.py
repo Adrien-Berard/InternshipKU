@@ -1,4 +1,3 @@
-import random
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation, PillowWriter
@@ -6,7 +5,7 @@ from matplotlib.animation import FuncAnimation, PillowWriter
 # Parameters for simulation
 chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 100
+simulation_steps = 150
 adding_position = 15
 end_of_replication_position = chromatine_size - 15
 
@@ -20,7 +19,7 @@ vicinity_size = 5
 
 # Linear function parameters
 slope = 1e-5
-intercept = 1e-2
+intercept = 1e-1
 
 # Polymerase movement probabilities
 left_movement_probability = 1/2
@@ -93,7 +92,7 @@ class Chromatine:
                         if current_histone == 'A' and nth_histone == 'U':
                             self.histones[nth_position] = 'A'
                         elif current_histone == 'A' and nth_histone == 'M':
-                            self.histones[nth_position] = 'A'
+                            self.histones[nth_position] = 'U'
                         elif current_histone == 'M' and nth_histone == 'U':
                             self.histones[nth_position] = 'M'
                         elif current_histone == 'M' and nth_histone == 'A':
@@ -218,6 +217,7 @@ def update(frame):
     axs[0, 1].legend()
 
     # Visualize chromatine structure with arrows indicating polymerase positions
+    
     visualize_chromatine(chromatine.histones, polymerase_positions=polymerase_positions)
 
 # Initialize chromatine and polymerases with a specified temperature
@@ -242,13 +242,13 @@ fig, axs = plt.subplots(2, 2, figsize=(12, 8))
 ani = FuncAnimation(fig, update, frames=simulation_steps, repeat=False)
 
 # Save the animation as a video (e.g., in mp4 format)
-ani.save('animated_3stateschromatine.gif')
+#ani.save('animated_3stateschromatine.gif',   writer=PillowWriter(fps=10))
 
 plt.show()
 
 # Display the transitions dictionary after the simulation
-#fig, ax = plt.subplots(figsize=(11, 7))
-#plt.bar(transitions_dict.keys(), transitions_dict.values(), color='g')
-#ax.set_ylabel('Number of transitions')
-#ax.set_title('Number of transitions in function of their types')
-#plt.show()
+fig, ax = plt.subplots(figsize=(11, 7))
+plt.bar(transitions_dict.keys(), transitions_dict.values(), color='g')
+ax.set_ylabel('Number of transitions')
+ax.set_title('Number of transitions in function of their types')
+plt.show()
