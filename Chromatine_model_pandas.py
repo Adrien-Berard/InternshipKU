@@ -2,6 +2,33 @@ import random
 import numpy as np
 import pandas as pd
 
+# Parameters for simulation
+chromatine_size = 60
+polymerase_count = 0
+simulation_steps = 200
+adding_position = 15
+end_of_replication_position = chromatine_size - 15
+
+vicinity_size = 5
+recruitment_probability = 1
+
+change_probability = 0.3
+F = change_probability / (1 - change_probability)
+
+# Number of simulations
+num_simulations = 1000
+
+# Linear function parameters for adding_poly_proba
+slope = 1e-5
+intercept = 1e-1
+
+# Polymerase movement probabilities
+left_movement_probability = 1/2
+right_movement_probability = 1/2
+
+# Set seed for reproducibility
+np.random.seed(42)
+
 class Chromatine:
     def __init__(self, histones_count):
         # Initialize chromatine with histones
@@ -31,15 +58,10 @@ class Chromatine:
     def adding_poly_proba(self, adding_position):
         # Linear function of the local density of histones
         # Let's calculate local density as the count of active histones in the vicinity of the polymerase
-        vicinity_size = 5  # Adjust this size as needed
         start_index = max(0, adding_position - vicinity_size)
         end_index = min(len(self.histones), adding_position + vicinity_size + 1)
 
         local_density = np.sum(np.isin(self.histones[start_index:end_index], ['M', 'A']))
-
-        # Linear function parameters (you may adjust these)
-        slope = 1e-5  # Adjust the slope to control the influence of local density
-        intercept = 1e-1 # Adjust the intercept to control the baseline probability
 
         # Calculate the probability of adding a new polymerase
         probability = slope * local_density + intercept
@@ -52,7 +74,7 @@ class Chromatine:
             current_histone = self.histones[position]
 
             # Calculate the influence of vicinity on the recruitment probability
-            adjusted_p_recruitment = p_recruitment / (1e-1 * nth_neighbor)  # Add 1 to avoid division by zero
+            adjusted_p_recruitment = p_recruitment / (nth_neighbor)  
             if adjusted_p_recruitment > 1:
                 adjusted_p_recruitment = 1
 
@@ -64,38 +86,18 @@ class Chromatine:
                     if nth_position < len(self.histones):
                         nth_histone = self.histones[nth_position]
 
-
-                        if current_histone == 'U' and nth_histone == 'A':
-                            self.histones[nth_position] = 'U'
-                            # Implement changes based on the nth neighbor
-                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
-                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
-                        elif current_histone == 'U' and nth_histone == 'M':
-                            self.histones[nth_position] = 'U'
-                            # Implement changes based on the nth neighbor
-                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
-                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
-                        elif current_histone == 'A' and nth_histone == 'U':
+                        #if current_histone == 'U' and nth_histone == 'A':
+                        #    self.histones[nth_position] = 'U'
+                        #elif current_histone == 'U' and nth_histone == 'M':
+                        #    self.histones[nth_position] = 'U'
+                        if current_histone == 'A' and nth_histone == 'U':
                             self.histones[nth_position] = 'A'
-                            # Implement changes based on the nth neighbor
-                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
-                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
                         elif current_histone == 'A' and nth_histone == 'M':
-                            self.histones[nth_position] = 'A'
-                            # Implement changes based on the nth neighbor
-                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
-                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
+                            self.histones[nth_position] = 'U'
                         elif current_histone == 'M' and nth_histone == 'A':
-                            self.histones[nth_position] = 'M'
-                            # Implement changes based on the nth neighbor
-                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
-                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
+                            self.histones[nth_position] = 'U'
                         elif current_histone == 'M' and nth_histone == 'U':
                             self.histones[nth_position] = 'M'
-                            # Implement changes based on the nth neighbor
-                            transition_key = f"{current_histone}_and_{nth_histone}_to_{current_histone}_and_{current_histone}"
-                            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
-
 
 class Polymerase:
     def __init__(self, chromatine, position=10, temperature=1.0):
@@ -118,7 +120,7 @@ class Polymerase:
             # Do not move if there is another polymerase 1 place after
             return
 
-        probabilities = [1/2, 1/2]
+        probabilities = [left_movement_probability, right_movement_probability]
 
         # Normalize probabilities to sum to 1
         total_prob = np.sum(probabilities)
@@ -135,21 +137,6 @@ class Polymerase:
         # Simulate the histone change process by polymerase
         if 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'M':
             chromatine.histones[self.position] = 'A'
-            transition_key = f"Polymerase_M_to_A"
-            transitions_dict[transition_key] = transitions_dict.get(transition_key, 0) + 1
-
-# Set seed for reproducibility
-np.random.seed(42)
-
-# Parameters for simulation
-chromatine_size = 50
-polymerase_count = 0
-simulation_steps = 200
-adding_position = 10
-end_of_replication_position = chromatine_size - 10
-
-# Number of simulations
-num_simulations = 5000
 
 # Initialize lists to store results of each simulation
 results_list = []
@@ -157,6 +144,7 @@ results_list = []
 # Run simulations
 for simulation in range(num_simulations):
     print(simulation)
+
     # Initialize chromatine and polymerases with a specified temperature
     chromatine = Chromatine(chromatine_size)
     polymerases = [Polymerase(chromatine, temperature=1.0) for _ in range(polymerase_count)]
@@ -166,7 +154,7 @@ for simulation in range(num_simulations):
 
     # Lists to store the number of transitions and active histones over time
     transitions_dict = {}
-    
+
     # Run the simulation
     for frame in range(simulation_steps):
         deleted_positions = []  
@@ -179,7 +167,7 @@ for simulation in range(num_simulations):
             deleted_positions.append(polymerase.position)
 
         for position in range(1, chromatine_size):
-            chromatine.change_next_histones(position, p_recruitment=0.2, p_change=0.3, nth_neighbor=np.random.randint(1, chromatine_size), vicinity_size=5)
+            chromatine.change_next_histones(position, p_recruitment=recruitment_probability, p_change=change_probability, nth_neighbor=np.random.randint(1, chromatine_size), vicinity_size=vicinity_size)
 
         if np.random.random() < chromatine.adding_poly_proba(adding_position):
             chromatine.add_polymerases(1, existing_polymerase_positions, adding_position)
