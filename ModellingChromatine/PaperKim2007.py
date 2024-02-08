@@ -9,14 +9,14 @@ matplotlib.use('Agg')
 # Parameters for simulation
 chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 100
+simulation_steps = 5000
 adding_position = 15
 end_of_replication_position = chromatine_size - 15
 
 # Simulation-specific parameters
 histone_modification_percentage = 0.3
 recruitment_probability = 1
-alpha = 0.9
+alpha = 2/3
 change_probability = alpha
 regeneration_probability = 0.3
 adding_polymerase_probability = 0.3
@@ -279,16 +279,11 @@ ani = FuncAnimation(fig, update, frames=simulation_steps, interval = 50,repeat=F
 
 # plt.show()
 
-# converting to an html5 video 
-video = ani.to_html5_video() 
-  
-# embedding for the video 
-html = display.HTML(video) 
-  
-# draw the animation 
-display.display(html) 
-plt.close() 
+# Save the animation as a video file
+video_filename = 'animated_chromatine.mp4'
+ani.save(video_filename, writer='ffmpeg', fps=20)
 
+print("Done")
 # Display the transitions dictionary after the simulation
 #fig, ax = plt.subplots(figsize=(11, 7))
 #plt.bar(transitions_dict.keys(), transitions_dict.values(), color='g')
