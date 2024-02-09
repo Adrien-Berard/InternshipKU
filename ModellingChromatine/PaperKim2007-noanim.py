@@ -1,17 +1,18 @@
 import numpy as np
 import pandas as pd
+import os
 
 # Parameters for simulation
 chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 1000000
+simulation_steps = 500000
 adding_position = 25
 end_of_replication_position = chromatine_size - 25
 
 # Simulation-specific parameters
 histone_modification_percentage = 0.5
 recruitment_probability = 1
-alpha = 2/3
+alpha = 9/10
 change_probability = alpha
 regeneration_probability = 0.3
 adding_polymerase_probability = 0.3
@@ -63,7 +64,8 @@ class Chromatine:
             new_position = adding_position
             while new_position in existing_polymerase_positions:
                 new_position += 1
-            existing_polymerase_positions.append(new_position)
+            if new_position < end_of_replication_position:
+                existing_polymerase_positions.append(new_position)
 
     def adding_poly_proba(self, adding_position):
         start_index = max(0, adding_position - vicinity_size)
@@ -186,7 +188,7 @@ for frame in range(simulation_steps):
     unmodified_histone_count = np.sum(chromatine.histones == 'U')
 
 
-    if frame%1000 == 0:
+    if frame%100 == 0:
         print(frame)
         # Append data to the dataframe
         result_df = pd.concat([result_df, pd.DataFrame([{'Time Steps': frame + 1,
@@ -201,5 +203,7 @@ for frame in range(simulation_steps):
 print("Done")
 
 # Save the dataframe to a CSV file
-csv_filename = f'counting_lists_dataframe_polymerasecount_{polymerase_count}_alpha_{alpha}_F_{F}_addingpolyprobaintercept_{intercept}.csv'
+
+current_directory = os.getcwd()
+csv_filename = f'{current_directory}/counting_lists_dataframe_polymerasecount_{polymerase_count}_alpha_{alpha}_F_{F}_addingpolyprobaintercept_{intercept}_addingpolyprobaslope_{slope}.csv'
 result_df.to_csv(csv_filename, index=False)
