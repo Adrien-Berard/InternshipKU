@@ -10,7 +10,7 @@ adding_position = 25
 end_of_replication_position = chromatine_size
 
 # Simulation-specific parameters
-F_values = np.arange(0.1, 4.1, 0.1)
+F_values = np.arange(0.1, 4.1, 0.01)
 
 # Linear function parameters
 slope = 0
@@ -213,7 +213,7 @@ for F in F_values:
 
 # Save the dataframe to a CSV file
 current_directory = os.getcwd()
-csv_filename = f'{current_directory}/average_m_a_ratio_results.csv'
+csv_filename = f'{current_directory}/average_m_a_ratio_results2.csv'
 result_summary_df.to_csv(csv_filename, index=False)
 
 print("Done")
