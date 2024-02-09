@@ -7,25 +7,15 @@ chromatine_size = 60
 polymerase_count = 0
 simulation_steps = 50000
 adding_position = 25
-end_of_replication_position = chromatine_size - 25
+end_of_replication_position = chromatine_size
 
 # Simulation-specific parameters
-F = 10
-alpha = F/(1+F)
-
-histone_modification_percentage = 0.5
-recruitment_probability = 1
-# alpha = 9/10
-change_probability = alpha
-regeneration_probability = 0.3
-adding_polymerase_probability = 0.3
-noisy_transition_probability = 1 - alpha
-vicinity_size = 5
-
+F_values = np.arange(0.1, 4.1, 0.1)
 
 # Linear function parameters
 slope = 0
 intercept = 0
+
 
 # Polymerase movement probabilities
 left_movement_probability = 1/2
@@ -135,25 +125,46 @@ class Chromatine:
 #         elif 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'M':
 #             chromatine.histones[self.position] = 'U'
 
-# Initialize chromatine and polymerases with a specified temperature
-chromatine = Chromatine(chromatine_size)
+# Create an empty dataframe to store the results for different F values
+columns = ['F', 'Average_M_A_ratio']
+result_summary_df = pd.DataFrame(columns=columns)
+
+# Set seed for reproducibility
+np.random.seed(42)
+
+for F in F_values:
+    # Update the value of F in the simulation parameters
+    alpha = F / (1 + F)
+    print(F)
+
+    histone_modification_percentage = 0.5
+    recruitment_probability = 1
+    # alpha = 9/10
+    change_probability = alpha
+    regeneration_probability = 0.3
+    adding_polymerase_probability = 0.3
+    noisy_transition_probability = 1 - alpha
+    vicinity_size = 5
+
+    # Initialize chromatine and polymerases with a specified temperature
+    chromatine = Chromatine(chromatine_size)
+
 # polymerases = [Polymerase(chromatine, temperature=1.0) for _ in range(polymerase_count)]
 
 # Track existing polymerase positions using a list to avoid duplicates
 # existing_polymerase_positions = [polymerase.position for polymerase in polymerases]
 
-# Create an empty dataframe to store the counting lists
-columns = ['Time Steps', 'Polymerase Count', 'Active Histone Count', 'Acetylated Histone Count',
-           'Methylated Histone Count', 'Unmodified Histone Count', 'Noisy Changes Count', 'Enzyme Changes Count']
-result_df = pd.DataFrame(columns=columns)
+    # Initialize a list to store the values of |M - A| / (M + A) for each step
+    m_a_ratios = []
 
-# Simulation loop
-for frame in range(simulation_steps):
+    # Simulation loop
+    for frame in range(simulation_steps):
+        deleted_positions = []  # Keep track of deleted positions for regeneration
+        polymerase_positions = []  # Clear the polymerase_positions list
+        noisy_changes_count = 0
+        enzyme_changes_count = 0
 
-    deleted_positions = []  # Keep track of deleted positions for regeneration
-    polymerase_positions = []  # Clear the polymerase_positions list
-    noisy_changes_count = 0
-    enzyme_changes_count = 0
+        
 
     # for polymerase in polymerases:
     #     polymerase.move(chromatine)
@@ -161,15 +172,15 @@ for frame in range(simulation_steps):
     #     polymerase_positions.append(polymerase.position)  # Append the current position
     #     deleted_positions.append(polymerase.position)
 
-    # Change the next histones based on the influence of first neighbors
-    position = np.random.randint(1, chromatine_size)
-    # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
-    if np.random.random() < alpha:
-        enzyme_changes_count = chromatine.change_next_histones(position, p_recruitment=recruitment_probability,
-                                                          p_change=change_probability, enzyme_changes=enzyme_changes_count,
-                                                          nth_neighbor=np.random.randint(1, chromatine_size))
-    else:
-        noisy_changes_count = chromatine.noisy_transition(position, noisy_transition_probability, noisy_changes_count)
+        # Change the next histones based on the influence of first neighbors
+        position = np.random.randint(1, chromatine_size)
+        # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
+        if np.random.random() < alpha:
+            enzyme_changes_count = chromatine.change_next_histones(position, p_recruitment=recruitment_probability,
+                                                            p_change=change_probability, enzyme_changes=enzyme_changes_count,
+                                                            nth_neighbor=np.random.randint(1, chromatine_size))
+        else:
+            noisy_changes_count = chromatine.noisy_transition(position, noisy_transition_probability, noisy_changes_count)
 
     # Regenerate histones at unmodified positions
     # if np.random.random() < regeneration_probability:
@@ -185,28 +196,25 @@ for frame in range(simulation_steps):
 
     # Update the number of polymerases and active histones lists
     # polymerase_count_over_time = len(polymerases)
-    active_histone_count = np.sum(np.isin(chromatine.histones, ['M', 'A']))
-    acetylated_histone_count = np.sum(chromatine.histones == 'A')
-    methylated_histone_count = np.sum(chromatine.histones == 'M')
-    unmodified_histone_count = np.sum(chromatine.histones == 'U')
+        active_histone_count = np.sum(np.isin(chromatine.histones, ['M', 'A']))
+        acetylated_histone_count = np.sum(chromatine.histones == 'A')
+        methylated_histone_count = np.sum(chromatine.histones == 'M')
+        unmodified_histone_count = np.sum(chromatine.histones == 'U')
 
+        # Calculate |M - A| / (M + A) and append to the list
+        m_a_ratio = np.abs(methylated_histone_count - acetylated_histone_count) / (methylated_histone_count + acetylated_histone_count)
+        m_a_ratios.append(m_a_ratio)
 
-    if frame%100 == 0:
-        print(frame)
-        # Append data to the dataframe
-        result_df = pd.concat([result_df, pd.DataFrame([{'Time Steps': frame + 1,
-                                                    'Polymerase Count': 0,
-                                                    'Active Histone Count': active_histone_count,
-                                                    'Acetylated Histone Count': acetylated_histone_count,
-                                                    'Methylated Histone Count': methylated_histone_count,
-                                                    'Unmodified Histone Count': unmodified_histone_count,
-                                                    'Noisy Changes Count': noisy_changes_count,
-                                                    'Enzyme Changes Count': enzyme_changes_count}])], ignore_index=True)
+    # Calculate the average |M - A| / (M + A) for the current value of F
+    average_m_a_ratio = np.mean(m_a_ratios)
+
+    # Append the result to the dataframe
+    result_summary_df = pd.concat([result_summary_df, pd.DataFrame([{'F': F, 'Average_M_A_ratio': average_m_a_ratio}])], ignore_index=True)
+
+# Save the dataframe to a CSV file
+current_directory = os.getcwd()
+csv_filename = f'{current_directory}/average_m_a_ratio_results.csv'
+result_summary_df.to_csv(csv_filename, index=False)
 
 print("Done")
 
-# Save the dataframe to a CSV file
-
-current_directory = os.getcwd()
-csv_filename = f'{current_directory}/counting_lists_dataframe_polymerasecount_{polymerase_count}_alpha_{alpha}_F_{F}_addingpolyprobaintercept_{intercept}_addingpolyprobaslope_{slope}.csv'
-result_df.to_csv(csv_filename, index=False)
