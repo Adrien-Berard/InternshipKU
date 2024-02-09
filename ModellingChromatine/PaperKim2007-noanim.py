@@ -183,15 +183,17 @@ for frame in range(simulation_steps):
     methylated_histone_count = np.sum(chromatine.histones == 'M')
     unmodified_histone_count = np.sum(chromatine.histones == 'U')
 
-    # Append data to the dataframe
-    result_df = pd.concat([result_df, pd.DataFrame([{'Time Steps': frame + 1,
-                                                  'Polymerase Count': polymerase_count_over_time,
-                                                  'Active Histone Count': active_histone_count,
-                                                  'Acetylated Histone Count': acetylated_histone_count,
-                                                  'Methylated Histone Count': methylated_histone_count,
-                                                  'Unmodified Histone Count': unmodified_histone_count,
-                                                  'Noisy Changes Count': noisy_changes_count,
-                                                  'Enzyme Changes Count': enzyme_changes_count}])], ignore_index=True)
+
+    if frame%100 == 0:
+        # Append data to the dataframe
+        result_df = pd.concat([result_df, pd.DataFrame([{'Time Steps': frame + 1,
+                                                    'Polymerase Count': polymerase_count_over_time,
+                                                    'Active Histone Count': active_histone_count,
+                                                    'Acetylated Histone Count': acetylated_histone_count,
+                                                    'Methylated Histone Count': methylated_histone_count,
+                                                    'Unmodified Histone Count': unmodified_histone_count,
+                                                    'Noisy Changes Count': noisy_changes_count,
+                                                    'Enzyme Changes Count': enzyme_changes_count}])], ignore_index=True)
 
 print("Done")
 

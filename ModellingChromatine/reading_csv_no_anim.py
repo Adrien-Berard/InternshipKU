@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Assuming you have a CSV file with the data, replace 'your_csv_file.csv' with your actual CSV file name.
-csv_filename = 'counting_lists_dataframe.csv'
+csv_filename = '/Users/adrienberard/Documents/GitHub/InternshipKU/ModellingChromatine/counting_lists_dataframe.csv'
 df = pd.read_csv(csv_filename)
 
 # Function to update the plot in each animation frame
