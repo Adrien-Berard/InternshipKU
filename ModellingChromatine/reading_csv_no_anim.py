@@ -33,4 +33,3 @@ fig = plt.figure(figsize=(10, 10))
 update(len(df) - 1)  # Use the last frame to show the final state
 plt.tight_layout()
 plt.show()
-
