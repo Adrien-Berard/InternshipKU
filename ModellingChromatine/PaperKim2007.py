@@ -9,14 +9,14 @@ matplotlib.use('Agg')
 # Parameters for simulation
 chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 1000
-adding_position = 15
-end_of_replication_position = chromatine_size - 15
+simulation_steps = 5000
+adding_position = 25
+end_of_replication_position = chromatine_size - 25
 
 # Simulation-specific parameters
 histone_modification_percentage = 0.5
 recruitment_probability = 1
-alpha = 2/3
+alpha = 3/4
 change_probability = alpha
 regeneration_probability = 0.3
 adding_polymerase_probability = 0.3
@@ -26,7 +26,7 @@ F = alpha/(1 - alpha)
 
 # Linear function parameters
 slope = 1e-5
-intercept = 1e-2
+intercept = 0
 
 # Polymerase movement probabilities
 left_movement_probability = 1/2
@@ -53,6 +53,14 @@ class Chromatine:
             elif self.histones[position] == 'M':
                 self.histones[position] = 'U'
                 noisy_changes += 1
+            elif self.histones[position] == 'U':
+                if np.random.random() < 1/2:
+                    self.histones[position] = 'A'
+                    noisy_changes += 1
+                else:
+                    self.histones[position] = 'M'
+                    noisy_changes += 1
+
         return noisy_changes
 
     def add_polymerases(self, count, existing_polymerase_positions, adding_position):
@@ -272,7 +280,7 @@ transitions_dict = {}
 
 # Create an animated plot
 fig, axs = plt.subplots(2, 2, figsize=(12, 8))
-ani = FuncAnimation(fig, update, frames=simulation_steps, interval = 50,repeat=False)
+ani = FuncAnimation(fig, update, frames=simulation_steps, interval = 100,repeat=False)
 
 
 # Define the filename based on the value of F and the length of the simulation
@@ -294,3 +302,10 @@ print("Done")
 #ax.set_ylabel('Number of transitions')
 #ax.set_title('Number of transitions in function of their types')
 #plt.show()
+
+
+
+# starting point of the polymerase : if n-M doesn't start
+# M->U and U->A
+# check paper nulbers of poly rate
+# cenH at someplkace M come here
