@@ -8,7 +8,7 @@ matplotlib.use('Agg')
 # Parameters for simulation
 chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 5000
+simulation_steps = 10000
 adding_position = 25
 end_of_replication_position = chromatine_size - 25
 
@@ -24,7 +24,7 @@ vicinity_size = 5
 F = alpha/(1 - alpha)
 
 # Linear function parameters
-slope = 1e-5
+slope = 0
 intercept = 0
 
 # Polymerase movement probabilities
@@ -283,7 +283,7 @@ ani = FuncAnimation(fig, update, frames=simulation_steps, interval = 100,repeat=
 
 
 # Define the filename based on the value of F and the length of the simulation
-mp4_filename = f'new_animated_3states_chromatine_F_{F}_steps_{simulation_steps}_starting_polymerases_{intercept}.mp4'
+mp4_filename = f'animated_3states_chromatine_F_{F}_steps_{simulation_steps}_starting_polymerases_{intercept}.mp4'
 
 # # Save the animation
 # ani.save(gif_filename)
