@@ -8,7 +8,7 @@ matplotlib.use('Agg')
 # Parameters for simulation
 chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 10000
+simulation_steps = 1000
 adding_position = 25
 end_of_replication_position = chromatine_size - 25
 
@@ -159,6 +159,9 @@ class Polymerase:
         if 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'U':
             chromatine.histones[self.position] = 'A'
 
+        elif 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'M':
+            chromatine.histones[self.position] = 'U'
+
 def visualize_chromatine(histones, polymerase_positions=None):
     # Display chromatine state as a bar chart
     plt.bar(range(len(histones)), [1] * len(histones),
@@ -288,7 +291,7 @@ mp4_filename = f'animated_3states_chromatine_F_{F}_steps_{simulation_steps}_star
 # # Save the animation
 # ani.save(gif_filename)
 
-# plt.show()
+plt.show()
 
 # Save the animation as a video file
 video_filename = mp4_filename
@@ -305,6 +308,5 @@ print("Done")
 
 
 # starting point of the polymerase : if n-M doesn't start
-# M->U and U->A
 # check paper nulbers of poly rate
 # cenH at someplkace M come here
