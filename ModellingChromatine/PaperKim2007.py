@@ -9,14 +9,14 @@ matplotlib.use('Agg')
 # Parameters for simulation
 chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 5000
+simulation_steps = 1000
 adding_position = 15
 end_of_replication_position = chromatine_size - 15
 
 # Simulation-specific parameters
-histone_modification_percentage = 0.3
+histone_modification_percentage = 0.5
 recruitment_probability = 1
-alpha = 10/11
+alpha = 2/3
 change_probability = alpha
 regeneration_probability = 0.3
 adding_polymerase_probability = 0.3
@@ -26,7 +26,7 @@ F = alpha/(1 - alpha)
 
 # Linear function parameters
 slope = 1e-5
-intercept = 0
+intercept = 1e-2
 
 # Polymerase movement probabilities
 left_movement_probability = 1/2
@@ -46,10 +46,12 @@ class Chromatine:
         self.histones[unmodified_positions] = 'U'
 
     def noisy_transition(self, position, noisy_transition_probability,noisy_changes):
-        if np.random.random() < noisy_transition_probability:
-            previous = self.histones[position]
-            self.histones[position] = np.random.choice(['A', 'M', 'U'])
-            if previous != self.histones[position]:
+        if np.random.random() < noisy_transition_probability/3:
+            if self.histones[position] == 'A':
+                self.histones[position] = 'U'
+                noisy_changes += 1
+            elif self.histones[position] == 'M':
+                self.histones[position] = 'U'
                 noisy_changes += 1
         return noisy_changes
 
@@ -74,7 +76,7 @@ class Chromatine:
 
         return probability
 
-    def change_next_histones(self, position, p_recruitment, p_change,enzyme_changes, nth_neighbor=1, vicinity_size=5):
+    def change_next_histones(self, position, p_recruitment, p_change,enzyme_changes, nth_neighbor):
         # Simulate the influence of neighbors on the next histones
         if 1 <= position < len(self.histones) - 1:
             current_histone = self.histones[position]
@@ -180,7 +182,7 @@ def update(frame):
     # Change the next histones based on the influence of first neighbors
     position = np.random.randint(1, chromatine_size)
     # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
-    enzyme_changes_count = chromatine.change_next_histones(position, p_recruitment=recruitment_probability, p_change=change_probability, enzyme_changes = enzyme_changes_count,nth_neighbor=np.random.randint(1, chromatine_size), vicinity_size=vicinity_size)
+    enzyme_changes_count = chromatine.change_next_histones(position, p_recruitment=recruitment_probability, p_change=change_probability, enzyme_changes = enzyme_changes_count,nth_neighbor=np.random.randint(1, chromatine_size))
     noisy_changes_count = chromatine.noisy_transition(position,noisy_transition_probability,noisy_changes_count)
 
     # Regenerate histones at unmodified positions
@@ -274,7 +276,7 @@ ani = FuncAnimation(fig, update, frames=simulation_steps, interval = 50,repeat=F
 
 
 # Define the filename based on the value of F and the length of the simulation
-mp4_filename = f'animated_3states_chromatine_F_{F}_steps_{simulation_steps}_starting_polymerases_{intercept}.mp4'
+mp4_filename = f'new_animated_3states_chromatine_F_{F}_steps_{simulation_steps}_starting_polymerases_{intercept}.mp4'
 
 # # Save the animation
 # ani.save(gif_filename)
