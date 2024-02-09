@@ -4,14 +4,14 @@ import pandas as pd
 # Parameters for simulation
 chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 100000
+simulation_steps = 1000000
 adding_position = 25
 end_of_replication_position = chromatine_size - 25
 
 # Simulation-specific parameters
 histone_modification_percentage = 0.5
 recruitment_probability = 1
-alpha = 3/4
+alpha = 2/3
 change_probability = alpha
 regeneration_probability = 0.3
 adding_polymerase_probability = 0.3
@@ -41,7 +41,7 @@ class Chromatine:
         self.histones[unmodified_positions] = 'U'
 
     def noisy_transition(self, position, noisy_transition_probability, noisy_changes):
-        if np.random.random() < noisy_transition_probability/3:
+        if np.random.random() < 1/3:
             if self.histones[position] == 'A':
                 self.histones[position] = 'U'
                 noisy_changes += 1
@@ -75,28 +75,28 @@ class Chromatine:
     def change_next_histones(self, position, p_recruitment, p_change, enzyme_changes, nth_neighbor):
         if 1 <= position < len(self.histones) - 1:
             current_histone = self.histones[position]
-            adjusted_p_recruitment = p_recruitment
-            if adjusted_p_recruitment > 1:
-                adjusted_p_recruitment = 1
+            # adjusted_p_recruitment = p_recruitment
+            # if adjusted_p_recruitment > 1:
+            #     adjusted_p_recruitment = 1
 
-            if np.random.random() < adjusted_p_recruitment:
-                if np.random.random() < p_change:
-                    nth_position = position + nth_neighbor
-                    if nth_position < len(self.histones):
-                        nth_histone = self.histones[nth_position]
+            # if np.random.random() < adjusted_p_recruitment:
+                # if np.random.random() < p_change:
+            nth_position = position + nth_neighbor
+            if nth_position < len(self.histones):
+                nth_histone = self.histones[nth_position]
 
-                        if current_histone == 'A' and nth_histone == 'U':
-                            self.histones[nth_position] = 'A'
-                            enzyme_changes += 1 
-                        elif current_histone == 'A' and nth_histone == 'M':
-                            self.histones[nth_position] = 'U'
-                            enzyme_changes += 1 
-                        elif current_histone == 'M' and nth_histone == 'U':
-                            self.histones[nth_position] = 'M'
-                            enzyme_changes += 1 
-                        elif current_histone == 'M' and nth_histone == 'A':
-                            self.histones[nth_position] = 'U'
-                            enzyme_changes += 1 
+                if current_histone == 'A' and nth_histone == 'U':
+                    self.histones[nth_position] = 'A'
+                    enzyme_changes += 1 
+                elif current_histone == 'A' and nth_histone == 'M':
+                    self.histones[nth_position] = 'U'
+                    enzyme_changes += 1 
+                elif current_histone == 'M' and nth_histone == 'U':
+                    self.histones[nth_position] = 'M'
+                    enzyme_changes += 1 
+                elif current_histone == 'M' and nth_histone == 'A':
+                    self.histones[nth_position] = 'U'
+                    enzyme_changes += 1 
         return enzyme_changes
 
 class Polymerase:
@@ -144,7 +144,7 @@ result_df = pd.DataFrame(columns=columns)
 
 # Simulation loop
 for frame in range(simulation_steps):
-    print(frame)
+
     deleted_positions = []  # Keep track of deleted positions for regeneration
     polymerase_positions = []  # Clear the polymerase_positions list
     noisy_changes_count = 0
@@ -159,10 +159,12 @@ for frame in range(simulation_steps):
     # Change the next histones based on the influence of first neighbors
     position = np.random.randint(1, chromatine_size)
     # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
-    enzyme_changes_count = chromatine.change_next_histones(position, p_recruitment=recruitment_probability,
+    if np.random.random() < alpha:
+        enzyme_changes_count = chromatine.change_next_histones(position, p_recruitment=recruitment_probability,
                                                           p_change=change_probability, enzyme_changes=enzyme_changes_count,
                                                           nth_neighbor=np.random.randint(1, chromatine_size))
-    noisy_changes_count = chromatine.noisy_transition(position, noisy_transition_probability, noisy_changes_count)
+    else:
+        noisy_changes_count = chromatine.noisy_transition(position, noisy_transition_probability, noisy_changes_count)
 
     # Regenerate histones at unmodified positions
     # if np.random.random() < regeneration_probability:
@@ -184,7 +186,8 @@ for frame in range(simulation_steps):
     unmodified_histone_count = np.sum(chromatine.histones == 'U')
 
 
-    if frame%100 == 0:
+    if frame%1000 == 0:
+        print(frame)
         # Append data to the dataframe
         result_df = pd.concat([result_df, pd.DataFrame([{'Time Steps': frame + 1,
                                                     'Polymerase Count': polymerase_count_over_time,
@@ -198,5 +201,5 @@ for frame in range(simulation_steps):
 print("Done")
 
 # Save the dataframe to a CSV file
-csv_filename = 'counting_lists_dataframe_.csv'
+csv_filename = f'counting_lists_dataframe_polymerasecount_{polymerase_count}_alpha_{alpha}_F_{F}_addingpolyprobaintercept_{intercept}.csv'
 result_df.to_csv(csv_filename, index=False)

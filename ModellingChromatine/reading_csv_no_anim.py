@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Assuming you have a CSV file with the data, replace 'your_csv_file.csv' with your actual CSV file name.
-csv_filename = '/Users/adrienberard/Documents/GitHub/InternshipKU/ModellingChromatine/counting_lists_dataframe.csv'
+csv_filename = 'counting_lists_dataframe_polymerasecount_0_alpha_0.6666666666666666_F_1.9999999999999998_addingpolyprobaintercept_0.csv'
 df = pd.read_csv(csv_filename)
 
 # Function to update the plot in each animation frame
@@ -33,3 +33,4 @@ fig = plt.figure(figsize=(10, 10))
 update(len(df) - 1)  # Use the last frame to show the final state
 plt.tight_layout()
 plt.show()
+
