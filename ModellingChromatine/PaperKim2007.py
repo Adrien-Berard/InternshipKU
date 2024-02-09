@@ -26,7 +26,7 @@ F = alpha/(1 - alpha)
 
 # Linear function parameters
 slope = 1e-5
-intercept = 0
+intercept = 1e-2
 
 # Polymerase movement probabilities
 left_movement_probability = 1/2
@@ -165,6 +165,7 @@ def visualize_chromatine(histones, polymerase_positions=None):
 
 # Function to update the plot in each animation frame
 def update(frame):
+    print(frame)
     deleted_positions = []  # Keep track of deleted positions for regeneration
     polymerase_positions = []  # Clear the polymerase_positions list
     noisy_changes_count = 0
