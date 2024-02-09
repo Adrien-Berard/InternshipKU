@@ -26,7 +26,7 @@ F = alpha/(1 - alpha)
 
 # Linear function parameters
 slope = 1e-5
-intercept = 1e-2
+intercept = 0
 
 # Polymerase movement probabilities
 left_movement_probability = 1/2
@@ -178,10 +178,10 @@ def update(frame):
         deleted_positions.append(polymerase.position)
 
     # Change the next histones based on the influence of first neighbors
-    for position in range(1, chromatine_size):
-        # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
-        enzyme_changes_count = chromatine.change_next_histones(position, p_recruitment=recruitment_probability, p_change=change_probability, enzyme_changes = enzyme_changes_count,nth_neighbor=np.random.randint(1, chromatine_size), vicinity_size=vicinity_size)
-        noisy_changes_count = chromatine.noisy_transition(position,noisy_transition_probability,noisy_changes_count)
+    position = np.random.randint(1, chromatine_size)
+    # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
+    enzyme_changes_count = chromatine.change_next_histones(position, p_recruitment=recruitment_probability, p_change=change_probability, enzyme_changes = enzyme_changes_count,nth_neighbor=np.random.randint(1, chromatine_size), vicinity_size=vicinity_size)
+    noisy_changes_count = chromatine.noisy_transition(position,noisy_transition_probability,noisy_changes_count)
 
     # Regenerate histones at unmodified positions
     #if np.random.random() < regeneration_probability:
