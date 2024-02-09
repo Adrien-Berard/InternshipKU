@@ -13,7 +13,7 @@ import numpy as np
 
 
 # Python implementation of the pair force and energy.
-def harm_force_and_energy(dx, k, sigma, r_cut, shift=False):
+def harm_force_and_energy(dx, b, l0, r_cut, shift=False):
 
     dr = np.linalg.norm(dx)
 
@@ -27,11 +27,29 @@ def harm_force_and_energy(dx, k, sigma, r_cut, shift=False):
 
     return f, e
 
+def pair_evaluator_example(r, l0, b, rcutsq, energy_shift=True):
+    # Calculate force_divr
+    rinv = 1 / r
+    overlap = l0 - r
+    four_r_on_l0 = 4 * r / l0
+    four_on_l0 = 4 / l0
+    force_divr = -four_on_l0 * (np.exp(-four_r_on_l0) - np.exp(-four_r_on_l0 * b))
+
+    # Calculate pair_eng
+    pair_eng = (np.exp(-4 * r / l0) - np.exp(-4 * b * r / l0))
+
+    # Apply energy shift if required
+    if energy_shift:
+        rcut = np.sqrt(rcutsq)
+        cut_overlap = (l0 - rcut) / l0
+        pair_eng -= 0.5 * (np.exp(-4 * cut_overlap) - np.exp(-4 * b * cut_overlap))
+
+    return force_divr, pair_eng
 
 # Build up list of parameters.
 distances = np.linspace(0.1, 2.0, 3)
-ks = [0.5, 2.0, 5.0]
-sigmas = [0.5, 1.0, 1.5]
+bs = [0.5, 2.0, 5.0]
+l0s = [0.5, 1.0, 1.5]
 # No need to test "xplor", as that is handled outside of the plugin impl.
 modes = ["none", "shift"]
 
@@ -67,7 +85,7 @@ def test_force_and_energy_eval(simulation_factory,
 
         # Compute force and energy from Python
         shift = mode == "shift"
-        f, e = harm_force_and_energy(vec_dist, k, sigma, sigma, shift)
+        f, e = pair_evaluator_example(r, l0, b, rcutsq, energy_shift=True)
         e /= 2.0
 
     # Test that the forces and energies match that predicted by the Python

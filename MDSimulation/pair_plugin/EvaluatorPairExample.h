@@ -14,7 +14,7 @@
     \brief Defines the pair evaluator class for the example potential
 */
 
-// need to declare these class methods with __device__ qualifiers when building in nvcc
+// Need to declare these class methods with __device__ qualifiers when building in nvcc
 // DEVICE is __host__ __device__ when included in nvcc and blank when included into the host
 // compiler
 #ifdef __HIPCC__
@@ -25,50 +25,43 @@
 #define HOSTDEVICE
 #endif
 
-namespace hoomd
-    {
-namespace md
-    {
+namespace hoomd {
+namespace md {
 
-class EvaluatorPairExample
-    {
-    public:
+class EvaluatorPairExample {
+public:
     //! Define the parameter type used by this pair potential evaluator
-    struct param_type
-        {
-        Scalar b; //!  Lambertw
-        Scalar l0; //! Equilibrium distance
+    struct param_type {
+        Scalar b;  //!< Lambertw
+        Scalar l0; //!< Equilibrium distance
 
-        DEVICE void load_shared(char*& ptr, unsigned int& available_bytes) { }
+        DEVICE void load_shared(char*& ptr, unsigned int& available_bytes) {}
 
-        HOSTDEVICE void allocate_shared(char*& ptr, unsigned int& available_bytes) const { }
+        HOSTDEVICE void allocate_shared(char*& ptr, unsigned int& available_bytes) const {}
 
 #ifdef ENABLE_HIP
         //! Set CUDA memory hints
-        void set_memory_hint() const
-            {
+        void set_memory_hint() const {
             // default implementation does nothing
-            }
+        }
 #endif
 
 #ifndef __HIPCC__
-        param_type() : b(0), l0(0) { }
+        param_type() : b(0), l0(0) {}
 
-        param_type(pybind11::dict v, bool managed = false)
-            {
-            k = v["b"].cast<Scalar>();
-            sigma = v["l0"].cast<Scalar>();
-            }
+        param_type(pybind11::dict v, bool managed = false) {
+            b = v["b"].cast<Scalar>();
+            l0 = v["l0"].cast<Scalar>();
+        }
 
-        pybind11::dict asDict()
-            {
+        pybind11::dict asDict() {
             pybind11::dict v;
             v["b"] = b;
             v["l0"] = l0;
             return v;
-            }
-#endif
         }
+#endif
+    }
 #if HOOMD_LONGREAL_SIZE == 32
         __attribute__((aligned(8)));
 #else
@@ -81,20 +74,18 @@ class EvaluatorPairExample
         \param _params Per type pair parameters of this potential
     */
     DEVICE EvaluatorPairExample(Scalar _rsq, Scalar _rcutsq, const param_type& _params)
-        : rsq(_rsq), rcutsq(_rcutsq), b(_params.b), l0(_params.l0)
-        {
-        }
+        : rsq(_rsq), rcutsq(_rcutsq), b(_params.b), l0(_params.l0) {}
 
     //! Example doesn't use charge
-    DEVICE static bool needsCharge()
-        {
+    DEVICE static bool needsCharge() {
         return false;
-        }
+    }
+
     //! Accept the optional charge value
     /*! \param qi Charge of particle i
         \param qj Charge of particle j
     */
-    DEVICE void setCharge(Scalar qi, Scalar qj) { }
+    DEVICE void setCharge(Scalar qi, Scalar qj) {}
 
     //! Evaluate the force and energy
     /*! \param force_divr Output parameter to write the computed force divided by r.
@@ -107,71 +98,60 @@ class EvaluatorPairExample
         \return True if they are evaluated or false if they are not because
         we are beyond the cutoff
     */
-    DEVICE bool evalForceAndEnergy(Scalar& force_divr, Scalar& pair_eng, bool energy_shift)
-        {
+    DEVICE bool evalForceAndEnergy(Scalar& force_divr, Scalar& pair_eng, bool energy_shift) {
         // compute the force divided by r in force_divr
-        if (rsq < rcutsq)
-            {
+        if (rsq < rcutsq) {
             Scalar r = fast::sqrt(rsq);
             Scalar rinv = 1 / r;
-            Scalar l0inv = 1/l0;
             Scalar overlap = l0 - r;
-            Scalar four_r_on_l0 = Scalar(4)*r/l0;
-            Scalar four_on_l0 = Scalar(4)/l0;
+            Scalar four_r_on_l0 = Scalar(4) * r / l0;
+            Scalar four_on_l0 = Scalar(4) / l0;
 
-            force_divr = k * overlap * rinv;
-            force_divr = -four_on_l0*(exp(-four_r_on_l0) - exp(-four_r_on_l0 * b));
-            pair_eng = (exp(Scalar(-4) * r_on_l0) - exp(Scalar(-4) * b * r_on_l0));
+            force_divr = -four_on_l0 * (exp(-four_r_on_l0) - exp(-four_r_on_l0 * b));
+            pair_eng = (exp(Scalar(-4) * r / l0) - exp(Scalar(-4) * b * r / l0));
 
-
-            if (energy_shift)
-                {
+            if (energy_shift) {
                 Scalar rcut = fast::sqrt(rcutsq);
-                Scalar cut_overlap = sigma - rcut;
-                pair_eng -= Scalar(0.5) * k * cut_overlap * cut_overlap;
-                }
-            return true;
+                Scalar cut_overlap = (l0 - rcut) / l0;
+                pair_eng -= Scalar(0.5) * (exp(Scalar(-4) * cut_overlap) - exp(Scalar(-4) * b * cut_overlap));
             }
-        else
+            return true;
+        } else {
             return false;
         }
+    }
 
     //! Example doesn't eval LRC integrals
-    DEVICE Scalar evalPressureLRCIntegral()
-        {
+    DEVICE Scalar evalPressureLRCIntegral() {
         return 0;
-        }
+    }
 
     //! Example doesn't eval LRC integrals
-    DEVICE Scalar evalEnergyLRCIntegral()
-        {
+    DEVICE Scalar evalEnergyLRCIntegral() {
         return 0;
-        }
+    }
 
 #ifndef __HIPCC__
     //! Get the name of this potential
     /*! \returns The potential name.
      */
-    static std::string getName()
-        {
+    static std::string getName() {
         return std::string("example_pair");
-        }
+    }
 
-    std::string getShapeSpec() const
-        {
+    std::string getShapeSpec() const {
         throw std::runtime_error("Shape definition not supported for this pair potential.");
-        }
+    }
 #endif
 
-    protected:
+protected:
     Scalar rsq;    //!< Stored rsq from the constructor
     Scalar rcutsq; //!< Stored rcutsq from the constructor
-    Scalar k;      //!< Stored k from the constructor
-    Scalar sigma;  //!< Stored sigma from the constructor
-    Scalar l0;
-    };
+    Scalar b;      //!< Stored b from the constructor
+    Scalar l0;     //!< Stored l0 from the constructor
+};
 
-    } // end namespace md
-    } // end namespace hoomd
+} // end namespace md
+} // end namespace hoomd
 
 #endif // __PAIR_EVALUATOR_EXAMPLE_H__
