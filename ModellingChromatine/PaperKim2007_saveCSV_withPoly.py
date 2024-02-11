@@ -4,7 +4,7 @@ import os
 
 # Parameters for simulation
 chromatine_size = 60
-polymerase_count = 0
+polymerase_count = 1
 simulation_steps = 100000
 adding_position = 25
 end_of_replication_position = chromatine_size - 25
@@ -25,7 +25,7 @@ vicinity_size = 5
 
 # Linear function parameters
 slope = 1e-5
-intercept = 5e-1
+intercept = 10
 
 # Polymerase movement probabilities
 left_movement_probability = 1/2
@@ -67,9 +67,10 @@ class Chromatine:
             new_position = adding_position
             if new_position in existing_polymerase_positions:
                 return
-            elif new_position < end_of_replication_position and self.histones[new_position] != 'M' and self.histones[new_position-1] != 'M' and self.histones[new_position+1] != 'M':
-                # Can't bind if 'M-M-M' 
-                existing_polymerase_positions.append(new_position)
+            elif new_position < end_of_replication_position:
+                if self.histones[new_position] != 'M' and self.histones[new_position-1] != 'M' and self.histones[new_position+1] != 'M':
+                    # Can't bind if 'M-M-M' 
+                    existing_polymerase_positions.append(new_position)
 
     def adding_poly_proba(self, adding_position):
         start_index = max(0, adding_position - vicinity_size)
@@ -172,9 +173,6 @@ for frame in range(simulation_steps):
     else:
         noisy_changes_count = chromatine.noisy_transition(position, noisy_transition_probability, noisy_changes_count)
 
-    # Regenerate histones at unmodified positions
-    # if np.random.random() < regeneration_probability:
-    #   chromatine.regenerate_histones(deleted_positions)
 
     # Randomly add new polymerase at the beginning of the chromatine with a certain probability
     if np.random.random() < chromatine.adding_poly_proba(adding_position):
@@ -196,7 +194,7 @@ for frame in range(simulation_steps):
         print(frame)
         # Append data to the dataframe
         result_df = pd.concat([result_df, pd.DataFrame([{'Time Steps': frame + 1,
-                                                    'Polymerase Count': 0,
+                                                    'Polymerase Count': polymerase_count_over_time,
                                                     'Active Histone Count': active_histone_count,
                                                     'Acetylated Histone Count': acetylated_histone_count,
                                                     'Methylated Histone Count': methylated_histone_count,

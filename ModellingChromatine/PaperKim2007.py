@@ -307,6 +307,5 @@ print("Done")
 
 
 
-# starting point of the polymerase : if n-M doesn't start
 # check paper nulbers of poly rate
 # cenH at someplkace M come here
