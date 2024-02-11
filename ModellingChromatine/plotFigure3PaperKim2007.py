@@ -10,7 +10,7 @@ sns.kdeplot(df['Methylated Histone Count'] - df['Acetylated Histone Count'])
 
 plt.xlabel('M-A')
 plt.ylabel('P(M-A)')
-plt.title("F = 77 uncoop C")
+plt.title("F = 77 coop C")
 plt.semilogy()
 plt.show()
 
