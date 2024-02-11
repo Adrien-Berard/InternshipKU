@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the result data from the CSV file
-csv_filename = 'average_m_a_ratio_results_4.csv'
+csv_filename = 'average_m_a_ratio_results_startingFvalue_0.1_endingFvalue_4.csv'
 result_summary_df = pd.read_csv(csv_filename)
 
 # Plot the results

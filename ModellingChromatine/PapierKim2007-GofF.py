@@ -1,17 +1,18 @@
 import numpy as np
 import pandas as pd
 from numba import jit
-import os
 
 # Parameters for simulation
 chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 50000
+simulation_steps = 500000
 adding_position = 25
 end_of_replication_position = chromatine_size
 
 # Simulation-specific parameters
-F_values = np.logspace(np.log(0.1), np.log(4))
+start_F = 0.1
+end_F = 4
+F_values = np.geomspace(start_F,end_F)
 
 # Linear function parameters
 slope = 0
@@ -117,8 +118,7 @@ for F in F_values:
     result_summary_df = pd.concat([result_summary_df, pd.DataFrame([{'F': F, 'Average_M_A_ratio': average_m_a_ratio}])], ignore_index=True)
 
 # Save the dataframe to a CSV file
-current_directory = os.getcwd()
-csv_filename = f'{current_directory}/average_m_a_ratio_results_5.csv'
+csv_filename = f'average_m_a_ratio_results_simulationSteps_{simulation_steps}_startingFvalue_{start_F}_endingFvalue_{end_F}.csv'
 result_summary_df.to_csv(csv_filename, index=False)
 
 print("Done")
