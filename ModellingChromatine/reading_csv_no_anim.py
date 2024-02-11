@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Assuming you have a CSV file with the data, replace 'your_csv_file.csv' with your actual CSV file name.
-csv_filename = 'counting_lists_dataframe_polymerasecount_0_alpha_0.9090909090909091_F_10_addingpolyprobaintercept_0_addingpolyprobaslope_0.csv'
+csv_filename = 'counting_lists_dataframe_polymerasecount_0_alpha_0.9090909090909091_F_10_addingpolyprobaintercept_0.1_addingpolyprobaslope_1e-05.csv'
 df = pd.read_csv(csv_filename)
 
 # Function to update the plot in each animation frame
