@@ -4,7 +4,7 @@ import os
 
 # Parameters for simulation
 chromatine_size = 60
-polymerase_count = 1
+polymerase_count = 0
 simulation_steps = 100000
 adding_position = 25
 end_of_replication_position = chromatine_size - 25
@@ -25,7 +25,7 @@ vicinity_size = 5
 
 # Linear function parameters
 slope = 1e-5
-intercept = 10
+intercept = 1e-1
 
 # Polymerase movement probabilities
 left_movement_probability = 1/2
