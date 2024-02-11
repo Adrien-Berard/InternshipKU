@@ -10,7 +10,7 @@ adding_position = 25
 end_of_replication_position = chromatine_size - 25
 
 # Simulation-specific parameters
-F = 10
+F = 77
 alpha = F/(1+F)
 
 histone_modification_percentage = 0.5

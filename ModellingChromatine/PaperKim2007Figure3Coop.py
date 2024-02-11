@@ -77,31 +77,31 @@ class Chromatine:
     #     probability = slope * local_density + intercept
     #     return probability
 
-    def change_next_histones(self, position, p_recruitment, p_change, enzyme_changes, nth_neighbor):
-        if 1 <= position < len(self.histones) - 1:
-            current_histone = self.histones[position]
-            # adjusted_p_recruitment = p_recruitment
-            # if adjusted_p_recruitment > 1:
-            #     adjusted_p_recruitment = 1
+    def change_next_histones(self, n1, p_recruitment, p_change, enzyme_changes, n2,n3):
+        if 1 <= n1 < len(self.histones) - 1:
+            
+            if n1 != n2 and n1 != n3:
+                n1state = self.histones[n1]
+                n2state = self.histones[n2]
+                n3state = self.histones[n3]
 
-            # if np.random.random() < adjusted_p_recruitment:
-                # if np.random.random() < p_change:
-            nth_position = position + nth_neighbor
-            if nth_position < len(self.histones):
-                nth_histone = self.histones[nth_position]
-
-                # if current_histone == 'A' and nth_histone == 'U':
-                #     self.histones[nth_position] = 'A'
+                # if n2state == 'A' and n3state == 'U':
+                #     self.histones[n1] = 'A'
                 #     enzyme_changes += 1 
-                if current_histone == 'A' and nth_histone == 'M':
-                    self.histones[nth_position] = 'U'
-                    enzyme_changes += 1 
-                # elif current_histone == 'M' and nth_histone == 'U':
-                #     self.histones[nth_position] = 'M'
-                #     enzyme_changes += 1 
-                elif current_histone == 'M' and nth_histone == 'A':
-                    self.histones[nth_position] = 'U'
-                    enzyme_changes += 1 
+                if n2state == 'M' and n3state == 'M' :
+                    if n1state == 'A':
+                        self.histones[n1] = 'U'
+                        enzyme_changes += 1 
+                    elif n1state == 'U': 
+                        self.histones[n1] = 'M'
+                        enzyme_changes += 1 
+                elif n2state == 'A' and n3state == 'A' :
+                    if n1state == 'U':
+                        self.histones[n1] = 'A'
+                        enzyme_changes += 1 
+                    elif n1state == 'M': 
+                        self.histones[n1] = 'U'
+                        enzyme_changes += 1 
         return enzyme_changes
 
 # class Polymerase:
@@ -162,14 +162,14 @@ for frame in range(simulation_steps):
     #     deleted_positions.append(polymerase.position)
 
     # Change the next histones based on the influence of first neighbors
-    position = np.random.randint(1, chromatine_size)
+    n1 = np.random.randint(1, chromatine_size)
     # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
     if np.random.random() < alpha:
-        enzyme_changes_count = chromatine.change_next_histones(position, p_recruitment=recruitment_probability,
+        enzyme_changes_count = chromatine.change_next_histones(n1, p_recruitment=recruitment_probability,
                                                           p_change=change_probability, enzyme_changes=enzyme_changes_count,
-                                                          nth_neighbor=np.random.randint(1, chromatine_size))
+                                                          n2=np.random.randint(1, chromatine_size),n3 =np.random.randint(1, chromatine_size))
     else:
-        noisy_changes_count = chromatine.noisy_transition(position, noisy_transition_probability, noisy_changes_count)
+        noisy_changes_count = chromatine.noisy_transition(n1, noisy_transition_probability, noisy_changes_count)
 
     # Regenerate histones at unmodified positions
     # if np.random.random() < regeneration_probability:
@@ -208,5 +208,5 @@ print("Done")
 # Save the dataframe to a CSV file
 
 current_directory = os.getcwd()
-csv_filename = f'{current_directory}/fig3_C_counting_lists_dataframe_polymerasecount_{polymerase_count}_alpha_{alpha}_F_{F}_addingpolyprobaintercept_{intercept}_addingpolyprobaslope_{slope}.csv'
+csv_filename = f'{current_directory}/fig3_C_coop_counting_lists_dataframe_polymerasecount_{polymerase_count}_alpha_{alpha}_F_{F}_addingpolyprobaintercept_{intercept}_addingpolyprobaslope_{slope}.csv'
 result_df.to_csv(csv_filename, index=False)
