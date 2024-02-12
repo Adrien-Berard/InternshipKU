@@ -1,11 +1,10 @@
 import numpy as np
 import pandas as pd
-from numba import jit
 
 # Parameters for simulation
 chromatine_size = 60
 polymerase_count = 0
-simulation_steps = 500000
+simulation_steps = 50000
 adding_position = 25
 end_of_replication_position = chromatine_size
 
