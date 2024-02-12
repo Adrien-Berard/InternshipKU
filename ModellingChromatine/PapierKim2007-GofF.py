@@ -11,7 +11,7 @@ end_of_replication_position = chromatine_size
 
 # Simulation-specific parameters
 start_F = 0.1
-end_F = 4
+end_F = 100
 F_values = np.geomspace(start_F,end_F)
 
 # Linear function parameters
@@ -122,3 +122,6 @@ csv_filename = f'average_m_a_ratio_results_simulationSteps_{simulation_steps}_st
 result_summary_df.to_csv(csv_filename, index=False)
 
 print("Done")
+
+
+# 
