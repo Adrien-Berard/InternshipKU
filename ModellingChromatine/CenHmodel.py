@@ -10,7 +10,7 @@ adding_position = 131
 end_of_replication_position = adding_position + 7
 
 # Simulation-specific parameters
-F = 77
+F =10
 alpha = F/(1+F)
 
 histone_modification_percentage = 0.5
@@ -18,13 +18,13 @@ recruitment_probability = 1
 # alpha = 9/10
 change_probability = alpha
 regeneration_probability = 0.3
-adding_polymerase_probability = 0.3
+adding_polymerase_probability = 0.03
 noisy_transition_probability = 1 - alpha
 vicinity_size = 5
 CenHSart = 65
 CenH_positions = np.arange(CenHSart,95) 
 CenHsize = 30
-MCenHDensity = 0.7
+MCenHDensity = 0.9
 
 
 
@@ -75,7 +75,7 @@ class Chromatine:
         for _ in range(count):
             new_position = adding_position
             if new_position not in existing_polymerase_positions and new_position < end_of_replication_position:
-                if self.histones[new_position] != 'M' and self.histones[new_position-1] != 'M' and self.histones[new_position+1] != 'M':
+                if self.histones[new_position] != 'M' and self.histones[new_position-1] != 'M' and self.histones[new_position -2] != 'M':
                     # Can't bind if 'M-M-M' 
                     existing_polymerase_positions.append(new_position)
     
@@ -83,7 +83,7 @@ class Chromatine:
     def adding_poly_proba(self, adding_position):
         start_index = max(0, adding_position - vicinity_size)
         end_index = min(len(self.histones), adding_position + vicinity_size + 1)
-        local_density = np.sum(np.isin(self.histones[start_index:end_index], ['M', 'A']))
+        local_density = np.sum(np.isin(self.histones[start_index:end_index], ['U', 'A']))
         probability = slope * local_density + intercept
         return probability
 
