@@ -5,7 +5,7 @@ import os
 # Parameters for simulation
 chromatine_size = 198
 polymerase_count = 1
-simulation_steps = 100000
+simulation_steps = 50000
 adding_position = 131
 end_of_replication_position = adding_position + 7
 
@@ -21,14 +21,16 @@ regeneration_probability = 0.3
 adding_polymerase_probability = 0.3
 noisy_transition_probability = 1 - alpha
 vicinity_size = 5
-CenH_positions = np.arange(65,95) # to be verified with articles
-CenHsize = 15
-print(CenH_positions)
+CenHSart = 65
+CenH_positions = np.arange(CenHSart,95) 
+CenHsize = 30
+MCenHDensity = 0.7
+
 
 
 # Linear function parameters
-slope = 1e-5
-intercept = 1e-1
+slope = 1e-6
+intercept = 1e-2
 
 # Polymerase movement probabilities
 left_movement_probability = 1/2
@@ -72,12 +74,11 @@ class Chromatine:
     def add_polymerases(self, count, existing_polymerase_positions, adding_position):
         for _ in range(count):
             new_position = adding_position
-            if new_position in existing_polymerase_positions:
-                return
-            elif new_position < end_of_replication_position:
+            if new_position not in existing_polymerase_positions and new_position < end_of_replication_position:
                 if self.histones[new_position] != 'M' and self.histones[new_position-1] != 'M' and self.histones[new_position+1] != 'M':
                     # Can't bind if 'M-M-M' 
                     existing_polymerase_positions.append(new_position)
+    
 
     def adding_poly_proba(self, adding_position):
         start_index = max(0, adding_position - vicinity_size)
@@ -113,6 +114,19 @@ class Chromatine:
                         self.histones[nth_position] = 'U'
                         enzyme_changes += 1 
         return enzyme_changes
+
+    def CenHRegion(self,CenH_positions, cenHStart, McenHDensity):
+        num_no_M = int((1 - McenHDensity) * CenHsize)
+        
+        unmodified_positions = np.random.choice(CenHsize, size=num_no_M, replace=False)
+        
+        self.histones[CenH_positions] = 'M'
+        
+        for position in unmodified_positions:
+            self.histones[cenHStart + position] = 'U'
+            np.delete(CenH_positions,position)
+        
+        return CenH_positions
 
     def ChromatineVisualisation(self):
         return self.histones
@@ -177,6 +191,8 @@ for frame in range(simulation_steps):
 
     # Change the next histones based on the influence of first neighbors
     position = np.random.randint(1, chromatine_size)
+    
+    CenH_positions = chromatine.CenHRegion(CenH_positions,CenHSart,McenHDensity=MCenHDensity)
     # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
     if np.random.random() < alpha:
         enzyme_changes_count = chromatine.change_next_histones(position,CenH_positions, p_recruitment=recruitment_probability,
@@ -189,10 +205,12 @@ for frame in range(simulation_steps):
     # Randomly add new polymerase at the beginning of the chromatine with a certain probability
     if np.random.random() < chromatine.adding_poly_proba(adding_position):
         # Add new polymerases with non-overlapping random positions
+        previous_poly_positions = polymerase_positions
         chromatine.add_polymerases(1, existing_polymerase_positions, adding_position)
         new_polymerase_positions = existing_polymerase_positions[-1:]
         new_polymerases = [Polymerase(chromatine, position=pos, temperature=1.0) for pos in new_polymerase_positions]
-        polymerases.extend(new_polymerases)
+        if previous_poly_positions != existing_polymerase_positions:
+            polymerases.extend(new_polymerases)
 
     # Update the number of polymerases and active histones lists
     polymerase_count_over_time = len(polymerases)
@@ -224,7 +242,7 @@ current_directory = os.getcwd()
 
 os.makedirs(current_directory, exist_ok=True)
 
-csv_filename = os.path.join(current_directory, f'ModelCenHsize_{CenHsize}_polymerasecount_{polymerase_count}_F_{F}_addingpolyprobaintercept_{intercept}_addingpolyprobaslope_{slope}.csv')
+csv_filename = os.path.join(current_directory, f'ModelCenHsize_{CenHsize}_Density_{MCenHDensity}_polymerasecount_{polymerase_count}_F_{F}_addingpolyprobaintercept_{intercept}_addingpolyprobaslope_{slope}.csv')
 
 result_df.to_csv(csv_filename, index=False)
 
