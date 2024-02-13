@@ -10,7 +10,7 @@ adding_position = 131
 end_of_replication_position = adding_position + 7
 
 # Simulation-specific parameters
-F =10
+F = 2
 alpha = F/(1+F)
 
 histone_modification_percentage = 0.5
@@ -75,7 +75,7 @@ class Chromatine:
         for _ in range(count):
             new_position = adding_position
             if new_position not in existing_polymerase_positions and new_position < end_of_replication_position:
-                if self.histones[new_position] != 'M' and self.histones[new_position-1] != 'M' and self.histones[new_position -2] != 'M':
+                if self.histones[new_position] != 'M' and self.histones[new_position-1] != 'M' and self.histones[new_position - 2] != 'M':
                     # Can't bind if 'M-M-M' 
                     existing_polymerase_positions.append(new_position)
     
@@ -132,7 +132,7 @@ class Chromatine:
         return self.histones
     
 class Polymerase:
-    def __init__(self, chromatine, position=10, temperature=1.0):
+    def __init__(self, chromatine, position=adding_position, temperature=1.0):
         self.chromatine = chromatine
         self.position = position
         self.temperature = temperature
@@ -140,21 +140,20 @@ class Polymerase:
     def delete(self):
         polymerases.remove(self)
 
-    def move(self, chromatine):
+    def move(self, chromatine,existing_polymerase_positions):
         states = [0, 1]
         next_position = self.position + 1
 
-        if next_position in existing_polymerase_positions:
-            return
+        if next_position not in existing_polymerase_positions:
+            
+            probabilities = [left_movement_probability, right_movement_probability]
+            total_prob = np.sum(probabilities)
+            normalized_probabilities = probabilities / total_prob
 
-        probabilities = [left_movement_probability, right_movement_probability]
-        total_prob = np.sum(probabilities)
-        normalized_probabilities = probabilities / total_prob
+            self.position = np.random.choice([self.position, next_position], p=normalized_probabilities)
 
-        self.position = np.random.choice([self.position, next_position], p=normalized_probabilities)
-
-        if self.position == end_of_replication_position:
-            self.delete()
+            if self.position >= end_of_replication_position:
+                self.delete()
 
     def change_histones(self, chromatine,CenH_positions):
         if self.position not in CenH_positions:
@@ -178,16 +177,14 @@ result_df = pd.DataFrame(columns=columns)
 # Simulation loop
 for frame in range(simulation_steps):
 
-    deleted_positions = []  # Keep track of deleted positions for regeneration
     polymerase_positions = []  # Clear the polymerase_positions list
     noisy_changes_count = 0
     enzyme_changes_count = 0
 
     for polymerase in polymerases:
-        polymerase.move(chromatine)
+        polymerase.move(chromatine,existing_polymerase_positions)
         polymerase.change_histones(chromatine, CenH_positions)
         polymerase_positions.append(polymerase.position)  # Append the current position
-        deleted_positions.append(polymerase.position)
 
     # Change the next histones based on the influence of first neighbors
     position = np.random.randint(1, chromatine_size)
@@ -242,8 +239,6 @@ current_directory = os.getcwd()
 
 os.makedirs(current_directory, exist_ok=True)
 
-csv_filename = os.path.join(current_directory, f'ModelCenHsize_{CenHsize}_Density_{MCenHDensity}_polymerasecount_{polymerase_count}_F_{F}_addingpolyprobaintercept_{intercept}_addingpolyprobaslope_{slope}.csv')
+csv_filename = os.path.join(current_directory, f'3NewModelCenHsize_{CenHsize}_Density_{MCenHDensity}_polymerasecount_{polymerase_count}_F_{F}_addingpolyprobaintercept_{intercept}_addingpolyprobaslope_{slope}.csv')
 
 result_df.to_csv(csv_filename, index=False)
-
-print(CenH_positions)
