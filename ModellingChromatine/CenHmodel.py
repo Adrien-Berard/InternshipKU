@@ -3,11 +3,11 @@ import pandas as pd
 import os
 
 # Parameters for simulation
-chromatine_size = 60
+chromatine_size = 198
 polymerase_count = 1
 simulation_steps = 100000
-adding_position = 25
-end_of_replication_position = chromatine_size - 25
+adding_position = 131
+end_of_replication_position = adding_position + 7
 
 # Simulation-specific parameters
 F = 77
@@ -21,8 +21,7 @@ regeneration_probability = 0.3
 adding_polymerase_probability = 0.3
 noisy_transition_probability = 1 - alpha
 vicinity_size = 5
-cenHCenter = int((end_of_replication_position - adding_position)/2)
-CenH_positions = np.arange(5,15) # to be verified with articles
+CenH_positions = np.arange(65,95) # to be verified with articles
 CenHsize = 15
 print(CenH_positions)
 
@@ -225,7 +224,7 @@ current_directory = os.getcwd()
 
 os.makedirs(current_directory, exist_ok=True)
 
-csv_filename = os.path.join(current_directory, f'CenHsize_{CenHsize}_polymerasecount_{polymerase_count}_alpha_{alpha}_F_{F}_addingpolyprobaintercept_{intercept}_addingpolyprobaslope_{slope}.csv')
+csv_filename = os.path.join(current_directory, f'ModelCenHsize_{CenHsize}_polymerasecount_{polymerase_count}_F_{F}_addingpolyprobaintercept_{intercept}_addingpolyprobaslope_{slope}.csv')
 
 result_df.to_csv(csv_filename, index=False)
 
