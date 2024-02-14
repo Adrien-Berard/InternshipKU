@@ -23,7 +23,7 @@ CenH_positions = np.arange(CenHSart,95)
 CenHsize = 30
 MCenHDensity = 0.8
 
-new_poly_probability = 0.3
+new_poly_probability = 0.1
 
 
 # Polymerase movement probabilities
@@ -73,21 +73,16 @@ class Chromatine:
         new_position = adding_position
         probability = new_poly_probability 
         # TO CHANGE AFTERWARDS
-        if new_position in existing_polymerase_positions or new_position > end_of_replication_position :
-            if (self.histones[new_position-1] == 'M' and self.histones[new_position-2] == 'M' and self.histones[new_position - 3] == 'M'):
+        if new_position in existing_polymerase_positions or new_position >= end_of_replication_position :
+            if self.histones[new_position-1] == 'M' and self.histones[new_position-2] == 'M' and self.histones[new_position - 3] == 'M':
                    # Can't bind if 'M-M-M' 
+                   # PROBLEMS WITH THE NESTED IF OR IF AND IF
                    probability = 0
         return probability
 
     def change_next_histones(self,position ,CenH_positions, p_recruitment, p_change, enzyme_changes, nth_neighbor):
         if 1 <= position < len(self.histones) - 1:
             current_histone = self.histones[position]
-            # adjusted_p_recruitment = p_recruitment
-            # if adjusted_p_recruitment > 1:
-            #     adjusted_p_recruitment = 1
-
-            # if np.random.random() < adjusted_p_recruitment:
-                # if np.random.random() < p_change:
             nth_position =  nth_neighbor
             if nth_position not in CenH_positions:
                 if nth_position < len(self.histones):
