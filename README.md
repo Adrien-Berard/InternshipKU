@@ -6,3 +6,5 @@ Here is the results over 5000 simulations of the chromatine within 3 states :
 ![image](https://github.com/Adrien-Berard/InternshipKU/assets/74345091/67199d34-c360-439f-ae98-3afe832be3b5)
 
 ![gif](https://github.com/Adrien-Berard/InternshipKU/blob/main/animated_3stateschromatine.gif)
+
+![image](https://github.com/Adrien-Berard/InternshipKU/blob/main/ModellingChromatine/FigureBistability.png)
