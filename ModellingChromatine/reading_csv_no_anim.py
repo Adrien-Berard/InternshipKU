@@ -4,7 +4,7 @@ import numpy as np
 from matplotlib.colors import ListedColormap
 
 # Assuming you have a CSV file with the data, replace 'your_csv_file.csv' with your actual CSV file name.
-csv_filename = '3NewModelCenHsize_30_Density_0.9_polymerasecount_1_F_2_addingpolyprobaintercept_0.01_addingpolyprobaslope_1e-06.csv'
+csv_filename = '5NewModelCenHsize_30_Density_0.9_polymerasecount_0_F_2_addingpolyprobaintercept_0.05_addingpolyprobaslope_1e-06.csv'
 df = pd.read_csv(csv_filename)
 length_chro = 198
 

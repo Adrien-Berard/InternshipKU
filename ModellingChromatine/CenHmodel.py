@@ -4,7 +4,7 @@ import os
 
 # Parameters for simulation
 chromatine_size = 198
-polymerase_count = 1
+polymerase_count = 0
 simulation_steps = 50000
 adding_position = 131
 end_of_replication_position = adding_position + 7
@@ -18,7 +18,7 @@ recruitment_probability = 1
 # alpha = 9/10
 change_probability = alpha
 regeneration_probability = 0.3
-adding_polymerase_probability = 0.03
+adding_polymerase_probability = 0.3
 noisy_transition_probability = 1 - alpha
 vicinity_size = 5
 CenHSart = 65
@@ -30,7 +30,7 @@ MCenHDensity = 0.9
 
 # Linear function parameters
 slope = 1e-6
-intercept = 1e-2
+intercept = 5e-2
 
 # Polymerase movement probabilities
 left_movement_probability = 1/2
@@ -162,6 +162,10 @@ class Polymerase:
             elif 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'M':
                 chromatine.histones[self.position] = 'U'
 
+
+    def delete(self):
+        polymerases.remove(self)
+
 # Initialize chromatine and polymerases with a specified temperature
 chromatine = Chromatine(chromatine_size,CenH_positions)
 polymerases = [Polymerase(chromatine, temperature=1.0) for _ in range(polymerase_count)]
@@ -239,6 +243,6 @@ current_directory = os.getcwd()
 
 os.makedirs(current_directory, exist_ok=True)
 
-csv_filename = os.path.join(current_directory, f'3NewModelCenHsize_{CenHsize}_Density_{MCenHDensity}_polymerasecount_{polymerase_count}_F_{F}_addingpolyprobaintercept_{intercept}_addingpolyprobaslope_{slope}.csv')
+csv_filename = os.path.join(current_directory, f'5NewModelCenHsize_{CenHsize}_Density_{MCenHDensity}_polymerasecount_{polymerase_count}_F_{F}_addingpolyprobaintercept_{intercept}_addingpolyprobaslope_{slope}.csv')
 
 result_df.to_csv(csv_filename, index=False)
