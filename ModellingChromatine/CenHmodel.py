@@ -29,7 +29,7 @@ MCenHDensity = 0.9
 
 
 # Linear function parameters
-slope = 1e-6
+slope = 1e-7
 intercept = 5e-2
 
 # Polymerase movement probabilities
