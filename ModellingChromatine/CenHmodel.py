@@ -4,33 +4,27 @@ import os
 
 # Parameters for simulation
 chromatine_size = 198
-polymerase_count = 0
+polymerase_count = 1
 simulation_steps = 50000
 adding_position = 131
 end_of_replication_position = adding_position + 7
 
 # Simulation-specific parameters
-F = 77
+F = 2
 alpha = F/(1+F)
 
 histone_modification_percentage = 0.5
 recruitment_probability = 1
-# alpha = 9/10
+
 change_probability = alpha
-regeneration_probability = 0.3
-adding_polymerase_probability = 0.3
 noisy_transition_probability = 1 - alpha
-vicinity_size = 5
 CenHSart = 65
 CenH_positions = np.arange(CenHSart,95) 
 CenHsize = 30
-MCenHDensity = 0.95
+MCenHDensity = 0.8
 
+new_poly_probability = 0.3
 
-
-# Linear function parameters
-slope = 1e-3
-intercept = 1e-2
 
 # Polymerase movement probabilities
 left_movement_probability = 1/2
@@ -71,20 +65,18 @@ class Chromatine:
 
         return noisy_changes
 
-    def add_polymerases(self, count, existing_polymerase_positions, adding_position):
+    def add_polymerases(self, count, adding_position,existing_polymerase_positions):
         for _ in range(count):
-            new_position = adding_position
-            if new_position not in existing_polymerase_positions and new_position < end_of_replication_position:
-                if self.histones[new_position] != 'M' and self.histones[new_position-1] != 'M' and self.histones[new_position - 2] != 'M':
-                    # Can't bind if 'M-M-M' 
-                    existing_polymerase_positions.append(new_position)
-    
+            existing_polymerase_positions.append(adding_position)
 
-    def adding_poly_proba(self, adding_position):
-        start_index = max(0, adding_position - vicinity_size)
-        end_index = min(len(self.histones), adding_position + vicinity_size + 1)
-        local_density = np.sum(np.isin(self.histones[start_index:end_index], ['U', 'A']))
-        probability = slope * local_density + intercept
+    def adding_poly_proba(self, adding_position, existing_polymerase_positions):
+        new_position = adding_position
+        probability = new_poly_probability 
+        # TO CHANGE AFTERWARDS
+        if new_position in existing_polymerase_positions or new_position > end_of_replication_position :
+            if (self.histones[new_position-1] == 'M' and self.histones[new_position-2] == 'M' and self.histones[new_position - 3] == 'M'):
+                   # Can't bind if 'M-M-M' 
+                   probability = 0
         return probability
 
     def change_next_histones(self,position ,CenH_positions, p_recruitment, p_change, enzyme_changes, nth_neighbor):
@@ -157,9 +149,9 @@ class Polymerase:
 
     def change_histones(self, chromatine,CenH_positions):
         if self.position not in CenH_positions:
-            # if 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'U' and np.random.random() < 0.5:
-                #  chromatine.histones[self.position] = 'A'
-            if 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'M':
+            if 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'U' and np.random.random() < 0.5:
+                chromatine.histones[self.position] = 'A'
+            elif 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'M':
                 chromatine.histones[self.position] = 'U'
 
 
@@ -204,10 +196,10 @@ for frame in range(simulation_steps):
 
 
     # Randomly add new polymerase at the beginning of the chromatine with a certain probability
-    if np.random.random() < chromatine.adding_poly_proba(adding_position):
+    if np.random.random() < chromatine.adding_poly_proba(adding_position, existing_polymerase_positions):
         # Add new polymerases with non-overlapping random positions
         previous_poly_positions = polymerase_positions
-        chromatine.add_polymerases(1, existing_polymerase_positions, adding_position)
+        chromatine.add_polymerases(1,  adding_position, existing_polymerase_positions)
         new_polymerase_positions = existing_polymerase_positions[-1:]
         new_polymerases = [Polymerase(chromatine, position=pos, temperature=1.0) for pos in new_polymerase_positions]
         if previous_poly_positions != existing_polymerase_positions:
@@ -243,6 +235,9 @@ current_directory = os.getcwd()
 
 os.makedirs(current_directory, exist_ok=True)
 
-csv_filename = os.path.join(current_directory, f'MtoUNewModelCenHsize_{CenHsize}_Density_{MCenHDensity}_polymerasecount_{polymerase_count}_F_{F}_addingpolyprobaintercept_{intercept}_addingpolyprobaslope_{slope}.csv')
+csv_filename = os.path.join(current_directory, f'New10ModelCenHsize_{CenHsize}_Density_{MCenHDensity}_polymerasecount_{polymerase_count}_F_{F}_newpolyproba_{new_poly_probability}.csv')
 
 result_df.to_csv(csv_filename, index=False)
+
+
+

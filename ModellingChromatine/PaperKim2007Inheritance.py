@@ -10,18 +10,18 @@ adding_position = 131
 end_of_replication_position = adding_position + 7
 
 # Simulation-specific parameters
-F = 77
+F = 2
 alpha = F/(1+F)
 
 histone_modification_percentage = 0.5
 recruitment_probability = 1
-# alpha = 9/10
+
 change_probability = alpha
 noisy_transition_probability = 1 - alpha
 CenHSart = 65
 CenH_positions = np.arange(CenHSart,95) 
 CenHsize = 30
-MCenHDensity = 0.8
+MCenHDensity = 0.5
 
 
 
@@ -78,9 +78,10 @@ class Chromatine:
         new_position = adding_position
         probability = 1
         # TO CHANGE AFTERWARDS
-        if new_position in existing_polymerase_positions or new_position > end_of_replication_position or (self.histones[new_position-1] == 'M' and self.histones[new_position-2] == 'M' and self.histones[new_position - 3] == 'M'):
+        if new_position in existing_polymerase_positions or new_position > end_of_replication_position or len(existing_polymerase_positions) > 7: 
+            if (self.histones[new_position-1] == 'M' and self.histones[new_position-2] == 'M' and self.histones[new_position - 3] == 'M'):
                    # Can't bind if 'M-M-M' 
-                   probability = 0
+                   probability = 1e-3
         return probability
 
     def change_next_histones(self,position ,CenH_positions, p_recruitment, p_change, enzyme_changes, nth_neighbor):
