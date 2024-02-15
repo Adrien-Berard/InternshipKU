@@ -48,7 +48,7 @@ class Chromatine:
         self.histones[CenH_positions] = 'M'
 
     def noisy_transition(self, position,CenH_positions, noisy_transition_probability, noisy_changes):
-        if np.random.random() < 1/3 and position not in CenH_positions:
+        if position not in CenH_positions:
             if self.histones[position] == 'A':
                 self.histones[position] = 'U'
                 noisy_changes += 1

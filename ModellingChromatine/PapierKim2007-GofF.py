@@ -26,7 +26,7 @@ np.random.seed(42)
 
 class Chromatine:
     def __init__(self, histones_count):
-        self.histones = np.full(histones_count, 'M', dtype='U1')
+        self.histones = np.full(histones_count, 'A', dtype='U1')
 
         num_unmodified = int(histone_modification_percentage * histones_count)
         unmodified_positions = np.random.choice(histones_count, size=num_unmodified, replace=False)
@@ -34,15 +34,14 @@ class Chromatine:
 
 
     def noisy_transition(self, position, noisy_transition_probability, noisy_changes):
-        if np.random.random() < 1/3:
-            current_histone = self.histones[position]
+        current_histone = self.histones[position]
 
-            if current_histone in ['A', 'M']:
-                self.histones[position] = 'U'
-                noisy_changes += 1
-            elif current_histone == 'U' and np.random.random() < 1/2:
-                self.histones[position] = np.random.choice(['A', 'M'])
-                noisy_changes += 1
+        if current_histone in ['A', 'M']:
+            self.histones[position] = 'U'
+            noisy_changes += 1
+        elif current_histone == 'U':
+            self.histones[position] = np.random.choice(['A', 'M'])
+            noisy_changes += 1
 
         return noisy_changes
 
@@ -76,6 +75,9 @@ result_summary_df = pd.DataFrame(columns=columns)
 # Set seed for reproducibility
 np.random.seed(42)
 
+# Number of simulations for each F value
+num_simulations = 100
+
 for F in F_values:
     print(F)
     alpha = F / (1 + F)
@@ -92,32 +94,33 @@ for F in F_values:
 
     m_a_ratios = []
 
-    for frame in range(simulation_steps):
-        deleted_positions = []
-        polymerase_positions = []
-        noisy_changes_count = 0
-        enzyme_changes_count = 0
+    for simulation in range(num_simulations):
+        for frame in range(simulation_steps):
+            deleted_positions = []
+            polymerase_positions = []
+            noisy_changes_count = 0
+            enzyme_changes_count = 0
 
-        position = np.random.randint(1, chromatine_size)
-        if np.random.random() < alpha:
-            enzyme_changes_count = chromatine.change_next_histones(position, p_recruitment=recruitment_probability,
-                                                            p_change=change_probability, enzyme_changes=enzyme_changes_count,
-                                                            nth_neighbor=np.random.randint(1, chromatine_size))
-        else:
-            noisy_changes_count = chromatine.noisy_transition(position, noisy_transition_probability, noisy_changes_count)
+            position = np.random.randint(1, chromatine_size)
+            if np.random.random() < alpha:
+                enzyme_changes_count = chromatine.change_next_histones(position, p_recruitment=recruitment_probability,
+                                                                p_change=change_probability, enzyme_changes=enzyme_changes_count,
+                                                                nth_neighbor=np.random.randint(1, chromatine_size))
+            else:
+                noisy_changes_count = chromatine.noisy_transition(position, noisy_transition_probability, noisy_changes_count)
 
-        active_histone_count = np.sum(np.isin(chromatine.histones, ['M', 'A']))
-        acetylated_histone_count = np.sum(chromatine.histones == 'A')
-        methylated_histone_count = np.sum(chromatine.histones == 'M')
+            active_histone_count = np.sum(np.isin(chromatine.histones, ['M', 'A']))
+            acetylated_histone_count = np.sum(chromatine.histones == 'A')
+            methylated_histone_count = np.sum(chromatine.histones == 'M')
 
-        m_a_ratio = np.abs(methylated_histone_count - acetylated_histone_count) / (methylated_histone_count + acetylated_histone_count)
-        m_a_ratios.append(m_a_ratio)
+            m_a_ratio = np.abs(methylated_histone_count - acetylated_histone_count) / active_histone_count
+            m_a_ratios.append(m_a_ratio)
 
-    average_m_a_ratio = np.mean(m_a_ratios)
-    result_summary_df = pd.concat([result_summary_df, pd.DataFrame([{'F': F, 'Average_M_A_ratio': average_m_a_ratio}])], ignore_index=True)
+        average_m_a_ratio = np.mean(m_a_ratios)
+        result_summary_df = pd.concat([result_summary_df, pd.DataFrame([{'F': F, 'Average_M_A_ratio': average_m_a_ratio}])], ignore_index=True)
 
 # Save the dataframe to a CSV file
-csv_filename = f'average_m_a_ratio_results_simulationSteps_{simulation_steps}_startingFvalue_{start_F}_endingFvalue_{end_F}.csv'
+csv_filename = f'averageNEW_m_a_ratio_results_simulationSteps_{simulation_steps}_startingFvalue_{start_F}_endingFvalue_{end_F}.csv'
 result_summary_df.to_csv(csv_filename, index=False)
 
 print("Done")
