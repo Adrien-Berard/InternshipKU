@@ -35,13 +35,13 @@ class Chromatine:
 
     def noisy_transition(self, position, noisy_transition_probability, noisy_changes):
         current_histone = self.histones[position]
-
-        if current_histone in ['A', 'M']:
-            self.histones[position] = 'U'
-            noisy_changes += 1
-        elif current_histone == 'U':
-            self.histones[position] = np.random.choice(['A', 'M'])
-            noisy_changes += 1
+        if np.random.random() < 1/3:
+            if current_histone in ['A', 'M']:
+                self.histones[position] = 'U'
+                noisy_changes += 1
+            elif current_histone == 'U':
+                self.histones[position] = np.random.choice(['A', 'M'])
+                noisy_changes += 1
 
         return noisy_changes
 
@@ -50,8 +50,8 @@ class Chromatine:
         if 1 <= position < len(self.histones) - 1:
             current_histone = self.histones[position]
 
-            nth_position = position + nth_neighbor
-            if nth_position < len(self.histones):
+            nth_position = nth_neighbor
+            if nth_position <= len(self.histones):
                 nth_histone = self.histones[nth_position]
 
                 if current_histone == 'A' and nth_histone == 'U':
@@ -76,7 +76,7 @@ result_summary_df = pd.DataFrame(columns=columns)
 np.random.seed(42)
 
 # Number of simulations for each F value
-num_simulations = 100
+num_simulations = 3
 
 for F in F_values:
     print(F)
@@ -120,7 +120,7 @@ for F in F_values:
         result_summary_df = pd.concat([result_summary_df, pd.DataFrame([{'F': F, 'Average_M_A_ratio': average_m_a_ratio}])], ignore_index=True)
 
 # Save the dataframe to a CSV file
-csv_filename = f'averageNEW_m_a_ratio_results_simulationSteps_{simulation_steps}_startingFvalue_{start_F}_endingFvalue_{end_F}.csv'
+csv_filename = f'averageNEW0.3_m_a_ratio_results_simulationSteps_{simulation_steps}_startingFvalue_{start_F}_endingFvalue_{end_F}.csv'
 result_summary_df.to_csv(csv_filename, index=False)
 
 print("Done")

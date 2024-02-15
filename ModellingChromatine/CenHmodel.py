@@ -4,13 +4,13 @@ import os
 
 # Parameters for simulation
 chromatine_size = 198
-polymerase_count = 1
-simulation_steps = 50000
+polymerase_count = 0
+simulation_steps = 500000
 adding_position = 131
 end_of_replication_position = adding_position + 7
 
 # Simulation-specific parameters
-F = 2
+F = 10
 alpha = F/(1+F)
 
 histone_modification_percentage = 0.5
@@ -19,8 +19,8 @@ recruitment_probability = 1
 change_probability = alpha
 noisy_transition_probability = 1 - alpha
 CenHSart = 65
-CenH_positions = np.arange(CenHSart,95) 
-CenHsize = 30
+CenHsize = 20
+CenH_positions = np.arange(CenHSart,CenHSart + CenHsize) 
 MCenHDensity = 0.8
 
 new_poly_probability = 0.1
@@ -73,8 +73,7 @@ class Chromatine:
         new_position = adding_position
         probability = new_poly_probability 
         # TO CHANGE AFTERWARDS
-        if new_position in existing_polymerase_positions or new_position >= end_of_replication_position :
-            if self.histones[new_position-1] == 'M' and self.histones[new_position-2] == 'M' and self.histones[new_position - 3] == 'M':
+        if (new_position in existing_polymerase_positions or new_position >= end_of_replication_position) and self.histones[new_position-1] == 'M' and self.histones[new_position-2] == 'M' and self.histones[new_position - 3] == 'M':
                    # Can't bind if 'M-M-M' 
                    # PROBLEMS WITH THE NESTED IF OR IF AND IF
                    probability = 0
@@ -230,7 +229,7 @@ current_directory = os.getcwd()
 
 os.makedirs(current_directory, exist_ok=True)
 
-csv_filename = os.path.join(current_directory, f'New10ModelCenHsize_{CenHsize}_Density_{MCenHDensity}_polymerasecount_{polymerase_count}_F_{F}_newpolyproba_{new_poly_probability}.csv')
+csv_filename = os.path.join(current_directory, f'ModelCenHsize_{CenHsize}_Density_{MCenHDensity}_polymerasecount_{polymerase_count}_F_{F}_newpolyproba_{new_poly_probability}.csv')
 
 result_df.to_csv(csv_filename, index=False)
 
