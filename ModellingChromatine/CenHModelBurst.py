@@ -5,9 +5,11 @@ import os
 # Parameters for simulation
 chromatine_size = 198
 polymerase_count = 0
-simulation_steps = 1000000
+simulation_steps = 100000
 adding_position = 131
 end_of_replication_position = adding_position + 7
+
+gene_position = np.arange(adding_position, end_of_replication_position)
 
 # Simulation-specific parameters
 F = 10
@@ -20,12 +22,15 @@ change_probability = alpha
 noisy_transition_probability = 1 - alpha
 CenHSart = 65
 CenHsize = 21
+
 CenH_positions = np.arange(CenHSart,CenHSart + CenHsize) 
 MCenHProb = 0.8
 
 new_poly_probability = 1e-2
 
 num_poly_burst = 5
+
+burst_frequency = 0.55
 
 
 # Polymerase movement probabilities
@@ -75,7 +80,8 @@ class Chromatine:
 
     def add_polymerases(self, count, adding_position,existing_polymerase_positions):
         for _ in range(count):
-            existing_polymerase_positions.append(adding_position)
+            if adding_position not in existing_polymerase_positions:
+                existing_polymerase_positions.append(adding_position)
 
     def BurstPoly(self,num_poly_burst, existing_polymerase_positions):
         Burst_adding_position = adding_position
@@ -231,7 +237,10 @@ for frame in range(simulation_steps):
     if frame%100 == 0:
         print(frame)
         chromatine_array = chromatine.ChromatineVisualisation()
-        chromatine.BurstPoly(num_poly_burst,existing_polymerase_positions)
+
+        count_A = np.count_nonzero(np.fromiter((nucleo == 'A' for nucleo in chromatine.histones[gene_position]), dtype=bool))
+
+
         # Append data to the dataframe
         result_df = pd.concat([result_df, pd.DataFrame([{'Time Steps': frame + 1,
                                                     'Polymerase Count': polymerase_count_over_time,
@@ -241,17 +250,23 @@ for frame in range(simulation_steps):
                                                     'Unmodified Histone Count': unmodified_histone_count,
                                                     'Noisy Changes Count': noisy_changes_count,
                                                     'Enzyme Changes Count': enzyme_changes_count,
-                                                    'Chromatine Array': str(chromatine_array)}])], ignore_index=True)
+                                                    'Chromatine Array': str(chromatine_array), 
+                                                    'A in gene': count_A}])],ignore_index=True)
+        
+    if frame % burst_frequency * simulation_steps:
+        chromatine.BurstPoly(num_poly_burst,existing_polymerase_positions)
 
 print("Done")
 
 # Save the dataframe to a CSV file
 
+        
+
 current_directory = os.getcwd()
 
 os.makedirs(current_directory, exist_ok=True)
 
-csv_filename = os.path.join(current_directory, f'BurstModelCenHsize_{CenHsize}_Proba_{MCenHProb}_polymerasecount_{polymerase_count}_F_{F}_newpolyproba_{new_poly_probability}.csv')
+csv_filename = os.path.join(current_directory, f'BurstModelCenHsize_{CenHsize}_Proba_{MCenHProb}_polymerasecount_{polymerase_count}_F_{F}_newpolyproba_{new_poly_probability}_burstFrequency_{burst_frequency}.csv')
 
 result_df.to_csv(csv_filename, index=False)
 
