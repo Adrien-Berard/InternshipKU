@@ -248,22 +248,14 @@ for CenHsize in range(15,31):
 
 
                 # Append data to the dataframe
-                result_df = pd.concat([result_df, pd.DataFrame([{'Time Steps': frame + 1,
-                                                            'Polymerase Count': polymerase_count_over_time,
-                                                            'Active Histone Count': active_histone_count,
-                                                            'Acetylated Histone Count': acetylated_histone_count,
-                                                            'Methylated Histone Count': methylated_histone_count,
-                                                            'Unmodified Histone Count': unmodified_histone_count,
-                                                            'Noisy Changes Count': noisy_changes_count,
-                                                            'Enzyme Changes Count': enzyme_changes_count,
-                                                            'Chromatine Array': str(chromatine_array), 
+                result_df = pd.concat([result_df, pd.DataFrame([{'Time Steps': frame + 1, 
                                                             'A in gene': count_A,
                                                             'CenHsize': CenHsize ,
                                                             'Burst Frequency' : burst_frequency
                                                             }])],ignore_index=True)
                 
-            if frame % burst_frequency * simulation_steps:
-                chromatine.BurstPoly(num_poly_burst,existing_polymerase_positions)
+            if frame % (burst_frequency * simulation_steps) == 0:
+                chromatine.BurstPoly(num_poly_burst, existing_polymerase_positions)
 
         print(f"Done with Cenhsize {CenHsize} and burst frequency {burst_frequency}")
 
