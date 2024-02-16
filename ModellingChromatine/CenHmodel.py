@@ -5,7 +5,7 @@ import os
 # Parameters for simulation
 chromatine_size = 198
 polymerase_count = 0
-simulation_steps = 500000
+simulation_steps = 1000000
 adding_position = 131
 end_of_replication_position = adding_position + 7
 
@@ -19,11 +19,11 @@ recruitment_probability = 1
 change_probability = alpha
 noisy_transition_probability = 1 - alpha
 CenHSart = 65
-CenHsize = 20
+CenHsize = 21
 CenH_positions = np.arange(CenHSart,CenHSart + CenHsize) 
-MCenHDensity = 0.8
+MCenHProb = 0.8
 
-new_poly_probability = 0.1
+new_poly_probability = 1e-2
 
 
 # Polymerase movement probabilities
@@ -62,6 +62,12 @@ class Chromatine:
                 else:
                     self.histones[position] = 'M'
                     noisy_changes += 1
+        elif self.histones[position] == 'M' and np.random.random() < 1- MCenHProb:
+            self.histones[position] = 'U'
+            noisy_changes += 1
+        elif self.histones[position] == 'U':
+            self.histones[position] = 'M'
+            noisy_changes += 1
 
         return noisy_changes
 
@@ -83,6 +89,7 @@ class Chromatine:
         if 1 <= position < len(self.histones) - 1:
             current_histone = self.histones[position]
             nth_position =  nth_neighbor
+            nth_histone = self.histones[nth_position]
             if nth_position not in CenH_positions:
                 if nth_position < len(self.histones):
                     nth_histone = self.histones[nth_position]
@@ -99,6 +106,12 @@ class Chromatine:
                     elif current_histone == 'M' and nth_histone == 'A':
                         self.histones[nth_position] = 'U'
                         enzyme_changes += 1 
+            elif current_histone == 'M' and nth_histone == 'U' :
+                self.histones[nth_position] = 'M'
+                enzyme_changes += 1 
+            elif current_histone == 'U' and nth_histone == 'M' and np.random.random() < 1- MCenHProb: 
+                self.histones[nth_position] = 'U'
+                enzyme_changes += 1
         return enzyme_changes
 
     def CenHRegion(self,CenH_positions, cenHStart, McenHDensity):
@@ -179,7 +192,7 @@ for frame in range(simulation_steps):
     # Change the next histones based on the influence of first neighbors
     position = np.random.randint(1, chromatine_size)
     
-    CenH_positions = chromatine.CenHRegion(CenH_positions,CenHSart,McenHDensity=MCenHDensity)
+    # CenH_positions = chromatine.CenHRegion(CenH_positions,CenHSart,McenHDensity=MCenHDensity)
     # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
     if np.random.random() < alpha:
         enzyme_changes_count = chromatine.change_next_histones(position,CenH_positions, p_recruitment=recruitment_probability,
@@ -229,9 +242,10 @@ current_directory = os.getcwd()
 
 os.makedirs(current_directory, exist_ok=True)
 
-csv_filename = os.path.join(current_directory, f'ModelCenHsize_{CenHsize}_Density_{MCenHDensity}_polymerasecount_{polymerase_count}_F_{F}_newpolyproba_{new_poly_probability}.csv')
+csv_filename = os.path.join(current_directory, f'NEWModelCenHsize_{CenHsize}_Proba_{MCenHProb}_polymerasecount_{polymerase_count}_F_{F}_newpolyproba_{new_poly_probability}.csv')
 
 result_df.to_csv(csv_filename, index=False)
 
 
 
+# burst or non burst with the same number of polymerases during the sim
