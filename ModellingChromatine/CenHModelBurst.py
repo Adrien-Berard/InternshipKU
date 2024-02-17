@@ -253,7 +253,7 @@ for frame in range(simulation_steps):
                                                     'Chromatine Array': str(chromatine_array), 
                                                     'A in gene': count_A}])],ignore_index=True)
         
-    if frame % burst_frequency * simulation_steps:
+    if frame % (burst_frequency * simulation_steps) == 0:
         chromatine.BurstPoly(num_poly_burst,existing_polymerase_positions)
 
 print("Done")

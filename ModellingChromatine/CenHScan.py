@@ -180,7 +180,12 @@ class Polymerase:
     def delete(self):
         polymerases.remove(self)
 
-for CenHsize in range(15,31):
+
+ # Create an empty dataframe to store the counting lists
+columns = ['Time Steps','A in gene','CenHsize','Burst Frequency']
+result_df = pd.DataFrame(columns=columns)
+
+for CenHsize in np.arange(15,31):
     for burst_frequency in np.linspace(0.1,1,40):
 
         CenH_positions = np.arange(CenHSart,CenHSart + CenHsize) 
@@ -191,12 +196,6 @@ for CenHsize in range(15,31):
 
         # Track existing polymerase positions using a list to avoid duplicates
         existing_polymerase_positions = [polymerase.position for polymerase in polymerases]
-
-        # Create an empty dataframe to store the counting lists
-        columns = ['Time Steps', 'Polymerase Count', 'Active Histone Count', 'Acetylated Histone Count',
-                'Methylated Histone Count', 'Unmodified Histone Count', 'Noisy Changes Count', 'Enzyme Changes Count','Cromatine Array','A in gene','CenHsize','Burst Frequency']
-        result_df = pd.DataFrame(columns=columns)
-
 
         # Simulation loop
         for frame in range(simulation_steps):
@@ -232,13 +231,6 @@ for CenHsize in range(15,31):
                 new_polymerases = [Polymerase(chromatine, position=pos, temperature=1.0) for pos in new_polymerase_positions]
                 if previous_poly_positions != existing_polymerase_positions:
                     polymerases.extend(new_polymerases)
-
-            # Update the number of polymerases and active histones lists
-            polymerase_count_over_time = len(polymerases)
-            active_histone_count = np.sum(np.isin(chromatine.histones, ['M', 'A']))
-            acetylated_histone_count = np.sum(chromatine.histones == 'A')
-            methylated_histone_count = np.sum(chromatine.histones == 'M')
-            unmodified_histone_count = np.sum(chromatine.histones == 'U')
 
 
             if frame%200 == 0:
