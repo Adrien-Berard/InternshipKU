@@ -1,4 +1,2 @@
-LAMMPS (2 Aug 2023 - Update 2)
-region box block 0 10 0 5 -0.5 0.5
-info system
-Total wall time: 0:00:00
+ERROR on proc 0: Cannot open input script input.lammps: No such file or directory (src/src/lammps.cpp:542)
+Last command: (unknown)
