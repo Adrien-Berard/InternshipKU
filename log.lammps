@@ -1,6 +1,4 @@
 LAMMPS (2 Aug 2023 - Update 2)
 region box block 0 10 0 5 -0.5 0.5
-run 1000
-ERROR: Run command before simulation box is defined (src/src/run.cpp:42)
-Last command: run 1000
+info system
 Total wall time: 0:00:00
