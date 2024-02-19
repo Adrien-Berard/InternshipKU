@@ -3,12 +3,6 @@ import math
 import hoomd
 import matplotlib
 
-
-matplotlib.style.use('ggplot')
-import matplotlib_inline
-
-matplotlib_inline.backend_inline.set_matplotlib_formats('svg')
-
 import warnings
 
 import fresnel
@@ -56,29 +50,42 @@ def render(snapshot):
     scene.background_color = (1, 1, 1)
     return IPython.display.Image(tracer.sample(scene, samples=500)._repr_png_())
 
-cpu = hoomd.device.CPU()
-simulation = hoomd.Simulation(device=cpu, seed=1)
-simulation.create_state_from_gsd(filename='random.gsd')
+import hoomd
+import gsd.hoomd
 
-integrator = hoomd.md.Integrator(dt=0.005)
-cell = hoomd.md.nlist.Cell(buffer=0.4)
+frame = gsd.hoomd.Frame()
 
-lj = hoomd.md.pair.LJ(nlist=cell)
-lj.params[('A', 'A')] = dict(epsilon=1, sigma=1)
-lj.r_cut[('A', 'A')] = 2.5
-integrator.forces.append(lj)
+# Place a polymer in the box.
+frame.particles.N = 5
+frame.particles.position = [[-2, 0, 0], [-1, 0, 0], [0, 0, 0], [1, 0, 0],
+                            [2, 0, 0]]
+frame.particles.types = ['A']
+frame.particles.typeid = [0] * 5
+frame.configuration.box = [20, 20, 20, 0, 0, 0]
 
-nvt = hoomd.md.methods.ConstantVolume(
-    filter=hoomd.filter.All(), thermostat=hoomd.md.methods.thermostats.Bussi(kT=1.5)
-)
-integrator.methods.append(nvt)
-simulation.operations.integrator = integrator
+# Connect particles with bonds.
+frame.bonds.N = 4
+frame.bonds.types = ['A-A']
+frame.bonds.typeid = [0] * 4
+frame.bonds.group = [[0, 1], [1, 2], [2, 3], [3, 4]]
 
-simulation.state.thermalize_particle_momenta(filter=hoomd.filter.All(), kT=1.5)
+with gsd.hoomd.open(name='molecular.gsd', mode='x') as f:
+    f.append(frame)
 
-thermodynamic_properties = hoomd.md.compute.ThermodynamicQuantities(
-    filter=hoomd.filter.All()
-)
+# Apply the harmonic potential on the bonds.
+harmonic = hoomd.md.bond.Harmonic()
+harmonic.params['A-A'] = dict(k=100, r0=1.0)
 
-simulation.operations.computes.append(thermodynamic_properties)
-simulation.run(0)
+# Perform the MD simulation.
+sim = hoomd.Simulation(device=hoomd.device.CPU(), seed=1)
+sim.create_state_from_gsd(filename='molecular.gsd')
+langevin = hoomd.md.methods.Langevin(filter=hoomd.filter.All(), kT=1.0)
+integrator = hoomd.md.Integrator(dt=0.005,
+                                 methods=[langevin],
+                                 forces=[harmonic])
+gsd_writer = hoomd.write.GSD(filename='molecular_trajectory.gsd',
+                             trigger=hoomd.trigger.Periodic(1000),
+                             mode='xb')
+sim.operations.integrator = integrator
+sim.operations.writers.append(gsd_writer)
+sim.run(10e3)
