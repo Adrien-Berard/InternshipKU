@@ -184,7 +184,7 @@ for num_poly_burst in range(5):
 
     for burst_frequency in np.arange(0,1,0.05):
 
-        for right_movement_probability in np.arange(1e-4,1):
+        for right_movement_probability in np.arange(1e-4,1,5e-2):
 
             print(f'Size burst : {num_poly_burst}, burst frequency : {burst_frequency}, RMP : {right_movement_probability}')
 
