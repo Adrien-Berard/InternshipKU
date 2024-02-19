@@ -32,12 +32,12 @@ new_poly_probability = 1
 
 num_poly_burst = 5
 
-burst_frequency = 0.8
+burst_frequency = 1e-1
 
 
 # Polymerase movement probabilities
-left_movement_probability = 1/2
-right_movement_probability = 1/2
+left_movement_probability = 1/4
+right_movement_probability = 3/4
 
 # Set seed for reproducibility
 np.random.seed(42)
@@ -84,12 +84,14 @@ class Chromatine:
         for _ in range(count):
             if adding_position not in existing_polymerase_positions:
                 existing_polymerase_positions.append(adding_position)
+        return existing_polymerase_positions
 
     def BurstPoly(self,adding_position, num_poly_burst, existing_polymerase_positions):
         Burst_adding_position = adding_position
         for poly in range(num_poly_burst):
-            chromatine.add_polymerases(1,Burst_adding_position,existing_polymerase_positions)
+            existing_polymerase_positions = chromatine.add_polymerases(1,Burst_adding_position,existing_polymerase_positions)
             Burst_adding_position += 1
+        return existing_polymerase_positions
 
     def adding_poly_proba(self, adding_position, existing_polymerase_positions):
         new_position = adding_position
@@ -152,9 +154,11 @@ class Polymerase:
         self.chromatine = chromatine
         self.position = position
 
-    def delete(self):
+    def delete(self,position,existing_polymerase_positions):
         polymerases.remove(self)
-
+        existing_polymerase_positions.remove(position)
+        return existing_polymerase_positions
+    
     def move(self, chromatine,existing_polymerase_positions):
         states = [0, 1]
         next_position = self.position + 1
@@ -168,8 +172,10 @@ class Polymerase:
             self.position = np.random.choice([self.position, next_position], p=normalized_probabilities)
 
         if self.position >= end_of_replication_position:
-            self.delete()
+            existing_polymerase_positions = self.delete(self.position,existing_polymerase_positions)
 
+        return existing_polymerase_positions
+    
     def change_histones(self, chromatine,CenH_positions):
         if self.position not in CenH_positions:
             if 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'U' and np.random.random() < 0.5:
@@ -177,9 +183,6 @@ class Polymerase:
             elif 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'M':
                 chromatine.histones[self.position] = 'U'
 
-
-    def delete(self):
-        polymerases.remove(self)
 
 # ---------------------------------------------------------------------------------- #
 
@@ -215,16 +218,13 @@ for frame in range(simulation_steps):
     if frame % int((1 - burst_frequency) * simulation_steps) == 0:
         print('BUUUURST')
         previous_poly_positions = polymerase_positions
-        chromatine.BurstPoly(adding_position,num_poly_burst,existing_polymerase_positions)
+        existing_polymerase_positions = chromatine.BurstPoly(adding_position,num_poly_burst,existing_polymerase_positions)
         # Add new polymerases with non-overlapping random positions
-        new_polymerase_positions = existing_polymerase_positions[-num_poly_burst:]
-        new_polymerases = [Polymerase(chromatine, position=pos) for pos in new_polymerase_positions]
+    
+    polymerases = [Polymerase(chromatine, position=pos) for pos in existing_polymerase_positions]
 
-        if previous_poly_positions != existing_polymerase_positions:
-            polymerases.extend(new_polymerases)
-
-    for polymerase in polymerases:
-        polymerase.move(chromatine,existing_polymerase_positions)
+    for polymerase in reversed(polymerases):
+        existing_polymerase_positions =  polymerase.move(chromatine,existing_polymerase_positions)
         polymerase.change_histones(chromatine, CenH_positions)
         polymerase_positions.append(polymerase.position)  # Append the current position
 
@@ -289,7 +289,7 @@ current_directory = os.getcwd()
 os.makedirs(current_directory, exist_ok=True)
 
 csv_filename = os.path.join(current_directory, f'Burst2ModelCenHsize_{CenHsize}_Proba_{MCenHProb}_polymerasecountini_{polymerase_count_init}_F_{F}_newpolyproba_{new_poly_probability}_burstFrequency_{burst_frequency}.csv')
-
+print(csv_filename)
 result_df.to_csv(csv_filename, index=False)
 
 
