@@ -4,7 +4,8 @@ import os
 
 # Parameters for simulation
 chromatine_size = 198
-polymerase_count = 0
+polymerase_count_init = 0
+polymerase_count = polymerase_count_init 
 simulation_steps = 100000
 adding_position = 131
 end_of_replication_position = adding_position + 7
@@ -21,16 +22,17 @@ recruitment_probability = 1
 change_probability = alpha
 noisy_transition_probability = 1 - alpha
 CenHSart = 65
-CenHsize = 21
+
+CenHsize = 30
 
 CenH_positions = np.arange(CenHSart,CenHSart + CenHsize) 
 MCenHProb = 0.8
 
-new_poly_probability = 1e-2
+new_poly_probability = 1
 
 num_poly_burst = 5
 
-burst_frequency = 0.55
+burst_frequency = 0.5
 
 
 # Polymerase movement probabilities
@@ -83,7 +85,7 @@ class Chromatine:
             if adding_position not in existing_polymerase_positions:
                 existing_polymerase_positions.append(adding_position)
 
-    def BurstPoly(self,num_poly_burst, existing_polymerase_positions):
+    def BurstPoly(self,adding_position, num_poly_burst, existing_polymerase_positions):
         Burst_adding_position = adding_position
         for poly in range(num_poly_burst):
             chromatine.add_polymerases(1,Burst_adding_position,existing_polymerase_positions)
@@ -93,7 +95,8 @@ class Chromatine:
         new_position = adding_position
         probability = new_poly_probability 
         # TO CHANGE AFTERWARDS
-        if (new_position in existing_polymerase_positions or new_position >= end_of_replication_position) and self.histones[new_position-1] == 'M' and self.histones[new_position-2] == 'M' and self.histones[new_position - 3] == 'M':
+        if (new_position in existing_polymerase_positions or new_position >= end_of_replication_position or 
+            new_position <= end_of_replication_position) and self.histones[new_position-1] == 'M' and self.histones[new_position-2] == 'M' and self.histones[new_position - 3] == 'M':
                    # Can't bind if 'M-M-M' 
                    # PROBLEMS WITH THE NESTED IF OR IF AND IF
                    probability = 0
@@ -145,10 +148,9 @@ class Chromatine:
         return self.histones
     
 class Polymerase:
-    def __init__(self, chromatine, position=adding_position, temperature=1.0):
+    def __init__(self, chromatine, position=adding_position):
         self.chromatine = chromatine
         self.position = position
-        self.temperature = temperature
 
     def delete(self):
         polymerases.remove(self)
@@ -179,9 +181,14 @@ class Polymerase:
     def delete(self):
         polymerases.remove(self)
 
-# Initialize chromatine and polymerases with a specified temperature
+# ---------------------------------------------------------------------------------- #
+
+#                       Initialize chromatine and polymerases 
+
+# ---------------------------------------------------------------------------------- #
+
 chromatine = Chromatine(chromatine_size,CenH_positions)
-polymerases = [Polymerase(chromatine, temperature=1.0) for _ in range(polymerase_count)]
+polymerases = [Polymerase(chromatine) for _ in range(polymerase_count)]
 
 # Track existing polymerase positions using a list to avoid duplicates
 existing_polymerase_positions = [polymerase.position for polymerase in polymerases]
@@ -191,12 +198,29 @@ columns = ['Time Steps', 'Polymerase Count', 'Active Histone Count', 'Acetylated
            'Methylated Histone Count', 'Unmodified Histone Count', 'Noisy Changes Count', 'Enzyme Changes Count']
 result_df = pd.DataFrame(columns=columns)
 
-# Simulation loop
+# ---------------------------------------------------------------------------------- #
+
+#                               Simulation loop 
+
+# ---------------------------------------------------------------------------------- #
+
 for frame in range(simulation_steps):
 
     polymerase_positions = []  # Clear the polymerase_positions list
     noisy_changes_count = 0
     enzyme_changes_count = 0
+
+    if frame % int((1 - burst_frequency) * simulation_steps) == 0:
+        print('BUUUURST')
+        previous_poly_positions = polymerase_positions
+        chromatine.BurstPoly(adding_position,num_poly_burst,existing_polymerase_positions)
+        # Add new polymerases with non-overlapping random positions
+        # chromatine.add_polymerases(1,  adding_position, existing_polymerase_positions)
+        new_polymerase_positions = existing_polymerase_positions[-num_poly_burst:]
+        new_polymerases = [Polymerase(chromatine, position=pos) for pos in new_polymerase_positions]
+
+        if previous_poly_positions != existing_polymerase_positions:
+            polymerases.extend(new_polymerases)
 
     for polymerase in polymerases:
         polymerase.move(chromatine,existing_polymerase_positions)
@@ -217,25 +241,26 @@ for frame in range(simulation_steps):
 
 
     # Randomly add new polymerase at the beginning of the chromatine with a certain probability
-    if np.random.random() < chromatine.adding_poly_proba(adding_position, existing_polymerase_positions):
+    # if np.random.random() < chromatine.adding_poly_proba(adding_position, existing_polymerase_positions):
         # Add new polymerases with non-overlapping random positions
-        previous_poly_positions = polymerase_positions
-        chromatine.add_polymerases(1,  adding_position, existing_polymerase_positions)
-        new_polymerase_positions = existing_polymerase_positions[-1:]
-        new_polymerases = [Polymerase(chromatine, position=pos, temperature=1.0) for pos in new_polymerase_positions]
-        if previous_poly_positions != existing_polymerase_positions:
-            polymerases.extend(new_polymerases)
+        # previous_poly_positions = polymerase_positions
+        # chromatine.add_polymerases(1,  adding_position, existing_polymerase_positions)
+        # new_polymerase_positions = existing_polymerase_positions[-1:]
+        # new_polymerases = [Polymerase(chromatine, position=pos) for pos in new_polymerase_positions]
+        # if previous_poly_positions != existing_polymerase_positions:
+            # polymerases.extend(new_polymerases)
 
-    # Update the number of polymerases and active histones lists
-    polymerase_count_over_time = len(polymerases)
-    active_histone_count = np.sum(np.isin(chromatine.histones, ['M', 'A']))
-    acetylated_histone_count = np.sum(chromatine.histones == 'A')
-    methylated_histone_count = np.sum(chromatine.histones == 'M')
-    unmodified_histone_count = np.sum(chromatine.histones == 'U')
 
 
     if frame%100 == 0:
-        print(frame)
+        # print(frame)
+        # Update the number of polymerases and active histones lists
+        polymerase_count = len(polymerases)
+        active_histone_count = np.sum(np.isin(chromatine.histones, ['M', 'A']))
+        acetylated_histone_count = np.sum(chromatine.histones == 'A')
+        methylated_histone_count = np.sum(chromatine.histones == 'M')
+        unmodified_histone_count = np.sum(chromatine.histones == 'U')
+        
         chromatine_array = chromatine.ChromatineVisualisation()
 
         count_A = np.count_nonzero(np.fromiter((nucleo == 'A' for nucleo in chromatine.histones[gene_position]), dtype=bool))
@@ -243,7 +268,7 @@ for frame in range(simulation_steps):
 
         # Append data to the dataframe
         result_df = pd.concat([result_df, pd.DataFrame([{'Time Steps': frame + 1,
-                                                    'Polymerase Count': polymerase_count_over_time,
+                                                    'Polymerase Count': polymerase_count,
                                                     'Active Histone Count': active_histone_count,
                                                     'Acetylated Histone Count': acetylated_histone_count,
                                                     'Methylated Histone Count': methylated_histone_count,
@@ -253,11 +278,7 @@ for frame in range(simulation_steps):
                                                     'Chromatine Array': str(chromatine_array), 
                                                     'A in gene': count_A}])],ignore_index=True)
         
-    if frame % (burst_frequency * simulation_steps) == 0:
-        chromatine.BurstPoly(num_poly_burst,existing_polymerase_positions)
-
-print("Done")
-
+print('Done')
 # Save the dataframe to a CSV file
 
         
@@ -266,7 +287,7 @@ current_directory = os.getcwd()
 
 os.makedirs(current_directory, exist_ok=True)
 
-csv_filename = os.path.join(current_directory, f'BurstModelCenHsize_{CenHsize}_Proba_{MCenHProb}_polymerasecount_{polymerase_count}_F_{F}_newpolyproba_{new_poly_probability}_burstFrequency_{burst_frequency}.csv')
+csv_filename = os.path.join(current_directory, f'Burst2ModelCenHsize_{CenHsize}_Proba_{MCenHProb}_polymerasecountini_{polymerase_count_init}_F_{F}_newpolyproba_{new_poly_probability}_burstFrequency_{burst_frequency}.csv')
 
 result_df.to_csv(csv_filename, index=False)
 
