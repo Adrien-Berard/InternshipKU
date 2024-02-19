@@ -32,7 +32,7 @@ new_poly_probability = 1
 
 num_poly_burst = 5
 
-burst_frequency = 0.5
+burst_frequency = 0.8
 
 
 # Polymerase movement probabilities
@@ -167,8 +167,8 @@ class Polymerase:
 
             self.position = np.random.choice([self.position, next_position], p=normalized_probabilities)
 
-            if self.position >= end_of_replication_position:
-                self.delete()
+        if self.position >= end_of_replication_position:
+            self.delete()
 
     def change_histones(self, chromatine,CenH_positions):
         if self.position not in CenH_positions:
@@ -207,15 +207,16 @@ result_df = pd.DataFrame(columns=columns)
 for frame in range(simulation_steps):
 
     polymerase_positions = []  # Clear the polymerase_positions list
+    polymerase_count = 0
     noisy_changes_count = 0
     enzyme_changes_count = 0
 
+    # Adding polymerases with a burst
     if frame % int((1 - burst_frequency) * simulation_steps) == 0:
         print('BUUUURST')
         previous_poly_positions = polymerase_positions
         chromatine.BurstPoly(adding_position,num_poly_burst,existing_polymerase_positions)
         # Add new polymerases with non-overlapping random positions
-        # chromatine.add_polymerases(1,  adding_position, existing_polymerase_positions)
         new_polymerase_positions = existing_polymerase_positions[-num_poly_burst:]
         new_polymerases = [Polymerase(chromatine, position=pos) for pos in new_polymerase_positions]
 
