@@ -32,12 +32,12 @@ new_poly_probability = 1
 
 num_poly_burst = 5
 
-burst_frequency = 1e-1
+burst_frequency = 0.99
 
 
 # Polymerase movement probabilities
-left_movement_probability = 1/4
-right_movement_probability = 3/4
+left_movement_probability = 1/2
+right_movement_probability = 1/1000
 
 # Set seed for reproducibility
 np.random.seed(42)
@@ -159,23 +159,27 @@ class Polymerase:
         existing_polymerase_positions.remove(position)
         return existing_polymerase_positions
     
-    def move(self, chromatine,existing_polymerase_positions):
+    def move(self, chromatine, existing_polymerase_positions):
         states = [0, 1]
+        previous_position = self.position
         next_position = self.position + 1
 
         if next_position not in existing_polymerase_positions:
-            
             probabilities = [left_movement_probability, right_movement_probability]
             total_prob = np.sum(probabilities)
             normalized_probabilities = probabilities / total_prob
 
             self.position = np.random.choice([self.position, next_position], p=normalized_probabilities)
 
+            # Update the position directly in the list
+            existing_polymerase_positions[existing_polymerase_positions.index(previous_position)] = self.position
+
         if self.position >= end_of_replication_position:
-            existing_polymerase_positions = self.delete(self.position,existing_polymerase_positions)
+            # Assuming delete returns the updated list
+            existing_polymerase_positions = self.delete(self.position, existing_polymerase_positions)
 
         return existing_polymerase_positions
-    
+
     def change_histones(self, chromatine,CenH_positions):
         if self.position not in CenH_positions:
             if 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'U' and np.random.random() < 0.5:
@@ -217,9 +221,7 @@ for frame in range(simulation_steps):
     # Adding polymerases with a burst
     if frame % int((1 - burst_frequency) * simulation_steps) == 0:
         print('BUUUURST')
-        previous_poly_positions = polymerase_positions
         existing_polymerase_positions = chromatine.BurstPoly(adding_position,num_poly_burst,existing_polymerase_positions)
-        # Add new polymerases with non-overlapping random positions
     
     polymerases = [Polymerase(chromatine, position=pos) for pos in existing_polymerase_positions]
 
@@ -227,6 +229,7 @@ for frame in range(simulation_steps):
         existing_polymerase_positions =  polymerase.move(chromatine,existing_polymerase_positions)
         polymerase.change_histones(chromatine, CenH_positions)
         polymerase_positions.append(polymerase.position)  # Append the current position
+
 
     # Change the next histones based on the influence of first neighbors
     position = np.random.randint(1, chromatine_size)
