@@ -191,9 +191,11 @@ polymerases = [Polymerase(chromatine) for _ in range(polymerase_count)]
 existing_polymerase_positions = [polymerase.position for polymerase in polymerases]
 
 # Create an empty dataframe to store the counting lists
-columns = ['Time Steps', 'Polymerase Count', 'Burst Size','Burst Frequency','Poly Proba movement']
-result_df = pd.DataFrame(columns=columns)
+columns = ['Time Steps', 'Polymerase Count', 'Burst Size','Burst Frequency','Poly Proba movement', 'Count A']
+# result_df = pd.DataFrame(columns=columns)
 
+file = open('ScanCenHBURSTorNOBURSTfullcsvWriting.csv','w')
+file.write('Time Steps, Polymerase Count, Burst Size, Burst Frequency, Poly Proba movement, Count A\n')
 
 for num_poly_burst in range(5):
 
@@ -286,17 +288,21 @@ for num_poly_burst in np.arange(1,7,1):
 
 
                     # Append data to the dataframe
-                    result_df = pd.concat([result_df, pd.DataFrame([{'Time Steps': frame + 1,
-                                                                'Polymerase Count': polymerase_count,
-                                                                'Burst Size' : num_poly_burst,
-                                                                'Burst Frequency': burst_frequency,
-                                                                'Poly Proba movement' : right_movement_probability, 
-                                                                'A in gene': count_A}])],ignore_index=True)
+                    file.write(f'{frame + 1}, {polymerase_count}, {num_poly_burst},{burst_frequency}, {right_movement_probability}, {count_A} \n')
+                    
+                    # result_df = pd.concat([result_df, pd.DataFrame([{'Time Steps': frame + 1,
+                                                                # 'Polymerase Count': polymerase_count,
+                                                                # 'Burst Size' : num_poly_burst,
+                                                                # 'Burst Frequency': burst_frequency,
+                                                                # 'Poly Proba movement' : right_movement_probability, 
+                                                                # 'A in gene': count_A}])],ignore_index=True)
                     
 print('Done')
-# Save the dataframe to a CSV file
 
-        
+file.close()
+
+# Save the dataframe to a CSV file
+   
 
 current_directory = os.getcwd()
 
@@ -304,7 +310,7 @@ os.makedirs(current_directory, exist_ok=True)
 
 csv_filename = os.path.join(current_directory, f'ScanCenHBURSTorNOBURST.csv')
 print(csv_filename)
-result_df.to_csv(csv_filename, index=False)
+# result_df.to_csv(csv_filename, index=False)
 
 
 
