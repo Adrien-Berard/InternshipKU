@@ -37,9 +37,7 @@ burst_frequency = 0.95
 # Polymerase movement probabilities
 left_movement_probability = 1/2
 
-right_movement_probability = 1/2
-
-burst_duration = 1e-3 * simulation_steps
+right_movement_probability = 1e-2
 
 # Set burst and inactive durations, and initialize burst and inactive counters
 burst_duration = 2000
