@@ -178,34 +178,35 @@ class Polymerase:
             elif 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'M':
                 chromatine.histones[self.position] = 'U'
 
+# ---------------------------------------------------------------------------------- #
+
+#                       Initialize chromatine and polymerases 
+
+# ---------------------------------------------------------------------------------- #
+
+chromatine = Chromatine(chromatine_size,CenH_positions)
+polymerases = [Polymerase(chromatine) for _ in range(polymerase_count)]
+
+# Track existing polymerase positions using a list to avoid duplicates
+existing_polymerase_positions = [polymerase.position for polymerase in polymerases]
+
+# Create an empty dataframe to store the counting lists
+columns = ['Time Steps', 'Polymerase Count', 'Burst Size','Burst Frequency','Poly proba movement']
+result_df = pd.DataFrame(columns=columns)
 
 
-for num_poly_burst in range(5):
+for num_poly_burst in np.arange(1,7,1):
 
-    for burst_frequency in np.arange(0,1,0.05):
+    for burst_frequency in np.arange(0,1.05,0.05):
 
-        for right_movement_probability in np.arange(1e-4,1,5e-2):
+        for right_movement_probability in np.arange(1e-4,1.05,5e-2):
 
             print(f'Size burst : {num_poly_burst}, burst frequency : {burst_frequency}, RMP : {right_movement_probability}')
 
             # Polymerase movement probabilities
             left_movement_probability = 1/2
 
-            # ---------------------------------------------------------------------------------- #
 
-            #                       Initialize chromatine and polymerases 
-
-            # ---------------------------------------------------------------------------------- #
-
-            chromatine = Chromatine(chromatine_size,CenH_positions)
-            polymerases = [Polymerase(chromatine) for _ in range(polymerase_count)]
-
-            # Track existing polymerase positions using a list to avoid duplicates
-            existing_polymerase_positions = [polymerase.position for polymerase in polymerases]
-
-            # Create an empty dataframe to store the counting lists
-            columns = ['Time Steps', 'Polymerase Count', 'Burst Size','Burst Frequency','Poly proba movement']
-            result_df = pd.DataFrame(columns=columns)
 
             # ---------------------------------------------------------------------------------- #
 
