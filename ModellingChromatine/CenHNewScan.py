@@ -184,7 +184,7 @@ for num_poly_burst in range(5):
 
     for burst_frequency in np.arange(0,1,0.05):
 
-        for right_movement_probability in np.arange(1e-4,1):
+        for right_movement_probability in np.arange(1e-4,1,5e-2):
 
             print(f'Size burst : {num_poly_burst}, burst frequency : {burst_frequency}, RMP : {right_movement_probability}')
 
@@ -288,7 +288,7 @@ current_directory = os.getcwd()
 
 os.makedirs(current_directory, exist_ok=True)
 
-csv_filename = os.path.join(current_directory, f'Burst2ModelCenHsize_{CenHsize}_Proba_{MCenHProb}_polymerasecountini_{polymerase_count_init}_F_{F}_newpolyproba_{new_poly_probability}_burstFrequency_{burst_frequency}.csv')
+csv_filename = os.path.join(current_directory, f'ScanCenHBURSTorNOBURST.csv')
 print(csv_filename)
 result_df.to_csv(csv_filename, index=False)
 
