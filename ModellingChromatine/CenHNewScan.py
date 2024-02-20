@@ -191,13 +191,13 @@ polymerases = [Polymerase(chromatine) for _ in range(polymerase_count)]
 existing_polymerase_positions = [polymerase.position for polymerase in polymerases]
 
 # Create an empty dataframe to store the counting lists
-columns = ['Time Steps', 'Polymerase Count', 'Burst Size','Burst Frequency','Poly proba movement']
+columns = ['Time Steps', 'Polymerase Count', 'Burst Size','Burst Frequency','Poly Proba movement']
 result_df = pd.DataFrame(columns=columns)
 
 
 for num_poly_burst in np.arange(1,7,1):
 
-    for burst_frequency in np.arange(0,1.05,0.05):
+    for burst_frequency in np.arange(0,1,0.05):
 
         for right_movement_probability in np.arange(1e-4,1.05,5e-2):
 
@@ -289,7 +289,7 @@ current_directory = os.getcwd()
 
 os.makedirs(current_directory, exist_ok=True)
 
-csv_filename = os.path.join(current_directory, f'ScanCenHV2BurstFBurstSizePolyProbaMovement.csv')
+csv_filename = os.path.join(current_directory, f'2ndScanCenHV2BurstFBurstSizePolyProbaMovement.csv')
 print(csv_filename)
 result_df.to_csv(csv_filename, index=False)
 
