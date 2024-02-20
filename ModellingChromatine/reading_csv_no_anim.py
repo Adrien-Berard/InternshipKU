@@ -4,7 +4,7 @@ import numpy as np
 from matplotlib.colors import ListedColormap
 
 # Assuming you have a CSV file with the data, replace 'your_csv_file.csv' with your actual CSV file name.
-csv_filename = 'Burst2ModelCenHsize_30_Proba_0.8_polymerasecountini_0_F_10_newpolyproba_1_burstFrequency_0.99.csv'
+csv_filename = 'TimeseriesBurstPERIODChromatin_burstFrequency0.95_burstSize6_ProbaRight0.5_burstDuration2000_InactiveDuration5000.csv'
 df = pd.read_csv(csv_filename)
 length_chro = 198
 
@@ -13,7 +13,9 @@ frame_to_show = len(df) - 1
 
 # Subplot for Polymerase Count
 plt.subplot(3, 1, 1)
-plt.plot(df['Time Steps'][:frame_to_show + 1], df['Polymerase Count'][:frame_to_show + 1], label='Polymerase Count')
+plt.plot(df['Time Steps'][:frame_to_show + 1], 
+         df['Polymerase Count'][:frame_to_show + 1], 
+         label='Polymerase Count')
 plt.title('Polymerase Count')
 plt.xlabel('Time Steps')
 plt.ylabel('Count')
@@ -21,12 +23,15 @@ plt.legend()
 
 # Subplot for Histone Counts
 plt.subplot(3, 1, 2)
-plt.plot(df['Time Steps'][:frame_to_show + 1], df['Acetylated Histone Count'][:frame_to_show + 1],
-         label='Acetylated Histone Count', color="b")
-plt.plot(df['Time Steps'][:frame_to_show + 1], df['Methylated Histone Count'][:frame_to_show + 1],
-         label='Methylated Histone Count', color="r")
-plt.plot(df['Time Steps'][:frame_to_show + 1], df['Unmodified Histone Count'][:frame_to_show + 1],
-         label='Unmodified Histone Count', color="y")
+plt.plot(df['Time Steps'][:frame_to_show + 1], 
+         df['Acetylated Histone Count'][:frame_to_show + 1], 
+         label='Acetylated', color="b")
+plt.plot(df['Time Steps'][:frame_to_show + 1], 
+         df['Methylated Histone Count'][:frame_to_show + 1], 
+         label='Methylated', color="r")
+plt.plot(df['Time Steps'][:frame_to_show + 1], 
+         df['Unmodified Histone Count'][:frame_to_show + 1], 
+         label='Unmodified', color="y")
 plt.title('Histone Counts')
 plt.xlabel('Time Steps')
 plt.ylabel('Count')
@@ -55,7 +60,10 @@ plt.imshow(chromatin_numeric, cmap=cmap, aspect='auto', interpolation='none')
 plt.title('Chromatin State Colormap')
 plt.xlabel('Time Steps')
 plt.ylabel('Chromatin Position')
-plt.yticks([64,94,131,141])  # Adjust y-axis ticks for better visualization
+plt.yticks([64, 94, 131, 141])  # Adjust y-axis ticks for better visualization
 
+# Adjust layout to prevent subplot overlap
 plt.tight_layout()
+
+# Display the plot
 plt.show()

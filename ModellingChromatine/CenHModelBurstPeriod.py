@@ -34,7 +34,20 @@ num_poly_burst = 6
 
 burst_frequency = 0.95
 
+# Polymerase movement probabilities
+left_movement_probability = 1/2
+
 right_movement_probability = 1/2
+
+burst_duration = 1e-3 * simulation_steps
+
+# Set burst and inactive durations, and initialize burst and inactive counters
+burst_duration = 2000
+inactive_duration = 5000
+burst_counter = 0
+inactive_counter = 0
+burst_active = False
+
 
 # Set seed for reproducibility
 np.random.seed(42)
@@ -203,10 +216,6 @@ result_df = pd.DataFrame(columns=columns)
 
 print(f'Size burst : {num_poly_burst}, burst frequency : {burst_frequency}, RMP : {right_movement_probability}')
 
-# Polymerase movement probabilities
-left_movement_probability = 1/2
-
-
 
 # ---------------------------------------------------------------------------------- #
 
@@ -221,10 +230,24 @@ for frame in range(simulation_steps):
     noisy_changes_count = 0
     enzyme_changes_count = 0
 
-    # Adding polymerases with a burst
-    if frame % int((1 - burst_frequency) * simulation_steps) == 0:
-        existing_polymerase_positions = chromatine.BurstPoly(adding_position,num_poly_burst,existing_polymerase_positions)
-    
+    # Check if burst should be active
+    if not burst_active and inactive_counter >= inactive_duration:
+        burst_active = True
+        inactive_counter = 0  # Reset the inactive counter
+
+    # Perform BurstPoly operation if burst is active
+    if burst_active:
+        existing_polymerase_positions = chromatine.BurstPoly(adding_position, num_poly_burst, existing_polymerase_positions)
+        burst_counter += 1
+
+        # Check if burst duration is reached
+        if burst_counter >= burst_duration:
+            burst_active = False  # Deactivate burst
+            burst_counter = 0  # Reset the burst counter
+
+    # Increment counters
+    inactive_counter += 1
+
     polymerases = [Polymerase(chromatine, position=pos) for pos in existing_polymerase_positions]
 
     for polymerase in reversed(polymerases):
@@ -246,18 +269,6 @@ for frame in range(simulation_steps):
         noisy_changes_count = chromatine.noisy_transition(position,CenH_positions, noisy_transition_probability, noisy_changes_count)
 
 
-    # Randomly add new polymerase at the beginning of the chromatine with a certain probability
-    # if np.random.random() < chromatine.adding_poly_proba(adding_position, existing_polymerase_positions):
-        # Add new polymerases with non-overlapping random positions
-        # previous_poly_positions = polymerase_positions
-        # chromatine.add_polymerases(1,  adding_position, existing_polymerase_positions)
-        # new_polymerase_positions = existing_polymerase_positions[-1:]
-        # new_polymerases = [Polymerase(chromatine, position=pos) for pos in new_polymerase_positions]
-        # if previous_poly_positions != existing_polymerase_positions:
-            # polymerases.extend(new_polymerases)
-
-
-
     if frame%100 == 0:
         # Update the number of polymerases and active histones lists
         polymerase_count = len(polymerases)
@@ -270,8 +281,6 @@ for frame in range(simulation_steps):
 
         count_A = np.count_nonzero(np.fromiter((nucleo == 'A' for nucleo in chromatine.histones[gene_position]), dtype=bool))
 
-
-    if frame%100 == 0:
         print(frame)
         chromatine_array = chromatine.ChromatineVisualisation()
         # Append data to the dataframe
@@ -287,7 +296,7 @@ for frame in range(simulation_steps):
                                                     'Count A' : count_A}])], ignore_index=True)
 print('Done')
 
-name_file = f'TimeseriesChromatin_burstFrequency{burst_frequency}_burstSize{num_poly_burst}_ProbaRight{right_movement_probability}.csv'
+name_file = f'TimeseriesBurstPERIODChromatin_burstFrequency{burst_frequency}_burstSize{num_poly_burst}_ProbaRight{right_movement_probability}_burstDuration{burst_duration}_InactiveDuration{inactive_duration}.csv'
 # Save data to a csv file
 result_df.to_csv(name_file, index=False)
 
