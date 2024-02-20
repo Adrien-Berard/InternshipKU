@@ -197,18 +197,6 @@ columns = ['Time Steps', 'Polymerase Count', 'Burst Size','Burst Frequency','Pol
 file = open('ScanCenHBURSTorNOBURSTfullcsvWriting.csv','w')
 file.write('Time Steps, Polymerase Count, Burst Size, Burst Frequency, Poly Proba movement, Count A\n')
 
-for num_poly_burst in range(5):
-
-    for burst_frequency in np.arange(0,1,0.05):
-
-        for right_movement_probability in np.arange(1e-4,1,5e-2):
-
-            print(f'Size burst : {num_poly_burst}, burst frequency : {burst_frequency}, RMP : {right_movement_probability}')
-
-            # Polymerase movement probabilities
-            left_movement_probability = 1/2
-
-
 
 for num_poly_burst in np.arange(1,7,1):
 
