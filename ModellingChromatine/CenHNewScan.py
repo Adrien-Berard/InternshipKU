@@ -288,7 +288,7 @@ current_directory = os.getcwd()
 
 os.makedirs(current_directory, exist_ok=True)
 
-csv_filename = os.path.join(current_directory, f'Burst2ModelCenHsize_{CenHsize}_Proba_{MCenHProb}_polymerasecountini_{polymerase_count_init}_F_{F}_newpolyproba_{new_poly_probability}_burstFrequency_{burst_frequency}.csv')
+csv_filename = os.path.join(current_directory, f'ScanCenHV2BurstFBurstSizePolyProbaMovement.csv')
 print(csv_filename)
 result_df.to_csv(csv_filename, index=False)
 
