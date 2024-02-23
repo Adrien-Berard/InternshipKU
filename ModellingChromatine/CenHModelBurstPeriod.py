@@ -37,7 +37,7 @@ burst_frequency = 0.95
 # Polymerase movement probabilities
 left_movement_probability = 1/2
 
-right_movement_probability = 1e-2
+right_movement_probability = 1e-3
 
 # Set burst and inactive durations, and initialize burst and inactive counters
 burst_duration = 2000
@@ -299,3 +299,5 @@ name_file = f'TimeseriesBurstPERIODChromatin_burstFrequency{burst_frequency}_bur
 result_df.to_csv(name_file, index=False)
 
 print(name_file)
+
+#10 attempts per nucleosome per cell cycle. p(M) of M as a result of a scan

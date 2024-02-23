@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 # Read the CSV file into a DataFrame
-csv_filename = 'counting_lists_dataframe_polymerasecount_0_alpha_0.8_F_4.000000000000001_addindpolyproba_0.3.csv'
+csv_filename = 'TimeseriesBurstPERIODChromatin_burstFrequency0.95_burstSize6_ProbaRight0.001_burstDuration2000_InactiveDuration5000.csv'
 df = pd.read_csv(csv_filename)
 
 # Parameters for simulation

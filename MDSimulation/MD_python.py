@@ -27,6 +27,7 @@ class PolymerSimulation:
         self.damping_coefficient = damping_coefficient
 
         self.particles = [Particle() for _ in range(num_beads)]
+        self.trajectory = []  # List to store particle positions at each timestep
 
     def initialize_positions(self):
         for particle in self.particles:
@@ -39,7 +40,6 @@ class PolymerSimulation:
         for i in range(1, self.num_beads):
             damping_forces = -self.damping_coefficient * self.particles[i - 1].velocity
             
-            # Calculate potential gradient forces using the provided function
             potential_gradient_forces = self.particles[i].calculate_force(
                 positions_array,
                 bonds,
@@ -47,21 +47,22 @@ class PolymerSimulation:
                 b
             )
             
-            # Force particles to be at a fixed distance from each other
             equilibrium_distance = 1.0
             distance_correction_forces = (positions_array[i - 1, :] - positions_array[i, :]) * (np.linalg.norm(positions_array[i - 1, :] - positions_array[i, :]) - equilibrium_distance)
             
             stochastic_forces = random_forces[i, :]
 
-            # Update positions and velocities
             self.particles[i].position = self.particles[i - 1].position + self.particles[i - 1].velocity * dt
             self.particles[i].velocity = self.particles[i - 1].velocity + (damping_forces + potential_gradient_forces + distance_correction_forces + stochastic_forces) * dt
+            
+            self.trajectory.append([particle.position.copy() for particle in self.particles])
 
     def run_simulation(self, timesteps, dt, bonds, l0, b):
         self.initialize_positions()
 
         for _ in range(timesteps):
             self.euler_maruyama_3d(dt, bonds, l0, b)
+            print(_)
 
     def plot_trajectory(self):
         fig = plt.figure()
@@ -80,10 +81,18 @@ class PolymerSimulation:
         ax.legend()
         plt.show()
 
+    def save_trajectory_to_csv(self, filename='molecularPolymerTrajectory.xyz'):
+        with open(filename, 'w') as file:
+            for timestep, positions in enumerate(self.trajectory):
+                file.write(f"{self.num_beads}\n")
+                file.write(f"Timestep {timestep}\n")
+                for position in positions:
+                    file.write(f"C {position[0]} {position[1]} {position[2]}\n")
+
 # Parameters
 num_beads = 10
 temperature = 300.0  # Kelvin
-damping_coefficient = 0.1
+damping_coefficient = 2
 bonds = np.array([[i, i + 1] for i in range(num_beads - 1)])
 l0 = 1.0
 b = 1.0
@@ -92,5 +101,8 @@ b = 1.0
 polymer_sim = PolymerSimulation(num_beads, temperature, damping_coefficient)
 polymer_sim.run_simulation(timesteps=1000, dt=0.01, bonds=bonds, l0=l0, b=b)
 
+# Save the trajectory to a CSV file
+polymer_sim.save_trajectory_to_csv()
+
 # Plot 3D trajectory
-polymer_sim.plot_trajectory()
+# polymer_sim.plot_trajectory()
