@@ -1,0 +1,42 @@
+# Input file to generate a polymer
+units real
+dimension 3
+processors * * *
+boundary p p p # Periodic boundary conditions
+
+# read data
+atom_style bond 
+read_data structure.dat  
+
+# Potential
+include pot.mod
+
+# Outputs 
+thermo 100
+thermo_style custom step temp pe press vol lx density
+dump 2 all custom 1000 md.lammpstrj id type x y z
+
+# Initial minimisation
+minimize 1.0e-10 1.0e-10 1000000 1000000 
+
+# Initial mixing
+fix 1 all nvt temp 300 300 100 # should be 100*dt with in real units dt = 1fs, dumping factor
+run 200000
+unfix 1
+
+fix 1 all npt temp 300 300 100 iso 0 0 1000 # iso initial P final P 1000*dt, dumping factor for pressure
+run 200000
+unfix 1
+
+# Pressuring the system at 1bar/s
+fix 1 all npt temp 300 300 100 iso 0 1 1000 
+run 1.0e6
+unfix 1
+
+# Final relaxation
+fix 1 all npt temp 300 300 100 iso 1 1 1000 
+run 100000
+unfix 1
+
+write_data S300K.dat # Can be a new starting point (write the ending point)
+write_restart S300K.rest # Can be a new starting point (write the ending point)
