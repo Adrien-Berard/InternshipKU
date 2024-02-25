@@ -46,6 +46,14 @@ burst_counter = 0
 inactive_counter = 0
 burst_active = False
 
+# speed of polymerase https://bionumbers.hms.harvard.edu/bionumber.aspx?id=103012&ver=7&trm=polymerase+speed&org=
+speed_pol = 0.81*1e3/60 #pB/s
+nucleosomesPerKb = 1/147 #1n/pb https://bionumbers.hms.harvard.edu/bionumber.aspx?id=102979&ver=5&trm=nucleosome+per+kilobases+yeast&org=
+speed_pol = speed_pol*nucleosomesPerKb # In nucleosomes/seconde
+time = 0 # time +=15*60 in seconds every change of ALL nucleosomes
+cell_cycle_duration = 150*60 #in secondes https://bionumbers.hms.harvard.edu/bionumber.aspx?id=108264&ver=0&trm=duration+cell+cycle+fission+yeast&org=
+#10 attempts per nucleosome per cell cycle
+#P(X < t) = 1 - exp(-wt)
 
 # Set seed for reproducibility
 np.random.seed(42)
