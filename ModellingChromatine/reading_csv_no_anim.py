@@ -4,7 +4,7 @@ import numpy as np
 from matplotlib.colors import ListedColormap
 
 # Assuming you have a CSV file with the data, replace 'your_csv_file.csv' with your actual CSV file name.
-csv_filename = 'TimeseriesBurstPERIODChromatin_burstFrequency0.95_burstSize6_ProbaRight0.001_burstDuration2000_InactiveDuration5000.csv'
+csv_filename = 'TimeseriesBurstPERIODChromatin_burstFrequency0.95_burstSize6_ProbaRight0.020204081632653057_burstDuration2000_InactiveDuration5000.csv'
 df = pd.read_csv(csv_filename)
 length_chro = 198
 
@@ -17,7 +17,7 @@ plt.plot(df['Real Time'][:frame_to_show + 1],
          df['Polymerase Count'][:frame_to_show + 1], 
          label='Polymerase Count')
 plt.title('Polymerase Count')
-plt.xlabel('Real Time')
+plt.xlabel('Real Time in s')
 plt.ylabel('Count')
 plt.legend()
 
@@ -33,7 +33,7 @@ plt.plot(df['Real Time'][:frame_to_show + 1],
          df['Unmodified Histone Count'][:frame_to_show + 1], 
          label='Unmodified', color="y")
 plt.title('Histone Counts')
-plt.xlabel('Real Time')
+plt.xlabel('Real Time in s')
 plt.ylabel('Count')
 plt.legend()
 
@@ -58,7 +58,7 @@ cmap = ListedColormap(['y', 'r', 'b'])
 
 plt.imshow(chromatin_numeric, cmap=cmap, aspect='auto', interpolation='none')
 plt.title('Chromatin State Colormap')
-plt.xlabel('Real Time')
+plt.xlabel('Not real Time')
 plt.ylabel('Chromatin Position')
 plt.yticks([64, 94, 131, 141])  # Adjust y-axis ticks for better visualization
 

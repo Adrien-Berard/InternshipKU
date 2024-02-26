@@ -10,7 +10,7 @@ import os
 chromatine_size = 198 # Fission yeast mating type region size in nucleosomes 2kb 
 polymerase_count_init = 0
 polymerase_count = polymerase_count_init 
-simulation_steps = 1000000
+simulation_steps = 300000
 adding_position = 131
 end_of_replication_position = adding_position + 7
 
@@ -38,10 +38,6 @@ num_poly_burst = 6
 
 burst_frequency = 0.95
 
-# Polymerase movement probabilities
-left_movement_probability = 1/2
-
-right_movement_probability = 1e-3
 
 # Set burst and inactive durations, and initialize burst and inactive counters
 burst_duration = 2000
@@ -58,12 +54,23 @@ inv_speed_pol = 1/speed_pol
 
 time = 0 # time +=15*60 in seconds every change of ALL nucleosomes
 cell_cycle_duration = 150*60 #in secondes https://bionumbers.hms.harvard.edu/bionumber.aspx?id=108264&ver=0&trm=duration+cell+cycle+fission+yeast&org=
-#10 attempts per nucleosome per cell cycle
+
 
 #P(X < t) = 1 - exp(-wt)
 
+#10 attempts per nucleosome per cell cycle ASSUMPTION OF KIM
+rate_nuc_change = chromatine_size/(cell_cycle_duration/10) # = 0,22 per second
+# Every frame a nucleosome should be change: considering that assumption we have dt = 1/rate
+dt = 1/rate_nuc_change # in seconds is 4,5s
+dx = 1 # in nucleosomes
 
+cell_cycle_interval = round(cell_cycle_duration/dt)
+print(cell_cycle_interval)
 nucleosome_changes = 0
+
+# Polymerase movement probabilities
+right_movement_probability = speed_pol*dx/dt
+left_movement_probability = 1 - right_movement_probability
 
 # Set seed for reproducibility
 np.random.seed(42)
@@ -93,63 +100,32 @@ class Chromatine:
                 self.histones[position] = 'U'
                 noisy_changes += 1
 
-                # Increment nucleosome_changes whenever a change occurs
-                nucleosome_changes += 1
 
-                # Call the count_time function to update time if needed
-                time = count_time(time, nucleosome_changes)
 
 
             elif self.histones[position] == 'M':
                 self.histones[position] = 'U'
                 noisy_changes += 1
 
-                # Increment nucleosome_changes whenever a change occurs
-                nucleosome_changes += 1
 
-                # Call the count_time function to update time if needed
-                time = count_time(time, nucleosome_changes)
 
             elif self.histones[position] == 'U':
                 if np.random.random() < 1/2:
                     self.histones[position] = 'A'
                     noisy_changes += 1
 
-                    # Increment nucleosome_changes whenever a change occurs
-                    nucleosome_changes += 1
-
-                    # Call the count_time function to update time if needed
-                    time = count_time(time, nucleosome_changes)
-
                 else:
                     self.histones[position] = 'M'
                     noisy_changes += 1
-
-                    # Increment nucleosome_changes whenever a change occurs
-                    nucleosome_changes += 1
-
-                    # Call the count_time function to update time if needed
-                    time = count_time(time, nucleosome_changes)
 
         elif self.histones[position] == 'M' and np.random.random() < 1- MCenHProb:
             self.histones[position] = 'U'
             noisy_changes += 1
 
-            # Increment nucleosome_changes whenever a change occurs
-            nucleosome_changes += 1
-
-            # Call the count_time function to update time if needed
-            time = count_time(time, nucleosome_changes)
-
 
         elif self.histones[position] == 'U':
             self.histones[position] = 'M'
             noisy_changes += 1
-            # Increment nucleosome_changes whenever a change occurs
-            nucleosome_changes += 1
-
-            # Call the count_time function to update time if needed
-            time = count_time(time, nucleosome_changes)
 
         return noisy_changes, time
 
@@ -189,56 +165,28 @@ class Chromatine:
                     if current_histone == 'A' and nth_histone == 'U':
                         self.histones[nth_position] = 'A'
                         enzyme_changes += 1
-                        # Increment nucleosome_changes whenever a change occurs
-                        nucleosome_changes += 1
-
-                        # Call the count_time function to update time if needed
-                        time = count_time(time, nucleosome_changes)
 
                     elif current_histone == 'A' and nth_histone == 'M':
                         self.histones[nth_position] = 'U'
                         enzyme_changes += 1 
-                        # Increment nucleosome_changes whenever a change occurs
-                        nucleosome_changes += 1
-
-                        # Call the count_time function to update time if needed
-                        time = count_time(time, nucleosome_changes)
 
                     elif current_histone == 'M' and nth_histone == 'U':
                         self.histones[nth_position] = 'M'
                         enzyme_changes += 1 
-                        # Increment nucleosome_changes whenever a change occurs
-                        nucleosome_changes += 1
-
-                        # Call the count_time function to update time if needed
-                        time = count_time(time, nucleosome_changes)
 
                     elif current_histone == 'M' and nth_histone == 'A':
                         self.histones[nth_position] = 'U'
                         enzyme_changes += 1 
-                        # Increment nucleosome_changes whenever a change occurs
-                        nucleosome_changes += 1
-
-                        # Call the count_time function to update time if needed
-                        time = count_time(time, nucleosome_changes)
 
             elif current_histone == 'M' and nth_histone == 'U' :
                 self.histones[nth_position] = 'M'
                 enzyme_changes += 1 
-                # Increment nucleosome_changes whenever a change occurs
-                nucleosome_changes += 1
 
-                # Call the count_time function to update time if needed
-                time = count_time(time, nucleosome_changes)
 
             elif current_histone == 'U' and nth_histone == 'M' and np.random.random() < 1- MCenHProb: 
                 self.histones[nth_position] = 'U'
                 enzyme_changes += 1
-                # Increment nucleosome_changes whenever a change occurs
-                nucleosome_changes += 1
 
-                # Call the count_time function to update time if needed
-                time = count_time(time, nucleosome_changes)
 
         return enzyme_changes, time
 
@@ -339,6 +287,7 @@ print(f'Size burst : {num_poly_burst}, burst frequency : {burst_frequency}, RMP 
 # ---------------------------------------------------------------------------------- #
 
 for frame in range(simulation_steps):
+    time += dt
 
     polymerase_positions = []  # Clear the polymerase_positions list
     polymerase_count = 0
@@ -377,11 +326,11 @@ for frame in range(simulation_steps):
     # CenH_positions = chromatine.CenHRegion(CenH_positions,CenHSart,McenHDensity=MCenHDensity)
     # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
     if np.random.random() < alpha:
-        enzyme_changes_count, time = chromatine.change_next_histones(position,CenH_positions,  time,nucleosome_changes, p_recruitment=recruitment_probability,
+        enzyme_changes_count = chromatine.change_next_histones(position,CenH_positions,  time,nucleosome_changes, p_recruitment=recruitment_probability,
                                                         p_change=change_probability, enzyme_changes=enzyme_changes_count,
                                                         nth_neighbor=np.random.randint(1, chromatine_size))
     else:
-        noisy_changes_count, time = chromatine.noisy_transition(position,CenH_positions, noisy_transition_probability, noisy_changes_count, time,nucleosome_changes)
+        noisy_changes_count = chromatine.noisy_transition(position,CenH_positions, noisy_transition_probability, noisy_changes_count, time,nucleosome_changes)
 
 # ---------------------------------------------------------------------------------- #
 
@@ -389,9 +338,10 @@ for frame in range(simulation_steps):
 
 # ---------------------------------------------------------------------------------- #
 
-    if time == cell_cycle_duration:
+    # Perform cell cycle at specified intervals
+    if frame % cell_cycle_interval == 0 and frame != 0:
         chromatine.CellCycle()
-
+        print('CELL DIVISION')
 # ---------------------------------------------------------------------------------- #
 
 #                                   Save data 
@@ -410,7 +360,7 @@ for frame in range(simulation_steps):
 
         count_A = np.count_nonzero(np.fromiter((nucleo == 'A' for nucleo in chromatine.histones[gene_position]), dtype=bool))
 
-        # print(frame)
+        print(f'% cell cycle :{time/cell_cycle_duration}')
         chromatine_array = chromatine.ChromatineVisualisation()
         # Append data to the dataframe
         result_df = pd.concat([result_df, pd.DataFrame([{
