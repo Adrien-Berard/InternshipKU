@@ -40,11 +40,12 @@ burst_frequency = 0.95
 
 
 # Set burst and inactive durations, and initialize burst and inactive counters
-burst_duration = 2000
-inactive_duration = 5000
+burst_duration = 4000 # in terms of dt
+inactive_duration = 20000 # in terms of dt
 burst_counter = 0
 inactive_counter = 0
 burst_active = False
+
 
 # speed of polymerase https://bionumbers.hms.harvard.edu/bionumber.aspx?id=103012&ver=7&trm=polymerase+speed&org=
 speed_pol = 0.81*1e3/60 #pB/s
