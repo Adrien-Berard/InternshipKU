@@ -13,27 +13,27 @@ frame_to_show = len(df) - 1
 
 # Subplot for Polymerase Count
 plt.subplot(3, 1, 1)
-plt.plot(df['Time Steps'][:frame_to_show + 1], 
+plt.plot(df['Real Time'][:frame_to_show + 1], 
          df['Polymerase Count'][:frame_to_show + 1], 
          label='Polymerase Count')
 plt.title('Polymerase Count')
-plt.xlabel('Time Steps')
+plt.xlabel('Real Time')
 plt.ylabel('Count')
 plt.legend()
 
 # Subplot for Histone Counts
 plt.subplot(3, 1, 2)
-plt.plot(df['Time Steps'][:frame_to_show + 1], 
+plt.plot(df['Real Time'][:frame_to_show + 1], 
          df['Acetylated Histone Count'][:frame_to_show + 1], 
          label='Acetylated', color="b")
-plt.plot(df['Time Steps'][:frame_to_show + 1], 
+plt.plot(df['Real Time'][:frame_to_show + 1], 
          df['Methylated Histone Count'][:frame_to_show + 1], 
          label='Methylated', color="r")
-plt.plot(df['Time Steps'][:frame_to_show + 1], 
+plt.plot(df['Real Time'][:frame_to_show + 1], 
          df['Unmodified Histone Count'][:frame_to_show + 1], 
          label='Unmodified', color="y")
 plt.title('Histone Counts')
-plt.xlabel('Time Steps')
+plt.xlabel('Real Time')
 plt.ylabel('Count')
 plt.legend()
 
@@ -58,7 +58,7 @@ cmap = ListedColormap(['y', 'r', 'b'])
 
 plt.imshow(chromatin_numeric, cmap=cmap, aspect='auto', interpolation='none')
 plt.title('Chromatin State Colormap')
-plt.xlabel('Time Steps')
+plt.xlabel('Real Time')
 plt.ylabel('Chromatin Position')
 plt.yticks([64, 94, 131, 141])  # Adjust y-axis ticks for better visualization
 
