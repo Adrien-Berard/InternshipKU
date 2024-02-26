@@ -340,16 +340,16 @@ for frame in range(simulation_steps):
 # ---------------------------------------------------------------------------------- #
 
     # Perform cell cycle at specified intervals
-    # if frame % cell_cycle_interval == 0 and frame != 0:
-    #    chromatine.CellCycle()
-    #    print('CELL DIVISION')
+    if frame % cell_cycle_interval == 0 and frame != 0:
+        chromatine.CellCycle()
+        print('CELL DIVISION')
 # ---------------------------------------------------------------------------------- #
 
 #                                   Save data 
 
 # ---------------------------------------------------------------------------------- #
 
-    if frame%1000 == 0:
+    if frame%100 == 0:
         # Update the number of polymerases and active histones lists
         polymerase_count = len(polymerases)
         active_histone_count = np.sum(np.isin(chromatine.histones, ['M', 'A']))

@@ -1,0 +1,18 @@
+LAMMPS (7 Feb 2024)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+Loaded 1 plugins from C:\Users\Adrien.FONUK-8MURIJ6UE\AppData\Local\LAMMPS 64-bit 7Feb2024\plugins
+# Input file to generate a polymer
+units real
+dimension 3
+processors * * *
+boundary p p p # Periodic boundary conditions
+
+# read data
+atom_style bond
+read_data structure.dat
+Reading data file ...
+  orthogonal box = (0 0 0) to (40 40 40)
+  1 by 1 by 1 MPI processor grid
+ERROR: Unexpected end of data file (src/read_data.cpp:1983)
+Last command: read_data structure.dat
