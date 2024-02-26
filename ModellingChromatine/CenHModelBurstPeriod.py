@@ -2,8 +2,12 @@ import numpy as np
 import pandas as pd
 import os
 
-# Parameters for simulation
-chromatine_size = 198
+# ---------------------------------------------------------------------------------- #
+
+#                       Parameters for simulation 
+
+# ---------------------------------------------------------------------------------- #
+chromatine_size = 198 # Fission yeast mating type region size in nucleosomes 2kb 
 polymerase_count_init = 0
 polymerase_count = polymerase_count_init 
 simulation_steps = 100000
@@ -58,6 +62,11 @@ cell_cycle_duration = 150*60 #in secondes https://bionumbers.hms.harvard.edu/bio
 # Set seed for reproducibility
 np.random.seed(42)
 
+# ---------------------------------------------------------------------------------- #
+
+#                                        Classes 
+
+# ---------------------------------------------------------------------------------- #
 class Chromatine:
     def __init__(self, histones_count,CenH_positions):
         # Initialize chromatine with histones
