@@ -17,7 +17,7 @@ end_of_replication_position = adding_position + 7
 gene_position = np.arange(adding_position, end_of_replication_position)
 
 # Simulation-specific parameters
-F = 10
+F = 4
 alpha = F/(1+F)
 
 histone_modification_percentage = 0.5
@@ -36,7 +36,7 @@ new_poly_probability = 1
 
 num_poly_burst = 6
 
-burst_frequency = 0.95
+burst_frequency = 0
 
 
 # Set burst and inactive durations, and initialize burst and inactive counters
@@ -340,9 +340,9 @@ for frame in range(simulation_steps):
 # ---------------------------------------------------------------------------------- #
 
     # Perform cell cycle at specified intervals
-    if frame % cell_cycle_interval == 0 and frame != 0:
-        chromatine.CellCycle()
-        print('CELL DIVISION')
+    # if frame % cell_cycle_interval == 0 and frame != 0:
+    #    chromatine.CellCycle()
+    #    print('CELL DIVISION')
 # ---------------------------------------------------------------------------------- #
 
 #                                   Save data 
@@ -361,7 +361,6 @@ for frame in range(simulation_steps):
 
         count_A = np.count_nonzero(np.fromiter((nucleo == 'A' for nucleo in chromatine.histones[gene_position]), dtype=bool))
 
-        print(f'% cell cycle :{time/cell_cycle_duration}')
         chromatine_array = chromatine.ChromatineVisualisation()
         # Append data to the dataframe
         result_df = pd.concat([result_df, pd.DataFrame([{
