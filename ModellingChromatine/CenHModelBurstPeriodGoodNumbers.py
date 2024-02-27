@@ -10,7 +10,7 @@ import os
 chromatine_size = 198 # Fission yeast mating type region size in nucleosomes 2kb 
 polymerase_count_init = 0
 polymerase_count = polymerase_count_init 
-simulation_steps = 300000
+simulation_steps = 30000
 adding_position = 131
 end_of_replication_position = adding_position + 7
 
@@ -40,8 +40,8 @@ burst_frequency = 0
 
 
 # Set burst and inactive durations, and initialize burst and inactive counters
-burst_duration = 4000 # in terms of dt
-inactive_duration = 20000 # in terms of dt
+burst_duration = 4 # in terms of dt/frame
+inactive_duration = 20 # in terms of dt/frame
 burst_counter = 0
 inactive_counter = 0
 burst_active = False
@@ -57,7 +57,7 @@ time = 0 # time +=15*60 in seconds every change of ALL nucleosomes
 cell_cycle_duration = 150*60 #in secondes https://bionumbers.hms.harvard.edu/bionumber.aspx?id=108264&ver=0&trm=duration+cell+cycle+fission+yeast&org=
 
 
-#P(X < t) = 1 - exp(-wt)
+#P(X < t) = 1 - exp(-wt) CMD
 
 #10 attempts per nucleosome per cell cycle ASSUMPTION OF KIM
 rate_nuc_change = chromatine_size/(cell_cycle_duration/10) # = 0,22 per second
@@ -72,6 +72,11 @@ nucleosome_changes = 0
 # Polymerase movement probabilities
 right_movement_probability = speed_pol*dx/dt
 left_movement_probability = 1 - right_movement_probability
+
+# Mean transcriptions per cell cycle
+transcriptions_per_cell_cycle = 300
+transcription_rate = transcriptions_per_cell_cycle/cell_cycle_duration
+#P(X < t) = 1 - exp(-wt) CMD
 
 # Set seed for reproducibility
 np.random.seed(42)
@@ -251,6 +256,11 @@ class Polymerase:
             elif 0 <= self.position < len(chromatine.histones) and chromatine.histones[self.position] == 'M':
                 chromatine.histones[self.position] = 'U'
 
+# ---------------------------------------------------------------------------------- #
+
+#                                       Functions 
+
+# ---------------------------------------------------------------------------------- #
                     
 # Function to count time
 def count_time(time, nucleosome_changes):
@@ -261,6 +271,10 @@ def count_time(time, nucleosome_changes):
         print(time)
     return time
 
+def RateToProbability(rate,time):
+    # P(X < t) = 1 - exp(-wt) CMD
+    p = 1 - np.exp(-rate*time)
+    return p
 # ---------------------------------------------------------------------------------- #
 
 #                       Initialize chromatine and polymerases 
@@ -295,10 +309,9 @@ for frame in range(simulation_steps):
     noisy_changes_count = 0
     enzyme_changes_count = 0
 
-    # Check if burst should be active
-    if not burst_active and inactive_counter >= inactive_duration:
+    # Activate burst randomly
+    if np.random.random() < RateToProbability(transcription_rate,time):
         burst_active = True
-        inactive_counter = 0  # Reset the inactive counter
 
     # Perform BurstPoly operation if burst is active
     if burst_active:
@@ -316,7 +329,7 @@ for frame in range(simulation_steps):
     polymerases = [Polymerase(chromatine, position=pos) for pos in existing_polymerase_positions]
 
     for polymerase in reversed(polymerases):
-        existing_polymerase_positions =  polymerase.move(chromatine,existing_polymerase_positions)
+        existing_polymerase_positions = polymerase.move(chromatine, existing_polymerase_positions)
         polymerase.change_histones(chromatine, CenH_positions)
         polymerase_positions.append(polymerase.position)  # Append the current position
 
@@ -342,7 +355,6 @@ for frame in range(simulation_steps):
     # Perform cell cycle at specified intervals
     if frame % cell_cycle_interval == 0 and frame != 0:
         chromatine.CellCycle()
-        print('CELL DIVISION')
 # ---------------------------------------------------------------------------------- #
 
 #                                   Save data 

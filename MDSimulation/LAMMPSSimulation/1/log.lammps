@@ -1,4 +1,7 @@
-LAMMPS (2 Aug 2023 - Update 2)
+LAMMPS (7 Feb 2024)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+Loaded 1 plugins from C:\Users\Adrien.FONUK-8MURIJ6UE\AppData\Local\LAMMPS 64-bit 7Feb2024\plugins
 # PART A - ENERGY MINIMIZATION
 # 1 Initialization
 units lj
@@ -14,7 +17,7 @@ Created orthogonal box = (-20 -20 -20) to (20 20 20)
 create_atoms 1 random 1500 341341 simulation_box
 Created 1500 atoms
   using lattice units in orthogonal box = (-20 -20 -20) to (20 20 20)
-  create_atoms CPU = 0.000 seconds
+  create_atoms CPU = 0.002 seconds
 create_atoms 2 random 100 127569 simulation_box
 Created 100 atoms
   using lattice units in orthogonal box = (-20 -20 -20) to (20 20 20)
@@ -84,9 +87,9 @@ Per MPI rank memory allocation (min/avg/max) = 4.349 | 4.349 | 4.349 Mbytes
        370   0             -0.9410052      0             -0.9410052     -0.00028189705
        380   0             -0.95064209     0             -0.95064209    -0.00027252979
        388   0             -0.95476642     0             -0.95476642    -0.00030483441
-Loop time of 0.10963 on 1 procs for 388 steps with 1600 atoms
+Loop time of 0.088185 on 1 procs for 388 steps with 1600 atoms
 
-97.5% CPU use with 1 MPI tasks x no OpenMP threads
+17.7% CPU use with 1 MPI tasks x 1 OpenMP threads
 
 Minimization stats:
   Stopping criterion = energy tolerance
@@ -100,12 +103,12 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.042675   | 0.042675   | 0.042675   |   0.0 | 38.93
-Neigh   | 0.036295   | 0.036295   | 0.036295   |   0.0 | 33.11
-Comm    | 0.0064309  | 0.0064309  | 0.0064309  |   0.0 |  5.87
-Output  | 0.00092966 | 0.00092966 | 0.00092966 |   0.0 |  0.85
+Pair    | 0.028712   | 0.028712   | 0.028712   |   0.0 | 32.56
+Neigh   | 0.031772   | 0.031772   | 0.031772   |   0.0 | 36.03
+Comm    | 0.004634   | 0.004634   | 0.004634   |   0.0 |  5.25
+Output  | 0.0053     | 0.0053     | 0.0053     |   0.0 |  6.01
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0233     |            |       | 21.25
+Other   |            | 0.01777    |            |       | 20.15
 
 Nlocal:           1600 ave        1600 max        1600 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -335,20 +338,20 @@ Per MPI rank memory allocation (min/avg/max) = 3.224 | 3.224 | 3.224 Mbytes
      10300   0.96929963    -0.24482582     1.4530407      1.2082149      0.021044499  
      10350   1.0147793     -0.23990469     1.5212176      1.2813129      0.024236744  
      10388   0.9908954     -0.24316096     1.4854141      1.2422532      0.0232023    
-Loop time of 1.49543 on 1 procs for 10000 steps with 1600 atoms
+Loop time of 1.41653 on 1 procs for 10000 steps with 1600 atoms
 
-Performance: 2888797.988 tau/day, 6687.032 timesteps/s, 10.699 Matom-step/s
-90.1% CPU use with 1 MPI tasks x no OpenMP threads
+Performance: 3049703.819 tau/day, 7059.500 timesteps/s, 11.295 Matom-step/s
+7.7% CPU use with 1 MPI tasks x 1 OpenMP threads
 
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.4023     | 0.4023     | 0.4023     |   0.0 | 26.90
-Neigh   | 0.35766    | 0.35766    | 0.35766    |   0.0 | 23.92
-Comm    | 0.073789   | 0.073789   | 0.073789   |   0.0 |  4.93
-Output  | 0.20117    | 0.20117    | 0.20117    |   0.0 | 13.45
-Modify  | 0.39749    | 0.39749    | 0.39749    |   0.0 | 26.58
-Other   |            | 0.06302    |            |       |  4.21
+Pair    | 0.25237    | 0.25237    | 0.25237    |   0.0 | 17.82
+Neigh   | 0.29299    | 0.29299    | 0.29299    |   0.0 | 20.68
+Comm    | 0.050431   | 0.050431   | 0.050431   |   0.0 |  3.56
+Output  | 0.23486    | 0.23486    | 0.23486    |   0.0 | 16.58
+Modify  | 0.53671    | 0.53671    | 0.53671    |   0.0 | 37.89
+Other   |            | 0.04917    |            |       |  3.47
 
 Nlocal:           1600 ave        1600 max        1600 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
