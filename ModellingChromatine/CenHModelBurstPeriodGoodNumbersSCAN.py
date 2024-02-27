@@ -34,14 +34,16 @@ MCenHProb = 0.8
 
 new_poly_probability = 1
 
-num_poly_burst = 6
+# num_poly_burst = 6
 
-burst_frequency = 0
+# burst_frequency = 0
 
 
 # Set burst and inactive durations, and initialize burst and inactive counters
+
 burst_duration = 1 # in terms of dt/frame
 inactive_duration = 500 # in terms of dt/frame
+
 burst_counter = 0
 inactive_counter = 0
 burst_active = False
@@ -66,7 +68,6 @@ dt = 1/rate_nuc_change # in seconds is 4,5s
 dx = 1 # in nucleosomes
 
 cell_cycle_interval = round(cell_cycle_duration/dt)
-print(cell_cycle_interval)
 nucleosome_changes = 0
 
 # Polymerase movement probabilities
@@ -275,124 +276,116 @@ def RateToProbability(rate,time):
     # P(X < t) = 1 - exp(-wt) CMD
     p = 1 - np.exp(-rate*time)
     return p
-# ---------------------------------------------------------------------------------- #
 
-#                       Initialize chromatine and polymerases 
+file = open('ScanCenHBURSTgoodNumbersfullcsvWriting.csv','w')
+file.write('Time Steps,Burst Size, Burst duration in dt,Burst inactivation in dt,Count A in gene,Count M in genge,Count total M \n')
 
-# ---------------------------------------------------------------------------------- #
+for burst_duration in range(1,50):
 
-chromatine = Chromatine(chromatine_size,CenH_positions)
-polymerases = [Polymerase(chromatine) for _ in range(polymerase_count)]
+        for inactive_duration in range(1,500): # in terms of dt/frame
 
-# Track existing polymerase positions using a list to avoid duplicates
-existing_polymerase_positions = [polymerase.position for polymerase in polymerases]
+            for num_poly_burst in range(0,7):
 
-# Create an empty dataframe to store the counting lists
-columns = ['Time Steps','Real Time', 'Polymerase Count', 'Active Histone Count', 'Acetylated Histone Count',
-           'Methylated Histone Count', 'Unmodified Histone Count', 'Chromatine array','Count A']
-result_df = pd.DataFrame(columns=columns)
+                print(f'Size Burst {num_poly_burst}, burst duration {burst_duration} and inactive duraiont {inactive_duration}')
 
-print(f'Size burst : {num_poly_burst}, burst frequency : {burst_frequency}, RMP : {right_movement_probability}')
+                # ---------------------------------------------------------------------------------- #
 
+                #                       Initialize chromatine and polymerases 
 
-# ---------------------------------------------------------------------------------- #
+                # ---------------------------------------------------------------------------------- #
 
-#                               Simulation loop 
+                chromatine = Chromatine(chromatine_size,CenH_positions)
+                polymerases = [Polymerase(chromatine) for _ in range(polymerase_count)]
 
-# ---------------------------------------------------------------------------------- #
-
-for frame in range(simulation_steps):
-    time += dt
-
-    polymerase_positions = []  # Clear the polymerase_positions list
-    polymerase_count = 0
-    noisy_changes_count = 0
-    enzyme_changes_count = 0
-
-    # Activate burst randomly
-    if np.random.random() < RateToProbability(transcription_rate,time):
-        burst_active = True
-
-    # Perform BurstPoly operation if burst is active
-    if burst_active:
-        existing_polymerase_positions = chromatine.BurstPoly(adding_position, num_poly_burst, existing_polymerase_positions)
-        burst_counter += 1
-
-        # Check if burst duration is reached
-        if burst_counter >= burst_duration:
-            burst_active = False  # Deactivate burst
-            burst_counter = 0  # Reset the burst counter
-
-    # Increment counters
-    inactive_counter += 1
-
-    polymerases = [Polymerase(chromatine, position=pos) for pos in existing_polymerase_positions]
-
-    for polymerase in reversed(polymerases):
-        existing_polymerase_positions = polymerase.move(chromatine, existing_polymerase_positions)
-        polymerase.change_histones(chromatine, CenH_positions)
-        polymerase_positions.append(polymerase.position)  # Append the current position
+                # Track existing polymerase positions using a list to avoid duplicates
+                existing_polymerase_positions = [polymerase.position for polymerase in polymerases]
 
 
-    # Change the next histones based on the influence of first neighbors
-    position = np.random.randint(1, chromatine_size)
-    
-    # CenH_positions = chromatine.CenHRegion(CenH_positions,CenHSart,McenHDensity=MCenHDensity)
-    # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
-    if np.random.random() < alpha:
-        enzyme_changes_count = chromatine.change_next_histones(position,CenH_positions,  time,nucleosome_changes, p_recruitment=recruitment_probability,
-                                                        p_change=change_probability, enzyme_changes=enzyme_changes_count,
-                                                        nth_neighbor=np.random.randint(1, chromatine_size))
-    else:
-        noisy_changes_count = chromatine.noisy_transition(position,CenH_positions, noisy_transition_probability, noisy_changes_count, time,nucleosome_changes)
 
-# ---------------------------------------------------------------------------------- #
+                # ---------------------------------------------------------------------------------- #
 
-#                                   Cell Cycle 
+                #                               Simulation loop 
 
-# ---------------------------------------------------------------------------------- #
+                # ---------------------------------------------------------------------------------- #
 
-    # Perform cell cycle at specified intervals
-    if frame % cell_cycle_interval == 0 and frame != 0:
-        chromatine.CellCycle()
-# ---------------------------------------------------------------------------------- #
+                for frame in range(simulation_steps):
+                    time += dt
 
-#                                   Save data 
+                    polymerase_positions = []  # Clear the polymerase_positions list
+                    polymerase_count = 0
+                    noisy_changes_count = 0
+                    enzyme_changes_count = 0
 
-# ---------------------------------------------------------------------------------- #
+                    # Activate burst randomly
+                    if np.random.random() < RateToProbability(transcription_rate,time):
+                        burst_active = True
 
-    if frame%100 == 0:
-        # Update the number of polymerases and active histones lists
-        polymerase_count = len(polymerases)
-        active_histone_count = np.sum(np.isin(chromatine.histones, ['M', 'A']))
-        acetylated_histone_count = np.sum(chromatine.histones == 'A')
-        methylated_histone_count = np.sum(chromatine.histones == 'M')
-        unmodified_histone_count = np.sum(chromatine.histones == 'U')
-        
-        chromatine_array = chromatine.ChromatineVisualisation()
+                    # Perform BurstPoly operation if burst is active
+                    if burst_active:
+                        existing_polymerase_positions = chromatine.BurstPoly(adding_position, num_poly_burst, existing_polymerase_positions)
+                        burst_counter += 1
 
-        count_A = np.count_nonzero(np.fromiter((nucleo == 'A' for nucleo in chromatine.histones[gene_position]), dtype=bool))
+                        # Check if burst duration is reached
+                        if burst_counter >= burst_duration:
+                            burst_active = False  # Deactivate burst
+                            burst_counter = 0  # Reset the burst counter
 
-        chromatine_array = chromatine.ChromatineVisualisation()
-        # Append data to the dataframe
-        result_df = pd.concat([result_df, pd.DataFrame([{
-                                                    'Time Steps': frame + 1,
-                                                    'Real Time' : time,
-                                                    'Polymerase Count': polymerase_count,
-                                                    'Active Histone Count': active_histone_count,
-                                                    'Acetylated Histone Count': acetylated_histone_count,
-                                                    'Methylated Histone Count': methylated_histone_count,
-                                                    'Unmodified Histone Count': unmodified_histone_count,
-                                                    'Noisy Changes Count': noisy_changes_count,
-                                                    'Enzyme Changes Count': enzyme_changes_count,
-                                                    'Chromatine Array': str(chromatine_array),
-                                                    'Count A' : count_A}])], ignore_index=True)
-print('Done')
+                    # Increment counters
+                    inactive_counter += 1
 
-name_file = f'TimeseriesBurstPERIODChromatin_burstFrequency{burst_frequency}_burstSize{num_poly_burst}_ProbaRight{right_movement_probability}_burstDuration{burst_duration}_InactiveDuration{inactive_duration}.csv'
-# Save data to a csv file
-result_df.to_csv(name_file, index=False)
+                    polymerases = [Polymerase(chromatine, position=pos) for pos in existing_polymerase_positions]
 
-print(name_file)
+                    for polymerase in reversed(polymerases):
+                        existing_polymerase_positions = polymerase.move(chromatine, existing_polymerase_positions)
+                        polymerase.change_histones(chromatine, CenH_positions)
+                        polymerase_positions.append(polymerase.position)  # Append the current position
+
+
+                    # Change the next histones based on the influence of first neighbors
+                    position = np.random.randint(1, chromatine_size)
+                    
+                    # CenH_positions = chromatine.CenHRegion(CenH_positions,CenHSart,McenHDensity=MCenHDensity)
+                    # Use p_recruitment and p_change probabilities with decreasing probability with vicinity
+                    if np.random.random() < alpha:
+                        enzyme_changes_count = chromatine.change_next_histones(position,CenH_positions,  time,nucleosome_changes, p_recruitment=recruitment_probability,
+                                                                        p_change=change_probability, enzyme_changes=enzyme_changes_count,
+                                                                        nth_neighbor=np.random.randint(1, chromatine_size))
+                    else:
+                        noisy_changes_count = chromatine.noisy_transition(position,CenH_positions, noisy_transition_probability, noisy_changes_count, time,nucleosome_changes)
+
+                # ---------------------------------------------------------------------------------- #
+
+                #                                   Cell Cycle 
+
+                # ---------------------------------------------------------------------------------- #
+
+                    # Perform cell cycle at specified intervals
+                    if frame % cell_cycle_interval == 0 and frame != 0:
+                        chromatine.CellCycle()
+                # ---------------------------------------------------------------------------------- #
+
+                #                                   Save data 
+
+                # ---------------------------------------------------------------------------------- #
+
+                    if frame%100 == 0:
+                        # Update the number of polymerases and active histones lists
+                        polymerase_count = len(polymerases)
+                        active_histone_count = np.sum(np.isin(chromatine.histones, ['M', 'A']))
+                        acetylated_histone_count = np.sum(chromatine.histones == 'A')
+                        methylated_histone_count = np.sum(chromatine.histones == 'M')
+                        unmodified_histone_count = np.sum(chromatine.histones == 'U')
+                        
+                        chromatine_array = chromatine.ChromatineVisualisation()
+
+                        count_A = np.count_nonzero(np.fromiter((nucleo == 'A' for nucleo in chromatine.histones[gene_position]), dtype=bool))
+                        count_M = np.count_nonzero(np.fromiter((nucleo == 'M' for nucleo in chromatine.histones[gene_position]), dtype=bool))
+
+                        chromatine_array = chromatine.ChromatineVisualisation()
+                        # Append data to the dataframe
+                        file.write(f'{frame + 1}, {num_poly_burst}, {burst_duration},{inactive_duration}, {count_A}, {count_M}, {methylated_histone_count} \n')
+                        
+
+print('ScanCenHBURSTgoodNumbersfullcsvWriting.csv')
 
 # p(M) of M as a result of a scan

@@ -4,7 +4,7 @@ import numpy as np
 from matplotlib.colors import ListedColormap
 
 # Assuming you have a CSV file with the data, replace 'your_csv_file.csv' with your actual CSV file name.
-csv_filename = 'TimeseriesBurstPERIODChromatin_burstFrequency0_burstSize6_ProbaRight0.020204081632653057_burstDuration4_InactiveDuration20.csv'
+csv_filename = 'TimeseriesBurstPERIODChromatin_burstFrequency0_burstSize6_ProbaRight0.020204081632653057_burstDuration1_InactiveDuration500.csv'
 df = pd.read_csv(csv_filename)
 length_chro = 198
 
