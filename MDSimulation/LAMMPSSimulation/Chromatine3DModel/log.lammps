@@ -1,0 +1,32 @@
+LAMMPS (2 Aug 2023 - Update 2)
+#####################################################
+#                                                   #
+#                                                   #
+# Filename: in.deform.polychain.txt                 #
+# Author: Mark Tschopp, 2010                        #
+#                                                   #
+# The methodology outlined here follows that from   #
+# Hossain, Tschopp, et al. 2010, Polymer.  Please   #
+# cite accordingly. The following script requires   #
+# a LAMMPS data file containing the coordinates and #
+# appropriate bond/angle/dihedral lists for each    #
+# united atom.                                      #
+#                                                   #
+# Execute the script through:                       #
+# lmp_exe < in.deform.polychain.txt                 #
+#                                                   #
+#####################################################
+
+# VARIABLES
+variable fname index InitialFile.txt
+variable simname index InitialFile
+
+# Reaction Settings
+variable reaction_rate equal 1.0e-6
+
+# Function to check and update atom types based on distance
+label check_reaction
+  compute pair all pair/local dist
+  fix change_types all adapt 1 pair dist thresh TYPE set 3 2
+ERROR: Fix command before simulation box is defined (src/src/modify.cpp:830)
+Last command:   fix change_types all adapt 1 pair dist thresh TYPE set 3 2
