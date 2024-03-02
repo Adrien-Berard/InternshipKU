@@ -1,0 +1,6 @@
+read_data	InitialFile.txt
+Reading data file ...
+  orthogonal box = (0 0 0) to (158.5 158.5 100)
+  1 by 1 by 1 MPI processor grid
+ERROR: Invalid format in Masses section of data file:  (src/src/read_data.cpp:1978)
+Last command: read_data	InitialFile.txt

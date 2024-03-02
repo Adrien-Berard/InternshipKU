@@ -17,43 +17,35 @@
 #####################################################
 
 # VARIABLES
-variable fname index PE_cl100.txt
-variable simname index PE_cl100
+variable fname index InitialFile.txt
+variable simname index InitialFile
 
 # Initialization
 units		real
 boundary	f f f
 atom_style	molecular
 log 		log.${simname}.txt
-read_data	InitialPos.txt
+read_data	InitialFile.txt
 
 # Dreiding potential information
 neighbor	0.4 bin
 neigh_modify	every 10 one 10000
+
 bond_style      harmonic
 bond_coeff	1 350 1.53
+bond_coeff	2 700 1.53
+
 angle_style     harmonic
 angle_coeff	1 60 109.5
+angle_coeff	2 120 109.5
+
 dihedral_style	multi/harmonic
 dihedral_coeff	1 1.73 -4.49 0.776 6.99 0.0
-pair_style	lj/cut 10.5
-
-
-bond_style      harmonic
-bond_coeff	2 350 1.53
-angle_style     harmonic
-angle_coeff	2 60 109.5
-dihedral_style	multi/harmonic
 dihedral_coeff	2 1.73 -4.49 0.776 6.99 0.0
 
-bond_style      harmonic
-bond_coeff	3 350 1.53
-angle_style     harmonic
-angle_coeff	3 60 109.5
-dihedral_style	multi/harmonic
-dihedral_coeff	3 1.73 -4.49 0.776 6.99 0.0
-
 pair_style	lj/cut 10.5
+
+
 pair_coeff	1 1 0.112 4.01 10.5
 pair_coeff	2 2 0.112 4.01 10.5
 pair_coeff	3 3 0.112 4.01 10.5
@@ -62,7 +54,7 @@ pair_coeff	1 3 0.112 4.01 10.5
 pair_coeff	2 3 0.112 4.01 10.5
 
 compute csym all centro/atom fcc
-compute peratom all pe/atom 
+compute peratom all pe/atom
 
 
 
