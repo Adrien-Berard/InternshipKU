@@ -21,12 +21,10 @@ LAMMPS (2 Aug 2023 - Update 2)
 variable fname index InitialFile.txt
 variable simname index InitialFile
 
-# Reaction Settings
-variable reaction_rate equal 1.0e-6
 
-# Function to check and update atom types based on distance
-label check_reaction
-  compute pair all pair/local dist
-  fix change_types all adapt 1 pair dist thresh TYPE set 3 2
-ERROR: Fix command before simulation box is defined (src/src/modify.cpp:830)
-Last command:   fix change_types all adapt 1 pair dist thresh TYPE set 3 2
+# Initialization
+units		real
+boundary	f f f
+atom_style	molecular
+log 		log.${simname}.txt
+log 		log.InitialFile.txt

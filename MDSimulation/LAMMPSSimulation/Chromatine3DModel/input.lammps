@@ -20,15 +20,6 @@
 variable fname index InitialFile.txt
 variable simname index InitialFile
 
-# Reaction Settings
-variable reaction_rate equal 1.0e-6
-
-# Function to check and update atom types based on distance
-label check_reaction
-  compute pair all pair/local dist
-  fix change_types all adapt 1 pair dist thresh TYPE set 3 2
-  run 1
-  unfix change_types
 
 # Initialization
 units		real
@@ -73,7 +64,7 @@ fix		2 all langevin 300.0 300.0 10.0 904297
 thermo_style	custom step temp 
 thermo          10000
 timestep	1
-run		10000000
+run		100000
 unfix 1
 unfix 2
 write_restart 	restart.${simname}.dreiding1
@@ -90,28 +81,53 @@ compute eatoms all reduce sum c_eng
 dump mydmp all atom 100 dump.lammpstrj
 
 reset_timestep 0 
-fix 1 all nvt temp 500.0 500.0 100.0
+fix 1 all nvt temp 300.0 300.0 100.0
 thermo 20 
 thermo_style custom step pe lx ly lz press pxx pyy pzz c_eatoms 
 min_style cg
 minimize 1e-25 1e-25 500000 1000000 
 
-# Additional Steps for Reaction
-label react_loop
-  variable current_step equal ${nsteps}
-  variable react_step equal ${current_step} + 100000   # Adjust the reaction time
+# Get the equilibrium distance of the harmonic bond (type 1)
+variable eq_dist equal 1.0  # Replace with the actual equilibrium distance
 
-  # Run simulation until the reaction step
-  while ${current_step} lt ${react_step} {
-    run 1000
-    check_reaction
-    variable reaction_probability equal ${reaction_rate} * 1000.0
-    if random(0, 1000) lt ${reaction_probability} then "check_reaction"
-    variable current_step equal ${current_step} + 1000
-  }
+# Continue with your simulation steps
+thermo_style custom step temp 
+thermo 1000
+timestep 1
 
-print "Reaction completed at step ${current_step}"
-write_restart restart.${simname}.dreiding1
+# Run the simulation for a specified number of steps
+variable num_steps equal 100000
+label loop_start
+
+# First reaction
+fix react1 all bond/react k forward 1 2 1 ${eq_dist} react_region react_dist 2*${eq_dist}
+run 1000
+
+# Second reaction
+unfix react1
+fix react2 all bond/react k forward 2 3 2 ${eq_dist} react_region react_dist 2*${eq_dist}
+run 1000
+
+# Third reaction
+unfix react2
+fix react3 all bond/react k forward 3 2 3 ${eq_dist} react_region react_dist 2*${eq_dist}
+run 1000
+
+# Fourth reaction
+unfix react3
+fix react4 all bond/react k forward 2 1 2 ${eq_dist} react_region react_dist 2*${eq_dist}
+run 1000
+
+# Check if reactions occurred (you can adjust the condition based on your requirements)
+variable reactions_occurred equal $fix_react1_react_count + $fix_react2_react_count + $fix_react3_react_count + $fix_react4_react_count > 0
+
+# Reset the fix bond/react to clear the reaction count
+unfix react4
+
+# If reactions occurred, continue the loop
+if ${reactions_occurred} then goto loop_start
+
+# Print the current timestep
 print "All done"
 
-
+write_restart restart.${simname}.dreiding1
