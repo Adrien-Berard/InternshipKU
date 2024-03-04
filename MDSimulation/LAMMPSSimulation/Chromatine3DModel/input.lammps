@@ -1,6 +1,5 @@
 #####################################################
 #                                                   #
-#                                                   #
 # Filename: in.deform.polychain.txt                 #
 # Author: Mark Tschopp, 2010                        #
 #                                                   #
@@ -19,7 +18,8 @@
 # VARIABLES
 variable fname index InitialFile.txt
 variable simname index InitialFile
-
+variable lj_epsilon equal 1.0
+variable lj_sigma equal 2.0
 
 # Initialization
 units		real
@@ -45,22 +45,19 @@ dihedral_coeff	1 1.73 -4.49 0.776 6.99 0.0
 dihedral_coeff	2 1.73 -4.49 0.776 6.99 0.0
 
 pair_style	lj/cut 10.5
-
-
 pair_coeff	* * 1.0 1.0 10.5
-pair_coeff	3 3 2.0 2.0 10.5
+pair_coeff	3 3 2.0 0.5 10.5
 
 compute csym all centro/atom fcc
 compute peratom all pe/atom
 
 
-
 #####################################################
-# Equilibration (Langevin dynamics at 300 K)
+# Equilibration (Brownian dynamics at 300 K)
 
 velocity 	all create 300.0 1231
 fix		1 all nve/limit 0.05
-fix		2 all langevin 300.0 300.0 10.0 904297
+fix 2 all brownian 300 108410 gamma_t 1.0
 thermo_style	custom step temp 
 thermo          10000
 timestep	1
@@ -68,7 +65,6 @@ run		100000
 unfix 1
 unfix 2
 write_restart 	restart.${simname}.dreiding1
-
 
 #####################################################
 # Define Settings
@@ -95,37 +91,41 @@ thermo_style custom step temp
 thermo 1000
 timestep 1
 
-# Run the simulation for a specified number of steps
-variable num_steps equal 100000
-label loop_start
+# Specify the pair coefficients for your specific atom types
+# For example, assuming you have three atom types, adjust as needed
+pair_coeff * * 1.0 1.0 10.5
+pair_coeff 3 3 2.0 0.5 10.5
 
-# First reaction
-fix react1 all bond/react k forward 1 2 1 ${eq_dist} react_region react_dist 2*${eq_dist}
-run 1000
+# Specify the total number of timesteps
+variable total_steps equal 10000  # Adjust as needed
 
-# Second reaction
-unfix react1
-fix react2 all bond/react k forward 2 3 2 ${eq_dist} react_region react_dist 2*${eq_dist}
-run 1000
+# Loop over timesteps
+label loop
+  # Calculate distances at each timestep
+  compute myDistances all pair lj/cut ${lj_sigma}  # Adjust the pair style accordingly
 
-# Third reaction
-unfix react2
-fix react3 all bond/react k forward 3 2 3 ${eq_dist} react_region react_dist 2*${eq_dist}
-run 1000
+  # Change atom of type 1 to type 2 if it's at a distance less than 2 from atom of type 2
+  set type 1 type/subset 2 1 2304 
 
-# Fourth reaction
-unfix react3
-fix react4 all bond/react k forward 2 1 2 ${eq_dist} react_region react_dist 2*${eq_dist}
-run 1000
+  # Change atom of type 2 to type 3 if it's at a distance less than 2 from atom of type 3
+  set type 2 type/subset 3 1 2404 
 
-# Check if reactions occurred (you can adjust the condition based on your requirements)
-variable reactions_occurred equal $fix_react1_react_count + $fix_react2_react_count + $fix_react3_react_count + $fix_react4_react_count > 0
+  # Change atom of type 2 to type 1 if it's at a distance less than 2 from atom of type 1
+  set type 2 type/subset 1 1 2604 
 
-# Reset the fix bond/react to clear the reaction count
-unfix react4
+  # Change atom of type 3 to type 2 if it's at a distance less than 2 from atom of type 2
+  set type 3 type/subset 2 1 2904 
 
-# If reactions occurred, continue the loop
-if ${reactions_occurred} then goto loop_start
+  # Run a single timestep
+  run 1
+
+  # Increment timestep counter
+  variable current_step equal ${current_step} + 1
+
+  # Check if the desired number of timesteps is reached
+  if ${current_step} < ${total_steps} then "next" else "jump SELF loop"
+
+# Cleanup
 
 # Print the current timestep
 print "All done"

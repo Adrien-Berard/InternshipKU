@@ -1,7 +1,6 @@
 LAMMPS (2 Aug 2023 - Update 2)
 #####################################################
 #                                                   #
-#                                                   #
 # Filename: in.deform.polychain.txt                 #
 # Author: Mark Tschopp, 2010                        #
 #                                                   #
@@ -20,7 +19,8 @@ LAMMPS (2 Aug 2023 - Update 2)
 # VARIABLES
 variable fname index InitialFile.txt
 variable simname index InitialFile
-
+variable lj_epsilon equal 1.0
+variable lj_sigma equal 2.0
 
 # Initialization
 units		real

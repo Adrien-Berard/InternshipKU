@@ -1,22 +1,4 @@
 LAMMPS (2 Aug 2023 - Update 2)
-#####################################################
-#                                                   #
-#                                                   #
-# Filename: in.deform.polychain.txt                 #
-# Author: Mark Tschopp, 2010                        #
-#                                                   #
-# The methodology outlined here follows that from   #
-# Hossain, Tschopp, et al. 2010, Polymer.  Please   #
-# cite accordingly. The following script requires   #
-# a LAMMPS data file containing the coordinates and #
-# appropriate bond/angle/dihedral lists for each    #
-# united atom.                                      #
-#                                                   #
-# Execute the script through:                       #
-# lmp_exe < in.deform.polychain.txt                 #
-#                                                   #
-#####################################################
-
 # VARIABLES
 variable fname index InitialFile.txt
 variable simname index InitialFile
