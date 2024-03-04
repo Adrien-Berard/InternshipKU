@@ -45,7 +45,7 @@ fix 2 all brownian 30.0 12908410 gamma_t 3.0 rng gaussian # Comute a correct 300
 thermo_style	custom step temp 
 thermo          10000
 timestep	1
-run		1000000
+run		10000
 unfix 1
 unfix 2
 write_restart 	restart.${simname}.dreiding1
@@ -83,22 +83,17 @@ pair_coeff 3 3 2.0 0.5 10.5
 # Specify the total number of timesteps
 variable total_steps equal 10000  # Adjust as needed
 
+# Compute distances between atom types
+compute myDistances all pair/local dist
+
 # Loop over timesteps
 label loop
-  # Calculate distances at each timestep
-  compute myDistances all pair lj/cut ${lj_sigma}  # Adjust the pair style accordingly
 
-  # Change atom of type 1 to type 2 if it's at a distance less than 2 from atom of type 2
-  set type 1 type/subset 2 1 2304 
-
-  # Change atom of type 2 to type 3 if it's at a distance less than 2 from atom of type 3
-  set type 2 type/subset 3 1 2404 
-
-  # Change atom of type 2 to type 1 if it's at a distance less than 2 from atom of type 1
-  set type 2 type/subset 1 1 2604 
-
-  # Change atom of type 3 to type 2 if it's at a distance less than 2 from atom of type 2
-  set type 3 type/subset 2 1 2904 
+  # Change atom types based on distances
+  if "${myDistances} < 2.0" then "set type 1 type/subset 2 1 2304"
+  if "${myDistances} < 2.0" then "set type 2 type/subset 3 1 2404"
+  if "${myDistances} < 2.0" then "set type 2 type/subset 1 1 2504"
+  if "${myDistances} < 2.0" then "set type 3 type/subset 2 1 2604"
 
   # Run a single timestep
   run 1
@@ -108,8 +103,6 @@ label loop
 
   # Check if the desired number of timesteps is reached
   if ${current_step} < ${total_steps} then "next" else "jump SELF loop"
-
-# Cleanup
 
 # Print the current timestep
 print "All done"
