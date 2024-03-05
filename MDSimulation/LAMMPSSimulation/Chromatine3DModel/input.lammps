@@ -13,7 +13,7 @@ read_data	InitialFile.txt
 
 # Dreiding potential information
 neighbor	0.4 bin
-neigh_modify	every 10 one 10000
+neigh_modify every 1 delay 0 check yes
 
 bond_style      harmonic
 bond_coeff	1 350 1.53
