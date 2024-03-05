@@ -1,1 +1,14 @@
-2 3 group type3_atoms
+# this is a map file
+
+3 equivalences
+
+InitiatorIDs
+
+2
+3
+
+Equivalences
+
+1   1
+2   3
+3   3

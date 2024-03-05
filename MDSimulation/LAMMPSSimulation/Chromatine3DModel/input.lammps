@@ -80,18 +80,17 @@ molecule mol2closeTo1PRE mol2closeTo1PRE.txt
 molecule mol2closeTo1POST mol2closeTo1POST.txt
 
 fix 3 all bond/react &
-  react reac1to2 type1_atoms 1 0.1 2 mol1closeTo3PRE mol1closeTo3POST map_1to2.txt &
-  react reac2to3 type2_atoms 1 0.1 2 mol2closeTo3PRE mol2closeTo3POST map_2to3.txt &
-  react reac3to2 type3_atoms 1 0.1 2 mol2closeTo3PRE mol3closeTo2POSTmap_3to2.txt &
-  react reac2to1 type2_atoms 1 0.1 2 mol2closeTo1PRE mol2closeTo1POST map_2to1.txt &
-
-# Unfix each individual reaction
-unfix 3
+  react reac1to2 type1_atoms 1 0 8 mol1closeTo3PRE mol1closeTo3POST map_1to2.txt &
+  react reac2to3 type2_atoms 1 0 8 mol2closeTo3PRE mol2closeTo3POST map_2to3.txt &
+  react reac3to2 type3_atoms 1 0 8 mol2closeTo3PRE mol3closeTo2POST map_3to2.txt &
+  react reac2to1 type2_atoms 1 0 8 mol2closeTo1PRE mol2closeTo1POST map_2to1.txt &
 
 group type1_atoms type 1
 group type2_atoms type 2
 group type3_atoms type 3
 
-run 10000
+thermo_style multi f_react[1]
+run 50000
 
 print "All done"
+write_data final.data nofix
