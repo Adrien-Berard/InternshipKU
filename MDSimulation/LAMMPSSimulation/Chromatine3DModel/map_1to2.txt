@@ -1,0 +1,1 @@
+1 2 group type3_atoms
