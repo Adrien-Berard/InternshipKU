@@ -79,6 +79,8 @@ molecule mol3closeTo2POST mol3closeTo2POST.txt
 molecule mol2closeTo1PRE mol2closeTo1PRE.txt
 molecule mol2closeTo1POST mol2closeTo1POST.txt
 
+#####################################################
+# Do the reactions
 fix 3 all bond/react &
   react reac1to2 type1_atoms 1 0 2 mol1closeTo3PRE mol1closeTo3POST map_1to2.txt &
   react reac2to3 type2_atoms 1 0 2 mol2closeTo3PRE mol2closeTo3POST map_2to3.txt &
@@ -99,4 +101,5 @@ print "Cumulative reaction count for reac2to3: ${react2_count}"
 print "Cumulative reaction count for reac3to2: ${react3_count}"
 print "Cumulative reaction count for reac2to1: ${react4_count}"
 
+#####################################################
 print "All done"
