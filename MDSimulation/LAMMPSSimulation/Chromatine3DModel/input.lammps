@@ -12,7 +12,7 @@ log 		log.${simname}.txt
 read_data	InitialFile.txt
 
 # Dreiding potential information
-neighbor	0.4 bin
+neighbor	2.0 bin
 neigh_modify every 1 delay 0 check yes
 
 bond_style      harmonic
@@ -85,12 +85,19 @@ fix 3 all bond/react &
   react reac3to2 type3_atoms 1 0 8 mol2closeTo3PRE mol3closeTo2POST map_3to2.txt &
   react reac2to1 type2_atoms 1 0 8 mol2closeTo1PRE mol2closeTo1POST map_2to1.txt &
 
-group type1_atoms type 1
-group type2_atoms type 2
-group type3_atoms type 3
-
-thermo_style multi f_react[1]
 run 50000
+
+# Access cumulative reaction counts after the simulation
+variable react1_count equal f_3[1]
+variable react2_count equal f_3[2]
+variable react3_count equal f_3[3]
+variable react4_count equal f_3[4]
+
+# Output cumulative reaction counts
+print "Cumulative reaction count for reac1to2: ${react1_count}"
+print "Cumulative reaction count for reac2to3: ${react2_count}"
+print "Cumulative reaction count for reac3to2: ${react3_count}"
+print "Cumulative reaction count for reac2to1: ${react4_count}"
 
 print "All done"
 write_data final.data nofix
