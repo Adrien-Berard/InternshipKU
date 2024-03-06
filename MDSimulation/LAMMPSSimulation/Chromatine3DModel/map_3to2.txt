@@ -1,6 +1,6 @@
 # this is a map file
 
-3 equivalences
+4 equivalences
 
 InitiatorIDs
 
@@ -12,3 +12,4 @@ Equivalences
 1   1
 2   2
 3   2
+4   1
