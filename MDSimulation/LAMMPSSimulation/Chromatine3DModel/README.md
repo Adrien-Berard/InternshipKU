@@ -1,6 +1,8 @@
 # Model of a 3 states copolymer with monomers changing states.
 ## Biologically : polymer of chromatine with a 3 states model of nucleosomes.
 
+![3 states Model](3statesModel.png "3 states Model")
+
 ### 1st step
 Launch  <code>python jupyter notebook create_Initfile.ipynb</code> to create an InitFile.txt (one file like this is already present with 100 monomers)
 
@@ -14,4 +16,5 @@ Launch the simulation using the terminal : <code>lmp -in input.lammps</code>
 Visualize your copolymer using Ovito or VMD (see online). Open the file dump.lammpstrj with the software you prefer.
 
 ### 5th step
-Enjoy the beauty of the simulation!
+Enjoy the beauty of the simulation!!
+
