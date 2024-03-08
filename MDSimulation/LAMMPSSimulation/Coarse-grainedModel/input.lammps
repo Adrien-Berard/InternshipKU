@@ -18,6 +18,8 @@ neigh_modify every 1 delay 0 check yes
 bond_style      harmonic
 bond_coeff	1 350 1.53
 bond_coeff	2 700 1.53
+special_bonds lj/coul 0.0 0.0 0.5
+
 
 angle_style     harmonic
 angle_coeff	1 60 109.5
@@ -83,9 +85,9 @@ molecule mol2closeTo1POST mol2closeTo1POST.txt
 # Do the reactions
 fix 3 all bond/react &
   react reac1to2 all 1 0 3 mol1closeTo3PRE mol1closeTo3POST map_1to2.txt molecule intra &
-  react reac2to3 type2_atoms 1 0 10 mol2closeTo3PRE mol2closeTo3POST map_2to3.txt  & 
-  react reac3to2 type3_atoms 1 0 10 mol2closeTo3PRE mol3closeTo2POST map_3to2.txt  &
-  react reac2to1 type2_atoms 1 0 10 mol2closeTo1PRE mol2closeTo1POST map_2to1.txt 
+  react reac2to3 all 1 0 10 mol2closeTo3PRE mol2closeTo3POST map_2to3.txt  & 
+  react reac3to2 all 1 0 10 mol2closeTo3PRE mol3closeTo2POST map_3to2.txt  &
+  react reac2to1 all 1 0 10 mol2closeTo1PRE mol2closeTo1POST map_2to1.txt 
 
 run 100000
 
