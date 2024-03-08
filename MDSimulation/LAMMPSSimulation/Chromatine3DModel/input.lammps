@@ -6,7 +6,7 @@ variable lj_sigma equal 2.0
 
 # Initialization
 units		real
-boundary	f f f
+boundary	    p p p
 atom_style	molecular
 log 		log.${simname}.txt
 read_data	InitialFile.txt
@@ -82,24 +82,28 @@ molecule mol2closeTo1POST mol2closeTo1POST.txt
 #####################################################
 # Do the reactions
 fix 3 all bond/react &
-  react reac1to2 type1_atoms 1 0 2 mol1closeTo3PRE mol1closeTo3POST map_1to2.txt &
-  react reac2to3 type2_atoms 1 0 2 mol2closeTo3PRE mol2closeTo3POST map_2to3.txt &
-  react reac3to2 type3_atoms 1 0 2 mol2closeTo3PRE mol3closeTo2POST map_3to2.txt &
-  react reac2to1 type2_atoms 1 0 2 mol2closeTo1PRE mol2closeTo1POST map_2to1.txt &
+  react reac1to2 all 1 0 10 mol1closeTo3PRE mol1closeTo3POST map_1to2.txt 
+  
+#fix 4 all bond/react &
+ # react reac2to3 type2_atoms 1 0 10 mol2closeTo3PRE mol2closeTo3POST map_2to3.txt 
+#fix 5 all bond/react & 
+ # react reac3to2 type3_atoms 1 0 10 mol2closeTo3PRE mol3closeTo2POST map_3to2.txt 
+#fix 6 all bond/react &
+ # react reac2to1 type2_atoms 1 0 10 mol2closeTo1PRE mol2closeTo1POST map_2to1.txt 
 
-run 50000
+run 100000
 
 # Access cumulative reaction counts after the simulation
 variable react1_count equal f_3[1]
-variable react2_count equal f_3[2]
-variable react3_count equal f_3[3]
-variable react4_count equal f_3[4]
+#variable react2_count equal f_3[2]
+#variable react3_count equal f_3[3]
+#variable react4_count equal f_3[4]
 
 # Output cumulative reaction counts
 print "Cumulative reaction count for reac1to2: ${react1_count}"
-print "Cumulative reaction count for reac2to3: ${react2_count}"
-print "Cumulative reaction count for reac3to2: ${react3_count}"
-print "Cumulative reaction count for reac2to1: ${react4_count}"
+#print "Cumulative reaction count for reac2to3: ${react2_count}"
+#print "Cumulative reaction count for reac3to2: ${react3_count}"
+#print "Cumulative reaction count for reac2to1: ${react4_count}"
 
 #####################################################
 print "All done"
