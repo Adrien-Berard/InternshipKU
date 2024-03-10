@@ -1,17 +1,11 @@
 # this is a map file
 
-5 equivalences
-2 edgeIDs
+4 equivalences
 
 InitiatorIDs
 
 2
 3
-
-EdgeIDs
-
-1
-5
 
 Equivalences
 
@@ -19,4 +13,3 @@ Equivalences
 2   3
 3   3
 4   1
-5   2

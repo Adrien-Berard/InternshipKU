@@ -1,0 +1,15 @@
+units           real
+atom_style      full
+bond_style      harmonic
+angle_style     harmonic
+dihedral_style  charmm
+pair_style      lj/cut 11.0
+
+# If charges are needed, (assuming biopolymers), try one of:
+#dielectric      80.0
+#pair_style      lj/cut/coul/debye 0.1 11.0
+# or (for short distances, below a couple nm)
+#pair_style      lj/charmm/coul/charmm/implicit 9.0 11.0
+
+pair_modify     mix arithmetic
+special_bonds   lj 0.0 0.0 0.0

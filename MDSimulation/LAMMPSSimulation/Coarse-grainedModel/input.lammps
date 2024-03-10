@@ -72,14 +72,7 @@ group type1_atoms type 1
 group type2_atoms type 2
 group type3_atoms type 3
 
-molecule mol1closeTo3PRE mol1closeTo3PRE.txt
-molecule mol1closeTo3POST mol1closeTo3POST.txt
-molecule mol3closeTo1POST mol3closeTo1POST.txt
-molecule mol2closeTo3PRE mol2closeTo3PRE.txt
-molecule mol2closeTo3POST mol2closeTo3POST.txt
-molecule mol3closeTo2POST mol3closeTo2POST.txt
-molecule mol2closeTo1PRE mol2closeTo1PRE.txt
-molecule mol2closeTo1POST mol2closeTo1POST.txt
+
 
 #####################################################
 # Do the reactions
