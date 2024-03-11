@@ -1,0 +1,1493 @@
+@/atom:ForceField/CA   1       #"forcefield.lt", line 34
+@/atom:ForceField/R   2       #"forcefield.lt", line 35
+@/bond:ForceField/Sidechain   1       #"forcefield.lt", line 58
+@/bond:ForceField/Backbone   2       #"forcefield.lt", line 59
+@/angle:ForceField/Backbone   1       #"forcefield.lt", line 68
+@/angle:ForceField/Sidechain   2       #"forcefield.lt", line 69
+@/dihedral:ForceField/CCCC   1       #"forcefield.lt", line 89
+@/dihedral:ForceField/RCCR   2       #"forcefield.lt", line 90
+$/mol:polymers[0][0][0]   1       #"polymer.lt", line 6
+$/mol:polymers[0][0][1]   2       #"polymer.lt", line 6
+$/mol:polymers[0][0][2]   3       #"polymer.lt", line 6
+$/mol:polymers[0][1][0]   4       #"polymer.lt", line 6
+$/mol:polymers[0][1][1]   5       #"polymer.lt", line 6
+$/mol:polymers[0][1][2]   6       #"polymer.lt", line 6
+$/mol:polymers[0][2][0]   7       #"polymer.lt", line 6
+$/mol:polymers[0][2][1]   8       #"polymer.lt", line 6
+$/mol:polymers[0][2][2]   9       #"polymer.lt", line 6
+$/mol:polymers[1][0][0]   10       #"polymer.lt", line 6
+$/mol:polymers[1][0][1]   11       #"polymer.lt", line 6
+$/mol:polymers[1][0][2]   12       #"polymer.lt", line 6
+$/mol:polymers[1][1][0]   13       #"polymer.lt", line 6
+$/mol:polymers[1][1][1]   14       #"polymer.lt", line 6
+$/mol:polymers[1][1][2]   15       #"polymer.lt", line 6
+$/mol:polymers[1][2][0]   16       #"polymer.lt", line 6
+$/mol:polymers[1][2][1]   17       #"polymer.lt", line 6
+$/mol:polymers[1][2][2]   18       #"polymer.lt", line 6
+$/mol:polymers[2][0][0]   19       #"polymer.lt", line 6
+$/mol:polymers[2][0][1]   20       #"polymer.lt", line 6
+$/mol:polymers[2][0][2]   21       #"polymer.lt", line 6
+$/mol:polymers[2][1][0]   22       #"polymer.lt", line 6
+$/mol:polymers[2][1][1]   23       #"polymer.lt", line 6
+$/mol:polymers[2][1][2]   24       #"polymer.lt", line 6
+$/mol:polymers[2][2][0]   25       #"polymer.lt", line 6
+$/mol:polymers[2][2][1]   26       #"polymer.lt", line 6
+$/mol:polymers[2][2][2]   27       #"polymer.lt", line 6
+$/atom:polymers[0][0][0]/mon1/ca   1       #"monomer.lt", line 7
+$/atom:polymers[0][0][0]/mon1/r   2       #"monomer.lt", line 8
+$/atom:polymers[0][0][0]/mon2/ca   3       #"monomer.lt", line 7
+$/atom:polymers[0][0][0]/mon2/r   4       #"monomer.lt", line 8
+$/atom:polymers[0][0][0]/mon3/ca   5       #"monomer.lt", line 7
+$/atom:polymers[0][0][0]/mon3/r   6       #"monomer.lt", line 8
+$/atom:polymers[0][0][0]/mon4/ca   7       #"monomer.lt", line 7
+$/atom:polymers[0][0][0]/mon4/r   8       #"monomer.lt", line 8
+$/atom:polymers[0][0][0]/mon5/ca   9       #"monomer.lt", line 7
+$/atom:polymers[0][0][0]/mon5/r   10       #"monomer.lt", line 8
+$/atom:polymers[0][0][0]/mon6/ca   11       #"monomer.lt", line 7
+$/atom:polymers[0][0][0]/mon6/r   12       #"monomer.lt", line 8
+$/atom:polymers[0][0][0]/mon7/ca   13       #"monomer.lt", line 7
+$/atom:polymers[0][0][0]/mon7/r   14       #"monomer.lt", line 8
+$/atom:polymers[0][0][1]/mon1/ca   15       #"monomer.lt", line 7
+$/atom:polymers[0][0][1]/mon1/r   16       #"monomer.lt", line 8
+$/atom:polymers[0][0][1]/mon2/ca   17       #"monomer.lt", line 7
+$/atom:polymers[0][0][1]/mon2/r   18       #"monomer.lt", line 8
+$/atom:polymers[0][0][1]/mon3/ca   19       #"monomer.lt", line 7
+$/atom:polymers[0][0][1]/mon3/r   20       #"monomer.lt", line 8
+$/atom:polymers[0][0][1]/mon4/ca   21       #"monomer.lt", line 7
+$/atom:polymers[0][0][1]/mon4/r   22       #"monomer.lt", line 8
+$/atom:polymers[0][0][1]/mon5/ca   23       #"monomer.lt", line 7
+$/atom:polymers[0][0][1]/mon5/r   24       #"monomer.lt", line 8
+$/atom:polymers[0][0][1]/mon6/ca   25       #"monomer.lt", line 7
+$/atom:polymers[0][0][1]/mon6/r   26       #"monomer.lt", line 8
+$/atom:polymers[0][0][1]/mon7/ca   27       #"monomer.lt", line 7
+$/atom:polymers[0][0][1]/mon7/r   28       #"monomer.lt", line 8
+$/atom:polymers[0][0][2]/mon1/ca   29       #"monomer.lt", line 7
+$/atom:polymers[0][0][2]/mon1/r   30       #"monomer.lt", line 8
+$/atom:polymers[0][0][2]/mon2/ca   31       #"monomer.lt", line 7
+$/atom:polymers[0][0][2]/mon2/r   32       #"monomer.lt", line 8
+$/atom:polymers[0][0][2]/mon3/ca   33       #"monomer.lt", line 7
+$/atom:polymers[0][0][2]/mon3/r   34       #"monomer.lt", line 8
+$/atom:polymers[0][0][2]/mon4/ca   35       #"monomer.lt", line 7
+$/atom:polymers[0][0][2]/mon4/r   36       #"monomer.lt", line 8
+$/atom:polymers[0][0][2]/mon5/ca   37       #"monomer.lt", line 7
+$/atom:polymers[0][0][2]/mon5/r   38       #"monomer.lt", line 8
+$/atom:polymers[0][0][2]/mon6/ca   39       #"monomer.lt", line 7
+$/atom:polymers[0][0][2]/mon6/r   40       #"monomer.lt", line 8
+$/atom:polymers[0][0][2]/mon7/ca   41       #"monomer.lt", line 7
+$/atom:polymers[0][0][2]/mon7/r   42       #"monomer.lt", line 8
+$/atom:polymers[0][1][0]/mon1/ca   43       #"monomer.lt", line 7
+$/atom:polymers[0][1][0]/mon1/r   44       #"monomer.lt", line 8
+$/atom:polymers[0][1][0]/mon2/ca   45       #"monomer.lt", line 7
+$/atom:polymers[0][1][0]/mon2/r   46       #"monomer.lt", line 8
+$/atom:polymers[0][1][0]/mon3/ca   47       #"monomer.lt", line 7
+$/atom:polymers[0][1][0]/mon3/r   48       #"monomer.lt", line 8
+$/atom:polymers[0][1][0]/mon4/ca   49       #"monomer.lt", line 7
+$/atom:polymers[0][1][0]/mon4/r   50       #"monomer.lt", line 8
+$/atom:polymers[0][1][0]/mon5/ca   51       #"monomer.lt", line 7
+$/atom:polymers[0][1][0]/mon5/r   52       #"monomer.lt", line 8
+$/atom:polymers[0][1][0]/mon6/ca   53       #"monomer.lt", line 7
+$/atom:polymers[0][1][0]/mon6/r   54       #"monomer.lt", line 8
+$/atom:polymers[0][1][0]/mon7/ca   55       #"monomer.lt", line 7
+$/atom:polymers[0][1][0]/mon7/r   56       #"monomer.lt", line 8
+$/atom:polymers[0][1][1]/mon1/ca   57       #"monomer.lt", line 7
+$/atom:polymers[0][1][1]/mon1/r   58       #"monomer.lt", line 8
+$/atom:polymers[0][1][1]/mon2/ca   59       #"monomer.lt", line 7
+$/atom:polymers[0][1][1]/mon2/r   60       #"monomer.lt", line 8
+$/atom:polymers[0][1][1]/mon3/ca   61       #"monomer.lt", line 7
+$/atom:polymers[0][1][1]/mon3/r   62       #"monomer.lt", line 8
+$/atom:polymers[0][1][1]/mon4/ca   63       #"monomer.lt", line 7
+$/atom:polymers[0][1][1]/mon4/r   64       #"monomer.lt", line 8
+$/atom:polymers[0][1][1]/mon5/ca   65       #"monomer.lt", line 7
+$/atom:polymers[0][1][1]/mon5/r   66       #"monomer.lt", line 8
+$/atom:polymers[0][1][1]/mon6/ca   67       #"monomer.lt", line 7
+$/atom:polymers[0][1][1]/mon6/r   68       #"monomer.lt", line 8
+$/atom:polymers[0][1][1]/mon7/ca   69       #"monomer.lt", line 7
+$/atom:polymers[0][1][1]/mon7/r   70       #"monomer.lt", line 8
+$/atom:polymers[0][1][2]/mon1/ca   71       #"monomer.lt", line 7
+$/atom:polymers[0][1][2]/mon1/r   72       #"monomer.lt", line 8
+$/atom:polymers[0][1][2]/mon2/ca   73       #"monomer.lt", line 7
+$/atom:polymers[0][1][2]/mon2/r   74       #"monomer.lt", line 8
+$/atom:polymers[0][1][2]/mon3/ca   75       #"monomer.lt", line 7
+$/atom:polymers[0][1][2]/mon3/r   76       #"monomer.lt", line 8
+$/atom:polymers[0][1][2]/mon4/ca   77       #"monomer.lt", line 7
+$/atom:polymers[0][1][2]/mon4/r   78       #"monomer.lt", line 8
+$/atom:polymers[0][1][2]/mon5/ca   79       #"monomer.lt", line 7
+$/atom:polymers[0][1][2]/mon5/r   80       #"monomer.lt", line 8
+$/atom:polymers[0][1][2]/mon6/ca   81       #"monomer.lt", line 7
+$/atom:polymers[0][1][2]/mon6/r   82       #"monomer.lt", line 8
+$/atom:polymers[0][1][2]/mon7/ca   83       #"monomer.lt", line 7
+$/atom:polymers[0][1][2]/mon7/r   84       #"monomer.lt", line 8
+$/atom:polymers[0][2][0]/mon1/ca   85       #"monomer.lt", line 7
+$/atom:polymers[0][2][0]/mon1/r   86       #"monomer.lt", line 8
+$/atom:polymers[0][2][0]/mon2/ca   87       #"monomer.lt", line 7
+$/atom:polymers[0][2][0]/mon2/r   88       #"monomer.lt", line 8
+$/atom:polymers[0][2][0]/mon3/ca   89       #"monomer.lt", line 7
+$/atom:polymers[0][2][0]/mon3/r   90       #"monomer.lt", line 8
+$/atom:polymers[0][2][0]/mon4/ca   91       #"monomer.lt", line 7
+$/atom:polymers[0][2][0]/mon4/r   92       #"monomer.lt", line 8
+$/atom:polymers[0][2][0]/mon5/ca   93       #"monomer.lt", line 7
+$/atom:polymers[0][2][0]/mon5/r   94       #"monomer.lt", line 8
+$/atom:polymers[0][2][0]/mon6/ca   95       #"monomer.lt", line 7
+$/atom:polymers[0][2][0]/mon6/r   96       #"monomer.lt", line 8
+$/atom:polymers[0][2][0]/mon7/ca   97       #"monomer.lt", line 7
+$/atom:polymers[0][2][0]/mon7/r   98       #"monomer.lt", line 8
+$/atom:polymers[0][2][1]/mon1/ca   99       #"monomer.lt", line 7
+$/atom:polymers[0][2][1]/mon1/r   100       #"monomer.lt", line 8
+$/atom:polymers[0][2][1]/mon2/ca   101       #"monomer.lt", line 7
+$/atom:polymers[0][2][1]/mon2/r   102       #"monomer.lt", line 8
+$/atom:polymers[0][2][1]/mon3/ca   103       #"monomer.lt", line 7
+$/atom:polymers[0][2][1]/mon3/r   104       #"monomer.lt", line 8
+$/atom:polymers[0][2][1]/mon4/ca   105       #"monomer.lt", line 7
+$/atom:polymers[0][2][1]/mon4/r   106       #"monomer.lt", line 8
+$/atom:polymers[0][2][1]/mon5/ca   107       #"monomer.lt", line 7
+$/atom:polymers[0][2][1]/mon5/r   108       #"monomer.lt", line 8
+$/atom:polymers[0][2][1]/mon6/ca   109       #"monomer.lt", line 7
+$/atom:polymers[0][2][1]/mon6/r   110       #"monomer.lt", line 8
+$/atom:polymers[0][2][1]/mon7/ca   111       #"monomer.lt", line 7
+$/atom:polymers[0][2][1]/mon7/r   112       #"monomer.lt", line 8
+$/atom:polymers[0][2][2]/mon1/ca   113       #"monomer.lt", line 7
+$/atom:polymers[0][2][2]/mon1/r   114       #"monomer.lt", line 8
+$/atom:polymers[0][2][2]/mon2/ca   115       #"monomer.lt", line 7
+$/atom:polymers[0][2][2]/mon2/r   116       #"monomer.lt", line 8
+$/atom:polymers[0][2][2]/mon3/ca   117       #"monomer.lt", line 7
+$/atom:polymers[0][2][2]/mon3/r   118       #"monomer.lt", line 8
+$/atom:polymers[0][2][2]/mon4/ca   119       #"monomer.lt", line 7
+$/atom:polymers[0][2][2]/mon4/r   120       #"monomer.lt", line 8
+$/atom:polymers[0][2][2]/mon5/ca   121       #"monomer.lt", line 7
+$/atom:polymers[0][2][2]/mon5/r   122       #"monomer.lt", line 8
+$/atom:polymers[0][2][2]/mon6/ca   123       #"monomer.lt", line 7
+$/atom:polymers[0][2][2]/mon6/r   124       #"monomer.lt", line 8
+$/atom:polymers[0][2][2]/mon7/ca   125       #"monomer.lt", line 7
+$/atom:polymers[0][2][2]/mon7/r   126       #"monomer.lt", line 8
+$/atom:polymers[1][0][0]/mon1/ca   127       #"monomer.lt", line 7
+$/atom:polymers[1][0][0]/mon1/r   128       #"monomer.lt", line 8
+$/atom:polymers[1][0][0]/mon2/ca   129       #"monomer.lt", line 7
+$/atom:polymers[1][0][0]/mon2/r   130       #"monomer.lt", line 8
+$/atom:polymers[1][0][0]/mon3/ca   131       #"monomer.lt", line 7
+$/atom:polymers[1][0][0]/mon3/r   132       #"monomer.lt", line 8
+$/atom:polymers[1][0][0]/mon4/ca   133       #"monomer.lt", line 7
+$/atom:polymers[1][0][0]/mon4/r   134       #"monomer.lt", line 8
+$/atom:polymers[1][0][0]/mon5/ca   135       #"monomer.lt", line 7
+$/atom:polymers[1][0][0]/mon5/r   136       #"monomer.lt", line 8
+$/atom:polymers[1][0][0]/mon6/ca   137       #"monomer.lt", line 7
+$/atom:polymers[1][0][0]/mon6/r   138       #"monomer.lt", line 8
+$/atom:polymers[1][0][0]/mon7/ca   139       #"monomer.lt", line 7
+$/atom:polymers[1][0][0]/mon7/r   140       #"monomer.lt", line 8
+$/atom:polymers[1][0][1]/mon1/ca   141       #"monomer.lt", line 7
+$/atom:polymers[1][0][1]/mon1/r   142       #"monomer.lt", line 8
+$/atom:polymers[1][0][1]/mon2/ca   143       #"monomer.lt", line 7
+$/atom:polymers[1][0][1]/mon2/r   144       #"monomer.lt", line 8
+$/atom:polymers[1][0][1]/mon3/ca   145       #"monomer.lt", line 7
+$/atom:polymers[1][0][1]/mon3/r   146       #"monomer.lt", line 8
+$/atom:polymers[1][0][1]/mon4/ca   147       #"monomer.lt", line 7
+$/atom:polymers[1][0][1]/mon4/r   148       #"monomer.lt", line 8
+$/atom:polymers[1][0][1]/mon5/ca   149       #"monomer.lt", line 7
+$/atom:polymers[1][0][1]/mon5/r   150       #"monomer.lt", line 8
+$/atom:polymers[1][0][1]/mon6/ca   151       #"monomer.lt", line 7
+$/atom:polymers[1][0][1]/mon6/r   152       #"monomer.lt", line 8
+$/atom:polymers[1][0][1]/mon7/ca   153       #"monomer.lt", line 7
+$/atom:polymers[1][0][1]/mon7/r   154       #"monomer.lt", line 8
+$/atom:polymers[1][0][2]/mon1/ca   155       #"monomer.lt", line 7
+$/atom:polymers[1][0][2]/mon1/r   156       #"monomer.lt", line 8
+$/atom:polymers[1][0][2]/mon2/ca   157       #"monomer.lt", line 7
+$/atom:polymers[1][0][2]/mon2/r   158       #"monomer.lt", line 8
+$/atom:polymers[1][0][2]/mon3/ca   159       #"monomer.lt", line 7
+$/atom:polymers[1][0][2]/mon3/r   160       #"monomer.lt", line 8
+$/atom:polymers[1][0][2]/mon4/ca   161       #"monomer.lt", line 7
+$/atom:polymers[1][0][2]/mon4/r   162       #"monomer.lt", line 8
+$/atom:polymers[1][0][2]/mon5/ca   163       #"monomer.lt", line 7
+$/atom:polymers[1][0][2]/mon5/r   164       #"monomer.lt", line 8
+$/atom:polymers[1][0][2]/mon6/ca   165       #"monomer.lt", line 7
+$/atom:polymers[1][0][2]/mon6/r   166       #"monomer.lt", line 8
+$/atom:polymers[1][0][2]/mon7/ca   167       #"monomer.lt", line 7
+$/atom:polymers[1][0][2]/mon7/r   168       #"monomer.lt", line 8
+$/atom:polymers[1][1][0]/mon1/ca   169       #"monomer.lt", line 7
+$/atom:polymers[1][1][0]/mon1/r   170       #"monomer.lt", line 8
+$/atom:polymers[1][1][0]/mon2/ca   171       #"monomer.lt", line 7
+$/atom:polymers[1][1][0]/mon2/r   172       #"monomer.lt", line 8
+$/atom:polymers[1][1][0]/mon3/ca   173       #"monomer.lt", line 7
+$/atom:polymers[1][1][0]/mon3/r   174       #"monomer.lt", line 8
+$/atom:polymers[1][1][0]/mon4/ca   175       #"monomer.lt", line 7
+$/atom:polymers[1][1][0]/mon4/r   176       #"monomer.lt", line 8
+$/atom:polymers[1][1][0]/mon5/ca   177       #"monomer.lt", line 7
+$/atom:polymers[1][1][0]/mon5/r   178       #"monomer.lt", line 8
+$/atom:polymers[1][1][0]/mon6/ca   179       #"monomer.lt", line 7
+$/atom:polymers[1][1][0]/mon6/r   180       #"monomer.lt", line 8
+$/atom:polymers[1][1][0]/mon7/ca   181       #"monomer.lt", line 7
+$/atom:polymers[1][1][0]/mon7/r   182       #"monomer.lt", line 8
+$/atom:polymers[1][1][1]/mon1/ca   183       #"monomer.lt", line 7
+$/atom:polymers[1][1][1]/mon1/r   184       #"monomer.lt", line 8
+$/atom:polymers[1][1][1]/mon2/ca   185       #"monomer.lt", line 7
+$/atom:polymers[1][1][1]/mon2/r   186       #"monomer.lt", line 8
+$/atom:polymers[1][1][1]/mon3/ca   187       #"monomer.lt", line 7
+$/atom:polymers[1][1][1]/mon3/r   188       #"monomer.lt", line 8
+$/atom:polymers[1][1][1]/mon4/ca   189       #"monomer.lt", line 7
+$/atom:polymers[1][1][1]/mon4/r   190       #"monomer.lt", line 8
+$/atom:polymers[1][1][1]/mon5/ca   191       #"monomer.lt", line 7
+$/atom:polymers[1][1][1]/mon5/r   192       #"monomer.lt", line 8
+$/atom:polymers[1][1][1]/mon6/ca   193       #"monomer.lt", line 7
+$/atom:polymers[1][1][1]/mon6/r   194       #"monomer.lt", line 8
+$/atom:polymers[1][1][1]/mon7/ca   195       #"monomer.lt", line 7
+$/atom:polymers[1][1][1]/mon7/r   196       #"monomer.lt", line 8
+$/atom:polymers[1][1][2]/mon1/ca   197       #"monomer.lt", line 7
+$/atom:polymers[1][1][2]/mon1/r   198       #"monomer.lt", line 8
+$/atom:polymers[1][1][2]/mon2/ca   199       #"monomer.lt", line 7
+$/atom:polymers[1][1][2]/mon2/r   200       #"monomer.lt", line 8
+$/atom:polymers[1][1][2]/mon3/ca   201       #"monomer.lt", line 7
+$/atom:polymers[1][1][2]/mon3/r   202       #"monomer.lt", line 8
+$/atom:polymers[1][1][2]/mon4/ca   203       #"monomer.lt", line 7
+$/atom:polymers[1][1][2]/mon4/r   204       #"monomer.lt", line 8
+$/atom:polymers[1][1][2]/mon5/ca   205       #"monomer.lt", line 7
+$/atom:polymers[1][1][2]/mon5/r   206       #"monomer.lt", line 8
+$/atom:polymers[1][1][2]/mon6/ca   207       #"monomer.lt", line 7
+$/atom:polymers[1][1][2]/mon6/r   208       #"monomer.lt", line 8
+$/atom:polymers[1][1][2]/mon7/ca   209       #"monomer.lt", line 7
+$/atom:polymers[1][1][2]/mon7/r   210       #"monomer.lt", line 8
+$/atom:polymers[1][2][0]/mon1/ca   211       #"monomer.lt", line 7
+$/atom:polymers[1][2][0]/mon1/r   212       #"monomer.lt", line 8
+$/atom:polymers[1][2][0]/mon2/ca   213       #"monomer.lt", line 7
+$/atom:polymers[1][2][0]/mon2/r   214       #"monomer.lt", line 8
+$/atom:polymers[1][2][0]/mon3/ca   215       #"monomer.lt", line 7
+$/atom:polymers[1][2][0]/mon3/r   216       #"monomer.lt", line 8
+$/atom:polymers[1][2][0]/mon4/ca   217       #"monomer.lt", line 7
+$/atom:polymers[1][2][0]/mon4/r   218       #"monomer.lt", line 8
+$/atom:polymers[1][2][0]/mon5/ca   219       #"monomer.lt", line 7
+$/atom:polymers[1][2][0]/mon5/r   220       #"monomer.lt", line 8
+$/atom:polymers[1][2][0]/mon6/ca   221       #"monomer.lt", line 7
+$/atom:polymers[1][2][0]/mon6/r   222       #"monomer.lt", line 8
+$/atom:polymers[1][2][0]/mon7/ca   223       #"monomer.lt", line 7
+$/atom:polymers[1][2][0]/mon7/r   224       #"monomer.lt", line 8
+$/atom:polymers[1][2][1]/mon1/ca   225       #"monomer.lt", line 7
+$/atom:polymers[1][2][1]/mon1/r   226       #"monomer.lt", line 8
+$/atom:polymers[1][2][1]/mon2/ca   227       #"monomer.lt", line 7
+$/atom:polymers[1][2][1]/mon2/r   228       #"monomer.lt", line 8
+$/atom:polymers[1][2][1]/mon3/ca   229       #"monomer.lt", line 7
+$/atom:polymers[1][2][1]/mon3/r   230       #"monomer.lt", line 8
+$/atom:polymers[1][2][1]/mon4/ca   231       #"monomer.lt", line 7
+$/atom:polymers[1][2][1]/mon4/r   232       #"monomer.lt", line 8
+$/atom:polymers[1][2][1]/mon5/ca   233       #"monomer.lt", line 7
+$/atom:polymers[1][2][1]/mon5/r   234       #"monomer.lt", line 8
+$/atom:polymers[1][2][1]/mon6/ca   235       #"monomer.lt", line 7
+$/atom:polymers[1][2][1]/mon6/r   236       #"monomer.lt", line 8
+$/atom:polymers[1][2][1]/mon7/ca   237       #"monomer.lt", line 7
+$/atom:polymers[1][2][1]/mon7/r   238       #"monomer.lt", line 8
+$/atom:polymers[1][2][2]/mon1/ca   239       #"monomer.lt", line 7
+$/atom:polymers[1][2][2]/mon1/r   240       #"monomer.lt", line 8
+$/atom:polymers[1][2][2]/mon2/ca   241       #"monomer.lt", line 7
+$/atom:polymers[1][2][2]/mon2/r   242       #"monomer.lt", line 8
+$/atom:polymers[1][2][2]/mon3/ca   243       #"monomer.lt", line 7
+$/atom:polymers[1][2][2]/mon3/r   244       #"monomer.lt", line 8
+$/atom:polymers[1][2][2]/mon4/ca   245       #"monomer.lt", line 7
+$/atom:polymers[1][2][2]/mon4/r   246       #"monomer.lt", line 8
+$/atom:polymers[1][2][2]/mon5/ca   247       #"monomer.lt", line 7
+$/atom:polymers[1][2][2]/mon5/r   248       #"monomer.lt", line 8
+$/atom:polymers[1][2][2]/mon6/ca   249       #"monomer.lt", line 7
+$/atom:polymers[1][2][2]/mon6/r   250       #"monomer.lt", line 8
+$/atom:polymers[1][2][2]/mon7/ca   251       #"monomer.lt", line 7
+$/atom:polymers[1][2][2]/mon7/r   252       #"monomer.lt", line 8
+$/atom:polymers[2][0][0]/mon1/ca   253       #"monomer.lt", line 7
+$/atom:polymers[2][0][0]/mon1/r   254       #"monomer.lt", line 8
+$/atom:polymers[2][0][0]/mon2/ca   255       #"monomer.lt", line 7
+$/atom:polymers[2][0][0]/mon2/r   256       #"monomer.lt", line 8
+$/atom:polymers[2][0][0]/mon3/ca   257       #"monomer.lt", line 7
+$/atom:polymers[2][0][0]/mon3/r   258       #"monomer.lt", line 8
+$/atom:polymers[2][0][0]/mon4/ca   259       #"monomer.lt", line 7
+$/atom:polymers[2][0][0]/mon4/r   260       #"monomer.lt", line 8
+$/atom:polymers[2][0][0]/mon5/ca   261       #"monomer.lt", line 7
+$/atom:polymers[2][0][0]/mon5/r   262       #"monomer.lt", line 8
+$/atom:polymers[2][0][0]/mon6/ca   263       #"monomer.lt", line 7
+$/atom:polymers[2][0][0]/mon6/r   264       #"monomer.lt", line 8
+$/atom:polymers[2][0][0]/mon7/ca   265       #"monomer.lt", line 7
+$/atom:polymers[2][0][0]/mon7/r   266       #"monomer.lt", line 8
+$/atom:polymers[2][0][1]/mon1/ca   267       #"monomer.lt", line 7
+$/atom:polymers[2][0][1]/mon1/r   268       #"monomer.lt", line 8
+$/atom:polymers[2][0][1]/mon2/ca   269       #"monomer.lt", line 7
+$/atom:polymers[2][0][1]/mon2/r   270       #"monomer.lt", line 8
+$/atom:polymers[2][0][1]/mon3/ca   271       #"monomer.lt", line 7
+$/atom:polymers[2][0][1]/mon3/r   272       #"monomer.lt", line 8
+$/atom:polymers[2][0][1]/mon4/ca   273       #"monomer.lt", line 7
+$/atom:polymers[2][0][1]/mon4/r   274       #"monomer.lt", line 8
+$/atom:polymers[2][0][1]/mon5/ca   275       #"monomer.lt", line 7
+$/atom:polymers[2][0][1]/mon5/r   276       #"monomer.lt", line 8
+$/atom:polymers[2][0][1]/mon6/ca   277       #"monomer.lt", line 7
+$/atom:polymers[2][0][1]/mon6/r   278       #"monomer.lt", line 8
+$/atom:polymers[2][0][1]/mon7/ca   279       #"monomer.lt", line 7
+$/atom:polymers[2][0][1]/mon7/r   280       #"monomer.lt", line 8
+$/atom:polymers[2][0][2]/mon1/ca   281       #"monomer.lt", line 7
+$/atom:polymers[2][0][2]/mon1/r   282       #"monomer.lt", line 8
+$/atom:polymers[2][0][2]/mon2/ca   283       #"monomer.lt", line 7
+$/atom:polymers[2][0][2]/mon2/r   284       #"monomer.lt", line 8
+$/atom:polymers[2][0][2]/mon3/ca   285       #"monomer.lt", line 7
+$/atom:polymers[2][0][2]/mon3/r   286       #"monomer.lt", line 8
+$/atom:polymers[2][0][2]/mon4/ca   287       #"monomer.lt", line 7
+$/atom:polymers[2][0][2]/mon4/r   288       #"monomer.lt", line 8
+$/atom:polymers[2][0][2]/mon5/ca   289       #"monomer.lt", line 7
+$/atom:polymers[2][0][2]/mon5/r   290       #"monomer.lt", line 8
+$/atom:polymers[2][0][2]/mon6/ca   291       #"monomer.lt", line 7
+$/atom:polymers[2][0][2]/mon6/r   292       #"monomer.lt", line 8
+$/atom:polymers[2][0][2]/mon7/ca   293       #"monomer.lt", line 7
+$/atom:polymers[2][0][2]/mon7/r   294       #"monomer.lt", line 8
+$/atom:polymers[2][1][0]/mon1/ca   295       #"monomer.lt", line 7
+$/atom:polymers[2][1][0]/mon1/r   296       #"monomer.lt", line 8
+$/atom:polymers[2][1][0]/mon2/ca   297       #"monomer.lt", line 7
+$/atom:polymers[2][1][0]/mon2/r   298       #"monomer.lt", line 8
+$/atom:polymers[2][1][0]/mon3/ca   299       #"monomer.lt", line 7
+$/atom:polymers[2][1][0]/mon3/r   300       #"monomer.lt", line 8
+$/atom:polymers[2][1][0]/mon4/ca   301       #"monomer.lt", line 7
+$/atom:polymers[2][1][0]/mon4/r   302       #"monomer.lt", line 8
+$/atom:polymers[2][1][0]/mon5/ca   303       #"monomer.lt", line 7
+$/atom:polymers[2][1][0]/mon5/r   304       #"monomer.lt", line 8
+$/atom:polymers[2][1][0]/mon6/ca   305       #"monomer.lt", line 7
+$/atom:polymers[2][1][0]/mon6/r   306       #"monomer.lt", line 8
+$/atom:polymers[2][1][0]/mon7/ca   307       #"monomer.lt", line 7
+$/atom:polymers[2][1][0]/mon7/r   308       #"monomer.lt", line 8
+$/atom:polymers[2][1][1]/mon1/ca   309       #"monomer.lt", line 7
+$/atom:polymers[2][1][1]/mon1/r   310       #"monomer.lt", line 8
+$/atom:polymers[2][1][1]/mon2/ca   311       #"monomer.lt", line 7
+$/atom:polymers[2][1][1]/mon2/r   312       #"monomer.lt", line 8
+$/atom:polymers[2][1][1]/mon3/ca   313       #"monomer.lt", line 7
+$/atom:polymers[2][1][1]/mon3/r   314       #"monomer.lt", line 8
+$/atom:polymers[2][1][1]/mon4/ca   315       #"monomer.lt", line 7
+$/atom:polymers[2][1][1]/mon4/r   316       #"monomer.lt", line 8
+$/atom:polymers[2][1][1]/mon5/ca   317       #"monomer.lt", line 7
+$/atom:polymers[2][1][1]/mon5/r   318       #"monomer.lt", line 8
+$/atom:polymers[2][1][1]/mon6/ca   319       #"monomer.lt", line 7
+$/atom:polymers[2][1][1]/mon6/r   320       #"monomer.lt", line 8
+$/atom:polymers[2][1][1]/mon7/ca   321       #"monomer.lt", line 7
+$/atom:polymers[2][1][1]/mon7/r   322       #"monomer.lt", line 8
+$/atom:polymers[2][1][2]/mon1/ca   323       #"monomer.lt", line 7
+$/atom:polymers[2][1][2]/mon1/r   324       #"monomer.lt", line 8
+$/atom:polymers[2][1][2]/mon2/ca   325       #"monomer.lt", line 7
+$/atom:polymers[2][1][2]/mon2/r   326       #"monomer.lt", line 8
+$/atom:polymers[2][1][2]/mon3/ca   327       #"monomer.lt", line 7
+$/atom:polymers[2][1][2]/mon3/r   328       #"monomer.lt", line 8
+$/atom:polymers[2][1][2]/mon4/ca   329       #"monomer.lt", line 7
+$/atom:polymers[2][1][2]/mon4/r   330       #"monomer.lt", line 8
+$/atom:polymers[2][1][2]/mon5/ca   331       #"monomer.lt", line 7
+$/atom:polymers[2][1][2]/mon5/r   332       #"monomer.lt", line 8
+$/atom:polymers[2][1][2]/mon6/ca   333       #"monomer.lt", line 7
+$/atom:polymers[2][1][2]/mon6/r   334       #"monomer.lt", line 8
+$/atom:polymers[2][1][2]/mon7/ca   335       #"monomer.lt", line 7
+$/atom:polymers[2][1][2]/mon7/r   336       #"monomer.lt", line 8
+$/atom:polymers[2][2][0]/mon1/ca   337       #"monomer.lt", line 7
+$/atom:polymers[2][2][0]/mon1/r   338       #"monomer.lt", line 8
+$/atom:polymers[2][2][0]/mon2/ca   339       #"monomer.lt", line 7
+$/atom:polymers[2][2][0]/mon2/r   340       #"monomer.lt", line 8
+$/atom:polymers[2][2][0]/mon3/ca   341       #"monomer.lt", line 7
+$/atom:polymers[2][2][0]/mon3/r   342       #"monomer.lt", line 8
+$/atom:polymers[2][2][0]/mon4/ca   343       #"monomer.lt", line 7
+$/atom:polymers[2][2][0]/mon4/r   344       #"monomer.lt", line 8
+$/atom:polymers[2][2][0]/mon5/ca   345       #"monomer.lt", line 7
+$/atom:polymers[2][2][0]/mon5/r   346       #"monomer.lt", line 8
+$/atom:polymers[2][2][0]/mon6/ca   347       #"monomer.lt", line 7
+$/atom:polymers[2][2][0]/mon6/r   348       #"monomer.lt", line 8
+$/atom:polymers[2][2][0]/mon7/ca   349       #"monomer.lt", line 7
+$/atom:polymers[2][2][0]/mon7/r   350       #"monomer.lt", line 8
+$/atom:polymers[2][2][1]/mon1/ca   351       #"monomer.lt", line 7
+$/atom:polymers[2][2][1]/mon1/r   352       #"monomer.lt", line 8
+$/atom:polymers[2][2][1]/mon2/ca   353       #"monomer.lt", line 7
+$/atom:polymers[2][2][1]/mon2/r   354       #"monomer.lt", line 8
+$/atom:polymers[2][2][1]/mon3/ca   355       #"monomer.lt", line 7
+$/atom:polymers[2][2][1]/mon3/r   356       #"monomer.lt", line 8
+$/atom:polymers[2][2][1]/mon4/ca   357       #"monomer.lt", line 7
+$/atom:polymers[2][2][1]/mon4/r   358       #"monomer.lt", line 8
+$/atom:polymers[2][2][1]/mon5/ca   359       #"monomer.lt", line 7
+$/atom:polymers[2][2][1]/mon5/r   360       #"monomer.lt", line 8
+$/atom:polymers[2][2][1]/mon6/ca   361       #"monomer.lt", line 7
+$/atom:polymers[2][2][1]/mon6/r   362       #"monomer.lt", line 8
+$/atom:polymers[2][2][1]/mon7/ca   363       #"monomer.lt", line 7
+$/atom:polymers[2][2][1]/mon7/r   364       #"monomer.lt", line 8
+$/atom:polymers[2][2][2]/mon1/ca   365       #"monomer.lt", line 7
+$/atom:polymers[2][2][2]/mon1/r   366       #"monomer.lt", line 8
+$/atom:polymers[2][2][2]/mon2/ca   367       #"monomer.lt", line 7
+$/atom:polymers[2][2][2]/mon2/r   368       #"monomer.lt", line 8
+$/atom:polymers[2][2][2]/mon3/ca   369       #"monomer.lt", line 7
+$/atom:polymers[2][2][2]/mon3/r   370       #"monomer.lt", line 8
+$/atom:polymers[2][2][2]/mon4/ca   371       #"monomer.lt", line 7
+$/atom:polymers[2][2][2]/mon4/r   372       #"monomer.lt", line 8
+$/atom:polymers[2][2][2]/mon5/ca   373       #"monomer.lt", line 7
+$/atom:polymers[2][2][2]/mon5/r   374       #"monomer.lt", line 8
+$/atom:polymers[2][2][2]/mon6/ca   375       #"monomer.lt", line 7
+$/atom:polymers[2][2][2]/mon6/r   376       #"monomer.lt", line 8
+$/atom:polymers[2][2][2]/mon7/ca   377       #"monomer.lt", line 7
+$/atom:polymers[2][2][2]/mon7/r   378       #"monomer.lt", line 8
+$/bond:polymers[0][0][0]/mon1/cr   1       #"monomer.lt", line 12
+$/bond:polymers[0][0][0]/mon2/cr   2       #"monomer.lt", line 12
+$/bond:polymers[0][0][0]/mon3/cr   3       #"monomer.lt", line 12
+$/bond:polymers[0][0][0]/mon4/cr   4       #"monomer.lt", line 12
+$/bond:polymers[0][0][0]/mon5/cr   5       #"monomer.lt", line 12
+$/bond:polymers[0][0][0]/mon6/cr   6       #"monomer.lt", line 12
+$/bond:polymers[0][0][0]/mon7/cr   7       #"monomer.lt", line 12
+$/bond:polymers[0][0][0]/backbone1   8       #"polymer.lt", line 20
+$/bond:polymers[0][0][0]/backbone2   9       #"polymer.lt", line 21
+$/bond:polymers[0][0][0]/backbone3   10       #"polymer.lt", line 22
+$/bond:polymers[0][0][0]/backbone4   11       #"polymer.lt", line 23
+$/bond:polymers[0][0][0]/backbone5   12       #"polymer.lt", line 24
+$/bond:polymers[0][0][0]/backbone6   13       #"polymer.lt", line 25
+$/bond:polymers[0][0][1]/mon1/cr   14       #"monomer.lt", line 12
+$/bond:polymers[0][0][1]/mon2/cr   15       #"monomer.lt", line 12
+$/bond:polymers[0][0][1]/mon3/cr   16       #"monomer.lt", line 12
+$/bond:polymers[0][0][1]/mon4/cr   17       #"monomer.lt", line 12
+$/bond:polymers[0][0][1]/mon5/cr   18       #"monomer.lt", line 12
+$/bond:polymers[0][0][1]/mon6/cr   19       #"monomer.lt", line 12
+$/bond:polymers[0][0][1]/mon7/cr   20       #"monomer.lt", line 12
+$/bond:polymers[0][0][1]/backbone1   21       #"polymer.lt", line 20
+$/bond:polymers[0][0][1]/backbone2   22       #"polymer.lt", line 21
+$/bond:polymers[0][0][1]/backbone3   23       #"polymer.lt", line 22
+$/bond:polymers[0][0][1]/backbone4   24       #"polymer.lt", line 23
+$/bond:polymers[0][0][1]/backbone5   25       #"polymer.lt", line 24
+$/bond:polymers[0][0][1]/backbone6   26       #"polymer.lt", line 25
+$/bond:polymers[0][0][2]/mon1/cr   27       #"monomer.lt", line 12
+$/bond:polymers[0][0][2]/mon2/cr   28       #"monomer.lt", line 12
+$/bond:polymers[0][0][2]/mon3/cr   29       #"monomer.lt", line 12
+$/bond:polymers[0][0][2]/mon4/cr   30       #"monomer.lt", line 12
+$/bond:polymers[0][0][2]/mon5/cr   31       #"monomer.lt", line 12
+$/bond:polymers[0][0][2]/mon6/cr   32       #"monomer.lt", line 12
+$/bond:polymers[0][0][2]/mon7/cr   33       #"monomer.lt", line 12
+$/bond:polymers[0][0][2]/backbone1   34       #"polymer.lt", line 20
+$/bond:polymers[0][0][2]/backbone2   35       #"polymer.lt", line 21
+$/bond:polymers[0][0][2]/backbone3   36       #"polymer.lt", line 22
+$/bond:polymers[0][0][2]/backbone4   37       #"polymer.lt", line 23
+$/bond:polymers[0][0][2]/backbone5   38       #"polymer.lt", line 24
+$/bond:polymers[0][0][2]/backbone6   39       #"polymer.lt", line 25
+$/bond:polymers[0][1][0]/mon1/cr   40       #"monomer.lt", line 12
+$/bond:polymers[0][1][0]/mon2/cr   41       #"monomer.lt", line 12
+$/bond:polymers[0][1][0]/mon3/cr   42       #"monomer.lt", line 12
+$/bond:polymers[0][1][0]/mon4/cr   43       #"monomer.lt", line 12
+$/bond:polymers[0][1][0]/mon5/cr   44       #"monomer.lt", line 12
+$/bond:polymers[0][1][0]/mon6/cr   45       #"monomer.lt", line 12
+$/bond:polymers[0][1][0]/mon7/cr   46       #"monomer.lt", line 12
+$/bond:polymers[0][1][0]/backbone1   47       #"polymer.lt", line 20
+$/bond:polymers[0][1][0]/backbone2   48       #"polymer.lt", line 21
+$/bond:polymers[0][1][0]/backbone3   49       #"polymer.lt", line 22
+$/bond:polymers[0][1][0]/backbone4   50       #"polymer.lt", line 23
+$/bond:polymers[0][1][0]/backbone5   51       #"polymer.lt", line 24
+$/bond:polymers[0][1][0]/backbone6   52       #"polymer.lt", line 25
+$/bond:polymers[0][1][1]/mon1/cr   53       #"monomer.lt", line 12
+$/bond:polymers[0][1][1]/mon2/cr   54       #"monomer.lt", line 12
+$/bond:polymers[0][1][1]/mon3/cr   55       #"monomer.lt", line 12
+$/bond:polymers[0][1][1]/mon4/cr   56       #"monomer.lt", line 12
+$/bond:polymers[0][1][1]/mon5/cr   57       #"monomer.lt", line 12
+$/bond:polymers[0][1][1]/mon6/cr   58       #"monomer.lt", line 12
+$/bond:polymers[0][1][1]/mon7/cr   59       #"monomer.lt", line 12
+$/bond:polymers[0][1][1]/backbone1   60       #"polymer.lt", line 20
+$/bond:polymers[0][1][1]/backbone2   61       #"polymer.lt", line 21
+$/bond:polymers[0][1][1]/backbone3   62       #"polymer.lt", line 22
+$/bond:polymers[0][1][1]/backbone4   63       #"polymer.lt", line 23
+$/bond:polymers[0][1][1]/backbone5   64       #"polymer.lt", line 24
+$/bond:polymers[0][1][1]/backbone6   65       #"polymer.lt", line 25
+$/bond:polymers[0][1][2]/mon1/cr   66       #"monomer.lt", line 12
+$/bond:polymers[0][1][2]/mon2/cr   67       #"monomer.lt", line 12
+$/bond:polymers[0][1][2]/mon3/cr   68       #"monomer.lt", line 12
+$/bond:polymers[0][1][2]/mon4/cr   69       #"monomer.lt", line 12
+$/bond:polymers[0][1][2]/mon5/cr   70       #"monomer.lt", line 12
+$/bond:polymers[0][1][2]/mon6/cr   71       #"monomer.lt", line 12
+$/bond:polymers[0][1][2]/mon7/cr   72       #"monomer.lt", line 12
+$/bond:polymers[0][1][2]/backbone1   73       #"polymer.lt", line 20
+$/bond:polymers[0][1][2]/backbone2   74       #"polymer.lt", line 21
+$/bond:polymers[0][1][2]/backbone3   75       #"polymer.lt", line 22
+$/bond:polymers[0][1][2]/backbone4   76       #"polymer.lt", line 23
+$/bond:polymers[0][1][2]/backbone5   77       #"polymer.lt", line 24
+$/bond:polymers[0][1][2]/backbone6   78       #"polymer.lt", line 25
+$/bond:polymers[0][2][0]/mon1/cr   79       #"monomer.lt", line 12
+$/bond:polymers[0][2][0]/mon2/cr   80       #"monomer.lt", line 12
+$/bond:polymers[0][2][0]/mon3/cr   81       #"monomer.lt", line 12
+$/bond:polymers[0][2][0]/mon4/cr   82       #"monomer.lt", line 12
+$/bond:polymers[0][2][0]/mon5/cr   83       #"monomer.lt", line 12
+$/bond:polymers[0][2][0]/mon6/cr   84       #"monomer.lt", line 12
+$/bond:polymers[0][2][0]/mon7/cr   85       #"monomer.lt", line 12
+$/bond:polymers[0][2][0]/backbone1   86       #"polymer.lt", line 20
+$/bond:polymers[0][2][0]/backbone2   87       #"polymer.lt", line 21
+$/bond:polymers[0][2][0]/backbone3   88       #"polymer.lt", line 22
+$/bond:polymers[0][2][0]/backbone4   89       #"polymer.lt", line 23
+$/bond:polymers[0][2][0]/backbone5   90       #"polymer.lt", line 24
+$/bond:polymers[0][2][0]/backbone6   91       #"polymer.lt", line 25
+$/bond:polymers[0][2][1]/mon1/cr   92       #"monomer.lt", line 12
+$/bond:polymers[0][2][1]/mon2/cr   93       #"monomer.lt", line 12
+$/bond:polymers[0][2][1]/mon3/cr   94       #"monomer.lt", line 12
+$/bond:polymers[0][2][1]/mon4/cr   95       #"monomer.lt", line 12
+$/bond:polymers[0][2][1]/mon5/cr   96       #"monomer.lt", line 12
+$/bond:polymers[0][2][1]/mon6/cr   97       #"monomer.lt", line 12
+$/bond:polymers[0][2][1]/mon7/cr   98       #"monomer.lt", line 12
+$/bond:polymers[0][2][1]/backbone1   99       #"polymer.lt", line 20
+$/bond:polymers[0][2][1]/backbone2   100       #"polymer.lt", line 21
+$/bond:polymers[0][2][1]/backbone3   101       #"polymer.lt", line 22
+$/bond:polymers[0][2][1]/backbone4   102       #"polymer.lt", line 23
+$/bond:polymers[0][2][1]/backbone5   103       #"polymer.lt", line 24
+$/bond:polymers[0][2][1]/backbone6   104       #"polymer.lt", line 25
+$/bond:polymers[0][2][2]/mon1/cr   105       #"monomer.lt", line 12
+$/bond:polymers[0][2][2]/mon2/cr   106       #"monomer.lt", line 12
+$/bond:polymers[0][2][2]/mon3/cr   107       #"monomer.lt", line 12
+$/bond:polymers[0][2][2]/mon4/cr   108       #"monomer.lt", line 12
+$/bond:polymers[0][2][2]/mon5/cr   109       #"monomer.lt", line 12
+$/bond:polymers[0][2][2]/mon6/cr   110       #"monomer.lt", line 12
+$/bond:polymers[0][2][2]/mon7/cr   111       #"monomer.lt", line 12
+$/bond:polymers[0][2][2]/backbone1   112       #"polymer.lt", line 20
+$/bond:polymers[0][2][2]/backbone2   113       #"polymer.lt", line 21
+$/bond:polymers[0][2][2]/backbone3   114       #"polymer.lt", line 22
+$/bond:polymers[0][2][2]/backbone4   115       #"polymer.lt", line 23
+$/bond:polymers[0][2][2]/backbone5   116       #"polymer.lt", line 24
+$/bond:polymers[0][2][2]/backbone6   117       #"polymer.lt", line 25
+$/bond:polymers[1][0][0]/mon1/cr   118       #"monomer.lt", line 12
+$/bond:polymers[1][0][0]/mon2/cr   119       #"monomer.lt", line 12
+$/bond:polymers[1][0][0]/mon3/cr   120       #"monomer.lt", line 12
+$/bond:polymers[1][0][0]/mon4/cr   121       #"monomer.lt", line 12
+$/bond:polymers[1][0][0]/mon5/cr   122       #"monomer.lt", line 12
+$/bond:polymers[1][0][0]/mon6/cr   123       #"monomer.lt", line 12
+$/bond:polymers[1][0][0]/mon7/cr   124       #"monomer.lt", line 12
+$/bond:polymers[1][0][0]/backbone1   125       #"polymer.lt", line 20
+$/bond:polymers[1][0][0]/backbone2   126       #"polymer.lt", line 21
+$/bond:polymers[1][0][0]/backbone3   127       #"polymer.lt", line 22
+$/bond:polymers[1][0][0]/backbone4   128       #"polymer.lt", line 23
+$/bond:polymers[1][0][0]/backbone5   129       #"polymer.lt", line 24
+$/bond:polymers[1][0][0]/backbone6   130       #"polymer.lt", line 25
+$/bond:polymers[1][0][1]/mon1/cr   131       #"monomer.lt", line 12
+$/bond:polymers[1][0][1]/mon2/cr   132       #"monomer.lt", line 12
+$/bond:polymers[1][0][1]/mon3/cr   133       #"monomer.lt", line 12
+$/bond:polymers[1][0][1]/mon4/cr   134       #"monomer.lt", line 12
+$/bond:polymers[1][0][1]/mon5/cr   135       #"monomer.lt", line 12
+$/bond:polymers[1][0][1]/mon6/cr   136       #"monomer.lt", line 12
+$/bond:polymers[1][0][1]/mon7/cr   137       #"monomer.lt", line 12
+$/bond:polymers[1][0][1]/backbone1   138       #"polymer.lt", line 20
+$/bond:polymers[1][0][1]/backbone2   139       #"polymer.lt", line 21
+$/bond:polymers[1][0][1]/backbone3   140       #"polymer.lt", line 22
+$/bond:polymers[1][0][1]/backbone4   141       #"polymer.lt", line 23
+$/bond:polymers[1][0][1]/backbone5   142       #"polymer.lt", line 24
+$/bond:polymers[1][0][1]/backbone6   143       #"polymer.lt", line 25
+$/bond:polymers[1][0][2]/mon1/cr   144       #"monomer.lt", line 12
+$/bond:polymers[1][0][2]/mon2/cr   145       #"monomer.lt", line 12
+$/bond:polymers[1][0][2]/mon3/cr   146       #"monomer.lt", line 12
+$/bond:polymers[1][0][2]/mon4/cr   147       #"monomer.lt", line 12
+$/bond:polymers[1][0][2]/mon5/cr   148       #"monomer.lt", line 12
+$/bond:polymers[1][0][2]/mon6/cr   149       #"monomer.lt", line 12
+$/bond:polymers[1][0][2]/mon7/cr   150       #"monomer.lt", line 12
+$/bond:polymers[1][0][2]/backbone1   151       #"polymer.lt", line 20
+$/bond:polymers[1][0][2]/backbone2   152       #"polymer.lt", line 21
+$/bond:polymers[1][0][2]/backbone3   153       #"polymer.lt", line 22
+$/bond:polymers[1][0][2]/backbone4   154       #"polymer.lt", line 23
+$/bond:polymers[1][0][2]/backbone5   155       #"polymer.lt", line 24
+$/bond:polymers[1][0][2]/backbone6   156       #"polymer.lt", line 25
+$/bond:polymers[1][1][0]/mon1/cr   157       #"monomer.lt", line 12
+$/bond:polymers[1][1][0]/mon2/cr   158       #"monomer.lt", line 12
+$/bond:polymers[1][1][0]/mon3/cr   159       #"monomer.lt", line 12
+$/bond:polymers[1][1][0]/mon4/cr   160       #"monomer.lt", line 12
+$/bond:polymers[1][1][0]/mon5/cr   161       #"monomer.lt", line 12
+$/bond:polymers[1][1][0]/mon6/cr   162       #"monomer.lt", line 12
+$/bond:polymers[1][1][0]/mon7/cr   163       #"monomer.lt", line 12
+$/bond:polymers[1][1][0]/backbone1   164       #"polymer.lt", line 20
+$/bond:polymers[1][1][0]/backbone2   165       #"polymer.lt", line 21
+$/bond:polymers[1][1][0]/backbone3   166       #"polymer.lt", line 22
+$/bond:polymers[1][1][0]/backbone4   167       #"polymer.lt", line 23
+$/bond:polymers[1][1][0]/backbone5   168       #"polymer.lt", line 24
+$/bond:polymers[1][1][0]/backbone6   169       #"polymer.lt", line 25
+$/bond:polymers[1][1][1]/mon1/cr   170       #"monomer.lt", line 12
+$/bond:polymers[1][1][1]/mon2/cr   171       #"monomer.lt", line 12
+$/bond:polymers[1][1][1]/mon3/cr   172       #"monomer.lt", line 12
+$/bond:polymers[1][1][1]/mon4/cr   173       #"monomer.lt", line 12
+$/bond:polymers[1][1][1]/mon5/cr   174       #"monomer.lt", line 12
+$/bond:polymers[1][1][1]/mon6/cr   175       #"monomer.lt", line 12
+$/bond:polymers[1][1][1]/mon7/cr   176       #"monomer.lt", line 12
+$/bond:polymers[1][1][1]/backbone1   177       #"polymer.lt", line 20
+$/bond:polymers[1][1][1]/backbone2   178       #"polymer.lt", line 21
+$/bond:polymers[1][1][1]/backbone3   179       #"polymer.lt", line 22
+$/bond:polymers[1][1][1]/backbone4   180       #"polymer.lt", line 23
+$/bond:polymers[1][1][1]/backbone5   181       #"polymer.lt", line 24
+$/bond:polymers[1][1][1]/backbone6   182       #"polymer.lt", line 25
+$/bond:polymers[1][1][2]/mon1/cr   183       #"monomer.lt", line 12
+$/bond:polymers[1][1][2]/mon2/cr   184       #"monomer.lt", line 12
+$/bond:polymers[1][1][2]/mon3/cr   185       #"monomer.lt", line 12
+$/bond:polymers[1][1][2]/mon4/cr   186       #"monomer.lt", line 12
+$/bond:polymers[1][1][2]/mon5/cr   187       #"monomer.lt", line 12
+$/bond:polymers[1][1][2]/mon6/cr   188       #"monomer.lt", line 12
+$/bond:polymers[1][1][2]/mon7/cr   189       #"monomer.lt", line 12
+$/bond:polymers[1][1][2]/backbone1   190       #"polymer.lt", line 20
+$/bond:polymers[1][1][2]/backbone2   191       #"polymer.lt", line 21
+$/bond:polymers[1][1][2]/backbone3   192       #"polymer.lt", line 22
+$/bond:polymers[1][1][2]/backbone4   193       #"polymer.lt", line 23
+$/bond:polymers[1][1][2]/backbone5   194       #"polymer.lt", line 24
+$/bond:polymers[1][1][2]/backbone6   195       #"polymer.lt", line 25
+$/bond:polymers[1][2][0]/mon1/cr   196       #"monomer.lt", line 12
+$/bond:polymers[1][2][0]/mon2/cr   197       #"monomer.lt", line 12
+$/bond:polymers[1][2][0]/mon3/cr   198       #"monomer.lt", line 12
+$/bond:polymers[1][2][0]/mon4/cr   199       #"monomer.lt", line 12
+$/bond:polymers[1][2][0]/mon5/cr   200       #"monomer.lt", line 12
+$/bond:polymers[1][2][0]/mon6/cr   201       #"monomer.lt", line 12
+$/bond:polymers[1][2][0]/mon7/cr   202       #"monomer.lt", line 12
+$/bond:polymers[1][2][0]/backbone1   203       #"polymer.lt", line 20
+$/bond:polymers[1][2][0]/backbone2   204       #"polymer.lt", line 21
+$/bond:polymers[1][2][0]/backbone3   205       #"polymer.lt", line 22
+$/bond:polymers[1][2][0]/backbone4   206       #"polymer.lt", line 23
+$/bond:polymers[1][2][0]/backbone5   207       #"polymer.lt", line 24
+$/bond:polymers[1][2][0]/backbone6   208       #"polymer.lt", line 25
+$/bond:polymers[1][2][1]/mon1/cr   209       #"monomer.lt", line 12
+$/bond:polymers[1][2][1]/mon2/cr   210       #"monomer.lt", line 12
+$/bond:polymers[1][2][1]/mon3/cr   211       #"monomer.lt", line 12
+$/bond:polymers[1][2][1]/mon4/cr   212       #"monomer.lt", line 12
+$/bond:polymers[1][2][1]/mon5/cr   213       #"monomer.lt", line 12
+$/bond:polymers[1][2][1]/mon6/cr   214       #"monomer.lt", line 12
+$/bond:polymers[1][2][1]/mon7/cr   215       #"monomer.lt", line 12
+$/bond:polymers[1][2][1]/backbone1   216       #"polymer.lt", line 20
+$/bond:polymers[1][2][1]/backbone2   217       #"polymer.lt", line 21
+$/bond:polymers[1][2][1]/backbone3   218       #"polymer.lt", line 22
+$/bond:polymers[1][2][1]/backbone4   219       #"polymer.lt", line 23
+$/bond:polymers[1][2][1]/backbone5   220       #"polymer.lt", line 24
+$/bond:polymers[1][2][1]/backbone6   221       #"polymer.lt", line 25
+$/bond:polymers[1][2][2]/mon1/cr   222       #"monomer.lt", line 12
+$/bond:polymers[1][2][2]/mon2/cr   223       #"monomer.lt", line 12
+$/bond:polymers[1][2][2]/mon3/cr   224       #"monomer.lt", line 12
+$/bond:polymers[1][2][2]/mon4/cr   225       #"monomer.lt", line 12
+$/bond:polymers[1][2][2]/mon5/cr   226       #"monomer.lt", line 12
+$/bond:polymers[1][2][2]/mon6/cr   227       #"monomer.lt", line 12
+$/bond:polymers[1][2][2]/mon7/cr   228       #"monomer.lt", line 12
+$/bond:polymers[1][2][2]/backbone1   229       #"polymer.lt", line 20
+$/bond:polymers[1][2][2]/backbone2   230       #"polymer.lt", line 21
+$/bond:polymers[1][2][2]/backbone3   231       #"polymer.lt", line 22
+$/bond:polymers[1][2][2]/backbone4   232       #"polymer.lt", line 23
+$/bond:polymers[1][2][2]/backbone5   233       #"polymer.lt", line 24
+$/bond:polymers[1][2][2]/backbone6   234       #"polymer.lt", line 25
+$/bond:polymers[2][0][0]/mon1/cr   235       #"monomer.lt", line 12
+$/bond:polymers[2][0][0]/mon2/cr   236       #"monomer.lt", line 12
+$/bond:polymers[2][0][0]/mon3/cr   237       #"monomer.lt", line 12
+$/bond:polymers[2][0][0]/mon4/cr   238       #"monomer.lt", line 12
+$/bond:polymers[2][0][0]/mon5/cr   239       #"monomer.lt", line 12
+$/bond:polymers[2][0][0]/mon6/cr   240       #"monomer.lt", line 12
+$/bond:polymers[2][0][0]/mon7/cr   241       #"monomer.lt", line 12
+$/bond:polymers[2][0][0]/backbone1   242       #"polymer.lt", line 20
+$/bond:polymers[2][0][0]/backbone2   243       #"polymer.lt", line 21
+$/bond:polymers[2][0][0]/backbone3   244       #"polymer.lt", line 22
+$/bond:polymers[2][0][0]/backbone4   245       #"polymer.lt", line 23
+$/bond:polymers[2][0][0]/backbone5   246       #"polymer.lt", line 24
+$/bond:polymers[2][0][0]/backbone6   247       #"polymer.lt", line 25
+$/bond:polymers[2][0][1]/mon1/cr   248       #"monomer.lt", line 12
+$/bond:polymers[2][0][1]/mon2/cr   249       #"monomer.lt", line 12
+$/bond:polymers[2][0][1]/mon3/cr   250       #"monomer.lt", line 12
+$/bond:polymers[2][0][1]/mon4/cr   251       #"monomer.lt", line 12
+$/bond:polymers[2][0][1]/mon5/cr   252       #"monomer.lt", line 12
+$/bond:polymers[2][0][1]/mon6/cr   253       #"monomer.lt", line 12
+$/bond:polymers[2][0][1]/mon7/cr   254       #"monomer.lt", line 12
+$/bond:polymers[2][0][1]/backbone1   255       #"polymer.lt", line 20
+$/bond:polymers[2][0][1]/backbone2   256       #"polymer.lt", line 21
+$/bond:polymers[2][0][1]/backbone3   257       #"polymer.lt", line 22
+$/bond:polymers[2][0][1]/backbone4   258       #"polymer.lt", line 23
+$/bond:polymers[2][0][1]/backbone5   259       #"polymer.lt", line 24
+$/bond:polymers[2][0][1]/backbone6   260       #"polymer.lt", line 25
+$/bond:polymers[2][0][2]/mon1/cr   261       #"monomer.lt", line 12
+$/bond:polymers[2][0][2]/mon2/cr   262       #"monomer.lt", line 12
+$/bond:polymers[2][0][2]/mon3/cr   263       #"monomer.lt", line 12
+$/bond:polymers[2][0][2]/mon4/cr   264       #"monomer.lt", line 12
+$/bond:polymers[2][0][2]/mon5/cr   265       #"monomer.lt", line 12
+$/bond:polymers[2][0][2]/mon6/cr   266       #"monomer.lt", line 12
+$/bond:polymers[2][0][2]/mon7/cr   267       #"monomer.lt", line 12
+$/bond:polymers[2][0][2]/backbone1   268       #"polymer.lt", line 20
+$/bond:polymers[2][0][2]/backbone2   269       #"polymer.lt", line 21
+$/bond:polymers[2][0][2]/backbone3   270       #"polymer.lt", line 22
+$/bond:polymers[2][0][2]/backbone4   271       #"polymer.lt", line 23
+$/bond:polymers[2][0][2]/backbone5   272       #"polymer.lt", line 24
+$/bond:polymers[2][0][2]/backbone6   273       #"polymer.lt", line 25
+$/bond:polymers[2][1][0]/mon1/cr   274       #"monomer.lt", line 12
+$/bond:polymers[2][1][0]/mon2/cr   275       #"monomer.lt", line 12
+$/bond:polymers[2][1][0]/mon3/cr   276       #"monomer.lt", line 12
+$/bond:polymers[2][1][0]/mon4/cr   277       #"monomer.lt", line 12
+$/bond:polymers[2][1][0]/mon5/cr   278       #"monomer.lt", line 12
+$/bond:polymers[2][1][0]/mon6/cr   279       #"monomer.lt", line 12
+$/bond:polymers[2][1][0]/mon7/cr   280       #"monomer.lt", line 12
+$/bond:polymers[2][1][0]/backbone1   281       #"polymer.lt", line 20
+$/bond:polymers[2][1][0]/backbone2   282       #"polymer.lt", line 21
+$/bond:polymers[2][1][0]/backbone3   283       #"polymer.lt", line 22
+$/bond:polymers[2][1][0]/backbone4   284       #"polymer.lt", line 23
+$/bond:polymers[2][1][0]/backbone5   285       #"polymer.lt", line 24
+$/bond:polymers[2][1][0]/backbone6   286       #"polymer.lt", line 25
+$/bond:polymers[2][1][1]/mon1/cr   287       #"monomer.lt", line 12
+$/bond:polymers[2][1][1]/mon2/cr   288       #"monomer.lt", line 12
+$/bond:polymers[2][1][1]/mon3/cr   289       #"monomer.lt", line 12
+$/bond:polymers[2][1][1]/mon4/cr   290       #"monomer.lt", line 12
+$/bond:polymers[2][1][1]/mon5/cr   291       #"monomer.lt", line 12
+$/bond:polymers[2][1][1]/mon6/cr   292       #"monomer.lt", line 12
+$/bond:polymers[2][1][1]/mon7/cr   293       #"monomer.lt", line 12
+$/bond:polymers[2][1][1]/backbone1   294       #"polymer.lt", line 20
+$/bond:polymers[2][1][1]/backbone2   295       #"polymer.lt", line 21
+$/bond:polymers[2][1][1]/backbone3   296       #"polymer.lt", line 22
+$/bond:polymers[2][1][1]/backbone4   297       #"polymer.lt", line 23
+$/bond:polymers[2][1][1]/backbone5   298       #"polymer.lt", line 24
+$/bond:polymers[2][1][1]/backbone6   299       #"polymer.lt", line 25
+$/bond:polymers[2][1][2]/mon1/cr   300       #"monomer.lt", line 12
+$/bond:polymers[2][1][2]/mon2/cr   301       #"monomer.lt", line 12
+$/bond:polymers[2][1][2]/mon3/cr   302       #"monomer.lt", line 12
+$/bond:polymers[2][1][2]/mon4/cr   303       #"monomer.lt", line 12
+$/bond:polymers[2][1][2]/mon5/cr   304       #"monomer.lt", line 12
+$/bond:polymers[2][1][2]/mon6/cr   305       #"monomer.lt", line 12
+$/bond:polymers[2][1][2]/mon7/cr   306       #"monomer.lt", line 12
+$/bond:polymers[2][1][2]/backbone1   307       #"polymer.lt", line 20
+$/bond:polymers[2][1][2]/backbone2   308       #"polymer.lt", line 21
+$/bond:polymers[2][1][2]/backbone3   309       #"polymer.lt", line 22
+$/bond:polymers[2][1][2]/backbone4   310       #"polymer.lt", line 23
+$/bond:polymers[2][1][2]/backbone5   311       #"polymer.lt", line 24
+$/bond:polymers[2][1][2]/backbone6   312       #"polymer.lt", line 25
+$/bond:polymers[2][2][0]/mon1/cr   313       #"monomer.lt", line 12
+$/bond:polymers[2][2][0]/mon2/cr   314       #"monomer.lt", line 12
+$/bond:polymers[2][2][0]/mon3/cr   315       #"monomer.lt", line 12
+$/bond:polymers[2][2][0]/mon4/cr   316       #"monomer.lt", line 12
+$/bond:polymers[2][2][0]/mon5/cr   317       #"monomer.lt", line 12
+$/bond:polymers[2][2][0]/mon6/cr   318       #"monomer.lt", line 12
+$/bond:polymers[2][2][0]/mon7/cr   319       #"monomer.lt", line 12
+$/bond:polymers[2][2][0]/backbone1   320       #"polymer.lt", line 20
+$/bond:polymers[2][2][0]/backbone2   321       #"polymer.lt", line 21
+$/bond:polymers[2][2][0]/backbone3   322       #"polymer.lt", line 22
+$/bond:polymers[2][2][0]/backbone4   323       #"polymer.lt", line 23
+$/bond:polymers[2][2][0]/backbone5   324       #"polymer.lt", line 24
+$/bond:polymers[2][2][0]/backbone6   325       #"polymer.lt", line 25
+$/bond:polymers[2][2][1]/mon1/cr   326       #"monomer.lt", line 12
+$/bond:polymers[2][2][1]/mon2/cr   327       #"monomer.lt", line 12
+$/bond:polymers[2][2][1]/mon3/cr   328       #"monomer.lt", line 12
+$/bond:polymers[2][2][1]/mon4/cr   329       #"monomer.lt", line 12
+$/bond:polymers[2][2][1]/mon5/cr   330       #"monomer.lt", line 12
+$/bond:polymers[2][2][1]/mon6/cr   331       #"monomer.lt", line 12
+$/bond:polymers[2][2][1]/mon7/cr   332       #"monomer.lt", line 12
+$/bond:polymers[2][2][1]/backbone1   333       #"polymer.lt", line 20
+$/bond:polymers[2][2][1]/backbone2   334       #"polymer.lt", line 21
+$/bond:polymers[2][2][1]/backbone3   335       #"polymer.lt", line 22
+$/bond:polymers[2][2][1]/backbone4   336       #"polymer.lt", line 23
+$/bond:polymers[2][2][1]/backbone5   337       #"polymer.lt", line 24
+$/bond:polymers[2][2][1]/backbone6   338       #"polymer.lt", line 25
+$/bond:polymers[2][2][2]/mon1/cr   339       #"monomer.lt", line 12
+$/bond:polymers[2][2][2]/mon2/cr   340       #"monomer.lt", line 12
+$/bond:polymers[2][2][2]/mon3/cr   341       #"monomer.lt", line 12
+$/bond:polymers[2][2][2]/mon4/cr   342       #"monomer.lt", line 12
+$/bond:polymers[2][2][2]/mon5/cr   343       #"monomer.lt", line 12
+$/bond:polymers[2][2][2]/mon6/cr   344       #"monomer.lt", line 12
+$/bond:polymers[2][2][2]/mon7/cr   345       #"monomer.lt", line 12
+$/bond:polymers[2][2][2]/backbone1   346       #"polymer.lt", line 20
+$/bond:polymers[2][2][2]/backbone2   347       #"polymer.lt", line 21
+$/bond:polymers[2][2][2]/backbone3   348       #"polymer.lt", line 22
+$/bond:polymers[2][2][2]/backbone4   349       #"polymer.lt", line 23
+$/bond:polymers[2][2][2]/backbone5   350       #"polymer.lt", line 24
+$/bond:polymers[2][2][2]/backbone6   351       #"polymer.lt", line 25
+$/angle:bytype1  1
+$/angle:bytype2  2
+$/angle:bytype3  3
+$/angle:bytype4  4
+$/angle:bytype5  5
+$/angle:bytype6  6
+$/angle:bytype7  7
+$/angle:bytype8  8
+$/angle:bytype9  9
+$/angle:bytype10  10
+$/angle:bytype11  11
+$/angle:bytype12  12
+$/angle:bytype13  13
+$/angle:bytype14  14
+$/angle:bytype15  15
+$/angle:bytype16  16
+$/angle:bytype17  17
+$/angle:bytype18  18
+$/angle:bytype19  19
+$/angle:bytype20  20
+$/angle:bytype21  21
+$/angle:bytype22  22
+$/angle:bytype23  23
+$/angle:bytype24  24
+$/angle:bytype25  25
+$/angle:bytype26  26
+$/angle:bytype27  27
+$/angle:bytype28  28
+$/angle:bytype29  29
+$/angle:bytype30  30
+$/angle:bytype31  31
+$/angle:bytype32  32
+$/angle:bytype33  33
+$/angle:bytype34  34
+$/angle:bytype35  35
+$/angle:bytype36  36
+$/angle:bytype37  37
+$/angle:bytype38  38
+$/angle:bytype39  39
+$/angle:bytype40  40
+$/angle:bytype41  41
+$/angle:bytype42  42
+$/angle:bytype43  43
+$/angle:bytype44  44
+$/angle:bytype45  45
+$/angle:bytype46  46
+$/angle:bytype47  47
+$/angle:bytype48  48
+$/angle:bytype49  49
+$/angle:bytype50  50
+$/angle:bytype51  51
+$/angle:bytype52  52
+$/angle:bytype53  53
+$/angle:bytype54  54
+$/angle:bytype55  55
+$/angle:bytype56  56
+$/angle:bytype57  57
+$/angle:bytype58  58
+$/angle:bytype59  59
+$/angle:bytype60  60
+$/angle:bytype61  61
+$/angle:bytype62  62
+$/angle:bytype63  63
+$/angle:bytype64  64
+$/angle:bytype65  65
+$/angle:bytype66  66
+$/angle:bytype67  67
+$/angle:bytype68  68
+$/angle:bytype69  69
+$/angle:bytype70  70
+$/angle:bytype71  71
+$/angle:bytype72  72
+$/angle:bytype73  73
+$/angle:bytype74  74
+$/angle:bytype75  75
+$/angle:bytype76  76
+$/angle:bytype77  77
+$/angle:bytype78  78
+$/angle:bytype79  79
+$/angle:bytype80  80
+$/angle:bytype81  81
+$/angle:bytype82  82
+$/angle:bytype83  83
+$/angle:bytype84  84
+$/angle:bytype85  85
+$/angle:bytype86  86
+$/angle:bytype87  87
+$/angle:bytype88  88
+$/angle:bytype89  89
+$/angle:bytype90  90
+$/angle:bytype91  91
+$/angle:bytype92  92
+$/angle:bytype93  93
+$/angle:bytype94  94
+$/angle:bytype95  95
+$/angle:bytype96  96
+$/angle:bytype97  97
+$/angle:bytype98  98
+$/angle:bytype99  99
+$/angle:bytype100  100
+$/angle:bytype101  101
+$/angle:bytype102  102
+$/angle:bytype103  103
+$/angle:bytype104  104
+$/angle:bytype105  105
+$/angle:bytype106  106
+$/angle:bytype107  107
+$/angle:bytype108  108
+$/angle:bytype109  109
+$/angle:bytype110  110
+$/angle:bytype111  111
+$/angle:bytype112  112
+$/angle:bytype113  113
+$/angle:bytype114  114
+$/angle:bytype115  115
+$/angle:bytype116  116
+$/angle:bytype117  117
+$/angle:bytype118  118
+$/angle:bytype119  119
+$/angle:bytype120  120
+$/angle:bytype121  121
+$/angle:bytype122  122
+$/angle:bytype123  123
+$/angle:bytype124  124
+$/angle:bytype125  125
+$/angle:bytype126  126
+$/angle:bytype127  127
+$/angle:bytype128  128
+$/angle:bytype129  129
+$/angle:bytype130  130
+$/angle:bytype131  131
+$/angle:bytype132  132
+$/angle:bytype133  133
+$/angle:bytype134  134
+$/angle:bytype135  135
+$/angle:bytype136  136
+$/angle:bytype137  137
+$/angle:bytype138  138
+$/angle:bytype139  139
+$/angle:bytype140  140
+$/angle:bytype141  141
+$/angle:bytype142  142
+$/angle:bytype143  143
+$/angle:bytype144  144
+$/angle:bytype145  145
+$/angle:bytype146  146
+$/angle:bytype147  147
+$/angle:bytype148  148
+$/angle:bytype149  149
+$/angle:bytype150  150
+$/angle:bytype151  151
+$/angle:bytype152  152
+$/angle:bytype153  153
+$/angle:bytype154  154
+$/angle:bytype155  155
+$/angle:bytype156  156
+$/angle:bytype157  157
+$/angle:bytype158  158
+$/angle:bytype159  159
+$/angle:bytype160  160
+$/angle:bytype161  161
+$/angle:bytype162  162
+$/angle:bytype163  163
+$/angle:bytype164  164
+$/angle:bytype165  165
+$/angle:bytype166  166
+$/angle:bytype167  167
+$/angle:bytype168  168
+$/angle:bytype169  169
+$/angle:bytype170  170
+$/angle:bytype171  171
+$/angle:bytype172  172
+$/angle:bytype173  173
+$/angle:bytype174  174
+$/angle:bytype175  175
+$/angle:bytype176  176
+$/angle:bytype177  177
+$/angle:bytype178  178
+$/angle:bytype179  179
+$/angle:bytype180  180
+$/angle:bytype181  181
+$/angle:bytype182  182
+$/angle:bytype183  183
+$/angle:bytype184  184
+$/angle:bytype185  185
+$/angle:bytype186  186
+$/angle:bytype187  187
+$/angle:bytype188  188
+$/angle:bytype189  189
+$/angle:bytype190  190
+$/angle:bytype191  191
+$/angle:bytype192  192
+$/angle:bytype193  193
+$/angle:bytype194  194
+$/angle:bytype195  195
+$/angle:bytype196  196
+$/angle:bytype197  197
+$/angle:bytype198  198
+$/angle:bytype199  199
+$/angle:bytype200  200
+$/angle:bytype201  201
+$/angle:bytype202  202
+$/angle:bytype203  203
+$/angle:bytype204  204
+$/angle:bytype205  205
+$/angle:bytype206  206
+$/angle:bytype207  207
+$/angle:bytype208  208
+$/angle:bytype209  209
+$/angle:bytype210  210
+$/angle:bytype211  211
+$/angle:bytype212  212
+$/angle:bytype213  213
+$/angle:bytype214  214
+$/angle:bytype215  215
+$/angle:bytype216  216
+$/angle:bytype217  217
+$/angle:bytype218  218
+$/angle:bytype219  219
+$/angle:bytype220  220
+$/angle:bytype221  221
+$/angle:bytype222  222
+$/angle:bytype223  223
+$/angle:bytype224  224
+$/angle:bytype225  225
+$/angle:bytype226  226
+$/angle:bytype227  227
+$/angle:bytype228  228
+$/angle:bytype229  229
+$/angle:bytype230  230
+$/angle:bytype231  231
+$/angle:bytype232  232
+$/angle:bytype233  233
+$/angle:bytype234  234
+$/angle:bytype235  235
+$/angle:bytype236  236
+$/angle:bytype237  237
+$/angle:bytype238  238
+$/angle:bytype239  239
+$/angle:bytype240  240
+$/angle:bytype241  241
+$/angle:bytype242  242
+$/angle:bytype243  243
+$/angle:bytype244  244
+$/angle:bytype245  245
+$/angle:bytype246  246
+$/angle:bytype247  247
+$/angle:bytype248  248
+$/angle:bytype249  249
+$/angle:bytype250  250
+$/angle:bytype251  251
+$/angle:bytype252  252
+$/angle:bytype253  253
+$/angle:bytype254  254
+$/angle:bytype255  255
+$/angle:bytype256  256
+$/angle:bytype257  257
+$/angle:bytype258  258
+$/angle:bytype259  259
+$/angle:bytype260  260
+$/angle:bytype261  261
+$/angle:bytype262  262
+$/angle:bytype263  263
+$/angle:bytype264  264
+$/angle:bytype265  265
+$/angle:bytype266  266
+$/angle:bytype267  267
+$/angle:bytype268  268
+$/angle:bytype269  269
+$/angle:bytype270  270
+$/angle:bytype271  271
+$/angle:bytype272  272
+$/angle:bytype273  273
+$/angle:bytype274  274
+$/angle:bytype275  275
+$/angle:bytype276  276
+$/angle:bytype277  277
+$/angle:bytype278  278
+$/angle:bytype279  279
+$/angle:bytype280  280
+$/angle:bytype281  281
+$/angle:bytype282  282
+$/angle:bytype283  283
+$/angle:bytype284  284
+$/angle:bytype285  285
+$/angle:bytype286  286
+$/angle:bytype287  287
+$/angle:bytype288  288
+$/angle:bytype289  289
+$/angle:bytype290  290
+$/angle:bytype291  291
+$/angle:bytype292  292
+$/angle:bytype293  293
+$/angle:bytype294  294
+$/angle:bytype295  295
+$/angle:bytype296  296
+$/angle:bytype297  297
+$/angle:bytype298  298
+$/angle:bytype299  299
+$/angle:bytype300  300
+$/angle:bytype301  301
+$/angle:bytype302  302
+$/angle:bytype303  303
+$/angle:bytype304  304
+$/angle:bytype305  305
+$/angle:bytype306  306
+$/angle:bytype307  307
+$/angle:bytype308  308
+$/angle:bytype309  309
+$/angle:bytype310  310
+$/angle:bytype311  311
+$/angle:bytype312  312
+$/angle:bytype313  313
+$/angle:bytype314  314
+$/angle:bytype315  315
+$/angle:bytype316  316
+$/angle:bytype317  317
+$/angle:bytype318  318
+$/angle:bytype319  319
+$/angle:bytype320  320
+$/angle:bytype321  321
+$/angle:bytype322  322
+$/angle:bytype323  323
+$/angle:bytype324  324
+$/angle:bytype325  325
+$/angle:bytype326  326
+$/angle:bytype327  327
+$/angle:bytype328  328
+$/angle:bytype329  329
+$/angle:bytype330  330
+$/angle:bytype331  331
+$/angle:bytype332  332
+$/angle:bytype333  333
+$/angle:bytype334  334
+$/angle:bytype335  335
+$/angle:bytype336  336
+$/angle:bytype337  337
+$/angle:bytype338  338
+$/angle:bytype339  339
+$/angle:bytype340  340
+$/angle:bytype341  341
+$/angle:bytype342  342
+$/angle:bytype343  343
+$/angle:bytype344  344
+$/angle:bytype345  345
+$/angle:bytype346  346
+$/angle:bytype347  347
+$/angle:bytype348  348
+$/angle:bytype349  349
+$/angle:bytype350  350
+$/angle:bytype351  351
+$/angle:bytype352  352
+$/angle:bytype353  353
+$/angle:bytype354  354
+$/angle:bytype355  355
+$/angle:bytype356  356
+$/angle:bytype357  357
+$/angle:bytype358  358
+$/angle:bytype359  359
+$/angle:bytype360  360
+$/angle:bytype361  361
+$/angle:bytype362  362
+$/angle:bytype363  363
+$/angle:bytype364  364
+$/angle:bytype365  365
+$/angle:bytype366  366
+$/angle:bytype367  367
+$/angle:bytype368  368
+$/angle:bytype369  369
+$/angle:bytype370  370
+$/angle:bytype371  371
+$/angle:bytype372  372
+$/angle:bytype373  373
+$/angle:bytype374  374
+$/angle:bytype375  375
+$/angle:bytype376  376
+$/angle:bytype377  377
+$/angle:bytype378  378
+$/angle:bytype379  379
+$/angle:bytype380  380
+$/angle:bytype381  381
+$/angle:bytype382  382
+$/angle:bytype383  383
+$/angle:bytype384  384
+$/angle:bytype385  385
+$/angle:bytype386  386
+$/angle:bytype387  387
+$/angle:bytype388  388
+$/angle:bytype389  389
+$/angle:bytype390  390
+$/angle:bytype391  391
+$/angle:bytype392  392
+$/angle:bytype393  393
+$/angle:bytype394  394
+$/angle:bytype395  395
+$/angle:bytype396  396
+$/angle:bytype397  397
+$/angle:bytype398  398
+$/angle:bytype399  399
+$/angle:bytype400  400
+$/angle:bytype401  401
+$/angle:bytype402  402
+$/angle:bytype403  403
+$/angle:bytype404  404
+$/angle:bytype405  405
+$/angle:bytype406  406
+$/angle:bytype407  407
+$/angle:bytype408  408
+$/angle:bytype409  409
+$/angle:bytype410  410
+$/angle:bytype411  411
+$/angle:bytype412  412
+$/angle:bytype413  413
+$/angle:bytype414  414
+$/angle:bytype415  415
+$/angle:bytype416  416
+$/angle:bytype417  417
+$/angle:bytype418  418
+$/angle:bytype419  419
+$/angle:bytype420  420
+$/angle:bytype421  421
+$/angle:bytype422  422
+$/angle:bytype423  423
+$/angle:bytype424  424
+$/angle:bytype425  425
+$/angle:bytype426  426
+$/angle:bytype427  427
+$/angle:bytype428  428
+$/angle:bytype429  429
+$/angle:bytype430  430
+$/angle:bytype431  431
+$/angle:bytype432  432
+$/angle:bytype433  433
+$/angle:bytype434  434
+$/angle:bytype435  435
+$/angle:bytype436  436
+$/angle:bytype437  437
+$/angle:bytype438  438
+$/angle:bytype439  439
+$/angle:bytype440  440
+$/angle:bytype441  441
+$/angle:bytype442  442
+$/angle:bytype443  443
+$/angle:bytype444  444
+$/angle:bytype445  445
+$/angle:bytype446  446
+$/angle:bytype447  447
+$/angle:bytype448  448
+$/angle:bytype449  449
+$/angle:bytype450  450
+$/angle:bytype451  451
+$/angle:bytype452  452
+$/angle:bytype453  453
+$/angle:bytype454  454
+$/angle:bytype455  455
+$/angle:bytype456  456
+$/angle:bytype457  457
+$/angle:bytype458  458
+$/angle:bytype459  459
+$/dihedral:bytype1  1
+$/dihedral:bytype2  2
+$/dihedral:bytype3  3
+$/dihedral:bytype4  4
+$/dihedral:bytype5  5
+$/dihedral:bytype6  6
+$/dihedral:bytype7  7
+$/dihedral:bytype8  8
+$/dihedral:bytype9  9
+$/dihedral:bytype10  10
+$/dihedral:bytype11  11
+$/dihedral:bytype12  12
+$/dihedral:bytype13  13
+$/dihedral:bytype14  14
+$/dihedral:bytype15  15
+$/dihedral:bytype16  16
+$/dihedral:bytype17  17
+$/dihedral:bytype18  18
+$/dihedral:bytype19  19
+$/dihedral:bytype20  20
+$/dihedral:bytype21  21
+$/dihedral:bytype22  22
+$/dihedral:bytype23  23
+$/dihedral:bytype24  24
+$/dihedral:bytype25  25
+$/dihedral:bytype26  26
+$/dihedral:bytype27  27
+$/dihedral:bytype28  28
+$/dihedral:bytype29  29
+$/dihedral:bytype30  30
+$/dihedral:bytype31  31
+$/dihedral:bytype32  32
+$/dihedral:bytype33  33
+$/dihedral:bytype34  34
+$/dihedral:bytype35  35
+$/dihedral:bytype36  36
+$/dihedral:bytype37  37
+$/dihedral:bytype38  38
+$/dihedral:bytype39  39
+$/dihedral:bytype40  40
+$/dihedral:bytype41  41
+$/dihedral:bytype42  42
+$/dihedral:bytype43  43
+$/dihedral:bytype44  44
+$/dihedral:bytype45  45
+$/dihedral:bytype46  46
+$/dihedral:bytype47  47
+$/dihedral:bytype48  48
+$/dihedral:bytype49  49
+$/dihedral:bytype50  50
+$/dihedral:bytype51  51
+$/dihedral:bytype52  52
+$/dihedral:bytype53  53
+$/dihedral:bytype54  54
+$/dihedral:bytype55  55
+$/dihedral:bytype56  56
+$/dihedral:bytype57  57
+$/dihedral:bytype58  58
+$/dihedral:bytype59  59
+$/dihedral:bytype60  60
+$/dihedral:bytype61  61
+$/dihedral:bytype62  62
+$/dihedral:bytype63  63
+$/dihedral:bytype64  64
+$/dihedral:bytype65  65
+$/dihedral:bytype66  66
+$/dihedral:bytype67  67
+$/dihedral:bytype68  68
+$/dihedral:bytype69  69
+$/dihedral:bytype70  70
+$/dihedral:bytype71  71
+$/dihedral:bytype72  72
+$/dihedral:bytype73  73
+$/dihedral:bytype74  74
+$/dihedral:bytype75  75
+$/dihedral:bytype76  76
+$/dihedral:bytype77  77
+$/dihedral:bytype78  78
+$/dihedral:bytype79  79
+$/dihedral:bytype80  80
+$/dihedral:bytype81  81
+$/dihedral:bytype82  82
+$/dihedral:bytype83  83
+$/dihedral:bytype84  84
+$/dihedral:bytype85  85
+$/dihedral:bytype86  86
+$/dihedral:bytype87  87
+$/dihedral:bytype88  88
+$/dihedral:bytype89  89
+$/dihedral:bytype90  90
+$/dihedral:bytype91  91
+$/dihedral:bytype92  92
+$/dihedral:bytype93  93
+$/dihedral:bytype94  94
+$/dihedral:bytype95  95
+$/dihedral:bytype96  96
+$/dihedral:bytype97  97
+$/dihedral:bytype98  98
+$/dihedral:bytype99  99
+$/dihedral:bytype100  100
+$/dihedral:bytype101  101
+$/dihedral:bytype102  102
+$/dihedral:bytype103  103
+$/dihedral:bytype104  104
+$/dihedral:bytype105  105
+$/dihedral:bytype106  106
+$/dihedral:bytype107  107
+$/dihedral:bytype108  108
+$/dihedral:bytype109  109
+$/dihedral:bytype110  110
+$/dihedral:bytype111  111
+$/dihedral:bytype112  112
+$/dihedral:bytype113  113
+$/dihedral:bytype114  114
+$/dihedral:bytype115  115
+$/dihedral:bytype116  116
+$/dihedral:bytype117  117
+$/dihedral:bytype118  118
+$/dihedral:bytype119  119
+$/dihedral:bytype120  120
+$/dihedral:bytype121  121
+$/dihedral:bytype122  122
+$/dihedral:bytype123  123
+$/dihedral:bytype124  124
+$/dihedral:bytype125  125
+$/dihedral:bytype126  126
+$/dihedral:bytype127  127
+$/dihedral:bytype128  128
+$/dihedral:bytype129  129
+$/dihedral:bytype130  130
+$/dihedral:bytype131  131
+$/dihedral:bytype132  132
+$/dihedral:bytype133  133
+$/dihedral:bytype134  134
+$/dihedral:bytype135  135
+$/dihedral:bytype136  136
+$/dihedral:bytype137  137
+$/dihedral:bytype138  138
+$/dihedral:bytype139  139
+$/dihedral:bytype140  140
+$/dihedral:bytype141  141
+$/dihedral:bytype142  142
+$/dihedral:bytype143  143
+$/dihedral:bytype144  144
+$/dihedral:bytype145  145
+$/dihedral:bytype146  146
+$/dihedral:bytype147  147
+$/dihedral:bytype148  148
+$/dihedral:bytype149  149
+$/dihedral:bytype150  150
+$/dihedral:bytype151  151
+$/dihedral:bytype152  152
+$/dihedral:bytype153  153
+$/dihedral:bytype154  154
+$/dihedral:bytype155  155
+$/dihedral:bytype156  156
+$/dihedral:bytype157  157
+$/dihedral:bytype158  158
+$/dihedral:bytype159  159
+$/dihedral:bytype160  160
+$/dihedral:bytype161  161
+$/dihedral:bytype162  162
+$/dihedral:bytype163  163
+$/dihedral:bytype164  164
+$/dihedral:bytype165  165
+$/dihedral:bytype166  166
+$/dihedral:bytype167  167
+$/dihedral:bytype168  168
+$/dihedral:bytype169  169
+$/dihedral:bytype170  170
+$/dihedral:bytype171  171
+$/dihedral:bytype172  172
+$/dihedral:bytype173  173
+$/dihedral:bytype174  174
+$/dihedral:bytype175  175
+$/dihedral:bytype176  176
+$/dihedral:bytype177  177
+$/dihedral:bytype178  178
+$/dihedral:bytype179  179
+$/dihedral:bytype180  180
+$/dihedral:bytype181  181
+$/dihedral:bytype182  182
+$/dihedral:bytype183  183
+$/dihedral:bytype184  184
+$/dihedral:bytype185  185
+$/dihedral:bytype186  186
+$/dihedral:bytype187  187
+$/dihedral:bytype188  188
+$/dihedral:bytype189  189
+$/dihedral:bytype190  190
+$/dihedral:bytype191  191
+$/dihedral:bytype192  192
+$/dihedral:bytype193  193
+$/dihedral:bytype194  194
+$/dihedral:bytype195  195
+$/dihedral:bytype196  196
+$/dihedral:bytype197  197
+$/dihedral:bytype198  198
+$/dihedral:bytype199  199
+$/dihedral:bytype200  200
+$/dihedral:bytype201  201
+$/dihedral:bytype202  202
+$/dihedral:bytype203  203
+$/dihedral:bytype204  204
+$/dihedral:bytype205  205
+$/dihedral:bytype206  206
+$/dihedral:bytype207  207
+$/dihedral:bytype208  208
+$/dihedral:bytype209  209
+$/dihedral:bytype210  210
+$/dihedral:bytype211  211
+$/dihedral:bytype212  212
+$/dihedral:bytype213  213
+$/dihedral:bytype214  214
+$/dihedral:bytype215  215
+$/dihedral:bytype216  216
+$/dihedral:bytype217  217
+$/dihedral:bytype218  218
+$/dihedral:bytype219  219
+$/dihedral:bytype220  220
+$/dihedral:bytype221  221
+$/dihedral:bytype222  222
+$/dihedral:bytype223  223
+$/dihedral:bytype224  224
+$/dihedral:bytype225  225
+$/dihedral:bytype226  226
+$/dihedral:bytype227  227
+$/dihedral:bytype228  228
+$/dihedral:bytype229  229
+$/dihedral:bytype230  230
+$/dihedral:bytype231  231
+$/dihedral:bytype232  232
+$/dihedral:bytype233  233
+$/dihedral:bytype234  234
+$/dihedral:bytype235  235
+$/dihedral:bytype236  236
+$/dihedral:bytype237  237
+$/dihedral:bytype238  238
+$/dihedral:bytype239  239
+$/dihedral:bytype240  240
+$/dihedral:bytype241  241
+$/dihedral:bytype242  242
+$/dihedral:bytype243  243
+$/dihedral:bytype244  244
+$/dihedral:bytype245  245
+$/dihedral:bytype246  246
+$/dihedral:bytype247  247
+$/dihedral:bytype248  248
+$/dihedral:bytype249  249
+$/dihedral:bytype250  250
+$/dihedral:bytype251  251
+$/dihedral:bytype252  252
+$/dihedral:bytype253  253
+$/dihedral:bytype254  254
+$/dihedral:bytype255  255
+$/dihedral:bytype256  256
+$/dihedral:bytype257  257
+$/dihedral:bytype258  258
+$/dihedral:bytype259  259
+$/dihedral:bytype260  260
+$/dihedral:bytype261  261
+$/dihedral:bytype262  262
+$/dihedral:bytype263  263
+$/dihedral:bytype264  264
+$/dihedral:bytype265  265
+$/dihedral:bytype266  266
+$/dihedral:bytype267  267
+$/dihedral:bytype268  268
+$/dihedral:bytype269  269
+$/dihedral:bytype270  270

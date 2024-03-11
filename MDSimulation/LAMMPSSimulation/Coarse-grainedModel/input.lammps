@@ -90,19 +90,10 @@ fix 3 all bond/react &
   react reac3to2 all 1 0 10 mol2closeTo3PRE mol3closeTo2POST map_3to2.txt  &
   react reac2to1 all 1 0 10 mol2closeTo1PRE mol2closeTo1POST map_2to1.txt 
 
+
+thermo_style custom step temp f_3[*]
+
 run 100000
-
-# Access cumulative reaction counts after the simulation
-variable react1_count equal f_3[1]
-variable react2_count equal f_3[2]
-variable react3_count equal f_3[3]
-variable react4_count equal f_3[4]
-
-# Output cumulative reaction counts
-print "Cumulative reaction count for reac1to2: ${react1_count}"
-print "Cumulative reaction count for reac2to3: ${react2_count}"
-print "Cumulative reaction count for reac3to2: ${react3_count}"
-print "Cumulative reaction count for reac2to1: ${react4_count}"
 
 #####################################################
 print "All done"

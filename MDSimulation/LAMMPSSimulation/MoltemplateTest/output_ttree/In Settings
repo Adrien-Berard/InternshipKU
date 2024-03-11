@@ -1,0 +1,13 @@
+    # Pairwise (non-bonded) interactions:
+    #           atomType1 atomType2   epsilon sigma
+    pair_coeff   1 1       0.10 2.0
+    pair_coeff   2  2        0.50 3.6
+    # (Interactions between different atoms are determined by mixing rules.)
+    #             bond-type        k     r0
+    bond_coeff  1   15.0   3.4
+    bond_coeff  2    15.0   3.7
+    #             angle-type       k    theta0
+    angle_coeff 1   30.00  114
+    angle_coeff 2  30.00  132
+    dihedral_coeff 1   -0.5 1 -180 0.0
+    dihedral_coeff 2   -1.5 1 -180 0.0
