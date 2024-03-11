@@ -24,8 +24,8 @@ Finding 1-2 1-3 1-4 neighbors ...
      1 = max # of 1-3 neighbors
      2 = max # of 1-4 neighbors
      3 = max # of special neighbors
-  special bonds CPU = 0.000 seconds
-  read_data CPU = 0.003 seconds
+  special bonds CPU = 0.005 seconds
+  read_data CPU = 0.016 seconds
 
 # Dreiding potential information
 neighbor	2.0 bin
@@ -103,21 +103,21 @@ Per MPI rank memory allocation (min/avg/max) = 7.931 | 7.931 | 7.931 Mbytes
      80000   228.86235    
      90000   387.88565    
     100000   232.24961    
-Loop time of 0.157134 on 1 procs for 100000 steps with 4 atoms
+Loop time of 0.191851 on 1 procs for 100000 steps with 4 atoms
 
-Performance: 54984.863 ns/day, 0.000 hours/ns, 636398.874 timesteps/s, 2.546 Matom-step/s
-93.9% CPU use with 1 MPI tasks x no OpenMP threads
+Performance: 45034.874 ns/day, 0.001 hours/ns, 521236.963 timesteps/s, 2.085 Matom-step/s
+82.4% CPU use with 1 MPI tasks x no OpenMP threads
 
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.011642   | 0.011642   | 0.011642   |   0.0 |  7.41
-Bond    | 0.032392   | 0.032392   | 0.032392   |   0.0 | 20.61
-Neigh   | 0.00037114 | 0.00037114 | 0.00037114 |   0.0 |  0.24
-Comm    | 0.029443   | 0.029443   | 0.029443   |   0.0 | 18.74
-Output  | 0.00022065 | 0.00022065 | 0.00022065 |   0.0 |  0.14
-Modify  | 0.053195   | 0.053195   | 0.053195   |   0.0 | 33.85
-Other   |            | 0.02987    |            |       | 19.01
+Pair    | 0.017081   | 0.017081   | 0.017081   |   0.0 |  8.90
+Bond    | 0.036217   | 0.036217   | 0.036217   |   0.0 | 18.88
+Neigh   | 0.00039826 | 0.00039826 | 0.00039826 |   0.0 |  0.21
+Comm    | 0.032934   | 0.032934   | 0.032934   |   0.0 | 17.17
+Output  | 0.00083644 | 0.00083644 | 0.00083644 |   0.0 |  0.44
+Modify  | 0.067993   | 0.067993   | 0.067993   |   0.0 | 35.44
+Other   |            | 0.03639    |            |       | 18.97
 
 Nlocal:              4 ave           4 max           4 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -167,9 +167,9 @@ Per MPI rank memory allocation (min/avg/max) = 9.056 | 9.056 | 9.056 Mbytes
        100   0.0053869948   158.5          158.5          158.5          0.023842864    0.030553024    0.018525857    0.022449712    0.0053869948 
        120   0.0053869948   158.5          158.5          158.5          0.023842709    0.030553453    0.018524846    0.022449828    0.0053869948 
        124   0.0053869948   158.5          158.5          158.5          0.023842709    0.030553453    0.018524846    0.022449828    0.0053869948 
-Loop time of 0.000813728 on 1 procs for 124 steps with 4 atoms
+Loop time of 0.000804075 on 1 procs for 124 steps with 4 atoms
 
-87.3% CPU use with 1 MPI tasks x no OpenMP threads
+88.7% CPU use with 1 MPI tasks x no OpenMP threads
 
 Minimization stats:
   Stopping criterion = energy tolerance
@@ -183,13 +183,13 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 6.5344e-05 | 6.5344e-05 | 6.5344e-05 |   0.0 |  8.03
-Bond    | 0.00022784 | 0.00022784 | 0.00022784 |   0.0 | 28.00
+Pair    | 6.9297e-05 | 6.9297e-05 | 6.9297e-05 |   0.0 |  8.62
+Bond    | 0.00018599 | 0.00018599 | 0.00018599 |   0.0 | 23.13
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 0.00015576 | 0.00015576 | 0.00015576 |   0.0 | 19.14
-Output  | 9.8925e-05 | 9.8925e-05 | 9.8925e-05 |   0.0 | 12.16
+Comm    | 0.00014628 | 0.00014628 | 0.00014628 |   0.0 | 18.19
+Output  | 7.97e-05   | 7.97e-05   | 7.97e-05   |   0.0 |  9.91
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.0002659  |            |       | 32.67
+Other   |            | 0.0003228  |            |       | 40.15
 
 Nlocal:              4 ave           4 max           4 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -286,9 +286,10 @@ Read molecule template mol2closeTo1POST:
   1 dihedrals with max type 1
   0 impropers with max type 0
 
+
 #####################################################
 # Do the reactions
-fix 3 all bond/react   react reac1to2 all 1 0 3 mol1closeTo3PRE mol1closeTo3POST map_1to2.txt molecule intra   react reac2to3 all 1 0 10 mol2closeTo3PRE mol2closeTo3POST map_2to3.txt    react reac3to2 all 1 0 10 mol2closeTo3PRE mol3closeTo2POST map_3to2.txt    react reac2to1 all 1 0 10 mol2closeTo1PRE mol2closeTo1POST map_2to1.txt
+fix 3 all bond/react   react reac1to2 all 1 0 10 mol1closeTo3PRE mol1closeTo3POST map_1to2.txt   react reac2to3 all 1 0 10 mol2closeTo3PRE mol2closeTo3POST map_2to3.txt    react reac3to2 all 1 0 10 mol2closeTo3PRE mol3closeTo2POST map_3to2.txt    react reac2to1 all 1 0 10 mol2closeTo1PRE mol2closeTo1POST map_2to1.txt
 dynamic group bond_react_MASTER_group defined
 
 run 100000
@@ -5347,21 +5348,21 @@ Per MPI rank memory allocation (min/avg/max) = 9.368 | 9.368 | 9.368 Mbytes
     100100   0.96882736     158.5          158.5          158.5          0.17163256     0.022474607    0.45730495     0.035118125    0.96882736   
     100120   0.39370522     158.5          158.5          158.5         -0.035088164    0.055710984   -0.12811621    -0.032859262    0.39370522   
     100124   0.22578454     158.5          158.5          158.5          0.066519992    0.087150627   -0.031333853    0.1437432      0.22578454   
-Loop time of 1.85842 on 1 procs for 100000 steps with 4 atoms
+Loop time of 2.31643 on 1 procs for 100000 steps with 4 atoms
 
-Performance: 4649.113 ns/day, 0.005 hours/ns, 53809.178 timesteps/s, 215.237 katom-step/s
-65.4% CPU use with 1 MPI tasks x no OpenMP threads
+Performance: 3729.871 ns/day, 0.006 hours/ns, 43169.807 timesteps/s, 172.679 katom-step/s
+56.6% CPU use with 1 MPI tasks x no OpenMP threads
 
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.020071   | 0.020071   | 0.020071   |   0.0 |  1.08
-Bond    | 0.050656   | 0.050656   | 0.050656   |   0.0 |  2.73
-Neigh   | 0.012147   | 0.012147   | 0.012147   |   0.0 |  0.65
-Comm    | 0.024496   | 0.024496   | 0.024496   |   0.0 |  1.32
-Output  | 0.41147    | 0.41147    | 0.41147    |   0.0 | 22.14
-Modify  | 1.2961     | 1.2961     | 1.2961     |   0.0 | 69.74
-Other   |            | 0.04347    |            |       |  2.34
+Pair    | 0.021312   | 0.021312   | 0.021312   |   0.0 |  0.92
+Bond    | 0.061464   | 0.061464   | 0.061464   |   0.0 |  2.65
+Neigh   | 0.01311    | 0.01311    | 0.01311    |   0.0 |  0.57
+Comm    | 0.03227    | 0.03227    | 0.03227    |   0.0 |  1.39
+Output  | 0.37337    | 0.37337    | 0.37337    |   0.0 | 16.12
+Modify  | 1.7514     | 1.7514     | 1.7514     |   0.0 | 75.61
+Other   |            | 0.06349    |            |       |  2.74
 
 Nlocal:              4 ave           4 max           4 min
 Histogram: 1 0 0 0 0 0 0 0 0 0

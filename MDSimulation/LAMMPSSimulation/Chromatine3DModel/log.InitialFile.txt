@@ -2,7 +2,7 @@ read_data	InitialFile.txt
 Reading data file ...
   orthogonal box = (0 0 0) to (158.5 158.5 158.5)
   1 by 1 by 1 MPI processor grid
-WARNING: Atom style in data file atomic differs from currently defined atom style molecular (src/src/read_data.cpp:621)
+WARNING: Atom style in data file atomic differs from currently defined atom style molecular (src/read_data.cpp:621)
   reading atoms ...
   100 atoms
   scanning bonds ...
@@ -24,8 +24,8 @@ Finding 1-2 1-3 1-4 neighbors ...
      2 = max # of 1-3 neighbors
      4 = max # of 1-4 neighbors
      6 = max # of special neighbors
-  special bonds CPU = 0.024 seconds
-  read_data CPU = 0.123 seconds
+  special bonds CPU = 0.000 seconds
+  read_data CPU = 0.011 seconds
 
 # Dreiding potential information
 neighbor	2.0 bin
@@ -62,7 +62,7 @@ thermo          10000
 timestep	1
 run		100000
 Generated 0 of 3 mixed pair_coeff terms from geometric mixing rule
-WARNING: One or more atoms are time integrated more than once (src/src/modify.cpp:289)
+WARNING: One or more atoms are time integrated more than once (src/modify.cpp:289)
 Neighbor list info ...
   update: every = 1 steps, delay = 0 steps, check = yes
   max neighbors/atom: 2000, page size: 100000
@@ -93,21 +93,21 @@ Per MPI rank memory allocation (min/avg/max) = 8.124 | 8.124 | 8.124 Mbytes
      80000   273.50579    
      90000   333.95695    
     100000   337.94215    
-Loop time of 5.28176 on 1 procs for 100000 steps with 100 atoms
+Loop time of 2.89322 on 1 procs for 100000 steps with 100 atoms
 
-Performance: 1635.818 ns/day, 0.015 hours/ns, 18933.076 timesteps/s, 1.893 Matom-step/s
-81.6% CPU use with 1 MPI tasks x no OpenMP threads
+Performance: 2986.295 ns/day, 0.008 hours/ns, 34563.595 timesteps/s, 3.456 Matom-step/s
+93.2% CPU use with 1 MPI tasks x 1 OpenMP threads
 
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 1.1956     | 1.1956     | 1.1956     |   0.0 | 22.64
-Bond    | 2.3673     | 2.3673     | 2.3673     |   0.0 | 44.82
-Neigh   | 0.0096979  | 0.0096979  | 0.0096979  |   0.0 |  0.18
-Comm    | 0.035574   | 0.035574   | 0.035574   |   0.0 |  0.67
-Output  | 0.00031825 | 0.00031825 | 0.00031825 |   0.0 |  0.01
-Modify  | 1.5602     | 1.5602     | 1.5602     |   0.0 | 29.54
-Other   |            | 0.113      |            |       |  2.14
+Pair    | 0.61247    | 0.61247    | 0.61247    |   0.0 | 21.17
+Bond    | 1.3109     | 1.3109     | 1.3109     |   0.0 | 45.31
+Neigh   | 0.0049862  | 0.0049862  | 0.0049862  |   0.0 |  0.17
+Comm    | 0.01758    | 0.01758    | 0.01758    |   0.0 |  0.61
+Output  | 0.00018966 | 0.00018966 | 0.00018966 |   0.0 |  0.01
+Modify  | 0.88235    | 0.88235    | 0.88235    |   0.0 | 30.50
+Other   |            | 0.06478    |            |       |  2.24
 
 Nlocal:            100 ave         100 max         100 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -156,9 +156,9 @@ Per MPI rank memory allocation (min/avg/max) = 9.249 | 9.249 | 9.249 Mbytes
         80   1.8019393      158.5          158.5          158.5          2.2007921      2.3779578      2.2626009      1.9618175      1.8019393    
        100   1.5054239      158.5          158.5          158.5          1.8329001      1.9800847      1.824118       1.6944978      1.5054239    
        105   1.5054239      158.5          158.5          158.5          1.8329001      1.9800847      1.824118       1.6944978      1.5054239    
-Loop time of 0.015434 on 1 procs for 105 steps with 100 atoms
+Loop time of 0.0128031 on 1 procs for 105 steps with 100 atoms
 
-83.5% CPU use with 1 MPI tasks x no OpenMP threads
+90.8% CPU use with 1 MPI tasks x 1 OpenMP threads
 
 Minimization stats:
   Stopping criterion = energy tolerance
@@ -172,13 +172,13 @@ Minimization stats:
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.0061701  | 0.0061701  | 0.0061701  |   0.0 | 39.98
-Bond    | 0.00684    | 0.00684    | 0.00684    |   0.0 | 44.32
+Pair    | 0.0049413  | 0.0049413  | 0.0049413  |   0.0 | 38.59
+Bond    | 0.0062484  | 0.0062484  | 0.0062484  |   0.0 | 48.80
 Neigh   | 0          | 0          | 0          |   0.0 |  0.00
-Comm    | 7.5115e-05 | 7.5115e-05 | 7.5115e-05 |   0.0 |  0.49
-Output  | 0.0004895  | 0.0004895  | 0.0004895  |   0.0 |  3.17
+Comm    | 8.1721e-05 | 8.1721e-05 | 8.1721e-05 |   0.0 |  0.64
+Output  | 0.00032565 | 0.00032565 | 0.00032565 |   0.0 |  2.54
 Modify  | 0          | 0          | 0          |   0.0 |  0.00
-Other   |            | 0.001859   |            |       | 12.05
+Other   |            | 0.001206   |            |       |  9.42
 
 Nlocal:            100 ave         100 max         100 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -206,77 +206,77 @@ molecule mol1closeTo3PRE mol1closeTo3PRE.txt
 Read molecule template mol1closeTo3PRE:
   1 molecules
   0 fragments
-  5 atoms with max type 3
-  4 bonds with max type 1
-  3 angles with max type 1
-  2 dihedrals with max type 1
+  6 atoms with max type 3
+  5 bonds with max type 1
+  0 angles with max type 0
+  0 dihedrals with max type 0
   0 impropers with max type 0
 molecule mol1closeTo3POST mol1closeTo3POST.txt
 Read molecule template mol1closeTo3POST:
   1 molecules
   0 fragments
-  5 atoms with max type 3
-  4 bonds with max type 1
-  3 angles with max type 1
-  2 dihedrals with max type 1
+  6 atoms with max type 3
+  5 bonds with max type 1
+  0 angles with max type 0
+  0 dihedrals with max type 0
   0 impropers with max type 0
 molecule mol3closeTo1POST mol3closeTo1POST.txt
 Read molecule template mol3closeTo1POST:
   1 molecules
   0 fragments
-  5 atoms with max type 2
-  4 bonds with max type 1
-  3 angles with max type 1
-  2 dihedrals with max type 1
+  6 atoms with max type 2
+  5 bonds with max type 1
+  0 angles with max type 0
+  0 dihedrals with max type 0
   0 impropers with max type 0
 molecule mol2closeTo3PRE mol2closeTo3PRE.txt
 Read molecule template mol2closeTo3PRE:
   1 molecules
   0 fragments
-  5 atoms with max type 3
-  4 bonds with max type 1
-  3 angles with max type 1
-  2 dihedrals with max type 1
+  6 atoms with max type 3
+  5 bonds with max type 1
+  0 angles with max type 0
+  0 dihedrals with max type 0
   0 impropers with max type 0
 molecule mol2closeTo3POST mol2closeTo3POST.txt
 Read molecule template mol2closeTo3POST:
   1 molecules
   0 fragments
-  5 atoms with max type 3
-  4 bonds with max type 1
-  3 angles with max type 1
-  2 dihedrals with max type 1
+  6 atoms with max type 3
+  5 bonds with max type 1
+  0 angles with max type 0
+  0 dihedrals with max type 0
   0 impropers with max type 0
 molecule mol3closeTo2POST mol3closeTo2POST.txt
 Read molecule template mol3closeTo2POST:
   1 molecules
   0 fragments
-  5 atoms with max type 2
-  4 bonds with max type 1
-  3 angles with max type 1
-  2 dihedrals with max type 1
+  6 atoms with max type 2
+  5 bonds with max type 1
+  0 angles with max type 0
+  0 dihedrals with max type 0
   0 impropers with max type 0
 molecule mol2closeTo1PRE mol2closeTo1PRE.txt
 Read molecule template mol2closeTo1PRE:
   1 molecules
   0 fragments
-  5 atoms with max type 3
-  4 bonds with max type 1
-  3 angles with max type 1
-  2 dihedrals with max type 1
+  6 atoms with max type 3
+  5 bonds with max type 1
+  0 angles with max type 0
+  0 dihedrals with max type 0
   0 impropers with max type 0
 molecule mol2closeTo1POST mol2closeTo1POST.txt
 Read molecule template mol2closeTo1POST:
   1 molecules
   0 fragments
-  5 atoms with max type 3
-  4 bonds with max type 1
-  3 angles with max type 1
-  2 dihedrals with max type 1
+  6 atoms with max type 3
+  5 bonds with max type 1
+  0 angles with max type 0
+  0 dihedrals with max type 0
   0 impropers with max type 0
 
 #####################################################
 # Do the reactions
 fix 3 all bond/react   react reac1to2 all 1 0 3 mol1closeTo3PRE mol1closeTo3POST map_1to2.txt molecule intra   react reac2to3 type2_atoms 1 0 10 mol2closeTo3PRE mol2closeTo3POST map_2to3.txt    react reac3to2 type3_atoms 1 0 10 mol2closeTo3PRE mol3closeTo2POST map_3to2.txt    react reac2to1 type2_atoms 1 0 10 mol2closeTo1PRE mol2closeTo1POST map_2to1.txt
-ERROR: Fix bond/react: Atom type affected by reaction reac1to2 is too close to template edge (src/src/REACTION/fix_bond_react.cpp:2635)
+ERROR: Fix bond/react: Atom type affected by reaction reac1to2 is too close to template edge (src/REACTION/fix_bond_react.cpp:2635)
 Last command: fix 3 all bond/react   react reac1to2 all 1 0 3 mol1closeTo3PRE mol1closeTo3POST map_1to2.txt molecule intra   react reac2to3 type2_atoms 1 0 10 mol2closeTo3PRE mol2closeTo3POST map_2to3.txt    react reac3to2 type3_atoms 1 0 10 mol2closeTo3PRE mol3closeTo2POST map_3to2.txt    react reac2to1 type2_atoms 1 0 10 mol2closeTo1PRE mol2closeTo1POST map_2to1.txt
