@@ -66,7 +66,7 @@ fix 1 all nvt temp 300.0 300.0 100.0
 thermo 20 
 thermo_style custom step pe lx ly lz press pxx pyy pzz c_eatoms 
 min_style cg
-minimize 1.0e-4 1.0e-6 100 1000
+minimize 1.0e-4 1.0e-6 10000 10000
 
 #molecule mol1closeTo3PRE mol1closeTo3PRE.txt
 #molecule mol1closeTo3POST mol1closeTo3POST.txt
@@ -77,19 +77,22 @@ minimize 1.0e-4 1.0e-6 100 1000
 #molecule mol2closeTo1PRE mol2closeTo1PRE.txt
 #molecule mol2closeTo1POST mol2closeTo1POST.txt
 
-molecule mol molTemplate.txt
+molecule mol1 molTemplate.txt
+molecule mol2 molTemplate2.txt
 
 #####################################################
 # Do the reactions
 fix 3 all bond/react &
-  react reax all 1 0 10 mol mol map_1to2.txt molecule intra &
+  react reax all 1 0 1000 mol1 mol2 map_1to2.txt molecule intra &
   #react reac1to2 all 1 0 10 mol1closeTo3PRE mol1closeTo3POST map_1to2.txt molecule intra &
   #react reac2to3 all 1 0 10 mol2closeTo3PRE mol2closeTo3POST map_2to3.txt molecule intra & 
   #react reac3to2 all 1 0 10 mol2closeTo3PRE mol3closeTo2POST map_3to2.txt molecule intra&
   #react reac2to1 all 1 0 10 mol2closeTo1PRE mol2closeTo1POST map_2to1.txt molecule intra
 
-run 100000
 
-thermo_style custom step temp f_3[*]
+
+thermo_style custom step temp f_3[1]
+
+run 100000
 #####################################################
 print "All done"
