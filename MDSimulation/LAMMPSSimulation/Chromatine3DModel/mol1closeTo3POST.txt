@@ -1,7 +1,7 @@
 # This is a molecule template for molecule 1
 
-6 atoms
-5 bonds
+10 atoms
+9 bonds
 
 Coords
 
@@ -14,12 +14,12 @@ Coords
 
 Types
 
-1   2
-2   2
-3   3
-4   1
-5   2
-6   1
+1   U
+2   U
+3   M
+4   A
+5   U
+6   M
 
 Bonds
 

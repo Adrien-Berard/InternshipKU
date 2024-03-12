@@ -1,16 +1,17 @@
 # this is a map file
 
-6 equivalences
-1 edgeIDs
+10 equivalences
+2 edgeIDs
 
 InitiatorIDs
 
-1
-3
+5  
+6
 
 EdgeIDs
 
-6
+1
+10
 
 Equivalences
 
@@ -20,6 +21,10 @@ Equivalences
 4   4
 5   5
 6   6
+7   7
+8   8
+9   9
+10  10
 
 Constraints 
-distance 1 3 0 10
+distance 5 6 0 10
