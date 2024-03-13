@@ -33,7 +33,7 @@ compute eatoms all reduce sum c_eng
 #####################################################
 # Minimization
 
-dump mydmp all atom 100 dump.lammpstrj
+dump mydmp all local 100 dump.lammpstrj
 
 reset_timestep 0 
 fix 1 all nvt temp 300.0 300.0 100.0

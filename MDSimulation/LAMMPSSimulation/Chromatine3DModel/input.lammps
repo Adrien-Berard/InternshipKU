@@ -5,7 +5,7 @@ variable lj_epsilon equal 1.0
 variable lj_sigma equal 2.0
 
 # Initialization
-units		real
+units		lj
 boundary	    p p p
 atom_style bond 
 log 		log.${simname}.txt
@@ -14,12 +14,12 @@ read_data	InitialFile.txt
 labelmap atom 1 A 2 U 3 M
 
 # Dreiding potential information
-neighbor	2.0 bin
+neighbor	0.4 bin
 neigh_modify every 1 delay 0 check yes
 
 bond_style      harmonic
-bond_coeff	Normal 0.1 450
-bond_coeff	M-M 0.1 350
+bond_coeff	Normal 1 1
+bond_coeff	M-M 2 0.5
 
 #angle_style     harmonic
 #angle_coeff	Normal 60 109.5
@@ -29,20 +29,20 @@ bond_coeff	M-M 0.1 350
 #dihedral_coeff	1 1.73 -4.49 0.776 6.99 0.0
 #dihedral_coeff	2 1.73 -4.49 0.776 6.99 0.0
 
-pair_style	lj/cut 10.5
-pair_coeff	* * 2 450 2000
-pair_coeff	M M 2 350 2000
+pair_style	lj/cut 5.0
+pair_coeff	* * 1 1 
+pair_coeff	M M 2 0.5
 
 compute csym all centro/atom fcc
 compute peratom all pe/atom
 
 
 #####################################################
-# Equilibration (Brownian dynamics at 300 K)
+# Equilibration (Brownian dynamics)
 
-velocity 	all create 300.0 1231
-fix		1 all nve/limit 100
-fix 2 all brownian 300.0 12908410 gamma_t 2.0 rng gaussian # Compute a correct 300K simulation, check the value for gamma_t
+velocity 	all create 1.0 1231
+fix		1 all nve/limit 0.5
+fix 2 all brownian 1.0 12908410 gamma_t 1.0 rng gaussian 
 thermo_style	custom step temp 
 thermo          10000
 timestep	1
@@ -62,11 +62,11 @@ compute eatoms all reduce sum c_eng
 dump mydmp all atom 100 dump.lammpstrj
 
 reset_timestep 0 
-fix 1 all nvt temp 300.0 300.0 100.0
+fix 1 all nvt temp 1.0 1.0 1.0
 thermo 20 
 thermo_style custom step pe lx ly lz press pxx pyy pzz c_eatoms 
 min_style cg
-minimize 1.0e-4 1.0e-6 10000 10000
+minimize 1.0 1.0 10000 10000
 
 #molecule mol1closeTo3PRE mol1closeTo3PRE.txt
 #molecule mol1closeTo3POST mol1closeTo3POST.txt
@@ -83,7 +83,7 @@ molecule mol2 molTemplate2.txt
 #####################################################
 # Do the reactions
 fix 3 all bond/react &
-  react reax all 1 0 1000 mol1 mol2 map_1to2.txt molecule intra &
+  react reax all 1 0 10 mol1 mol2 map_1to2.txt molecule intra &
   #react reac1to2 all 1 0 10 mol1closeTo3PRE mol1closeTo3POST map_1to2.txt molecule intra &
   #react reac2to3 all 1 0 10 mol2closeTo3PRE mol2closeTo3POST map_2to3.txt molecule intra & 
   #react reac3to2 all 1 0 10 mol2closeTo3PRE mol3closeTo2POST map_3to2.txt molecule intra&

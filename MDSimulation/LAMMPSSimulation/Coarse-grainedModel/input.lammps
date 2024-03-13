@@ -7,7 +7,7 @@ variable lj_sigma equal 2.0
 # Initialization
 units		real
 boundary	    p p p
-atom_style	molecular
+atom_style	bond
 log 		log.${simname}.txt
 read_data	InitialFile.txt
 
@@ -20,14 +20,6 @@ bond_coeff	1 350 1.53
 bond_coeff	2 700 1.53
 special_bonds lj/coul 0.0 0.0 0.5
 
-
-angle_style     harmonic
-angle_coeff	1 60 109.5
-angle_coeff	2 120 109.5
-
-dihedral_style	multi/harmonic
-dihedral_coeff	1 1.73 -4.49 0.776 6.99 0.0
-dihedral_coeff	2 1.73 -4.49 0.776 6.99 0.0
 
 pair_style	lj/cut 10.5
 pair_coeff	* * 1.0 1.0 10.5
@@ -68,28 +60,15 @@ thermo_style custom step pe lx ly lz press pxx pyy pzz c_eatoms
 min_style cg
 minimize 1e-25 1e-25 500000 1000000 
 
-group type1_atoms type 1
-group type2_atoms type 2
-group type3_atoms type 3
 
-molecule mol1closeTo3PRE mol1closeTo3PRE.txt
-molecule mol1closeTo3POST mol1closeTo3POST.txt
-molecule mol3closeTo1POST mol3closeTo1POST.txt
-molecule mol2closeTo3PRE mol2closeTo3PRE.txt
-molecule mol2closeTo3POST mol2closeTo3POST.txt
-molecule mol3closeTo2POST mol3closeTo2POST.txt
-molecule mol2closeTo1PRE mol2closeTo1PRE.txt
-molecule mol2closeTo1POST mol2closeTo1POST.txt
+molecule mol molTemplate.txt
+molecule mol2 molTemplate2.txt
 
 
 #####################################################
 # Do the reactions
 fix 3 all bond/react &
-  react reac1to2 all 1 0 10 mol1closeTo3PRE mol1closeTo3POST map_1to2.txt &
-  react reac2to3 all 1 0 10 mol2closeTo3PRE mol2closeTo3POST map_2to3.txt  & 
-  react reac3to2 all 1 0 10 mol2closeTo3PRE mol3closeTo2POST map_3to2.txt  &
-  react reac2to1 all 1 0 10 mol2closeTo1PRE mol2closeTo1POST map_2to1.txt 
-
+  react reac all 1 0 10 mol mol2 map.txt
 
 thermo_style custom step temp f_3[*]
 
