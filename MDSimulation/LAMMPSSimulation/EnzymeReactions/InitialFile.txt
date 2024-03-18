@@ -1,0 +1,30 @@
+# Initialisation
+
+5 atoms
+
+3 atom types
+
+0.0000   15.5000 xlo xhi 
+0.0000   15.5000 ylo yhi 
+0.0000   15.5000 zlo zhi
+
+
+Atom Type Labels
+
+1  A
+2  B
+3  C
+
+Masses
+
+1    14.02
+2    14.02
+3    14.02
+
+Atoms # atomic
+
+  1  1  A  0.0  0.0  0.0
+  2  2  A  1.5  1.5  1.5
+  3  3  A  3.0  3.0  3.0
+  4  4  B  4.5  4.5  4.5
+  5  5  C  6.0  6.0  6.0

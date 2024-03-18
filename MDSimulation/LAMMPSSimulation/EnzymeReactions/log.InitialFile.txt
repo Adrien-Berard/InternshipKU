@@ -1,0 +1,353 @@
+read_data	InitialFile.txt
+Reading data file ...
+  orthogonal box = (0 0 0) to (15.5 15.5 15.5)
+  1 by 1 by 1 MPI processor grid
+  reading atom labelmap ...
+WARNING: Atom style in data file atomic differs from currently defined atom style bond (src/src/read_data.cpp:621)
+  reading atoms ...
+  5 atoms
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:    0        0        0       
+  special bond factors coul:  0        0        0       
+     0 = max # of 1-2 neighbors
+     0 = max # of 1-3 neighbors
+     0 = max # of 1-4 neighbors
+     1 = max # of special neighbors
+  special bonds CPU = 0.004 seconds
+  read_data CPU = 0.013 seconds
+
+# Dreiding potential information
+neighbor	2.0 bin
+neigh_modify every 1 delay 0 check yes
+
+pair_style	lj/cut 10.5
+pair_coeff	* * 10 1.0 10.5
+
+compute csym all centro/atom fcc
+compute peratom all pe/atom
+
+
+#####################################################
+# Equilibration (Brownian dynamics at 300 K)
+
+velocity 	all create 300.0 1231
+fix		1 all nve/limit 0.05
+fix 2 all brownian 30.0 12908410 gamma_t 3.0 rng gaussian # Compute a correct 300K simulation, check the value for gamma_t
+thermo_style	custom step temp
+thermo          10000
+timestep	1
+run		100000
+Generated 0 of 3 mixed pair_coeff terms from geometric mixing rule
+WARNING: One or more atoms are time integrated more than once (src/src/modify.cpp:289)
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 12.5
+  ghost atom cutoff = 12.5
+  binsize = 6.25, bins = 3 3 3
+  2 neighbor lists, perpetual/occasional/extra = 1 1 0
+  (1) pair lj/cut, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d
+      bin: standard
+  (2) compute centro/atom, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 4.694 | 4.694 | 4.694 Mbytes
+   Step          Temp     
+         0   300          
+     10000   486.24444    
+     20000   427.75871    
+     30000   339.96558    
+     40000   426.98687    
+     50000   349.94314    
+     60000   520.09548    
+     70000   188.15718    
+     80000   394.25296    
+     90000   391.61046    
+    100000   263.77866    
+Loop time of 0.360101 on 1 procs for 100000 steps with 5 atoms
+
+Performance: 23993.294 ns/day, 0.001 hours/ns, 277700.161 timesteps/s, 1.389 Matom-step/s
+72.6% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.049696   | 0.049696   | 0.049696   |   0.0 | 13.80
+Bond    | 0.0088451  | 0.0088451  | 0.0088451  |   0.0 |  2.46
+Neigh   | 0.00030099 | 0.00030099 | 0.00030099 |   0.0 |  0.08
+Comm    | 0.11941    | 0.11941    | 0.11941    |   0.0 | 33.16
+Output  | 0.00048104 | 0.00048104 | 0.00048104 |   0.0 |  0.13
+Modify  | 0.11942    | 0.11942    | 0.11942    |   0.0 | 33.16
+Other   |            | 0.06195    |            |       | 17.20
+
+Nlocal:              5 ave           5 max           5 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:             83 ave          83 max          83 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:             16 ave          16 max          16 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:            0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 16
+Ave neighs/atom = 3.2
+Ave special neighs/atom = 0
+Neighbor list builds = 32
+Dangerous builds = 0
+unfix 1
+unfix 2
+write_restart 	restart.${simname}.dreiding1
+write_restart 	restart.InitialFile.dreiding1
+System init for write_restart ...
+Generated 0 of 3 mixed pair_coeff terms from geometric mixing rule
+
+#####################################################
+# Define Settings
+compute eng all pe/atom
+compute eatoms all reduce sum c_eng
+
+#####################################################
+# Minimization
+
+dump mydmp all atom 100 dump.lammpstrj
+
+#reset_timestep 0
+#fix 1 all nvt temp 300.0 300.0 100.0
+#thermo 20
+#thermo_style custom step pe lx ly lz press pxx pyy pzz c_eatoms
+#min_style cg
+#minimize 1e-25 1e-25 500000 1000000
+
+#unfix 1
+
+molecule mol molTemplate.txt
+Read molecule template mol:
+  1 molecules
+  0 fragments
+  2 atoms with max type 3
+  0 bonds with max type 0
+  0 angles with max type 0
+  0 dihedrals with max type 0
+  0 impropers with max type 0
+molecule mol2 molTemplate2.txt
+Read molecule template mol2:
+  1 molecules
+  0 fragments
+  2 atoms with max type 3
+  0 bonds with max type 0
+  0 angles with max type 0
+  0 dihedrals with max type 0
+  0 impropers with max type 0
+
+
+
+#####################################################
+# Do the reactions
+fix rxns all bond/react stabilization yes statted_grp .03   react reac all 1 0 10 mol mol2 map.txt molecule inter
+dynamic group bond_react_MASTER_group defined
+dynamic group statted_grp_REACT defined
+
+fix 1 statted_grp_REACT nvt temp 300 300 100
+
+thermo_style custom step temp f_rxns[1]
+
+
+run 1000000
+
+CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE
+
+Your simulation uses code contributions which should be cited:
+
+- fix bond/react: reacter.org doi:10.1016/j.polymer.2017.09.038, doi:10.1021/acs.macromol.0c02012
+
+@Article{Gissinger17,
+ author = {J. R. Gissinger and B. D. Jensen and K. E. Wise},
+ title = {Modeling Chemical Reactions in Classical Molecular Dynamics Simulations},
+ journal = {Polymer},
+ year =    2017,
+ volume =  128,
+ pages =   {211--217}
+}
+
+@Article{Gissinger20,
+ author = {J. R. Gissinger, B. D. Jensen, K. E. Wise},
+ title = {{REACTER}: A Heuristic Method for Reactive Molecular Dynamics},
+ journal = {Macromolecules},
+ year =    2020,
+ volume =  53,
+ number =  22,
+ pages =   {9953--9961}
+}
+
+CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE
+
+Generated 0 of 3 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 12.5
+  ghost atom cutoff = 12.5
+  binsize = 6.25, bins = 3 3 3
+  3 neighbor lists, perpetual/occasional/extra = 1 2 0
+  (1) pair lj/cut, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d
+      bin: standard
+  (2) compute centro/atom, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+  (3) fix bond/react, occasional, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+Per MPI rank memory allocation (min/avg/max) = 5.069 | 5.069 | 5.069 Mbytes
+   Step          Temp        f_rxns[1]   
+    100000   263.77866      0            
+    110000   74.104926      1            
+    120000   535.23499      1            
+    130000   342.64269      1            
+    140000   384.66899      1            
+    150000   252.72679      1            
+    160000   187.75431      1            
+    170000   245.67504      1            
+    180000   295.70514      1            
+    190000   467.98666      1            
+    200000   313.46416      1            
+    210000   207.9037       1            
+    220000   84.560534      1            
+    230000   406.35653      1            
+    240000   253.87615      1            
+    250000   274.9838       1            
+    260000   335.14872      1            
+    270000   312.58719      1            
+    280000   178.07267      1            
+    290000   170.93447      1            
+    300000   427.52602      1            
+    310000   145.65488      1            
+    320000   200.77251      1            
+    330000   203.35446      1            
+    340000   346.39312      1            
+    350000   234.23314      1            
+    360000   296.48655      1            
+    370000   475.47488      1            
+    380000   220.82335      1            
+    390000   268.26849      1            
+    400000   324.83113      1            
+    410000   215.86555      1            
+    420000   234.81896      1            
+    430000   230.27013      1            
+    440000   613.84359      1            
+    450000   420.65217      1            
+    460000   366.56846      1            
+    470000   519.18308      1            
+    480000   195.89833      1            
+    490000   187.34166      1            
+    500000   220.59486      1            
+    510000   135.58381      1            
+    520000   301.37339      1            
+    530000   373.79932      1            
+    540000   142.29514      1            
+    550000   282.74119      1            
+    560000   196.16078      1            
+    570000   720.64842      1            
+    580000   352.0717       1            
+    590000   456.71952      1            
+    600000   233.23351      1            
+    610000   249.47184      1            
+    620000   201.18241      1            
+    630000   160.07937      1            
+    640000   142.16137      1            
+    650000   109.00009      1            
+    660000   325.48356      1            
+    670000   341.68269      1            
+    680000   261.61673      1            
+    690000   422.54052      1            
+    700000   341.42492      1            
+    710000   233.83444      1            
+    720000   412.79891      1            
+    730000   200.42648      1            
+    740000   263.43125      1            
+    750000   203.85967      1            
+    760000   393.25094      1            
+    770000   151.0749       1            
+    780000   424.4944       1            
+    790000   361.27411      1            
+    800000   445.77218      1            
+    810000   315.32007      1            
+    820000   510.71078      1            
+    830000   550.744        1            
+    840000   283.2572       1            
+    850000   282.85668      1            
+    860000   280.17382      1            
+    870000   157.59916      1            
+    880000   331.89567      1            
+    890000   722.78846      1            
+    900000   434.7177       1            
+    910000   486.68972      1            
+    920000   680.98721      1            
+    930000   348.89495      1            
+    940000   217.92695      1            
+    950000   180.27144      1            
+    960000   402.19183      1            
+    970000   234.91852      1            
+    980000   299.87551      1            
+    990000   546.06765      1            
+   1000000   459.11115      1            
+   1010000   243.73009      1            
+   1020000   225.06538      1            
+   1030000   349.07457      1            
+   1040000   632.06561      1            
+   1050000   327.93506      1            
+   1060000   219.21359      1            
+   1070000   149.78625      1            
+   1080000   164.32391      1            
+   1090000   58.298569      1            
+   1100000   520.66962      1            
+Loop time of 6.20918 on 1 procs for 1000000 steps with 5 atoms
+
+Performance: 13914.883 ns/day, 0.002 hours/ns, 161051.892 timesteps/s, 805.259 katom-step/s
+75.1% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.41764    | 0.41764    | 0.41764    |   0.0 |  6.73
+Bond    | 0.12343    | 0.12343    | 0.12343    |   0.0 |  1.99
+Neigh   | 0.0044565  | 0.0044565  | 0.0044565  |   0.0 |  0.07
+Comm    | 0.84404    | 0.84404    | 0.84404    |   0.0 | 13.59
+Output  | 0.45228    | 0.45228    | 0.45228    |   0.0 |  7.28
+Modify  | 3.7757     | 3.7757     | 3.7757     |   0.0 | 60.81
+Other   |            | 0.5917     |            |       |  9.53
+
+Nlocal:              5 ave           5 max           5 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:             55 ave          55 max          55 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:             10 ave          10 max          10 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:            0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 10
+Ave neighs/atom = 2
+Ave special neighs/atom = 0
+Neighbor list builds = 578
+Dangerous builds = 0
+
+#####################################################
+
+# 3 options for the reaction:
+  # 1 story telling avec fix/react et 5 atoms EN COURS
+  # 2 story telling avec fix/react et 2 molecules
+  # 3 envoyer un mail à Jacob Gissinger  FAIT
+  # 4 tenter la méthode naïve 
+Total wall time: 0:00:06

@@ -1,45 +1,39 @@
+LAMMPS (2 Aug 2023 - Update 2)
+# VARIABLES
+variable fname index InitialFile.txt
+variable simname index InitialFile
+variable lj_epsilon equal 1.0
+variable lj_sigma equal 2.0
+
+# Initialization
+units		real
+boundary	    p p p
+atom_style	bond
+#log 		log.${simname}.txt
 read_data	InitialFile.txt
 Reading data file ...
-  orthogonal box = (0 0 0) to (158.5 158.5 158.5)
+  orthogonal box = (0 0 0) to (15.5 15.5 15.5)
   1 by 1 by 1 MPI processor grid
+  reading atom labelmap ...
 WARNING: Atom style in data file atomic differs from currently defined atom style bond (src/src/read_data.cpp:621)
   reading atoms ...
-  100 atoms
-  scanning bonds ...
-  1 = max bonds/atom
-  reading bonds ...
-  99 bonds
+  5 atoms
 Finding 1-2 1-3 1-4 neighbors ...
   special bond factors lj:    0        0        0       
   special bond factors coul:  0        0        0       
-     2 = max # of 1-2 neighbors
-     2 = max # of 1-3 neighbors
-     4 = max # of 1-4 neighbors
-     6 = max # of special neighbors
-  special bonds CPU = 0.025 seconds
-  read_data CPU = 0.050 seconds
+     0 = max # of 1-2 neighbors
+     0 = max # of 1-3 neighbors
+     0 = max # of 1-4 neighbors
+     1 = max # of special neighbors
+  special bonds CPU = 0.008 seconds
+  read_data CPU = 0.027 seconds
 
 # Dreiding potential information
 neighbor	2.0 bin
 neigh_modify every 1 delay 0 check yes
 
-bond_style      harmonic
-bond_coeff	1 350 1
-bond_coeff	2 700 0.5
-special_bonds lj/coul 0.0 0.0 0.5
-Finding 1-2 1-3 1-4 neighbors ...
-  special bond factors lj:    0        0        0.5     
-  special bond factors coul:  0        0        0.5     
-     2 = max # of 1-2 neighbors
-     2 = max # of 1-3 neighbors
-     4 = max # of 1-4 neighbors
-     6 = max # of special neighbors
-  special bonds CPU = 0.001 seconds
-
-
 pair_style	lj/cut 10.5
-pair_coeff	* * 0.5 1.0 10.5
-pair_coeff	3 3 1 0.5 10.5
+pair_coeff	* * 10 1.0 10.5
 
 compute csym all centro/atom fcc
 compute peratom all pe/atom
@@ -62,7 +56,7 @@ Neighbor list info ...
   max neighbors/atom: 2000, page size: 100000
   master list distance cutoff = 12.5
   ghost atom cutoff = 12.5
-  binsize = 6.25, bins = 26 26 26
+  binsize = 6.25, bins = 3 3 3
   2 neighbor lists, perpetual/occasional/extra = 1 1 0
   (1) pair lj/cut, perpetual
       attributes: half, newton on
@@ -74,56 +68,60 @@ Neighbor list info ...
       pair build: full/bin
       stencil: full/bin/3d
       bin: standard
-Per MPI rank memory allocation (min/avg/max) = 5.371 | 5.371 | 5.371 Mbytes
+Per MPI rank memory allocation (min/avg/max) = 4.694 | 4.694 | 4.694 Mbytes
    Step          Temp     
          0   300          
-     10000   294.33268    
-     20000   268.46504    
-     30000   322.62857    
-     40000   271.67891    
-     50000   286.89318    
-     60000   288.13737    
-     70000   321.99628    
-     80000   276.12862    
-     90000   334.20518    
-    100000   329.52006    
-Loop time of 3.21226 on 1 procs for 100000 steps with 100 atoms
+     10000   486.24444    
+     20000   427.75871    
+     30000   339.96558    
+     40000   426.98687    
+     50000   349.94314    
+     60000   520.09548    
+     70000   188.15718    
+     80000   394.25296    
+     90000   391.61046    
+    100000   263.77866    
+Loop time of 0.309591 on 1 procs for 100000 steps with 5 atoms
 
-Performance: 2689.693 ns/day, 0.009 hours/ns, 31130.700 timesteps/s, 3.113 Matom-step/s
-88.6% CPU use with 1 MPI tasks x no OpenMP threads
+Performance: 27907.761 ns/day, 0.001 hours/ns, 323006.496 timesteps/s, 1.615 Matom-step/s
+78.4% CPU use with 1 MPI tasks x no OpenMP threads
 
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 1.6864     | 1.6864     | 1.6864     |   0.0 | 52.50
-Bond    | 0.17724    | 0.17724    | 0.17724    |   0.0 |  5.52
-Neigh   | 0.0084081  | 0.0084081  | 0.0084081  |   0.0 |  0.26
-Comm    | 0.025558   | 0.025558   | 0.025558   |   0.0 |  0.80
-Output  | 0.0020752  | 0.0020752  | 0.0020752  |   0.0 |  0.06
-Modify  | 1.2182     | 1.2182     | 1.2182     |   0.0 | 37.92
-Other   |            | 0.09436    |            |       |  2.94
+Pair    | 0.044102   | 0.044102   | 0.044102   |   0.0 | 14.25
+Bond    | 0.0087764  | 0.0087764  | 0.0087764  |   0.0 |  2.83
+Neigh   | 0.00033823 | 0.00033823 | 0.00033823 |   0.0 |  0.11
+Comm    | 0.085758   | 0.085758   | 0.085758   |   0.0 | 27.70
+Output  | 0.0010959  | 0.0010959  | 0.0010959  |   0.0 |  0.35
+Modify  | 0.10639    | 0.10639    | 0.10639    |   0.0 | 34.36
+Other   |            | 0.06313    |            |       | 20.39
 
-Nlocal:            100 ave         100 max         100 min
+Nlocal:              5 ave           5 max           5 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
-Nghost:              0 ave           0 max           0 min
+Nghost:             83 ave          83 max          83 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
-Neighs:           1083 ave        1083 max        1083 min
+Neighs:             16 ave          16 max          16 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
 FullNghs:            0 ave           0 max           0 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
 
-Total # of neighbors = 1083
-Ave neighs/atom = 10.83
-Ave special neighs/atom = 5.88
-Neighbor list builds = 112
+Total # of neighbors = 16
+Ave neighs/atom = 3.2
+Ave special neighs/atom = 0
+Neighbor list builds = 32
 Dangerous builds = 0
 unfix 1
 unfix 2
+write_restart 	restart.${simname}.dreiding1
+write_restart 	restart.InitialFile.dreiding1
+System init for write_restart ...
+Generated 0 of 3 mixed pair_coeff terms from geometric mixing rule
 
 #####################################################
 # Define Settings
-#compute eng all pe/atom
-#compute eatoms all reduce sum c_eng
+compute eng all pe/atom
+compute eatoms all reduce sum c_eng
 
 #####################################################
 # Minimization
@@ -143,8 +141,8 @@ molecule mol molTemplate.txt
 Read molecule template mol:
   1 molecules
   0 fragments
-  5 atoms with max type 3
-  4 bonds with max type 2
+  2 atoms with max type 3
+  0 bonds with max type 0
   0 angles with max type 0
   0 dihedrals with max type 0
   0 impropers with max type 0
@@ -152,24 +150,26 @@ molecule mol2 molTemplate2.txt
 Read molecule template mol2:
   1 molecules
   0 fragments
-  5 atoms with max type 3
-  4 bonds with max type 2
+  2 atoms with max type 3
+  0 bonds with max type 0
   0 angles with max type 0
   0 dihedrals with max type 0
   0 impropers with max type 0
 
 
+
 #####################################################
 # Do the reactions
-fix 3 all bond/react stabilization yes statted_grp .03   react reac all 1 0 4 mol mol2 map.txt molecule intra
+fix rxns all bond/react stabilization yes statted_grp .03   react reac all 1 0 10 mol mol2 map.txt
 dynamic group bond_react_MASTER_group defined
 dynamic group statted_grp_REACT defined
 
 fix 1 statted_grp_REACT nvt temp 300 300 100
 
-thermo_style custom step temp f_3[1]
+thermo_style custom step temp f_rxns[1]
 
-run 100000
+
+run 1000000
 
 CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE
 
@@ -204,7 +204,7 @@ Neighbor list info ...
   max neighbors/atom: 2000, page size: 100000
   master list distance cutoff = 12.5
   ghost atom cutoff = 12.5
-  binsize = 6.25, bins = 26 26 26
+  binsize = 6.25, bins = 3 3 3
   3 neighbor lists, perpetual/occasional/extra = 1 2 0
   (1) pair lj/cut, perpetual
       attributes: half, newton on
@@ -221,8 +221,28 @@ Neighbor list info ...
       pair build: copy
       stencil: none
       bin: none
-Per MPI rank memory allocation (min/avg/max) = 5.745 | 5.745 | 5.745 Mbytes
-   Step          Temp          f_3[1]    
-    100000   329.52006      0            
-ERROR on proc 0: Bond atoms 75 76 missing on proc 0 at step 109597 (src/src/ntopo_bond_all.cpp:59)
-Last command: run 100000
+Per MPI rank memory allocation (min/avg/max) = 5.069 | 5.069 | 5.069 Mbytes
+   Step          Temp        f_rxns[1]   
+    100000   263.77866      0            
+    110000   111.03051      3            
+    120000   144.78885      3            
+    130000   440.17549      3            
+    140000   175.71292      3            
+    150000   243.07209      3            
+    160000   339.66923      3            
+    170000   416.93439      3            
+    180000   427.91411      3            
+    190000   253.77494      3            
+    200000   322.53307      3            
+    210000   581.45122      3            
+    220000   338.17113      3            
+    230000   296.93915      3            
+    240000   366.80667      3            
+    250000   264.16382      3            
+    260000   229.28497      3            
+    270000   195.08554      3            
+    280000   186.14837      3            
+    290000   262.98911      3            
+    300000   302.14349      3            
+    310000   128.73759      3            
+    320000   336.50545     

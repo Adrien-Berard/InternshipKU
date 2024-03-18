@@ -1,25 +1,18 @@
 # this is a map file
 
-5 equivalences
-2 edgeIDs
+2 equivalences
+1 constraints
 
 InitiatorIDs
 
-3
-4
-
-EdgeIDs
-
 1
-5
+2
 
 Equivalences
 
 1   1
 2   2
-3   3
-4   4
-5   5   
 
+Constraints
 
-
+distance 1 2 0 10

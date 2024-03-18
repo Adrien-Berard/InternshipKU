@@ -8,22 +8,15 @@ variable lj_sigma equal 2.0
 units		real
 boundary	    p p p
 atom_style	bond
-log 		log.${simname}.txt
+#log 		log.${simname}.txt
 read_data	InitialFile.txt
 
 # Dreiding potential information
 neighbor	2.0 bin
 neigh_modify every 1 delay 0 check yes
 
-bond_style      harmonic
-bond_coeff	1 350 1
-bond_coeff	2 700 0.5
-special_bonds lj/coul 0.0 0.0 0.5
-
-
 pair_style	lj/cut 10.5
-pair_coeff	* * 0.5 1.0 10.5
-pair_coeff	3 3 1 0.5 10.5
+pair_coeff	* * 10 1.0 10.5
 
 compute csym all centro/atom fcc
 compute peratom all pe/atom
@@ -41,11 +34,12 @@ timestep	1
 run		100000
 unfix 1
 unfix 2
+write_restart 	restart.${simname}.dreiding1
 
 #####################################################
 # Define Settings
-#compute eng all pe/atom 
-#compute eatoms all reduce sum c_eng 
+compute eng all pe/atom 
+compute eatoms all reduce sum c_eng 
 
 #####################################################
 # Minimization
@@ -65,22 +59,23 @@ molecule mol molTemplate.txt
 molecule mol2 molTemplate2.txt
 
 
+
 #####################################################
 # Do the reactions
-fix 3 all bond/react stabilization yes statted_grp .03 &
-  react reac all 1 0 4 mol mol2 map.txt molecule intra 
+fix rxns all bond/react stabilization yes statted_grp .03 &
+  react reac all 1 0 10 mol mol2 map.txt
 
 fix 1 statted_grp_REACT nvt temp 300 300 100
 
-thermo_style custom step temp f_3[1]
+thermo_style custom step temp f_rxns[1]
 
-run 100000
+
+run 1000000
 
 #####################################################
-print "All done"
 
 # 3 options for the reaction:
-  # 1 story telling avec fix/react et 5 atoms
+  # 1 story telling avec fix/react et 5 atoms EN COURS
   # 2 story telling avec fix/react et 2 molecules
   # 3 envoyer un mail à Jacob Gissinger  FAIT
   # 4 tenter la méthode naïve 
