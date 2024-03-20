@@ -1,2 +1,0 @@
-    @/angle:ForceField/Backbone  @/atom:ForceField/CA  @/atom:ForceField/CA  @/atom:ForceField/CA   @/bond:ForceField/*   @/bond:ForceField/*
-    @/angle:ForceField/Sidechain @/atom:ForceField/CA  @/atom:ForceField/CA  @/atom:ForceField/R    @/bond:ForceField/*   @/bond:ForceField/*

@@ -1,3 +1,0 @@
-    # dihedralType atmType1 atmType2 atmType3 atmType4 bondType1 bType2 bType3
-    1 1 1 1 1  @/bond:ForceField/* @/bond:ForceField/* @/bond:ForceField/*
-    2 2  1 1 2   @/bond:ForceField/* @/bond:ForceField/* @/bond:ForceField/*

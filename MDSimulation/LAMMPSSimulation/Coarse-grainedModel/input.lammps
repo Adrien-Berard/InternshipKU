@@ -8,7 +8,7 @@ variable lj_sigma equal 2.0
 units		real
 boundary	    p p p
 atom_style	bond
-log 		log.${simname}.txt
+#log 		log.${simname}.txt
 read_data	InitialFile.txt
 
 # Dreiding potential information
@@ -22,8 +22,8 @@ special_bonds lj/coul 0.0 0.0 0.5
 
 
 pair_style	lj/cut 10.5
-pair_coeff	* * 0.5 1.0 10.5
-pair_coeff	3 3 1 0.5 10.5
+pair_coeff	* * 2 1.0 10.5
+pair_coeff	3 3 4 0.5 10.5
 
 compute csym all centro/atom fcc
 compute peratom all pe/atom
@@ -44,7 +44,7 @@ unfix 2
 
 #####################################################
 # Define Settings
-#compute eng all pe/atom 
+compute eng all pe/atom 
 #compute eatoms all reduce sum c_eng 
 
 #####################################################
@@ -52,14 +52,14 @@ unfix 2
 
 dump mydmp all atom 100 dump.lammpstrj
 
-#reset_timestep 0 
-#fix 1 all nvt temp 300.0 300.0 100.0
-#thermo 20 
+reset_timestep 0 
+fix 1 all nvt temp 300.0 300.0 100.0
+thermo 20 
 #thermo_style custom step pe lx ly lz press pxx pyy pzz c_eatoms 
-#min_style cg
-#minimize 1e-25 1e-25 500000 1000000 
+min_style cg
+minimize 1e-25 1e-25 500000 1000000 
 
-#unfix 1
+unfix 1
 
 molecule mol molTemplate.txt
 molecule mol2 molTemplate2.txt

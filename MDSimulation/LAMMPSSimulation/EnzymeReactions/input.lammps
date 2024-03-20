@@ -46,14 +46,14 @@ compute eatoms all reduce sum c_eng
 
 dump mydmp all atom 100 dump.lammpstrj
 
-#reset_timestep 0 
-#fix 1 all nvt temp 300.0 300.0 100.0
-#thermo 20 
-#thermo_style custom step pe lx ly lz press pxx pyy pzz c_eatoms 
-#min_style cg
-#minimize 1e-25 1e-25 500000 1000000 
+reset_timestep 0 
+fix 1 all nvt temp 300.0 300.0 100.0
+thermo 20 
+thermo_style custom step pe lx ly lz press pxx pyy pzz c_eatoms 
+min_style cg
+minimize 1e-25 1e-25 500000 1000000 
 
-#unfix 1
+unfix 1
 
 molecule mol molTemplate.txt
 molecule mol2 molTemplate2.txt
@@ -74,7 +74,7 @@ run 1000000
 
 #####################################################
 
-# 3 options for the reaction:
+# 4 options for the reaction:
   # 1 story telling avec fix/react et 5 atoms EN COURS
   # 2 story telling avec fix/react et 2 molecules
   # 3 envoyer un mail à Jacob Gissinger  FAIT
